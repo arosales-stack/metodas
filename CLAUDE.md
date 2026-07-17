@@ -2,11 +2,18 @@
 
 ## Repo & Deploy
 - Repo: `arosales-stack/metodas`. This repo contains ONLY the live site files — every file here can be served publicly.
-- Workflow: **never commit straight to `main`.** All work happens on `dev`, gets pushed, then merged to `main` only on explicit user approval.
+- **This is a Cloudflare Workers project (Workers Static Assets), NOT Cloudflare Pages.** That distinction matters because the two products behave differently — don't apply Pages assumptions here.
+- Config file: `wrangler.jsonc` at repo root. It has `"assets": { "directory": "./" }` — this tells Cloudflare to serve every file in this repo as static assets, no build step, no framework.
+- **Preview URL for `dev` (bookmark this, it never changes):**
+  **`https://dev-metodas.a-rosales.workers.dev`**
+  Every push to `dev` updates this same link automatically — refresh it to see the latest change. No need to open the Cloudflare dashboard, no need to click into a specific build/deployment. This works because `preview_urls` is enabled in `wrangler.jsonc` and Workers auto-generates a stable alias from the branch name (`<branch>-<worker-name>.<subdomain>.workers.dev`).
+- **Production URL:** `https://metodas.a-rosales.workers.dev` — this is what `main` deploys to. Do not push to `main` without explicit approval.
+- Workflow:
   1. Make the change on `dev`, commit, push.
-  2. Cloudflare Pages auto-builds a preview URL for `dev` (Git integration: any non-production branch gets its own preview deployment).
-  3. User checks the preview. Only on explicit "merge it" / "ship it" does `dev` → `main`.
-  4. `main` pushes auto-deploy to the live production URL.
+  2. Cloudflare Workers Build runs automatically (`npx wrangler versions upload`) and updates the `dev` preview link above.
+  3. User checks that same bookmarked preview URL — no dashboard needed.
+  4. Only on explicit "merge it" / "ship it" does `dev` → `main`, which deploys to production.
+- Why the dashboard felt confusing the first time: Workers' UI separates "build/version" from "visit this deployment" — unlike Pages, which jumps straight from a build to its preview. With the stable alias above, that dashboard flow is now avoidable entirely for day-to-day checks.
 - This file lives in the repo root and travels with the code — keep it updated after every confirmed change so context survives across sessions/tools.
 
 ## The Files
