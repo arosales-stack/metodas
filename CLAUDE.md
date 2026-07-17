@@ -6,7 +6,7 @@
 - Config file: `wrangler.jsonc` at repo root. It has `"assets": { "directory": "./" }` — this tells Cloudflare to serve every file in this repo as static assets, no build step, no framework.
 - **Preview URL for `dev` (bookmark this, it never changes):**
   **`https://dev-metodas.a-rosales.workers.dev`**
-  Every push to `dev` updates this same link automatically — refresh it to see the latest change. No need to open the Cloudflare dashboard, no need to click into a specific build/deployment. This works because `preview_urls` is enabled in `wrangler.jsonc` and Workers auto-generates a stable alias from the branch name (`<branch>-<worker-name>.<subdomain>.workers.dev`).
+  Every push to `dev` updates this same link automatically — refresh it to see the latest change. No need to open the Cloudflare dashboard, no need to click into a specific build/deployment. This works because `preview_urls` is enabled in `wrangler.jsonc` and Workers auto-generates a stable alias from the branch name (`<branch>-<worker-name>.<subdomain>.workers.dev`). **Confirmed working and verified by the user (2026-07-17) — every change pushed to `dev` shows up at this exact URL after the build finishes. Do not re-explain or re-verify this mechanism again; just push and tell the user to refresh this link.**
 - **Production URL:** `https://metodas.a-rosales.workers.dev` — this is what `main` deploys to. Do not push to `main` without explicit approval.
 - Workflow:
   1. Make the change on `dev`, commit, push.
