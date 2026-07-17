@@ -66,6 +66,9 @@ Rust and Clay swap jobs between themes (same two colors, swapped roles). Font: *
 ## Copy Rule — Hard Rule
 Never invent or alter copy. Only use what exists in the source file being edited. If a change requires new wording, ask first — don't paraphrase or "improve" existing copy as a side effect of a styling change.
 
+## Design Changes Apply to Both Languages — Hard Rule
+Any visual/design/styling change (colors, layout, spacing, animations, card treatments, etc.) requested on one language version of a page ALWAYS applies to its `-fr`/non-`-fr` counterpart too, automatically, without being asked twice. Text/copy changes are the only exception — those are language-specific by nature. When in doubt whether something is "design" or "copy," treat class/CSS/structural changes as design (apply to both) and literal wording changes as copy (apply only to the language specified).
+
 ## Behavior Rules
 - **STEP ONE, ALWAYS, NO EXCEPTIONS: read the actual code of the page being touched — the whole file, not a skim — and specifically the full section being modified, before making ANY edit.** This applies even to changes that look trivial or stupid-simple. Never write a change based on a guess, a memory of the file from earlier in the conversation, or a description of what it "probably" looks like. Open it, read it, then edit it.
 - A question from the user is not a command to execute. Only act on explicit instructions ("go," "do it," "change it").
