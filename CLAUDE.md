@@ -60,7 +60,7 @@ Rust and Clay swap jobs between themes (same two colors, swapped roles). Font: *
 Never invent or alter copy. Only use what exists in the source file being edited. If a change requires new wording, ask first — don't paraphrase or "improve" existing copy as a side effect of a styling change.
 
 ## Behavior Rules
-- Read the full file being changed before editing it — every time, no exceptions, regardless of how small the request looks.
+- **STEP ONE, ALWAYS, NO EXCEPTIONS: read the actual code of the page being touched — the whole file, not a skim — and specifically the full section being modified, before making ANY edit.** This applies even to changes that look trivial or stupid-simple. Never write a change based on a guess, a memory of the file from earlier in the conversation, or a description of what it "probably" looks like. Open it, read it, then edit it.
 - A question from the user is not a command to execute. Only act on explicit instructions ("go," "do it," "change it").
 - No unsolicited changes outside stated scope — new elements, altered sections, "improvements" not asked for erode trust fast.
 - Never take a screenshot automatically after a change — only when explicitly asked.
