@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rebuilding Commercial Conversion — Metodas</title>
+<meta name="description" content="How a former Commercial Director rebuilt lead scoring, closing process and event playbook for a €50M group with 6,000 clients but no system to convert leads.">
+<link rel="canonical" href="https://metodas.co/case-studies/commercial-conversion">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rebuilding Commercial Conversion — Metodas">
+<meta property="og:description" content="How a former Commercial Director rebuilt lead scoring, closing process and event playbook for a €50M group.">
+<meta property="og:url" content="https://metodas.co/case-studies/commercial-conversion">
+<meta property="og:image" content="https://metodas.co/Assets/Images/Use%20case%20images/webp/lead-scoring-matrix.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rebuilding Commercial Conversion — Metodas">
+<meta name="twitter:description" content="How a former Commercial Director rebuilt lead scoring, closing process and event playbook for a €50M group.">
+<meta name="twitter:image" content="https://metodas.co/Assets/Images/Use%20case%20images/webp/lead-scoring-matrix.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* TOKENS — copied verbatim from index.html */
+:root {
+  color-scheme: light dark;
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --pad-x: clamp(20px, 4vw, 48px); --pad-y: clamp(48px, 6vw, 72px); --pad-card: clamp(20px, 2vw, 28px);
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+  --fixed-cream: #f7f4ee; --fixed-cream-55: rgba(247,244,238,0.55);
+  --fixed-ink: #1c1a17; --fixed-ink-55: rgba(28,26,23,0.64);
+  --fixed-beige: #e4ddcd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+    --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+    --paper-r: 23; --paper-g: 21; --paper-b: 18;
+    --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10);
+  }
+}
+:root[data-theme="light"] {
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+}
+:root[data-theme="dark"] {
+  --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+  --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+  --paper-r: 23; --paper-g: 21; --paper-b: 18;
+  --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light dark; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; font-size:16px; font-weight:400; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+p, h1, h2, h3 { margin:0; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.inner { max-width:1200px; margin:0 auto; padding:var(--pad-y) var(--pad-x); }
+
+.section-dark { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-20:rgba(247,244,238,0.24); --ink-10:rgba(247,244,238,0.12); --ink-06:var(--dark-line); --card:var(--dark-surface); --paper:var(--dark-bg); color:var(--ink); }
+
+.ew { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
+.ew::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+
+.sh { display:grid; grid-template-columns:200px 1fr; gap:40px; align-items:start; margin-bottom:40px; }
+.sh-h { font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-0.025em; line-height:1.1; margin-bottom:10px; }
+.sh-b { font-size:15px; color:var(--ink-55); line-height:1.65; }
+@media (max-width:680px){ .sh{ grid-template-columns:1fr; gap:10px; } }
+
+.btn-red, .btn-red-lg { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:inherit; font-weight:500; border:1px solid var(--accent); text-decoration:none; transition: transform .2s cubic-bezier(.22,1,.36,1), opacity .12s, box-shadow .2s; }
+.btn-red { font-size:14px; padding:11px 20px; letter-spacing:0.01em; }
+.btn-red-lg { font-size:14px; padding:13px 24px; }
+.btn-red:hover, .btn-red-lg:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(163,49,26,0.28); }
+
+.btn-stroke-lg { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; padding:12px 24px; border:1px solid var(--ink-20); text-decoration:none; transition: border-color .12s, transform .2s; }
+.btn-stroke-lg:hover { border-color:var(--ink-55); transform: translateY(-2px); }
+
+.btn-link { display:inline-flex; align-items:center; gap:5px; font-size:14px; font-weight:500; color:var(--ink-55); transition:color .12s, gap .2s; }
+.btn-link:hover { color:var(--ink); gap:9px; }
+
+.tag { font-size:11px; font-weight:500; letter-spacing:0.04em; color:var(--ink-55); border:1px solid var(--ink-06); padding:3px 9px; }
+
+/* NAV */
+.site-nav { position:sticky; top:0; z-index:100; background:rgba(var(--paper-r),var(--paper-g),var(--paper-b),0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--ink-06); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:16px var(--pad-x); display:flex; align-items:center; justify-content:space-between; gap:24px; transition:padding .2s ease; }
+.site-nav.scrolled .nav-inner { padding-top:10px; padding-bottom:10px; }
+.nav-left { display:flex; align-items:center; gap:24px; min-width:0; }
+.nav-logo { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:700; letter-spacing:-0.02em; flex-shrink:0; }
+.nav-logo img { height:34px; width:auto; display:block; }
+.nav-logo img.logo-dark { display:none; }
+@media (prefers-color-scheme: dark) {
+  .nav-logo img.logo-light { display:none; }
+  .nav-logo img.logo-dark { display:block; }
+}
+:root[data-theme="light"] .nav-logo img.logo-light { display:block; }
+:root[data-theme="light"] .nav-logo img.logo-dark { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-light { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-dark { display:block; }
+.nav-back { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:500; color:var(--ink-55); transition:color .12s; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.nav-back:hover { color:var(--ink); }
+.nav-actions { display:flex; align-items:center; gap:16px; flex-shrink:0; }
+.theme-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); cursor:pointer; transition:border-color .12s; flex-shrink:0; }
+.theme-toggle:hover { border-color:var(--ink-55); }
+.lang-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:13px; font-weight:500; letter-spacing:0.02em; transition:border-color .12s; flex-shrink:0; }
+.lang-toggle:hover { border-color:var(--ink-55); }
+.theme-toggle svg { width:19px; height:19px; display:block; }
+.theme-toggle .icon-moon { display:none; }
+@media (prefers-color-scheme: dark) {
+  .theme-toggle .icon-sun { display:none; }
+  .theme-toggle .icon-moon { display:block; }
+}
+:root[data-theme="light"] .theme-toggle .icon-sun { display:block; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display:block; }
+@media (max-width:640px){ .nav-back span.nav-back-text{display:none;} .nav-inner .btn-red{display:none;} .nav-actions{gap:10px;} }
+
+/* HERO */
+.uc-hero { position:relative; max-width:1200px; margin:0 auto; padding:clamp(48px,6vw,88px) var(--pad-x) clamp(48px,6vw,80px); display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(40px,5vw,72px); align-items:center; }
+.uc-hero-eyebrow { margin-bottom:16px; }
+.uc-hero-h1 { font-size:clamp(32px,4.4vw,52px); font-weight:700; letter-spacing:-0.03em; line-height:1.08; }
+.uc-hero-sub { margin-top:18px; font-size:16px; color:var(--ink-55); line-height:1.7; max-width:480px; }
+@media (max-width:768px){ .uc-hero{grid-template-columns:1fr;} }
+
+/* PROFILE CARD — beige surface in both themes (not stark white), matching the crossed
+   dark/beige treatment already used on Laurence's own photo, so the card visually
+   "adapts" to her photo instead of sitting apart from it as a plain white box. */
+.uc-profile { background:var(--beige); border:1px solid var(--ink-06); padding:clamp(24px,3vw,32px); display:flex; flex-direction:column; gap:22px; color:var(--ink); }
+@media (prefers-color-scheme: dark) { .uc-profile { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-06:rgba(28,26,23,0.12); --ink-20:rgba(28,26,23,0.22); } }
+:root[data-theme="light"] .uc-profile { background:var(--beige); }
+:root[data-theme="dark"] .uc-profile { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-06:rgba(28,26,23,0.12); --ink-20:rgba(28,26,23,0.22); }
+.uc-profile-row { display:flex; align-items:center; gap:16px; }
+.uc-profile-photo { width:64px; height:64px; flex-shrink:0; background:var(--dark-bg); overflow:hidden; }
+@media (prefers-color-scheme: dark) { .uc-profile-photo { background:var(--fixed-beige); } }
+:root[data-theme="light"] .uc-profile-photo { background:var(--dark-bg); }
+:root[data-theme="dark"] .uc-profile-photo { background:var(--fixed-beige); }
+.uc-profile-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; }
+.uc-profile-name { font-size:17px; font-weight:700; letter-spacing:-0.015em; }
+.uc-profile-role { font-size:13px; color:var(--ink-55); margin-top:2px; }
+.uc-profile-years { font-size:12px; color:var(--ink-55); }
+.uc-profile-big { border-top:1px solid var(--ink-06); padding-top:20px; }
+.uc-profile-big-num { font-size:clamp(38px,4.4vw,52px); font-weight:700; letter-spacing:-0.04em; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; }
+.uc-profile-rule { border:none; border-top:2px solid var(--accent-2); margin:12px 0 8px; width:28px; }
+.uc-profile-big-lbl { font-size:13px; color:var(--ink-55); }
+.uc-profile-substats { display:grid; grid-template-columns:1fr 1fr; gap:20px; border-top:1px solid var(--ink-06); padding-top:20px; }
+.uc-substat-num { font-size:clamp(22px,2.6vw,28px); font-weight:700; letter-spacing:-0.03em; line-height:1; color:var(--ink); margin-bottom:6px; font-variant-numeric:tabular-nums; }
+.uc-substat-lbl { font-size:13px; color:var(--ink-55); }
+.uc-profile-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.uc-profile-tags .tag { border-color:var(--ink-20); }
+
+/* STEP LIST — mirrors the homepage's own Vetting step sequence (numbered circular
+   gate + title + body), reused here for Problem and What-They-Did instead of a
+   one-off invented "ghost number" pattern, so the structure actually matches
+   the homepage instead of just borrowing its colors. */
+.uc-stepline { position:relative; }
+.uc-stepline::before { content:''; position:absolute; top:15px; left:0; right:0; height:1px; background:var(--ink-06); }
+.uc-steps { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.uc-step { position:relative; padding-top:44px; }
+.uc-gate { position:absolute; top:0; left:0; width:30px; height:30px; border-radius:50%; border:1.5px solid var(--ink-20); background:var(--paper); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; z-index:1; }
+.uc-step-title { font-size:17px; font-weight:700; margin-bottom:8px; line-height:1.3; }
+.uc-step-body { font-size:15px; color:var(--ink-55); line-height:1.65; }
+@media (max-width:860px){ .uc-steps{grid-template-columns:repeat(2,1fr); gap:32px 20px;} }
+@media (max-width:480px){ .uc-steps{grid-template-columns:1fr;} }
+
+/* PROBLEM */
+.uc-problem-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.uc-problem-close { font-size:16px; color:var(--ink-55); line-height:1.7; max-width:760px; margin-top:44px; }
+
+/* VETTING SPOTLIGHT */
+.uc-vet-section { border-bottom:1px solid var(--dark-line); }
+/* On mobile, Problem (which turns near-black in dark theme same as Vetting's
+   always-dark band) butts up against Vetting with no visual break between them —
+   the two sections' full padding just stacks into one dead gap. Tighten it here. */
+@media (max-width:768px){
+  .uc-problem-section, .uc-vet-section { --pad-y: 32px; }
+  .uc-problem-close { margin-top:28px; }
+}
+.uc-vet-split { display:grid; grid-template-columns:0.5fr 1.5fr; gap:clamp(40px,5vw,72px); align-items:center; }
+/* aspect-ratio matches Laurence's actual photo content exactly (measured from the
+   real alpha-channel bounding box of the source file) — not a generic ratio borrowed
+   from another photo — so the background box never shows empty space around the cut. */
+.uc-vet-photo { aspect-ratio:1010/1172; max-width:260px; background:var(--dark-bg); overflow:hidden; position:relative; flex-shrink:0; }
+@media (prefers-color-scheme: dark) { .uc-vet-photo { background:var(--fixed-beige); } }
+:root[data-theme="light"] .uc-vet-photo { background:var(--dark-bg); }
+:root[data-theme="dark"] .uc-vet-photo { background:var(--fixed-beige); }
+.uc-vet-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
+.uc-vet-photo-cap { margin-top:14px; }
+.uc-vet-photo-name { font-size:15px; font-weight:700; }
+.uc-vet-photo-role { font-size:13px; color:var(--ink-55); margin-top:2px; }
+.uc-vet-photo-years { font-size:12px; color:var(--ink-55); }
+@media (max-width:860px){
+  .uc-vet-photo-block { display:flex; align-items:center; gap:16px; }
+  .uc-vet-photo { width:84px; max-width:84px; }
+  .uc-vet-photo-cap { margin-top:0; }
+}
+.uc-vet-h2 { font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-0.025em; line-height:1.15; margin:12px 0 20px; max-width:620px; }
+.uc-vet-body { font-size:16px; color:var(--ink-55); line-height:1.7; margin-bottom:16px; max-width:620px; }
+.uc-vet-body:last-of-type { margin-bottom:24px; }
+.uc-vet-tags { display:flex; flex-wrap:wrap; gap:8px; max-width:620px; }
+.uc-vet-tags .tag { border-color:var(--ink-20); }
+@media (max-width:860px){ .uc-vet-split{grid-template-columns:1fr;} .uc-vet-photo{max-width:220px;} }
+
+/* WHAT THEY DID + SLIDES */
+.uc-did-section { border-bottom:1px solid var(--ink-06); }
+.uc-slides { background:var(--fixed-beige); padding:clamp(24px,3vw,40px); display:grid; grid-template-columns:repeat(2, minmax(0,320px)); justify-content:center; gap:24px; margin:8px 0 56px; }
+@media (prefers-color-scheme: dark) { .uc-slides { background:var(--dark-bg); } }
+:root[data-theme="light"] .uc-slides { background:var(--fixed-beige); }
+:root[data-theme="dark"] .uc-slides { background:var(--dark-bg); }
+.uc-slide { overflow:hidden; }
+.uc-slide img { width:100%; height:auto; display:block; }
+@media (max-width:640px){ .uc-slides{ grid-template-columns:repeat(2, minmax(0,1fr)); padding:20px; gap:14px; margin:8px 0 40px; } }
+
+/* RESULT */
+.uc-result-section { border-bottom:1px solid var(--ink-06); }
+.uc-result-header { margin-bottom:48px; }
+.uc-result-cols { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; }
+.uc-result-cols .sh-h { margin-bottom:0; }
+.uc-result-right { font-size:16px; color:var(--ink-55); line-height:1.7; }
+@media (max-width:680px){ .uc-result-cols{ grid-template-columns:1fr; gap:16px; } }
+.result-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.result-card { padding:clamp(24px,2.8vw,32px); display:flex; flex-direction:column; transition:transform .2s; }
+.result-card:hover { transform:translateY(-3px); }
+.result-card:nth-child(1){ background:#171512; border:1px solid rgba(247,244,238,0.14); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); }
+.result-card:nth-child(2){ background:#0a0908; --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); }
+.result-card:nth-child(3){ background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
+.result-card-label { font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-2); margin-bottom:18px; display:flex; align-items:center; gap:7px; }
+.result-card-label::before { content:''; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.result-card-title { font-size:20px; font-weight:700; letter-spacing:-0.015em; line-height:1.25; margin-bottom:14px; color:var(--ink); }
+.result-card-body { font-size:14px; color:var(--ink-55); line-height:1.7; }
+@media (max-width:860px){ .result-cards{grid-template-columns:1fr 1fr;} }
+@media (max-width:640px){ .result-cards{grid-template-columns:1fr;} }
+
+/* CTA */
+.cta-section { padding:clamp(64px,8vw,120px) 0; }
+.cta-inner-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center; }
+.cta-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; margin:14px 0 0; max-width:460px; }
+.cta-sub { font-size:16px; color:var(--ink-55); line-height:1.65; margin:0 0 24px; max-width:380px; }
+.cta-btns { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+@media (max-width:640px){ .cta-inner-grid{grid-template-columns:1fr;} }
+
+/* FOOTER */
+.site-footer { border-top:1px solid var(--dark-line); padding:56px 0 28px; }
+.footer-top { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--dark-line); margin-bottom:24px; }
+.footer-logo { display:flex; align-items:center; gap:8px; font-size:16px; font-weight:700; letter-spacing:-0.02em; }
+.footer-logo img { height:26px; width:auto; display:block; }
+.footer-nav { display:flex; flex-direction:column; gap:12px; }
+.footer-col-label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--fixed-cream-55); margin-bottom:6px; }
+.footer-link { font-size:14px; color:var(--fixed-cream-55); transition:color .12s; width:fit-content; }
+.footer-link:hover { color:var(--fixed-cream); }
+.footer-bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.footer-copy { font-size:12px; color:var(--fixed-cream-55); }
+
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html#top" class="nav-logo"><img class="logo-light" src="Assets/Images/Logo/metodas-mark-black.png" alt=""><img class="logo-dark" src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <a href="index.html#cases" class="nav-back">← <span class="nav-back-text">All use cases</span></a>
+    </div>
+    <div class="nav-actions">
+      <a class="lang-toggle" href="usecase-sales-editorial-fr.html" aria-label="Switch to French">FR</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.3"/><g stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><line x1="8" y1="0.8" x2="8" y2="2.4"/><line x1="8" y1="13.6" x2="8" y2="15.2"/><line x1="0.8" y1="8" x2="2.4" y2="8"/><line x1="13.6" y1="8" x2="15.2" y2="8"/><line x1="2.6" y1="2.6" x2="3.7" y2="3.7"/><line x1="12.3" y1="12.3" x2="13.4" y2="13.4"/><line x1="2.6" y1="13.4" x2="3.7" y2="12.3"/><line x1="12.3" y1="3.7" x2="13.4" y2="2.6"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 9.8A6 6 0 1 1 6.2 2.8a6.6 6.6 0 1 0 7 7z" fill="currentColor"/></svg>
+      </button>
+      <a href="Validated elements/contact.html" class="btn-red">Work with us</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="uc-hero">
+  <div class="uc-hero-col">
+    <p class="ew uc-hero-eyebrow">GTM &amp; Sales Enablement</p>
+    <h1 class="uc-hero-h1">Rebuilding commercial conversion for a €50M group.</h1>
+    <p class="uc-hero-sub">A €50M group with 6,000 clients was generating leads consistently but lacked the commercial structure to convert them effectively. With a major industry event approaching, the company needed a complete rethink of how marketing, sales, qualification and closing operated together.</p>
+  </div>
+  <div class="uc-profile" id="ucProfile">
+    <p class="ew">Delivered by</p>
+    <div class="uc-profile-row">
+      <div class="uc-profile-photo"><img src="Assets/Images/Profiles/laurence-c.webp" alt="Laurence C."></div>
+      <div>
+        <p class="uc-profile-name">Laurence C.</p>
+        <p class="uc-profile-role">Former Commercial Director</p>
+        <p class="uc-profile-years">20 yrs exp.</p>
+      </div>
+    </div>
+    <div class="uc-profile-big">
+      <p class="uc-profile-big-num" data-count="50" data-prefix="€" data-suffix="M">€50M</p>
+      <hr class="uc-profile-rule">
+      <p class="uc-profile-big-lbl">Group revenue</p>
+    </div>
+    <div class="uc-profile-substats">
+      <div><p class="uc-substat-num" data-count="6000" data-format="comma">6,000</p><p class="uc-substat-lbl">Clients in database</p></div>
+      <div><p class="uc-substat-num" data-count="7" data-suffix=" yrs">7 yrs</p><p class="uc-substat-lbl">Freelance exp.</p></div>
+    </div>
+    <div class="uc-profile-tags">
+      <span class="tag">Commercial Operator</span>
+      <span class="tag">Pipeline Architect</span>
+      <span class="tag">Cross-Functional</span>
+      <span class="tag">Conversion-Focused</span>
+      <span class="tag">Analytical</span>
+      <span class="tag">Relationship-Driven</span>
+      <span class="tag">Process Builder</span>
+    </div>
+  </div>
+</section>
+
+<section class="uc-problem-section">
+  <div class="inner">
+    <div class="sh">
+      <p class="ew">The problem</p>
+      <div><h2 class="sh-h">A fragmented commercial process.</h2><p class="sh-b">The issue wasn't lead generation. The company already had traffic, visibility and inbound interest — the commercial process was broken.</p></div>
+    </div>
+    <div class="uc-stepline">
+      <div class="uc-steps">
+        <div class="uc-step"><div class="uc-gate">01</div><h3 class="uc-step-title">Marketing and Sales operated separately.</h3></div>
+        <div class="uc-step"><div class="uc-gate">02</div><h3 class="uc-step-title">No shared qualification logic.</h3></div>
+        <div class="uc-step"><div class="uc-gate">03</div><h3 class="uc-step-title">No lead prioritization.</h3></div>
+        <div class="uc-step"><div class="uc-gate">04</div><h3 class="uc-step-title">No structured follow-up process.</h3></div>
+      </div>
+    </div>
+    <p class="uc-problem-close">High-potential opportunities were treated the same way as low-intent visitors — creating friction, wasted sales time, and inconsistent conversion.</p>
+  </div>
+</section>
+
+<section id="vetting" class="uc-vet-section section-dark">
+  <div class="inner">
+    <div class="uc-vet-split">
+      <div class="uc-vet-photo-block">
+        <div class="uc-vet-photo"><img src="Assets/Images/Profiles/laurence-c.webp" alt="Laurence C." loading="lazy"></div>
+        <div class="uc-vet-photo-cap">
+          <p class="uc-vet-photo-name">Laurence C.</p>
+          <p class="uc-vet-photo-role">Commercial Director &amp; Consultant</p>
+          <p class="uc-vet-photo-years">20 yrs exp.</p>
+        </div>
+      </div>
+      <div>
+        <p class="ew">Our vetting</p>
+        <h2 class="uc-vet-h2">We needed a profile capable of understanding both commercial pressure and operational structure.</h2>
+        <p class="uc-vet-body">This mission required someone hybrid: commercially sharp enough to understand closing dynamics, but analytical enough to redesign the system behind them. Most profiles are one or the other.</p>
+        <p class="uc-vet-body">The selected freelancer was a former Commercial Director with multinational experience and 7 years in freelance consulting. Her strength was not only relationship-building but the ability to transform scattered commercial activity into a structured conversion framework teams could actually execute independently.</p>
+        <div class="uc-vet-tags">
+          <span class="tag">Commercial Operator</span>
+          <span class="tag">Pipeline Architect</span>
+          <span class="tag">Cross-Functional</span>
+          <span class="tag">Conversion-Focused</span>
+          <span class="tag">Analytical</span>
+          <span class="tag">Relationship-Driven</span>
+          <span class="tag">Process Builder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="uc-did-section">
+  <div class="inner">
+    <div class="sh">
+      <p class="ew">What our freelance did</p>
+      <div><h2 class="sh-h">This was not a sales mission. It was a commercial architecture mission.</h2></div>
+    </div>
+    <div class="uc-slides" id="ucSlides">
+      <div class="uc-slide"><img src="Assets/Images/Use case images/webp/lead-scoring-matrix.webp" alt="Lead scoring matrix chart" loading="lazy"></div>
+      <div class="uc-slide"><img src="Assets/Images/Use case images/webp/structural-diagnostic.webp" alt="Structural diagnostic chart" loading="lazy"></div>
+    </div>
+    <div class="uc-stepline">
+      <div class="uc-steps">
+        <div class="uc-step"><div class="uc-gate">01</div><h3 class="uc-step-title">Found every crack in the process.</h3><p class="uc-step-body">Ran interviews across Marketing, Sales and event teams to surface what was actually blocking deals, not the official version.</p></div>
+        <div class="uc-step"><div class="uc-gate">02</div><h3 class="uc-step-title">Built a system to rank every lead.</h3><p class="uc-step-body">A 3-tier model to sort every contact by readiness: who to call today, who to nurture, and who to stop chasing.</p></div>
+        <div class="uc-step"><div class="uc-gate">03</div><h3 class="uc-step-title">Turned the salon into a revenue operation.</h3><p class="uc-step-body">Pre-event playbook, role assignments, and a minimum of 3 booked appointments per salesperson per day.</p></div>
+        <div class="uc-step"><div class="uc-gate">04</div><h3 class="uc-step-title">Gave the team everything to close.</h3><p class="uc-step-body">Finalized the product catalog, built the briefing kit, and designed the follow-up sequences so no one was improvising on the floor.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="uc-result-section">
+  <div class="inner">
+    <div class="uc-result-header">
+      <p class="ew">The result</p>
+      <div class="uc-result-cols">
+        <h2 class="sh-h">The mission ended. The infrastructure stayed.</h2>
+        <p class="uc-result-right">The mission diagnosed what was breaking the commercial process and delivered the infrastructure to fix it. Three areas rebuilt, usable from the next event forward.</p>
+      </div>
+    </div>
+    <div class="result-cards" id="resultCards">
+      <div class="result-card"><p class="result-card-label">Clarity</p><h3 class="result-card-title">They know exactly what failed.</h3><p class="result-card-body">A documented diagnosis of every breakdown across Marketing, Sales and event operations. Root causes, not just symptoms.</p></div>
+      <div class="result-card"><p class="result-card-label">System</p><h3 class="result-card-title">The pipeline is sorted by readiness.</h3><p class="result-card-body">A model that routes every contact by readiness, from ready-to-close to long-term nurture. No longer one undifferentiated list.</p></div>
+      <div class="result-card"><p class="result-card-label">Playbook</p><h3 class="result-card-title">The next salon starts ready.</h3><p class="result-card-body">Pre-event outreach, referral activation, role assignments and a structured event plan — everything needed to run the next one independently.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-section section-dark">
+  <div class="inner">
+    <div class="cta-inner-grid">
+      <div><p class="ew">Ready to work together?</p><h2 class="cta-h2">Let's work on your next project together.</h2></div>
+      <div>
+        <p class="cta-sub">Tell us what you need. We'll come back with a clear approach and identified profiles before you sign anything.</p>
+        <div class="cta-btns">
+          <a href="Validated elements/contact.html" class="btn-red-lg">Get in touch</a>
+          <a href="index.html#cases" class="btn-stroke-lg">See more use cases</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="inner" style="padding-top:0; padding-bottom:0;">
+    <div class="footer-top">
+      <a href="index.html#top" class="footer-logo"><img src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <div class="footer-nav">
+        <p class="footer-col-label">Navigate</p>
+        <a href="index.html#talent" class="footer-link">Talent</a>
+        <a href="index.html#vetting" class="footer-link">Vetting</a>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-col-label">&nbsp;</p>
+        <a href="index.html#cases" class="footer-link">Cases</a>
+        <a href="index.html#pricing" class="footer-link">Pricing</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Metodas. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('siteNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive:true });
+
+function animateCount(el, target, duration) {
+  const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
+  const format = el.dataset.format || '';
+  const start = performance.now();
+  const update = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = Math.round(ease * target);
+    const display = format === 'comma' ? val.toLocaleString('en-US') : val;
+    el.textContent = prefix + display + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+const ucProfile = document.getElementById('ucProfile');
+const profileObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      ucProfile.querySelectorAll('[data-count]').forEach(el => {
+        animateCount(el, parseInt(el.dataset.count), el.classList.contains('uc-profile-big-num') ? 1400 : 1100);
+      });
+      profileObserver.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+profileObserver.observe(ucProfile);
+
+const resultCards = document.getElementById('resultCards');
+const resultObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      resultCards.querySelectorAll('.result-card').forEach((card, i) => {
+        card.style.transition = 'opacity .4s ease, transform .4s ease';
+        card.style.transitionDelay = (i * 0.13) + 's';
+        requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'none'; });
+      });
+      resultObserver.disconnect();
+    }
+  });
+}, { threshold: 0.2 });
+resultCards.querySelectorAll('.result-card').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(24px)';
+});
+resultObserver.observe(resultCards);
+
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentTheme = systemPrefersDark ? 'dark' : 'light';
+themeToggle.addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', currentTheme);
+});
+</script>
+
+</body>
+</html>

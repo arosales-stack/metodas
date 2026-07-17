@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metodas — Talents indépendants en marketing</title>
+<meta name="description" content="Metodas est un collectif trié sur le volet de talents confirmés dans les domaines du marketing, de la création, de l'IA et des données, destiné aux entreprises qui ont besoin d'une mise en œuvre experte sans les frais généraux liés à une agence.">
+<link rel="canonical" href="https://metodas.co/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Metodas — Talents indépendants en marketing">
+<meta property="og:description" content="Metodas est un collectif trié sur le volet de talents confirmés dans les domaines du marketing, de la création, de l'IA et des données, destiné aux entreprises qui ont besoin d'une mise en œuvre experte sans les frais généraux liés à une agence.">
+<meta property="og:url" content="https://metodas.co/">
+<meta property="og:image" content="https://metodas.co/Assets/Images/Logo/metodas-mark-black.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Metodas — Talents indépendants en marketing">
+<meta name="twitter:description" content="Metodas est un collectif trié sur le volet de talents confirmés dans les domaines du marketing, de la création, de l'IA et des données, destiné aux entreprises qui ont besoin d'une mise en œuvre experte sans les frais généraux liés à une agence.">
+<meta name="twitter:image" content="https://metodas.co/Assets/Images/Logo/metodas-mark-black.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Metodas",
+  "url": "https://metodas.co/",
+  "logo": "https://metodas.co/Assets/Images/Logo/metodas-mark-black.png",
+  "description": "Metodas est un collectif trié sur le volet de talents confirmés dans les domaines du marketing, de la création, de l'IA et des données, destiné aux entreprises qui ont besoin d'une mise en œuvre experte sans les frais généraux liés à une agence."
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* TOKENS */
+:root {
+  color-scheme: light dark;
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --on-ink: #f7f4ee; --on-ink-55: rgba(247,244,238,0.55); --on-ink-10: rgba(247,244,238,0.10);
+  --pa: #ebe4d6; --pb: #ddd6c4; --pc: #f0ead9; --pd: #d8d0bf; --pe: #e5ddd0;
+  --pad-x: clamp(20px, 4vw, 48px); --pad-y: clamp(48px, 6vw, 72px); --pad-card: clamp(20px, 2vw, 28px);
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+  --fixed-cream: #f7f4ee; --fixed-cream-55: rgba(247,244,238,0.55);
+  --fixed-ink: #1c1a17; --fixed-ink-55: rgba(28,26,23,0.64);
+  --fixed-beige: #e4ddcd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #171512; --accent: #d9714a; --accent-2: #a3311a;
+    --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+    --paper-r: 23; --paper-g: 21; --paper-b: 18;
+    --on-ink: #171512; --on-ink-55: rgba(23,21,18,0.55); --on-ink-10: rgba(23,21,18,0.10);
+    --pa: #35302a; --pb: #2e2a24; --pc: #3c3730; --pd: #292420; --pe: #322d27;
+    --dark-bg: #0a0908; --dark-surface: #171512; --dark-line: rgba(247,244,238,0.10);
+  }
+}
+:root[data-theme="light"] {
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --on-ink: #f7f4ee; --on-ink-55: rgba(247,244,238,0.55); --on-ink-10: rgba(247,244,238,0.10);
+  --pa: #ebe4d6; --pb: #ddd6c4; --pc: #f0ead9; --pd: #d8d0bf; --pe: #e5ddd0;
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+}
+:root[data-theme="dark"] {
+  --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #171512; --accent: #d9714a; --accent-2: #a3311a;
+  --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+  --paper-r: 23; --paper-g: 21; --paper-b: 18;
+  --on-ink: #171512; --on-ink-55: rgba(23,21,18,0.55); --on-ink-10: rgba(23,21,18,0.10);
+  --pa: #35302a; --pb: #2e2a24; --pc: #3c3730; --pd: #292420; --pe: #322d27;
+  --dark-bg: #0a0908; --dark-surface: #171512; --dark-line: rgba(247,244,238,0.10);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light dark; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; font-size:16px; font-weight:400; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+p, h1, h2, h3 { margin:0; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.inner { max-width:1200px; margin:0 auto; padding:var(--pad-y) var(--pad-x); }
+
+.section-dark { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-20:rgba(247,244,238,0.24); --ink-10:rgba(247,244,238,0.12); --ink-06:var(--dark-line); --card:var(--dark-surface); --paper:var(--dark-bg); color:var(--ink); }
+
+.ew { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
+.ew::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.sec-num { color:var(--accent-2); font-weight:700; }
+
+.sh { display:grid; grid-template-columns:200px 1fr; gap:40px; align-items:start; margin-bottom:40px; }
+.sh-h { font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-0.025em; line-height:1.1; margin-bottom:10px; }
+.sh-b { font-size:15px; color:var(--ink-55); line-height:1.65; }
+@media (max-width:680px){ .sh{ grid-template-columns:1fr; gap:10px; } }
+
+.cluster { border:1px solid var(--ink-06); display:grid; background:var(--ink-06); gap:1px; }
+
+.btn-red, .btn-red-lg { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:inherit; font-weight:500; border:1px solid var(--accent); text-decoration:none; transition: transform .2s cubic-bezier(.22,1,.36,1), opacity .12s, box-shadow .2s; }
+.btn-red { font-size:14px; padding:11px 20px; letter-spacing:0.01em; }
+.btn-red-lg { font-size:14px; padding:13px 24px; }
+.btn-red:hover, .btn-red-lg:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(163,49,26,0.28); }
+
+.btn-stroke-lg { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; padding:12px 24px; border:1px solid var(--ink-20); text-decoration:none; transition: border-color .12s, transform .2s; }
+.btn-stroke-lg:hover { border-color:var(--ink-55); transform: translateY(-2px); }
+
+.btn-link { display:inline-flex; align-items:center; gap:5px; font-size:14px; font-weight:500; color:var(--ink-55); transition:color .12s, gap .2s; }
+.btn-link:hover { color:var(--ink); gap:9px; }
+
+.tag { font-size:11px; font-weight:500; letter-spacing:0.04em; color:var(--ink-55); border:1px solid var(--ink-06); padding:3px 9px; }
+
+
+
+/* NAV */
+.site-nav { position:sticky; top:0; z-index:100; background:rgba(var(--paper-r),var(--paper-g),var(--paper-b),0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--ink-06); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:16px var(--pad-x); display:flex; align-items:center; justify-content:space-between; gap:32px; transition:padding .2s ease; }
+.site-nav.scrolled .nav-inner { padding-top:10px; padding-bottom:10px; }
+.nav-logo { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:700; letter-spacing:-0.02em; }
+.nav-logo img { height:34px; width:auto; display:block; }
+.nav-logo img.logo-dark { display:none; }
+@media (prefers-color-scheme: dark) {
+  .nav-logo img.logo-light { display:none; }
+  .nav-logo img.logo-dark { display:block; }
+}
+:root[data-theme="light"] .nav-logo img.logo-light { display:block; }
+:root[data-theme="light"] .nav-logo img.logo-dark { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-light { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-dark { display:block; }
+.nav-links { display:flex; gap:30px; }
+.nav-actions { display:flex; align-items:center; gap:16px; }
+.nav-link { position:relative; font-size:15px; font-weight:500; letter-spacing:0.01em; color:var(--ink-55); transition:color .12s; padding-bottom:4px; }
+.nav-link::after { content:''; position:absolute; left:0; right:100%; bottom:0; height:2px; background:var(--accent); transition:right .2s cubic-bezier(.22,1,.36,1); }
+.nav-link:hover { color:var(--ink); }
+.nav-link.active { color:var(--ink); }
+.nav-link.active::after { right:0; }
+.hamburger { display:none; flex-direction:column; gap:4px; background:none; border:none; cursor:pointer; padding:4px; }
+.hamburger span { width:20px; height:1.5px; background:var(--ink); transition: transform .2s, opacity .2s; }
+.hamburger.open span:nth-child(1){ transform: translateY(5.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2){ opacity:0; }
+.hamburger.open span:nth-child(3){ transform: translateY(-5.5px) rotate(-45deg); }
+.mobile-menu { display:none; max-height:0; overflow:hidden; background:var(--paper); border-bottom:1px solid var(--ink-06); transition: max-height .4s ease; }
+.mobile-menu.open { max-height:320px; }
+.mobile-menu-inner { padding:8px var(--pad-x) 24px; display:flex; flex-direction:column; gap:2px; }
+.mobile-menu a.nav-link { padding:12px 0; border-bottom:1px solid var(--ink-06); font-size:15px; }
+.mobile-menu a.nav-link::after { display:none; }
+.mobile-cta { margin-top:12px; }
+.theme-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); cursor:pointer; transition:border-color .12s; flex-shrink:0; }
+.theme-toggle:hover { border-color:var(--ink-55); }
+.lang-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:13px; font-weight:500; letter-spacing:0.02em; transition:border-color .12s; flex-shrink:0; }
+.lang-toggle:hover { border-color:var(--ink-55); }
+.theme-toggle svg { width:19px; height:19px; display:block; }
+.theme-toggle .icon-moon { display:none; }
+@media (prefers-color-scheme: dark) {
+  .theme-toggle .icon-sun { display:none; }
+  .theme-toggle .icon-moon { display:block; }
+}
+:root[data-theme="light"] .theme-toggle .icon-sun { display:block; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display:block; }
+@media (max-width:768px){ .nav-links{display:none;} .hamburger{display:flex;} .mobile-menu{display:block;} .nav-inner .btn-red{display:none;} }
+
+/* HERO */
+.hero { position:relative; max-width:1200px; margin:0 auto; padding:clamp(56px,7vw,96px) var(--pad-x) clamp(48px,6vw,80px); display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(40px,5vw,72px); align-items:center; overflow:hidden; }
+.hero-col { position:relative; z-index:1; }
+.hero-ew { margin-bottom:16px; }
+.hero-h1 { font-size:clamp(36px,5vw,60px); font-weight:700; letter-spacing:-0.03em; line-height:1.06; }
+.hero-sub { margin-top:18px; font-size:16px; color:var(--ink-55); line-height:1.65; max-width:440px; }
+.hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--ink-06); border:1px solid var(--ink-06); }
+.hcard { aspect-ratio:3/4; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative; background:var(--dark-bg); }
+@media (prefers-color-scheme: dark) { .hcard { background:var(--fixed-beige); } }
+:root[data-theme="light"] .hcard { background:var(--dark-bg); }
+:root[data-theme="dark"] .hcard { background:var(--fixed-beige); }
+.hcard-tag { position:absolute; bottom:12px; left:12px; background:#1c1a17; color:#f7f4ee; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 8px; z-index:2; }
+.hcard svg { width:44%; height:auto; color:var(--ink-55); margin:0 auto 8%; display:block; }
+.hcard img { width:100%; height:100%; object-fit:cover; display:block; transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.hcard:hover svg { transform: scale(1.06); }
+.hcard:hover img { transform: scale(1.06); }
+@media (max-width:680px){ .hero{grid-template-columns:1fr;} }
+
+/* LOGO MARQUEE */
+.logo-bar { background:var(--paper); overflow:hidden; }
+.logo-bar .inner { padding-top:40px; padding-bottom:40px; max-width:1200px; }
+.logo-ew { margin-bottom:16px; }
+.marquee-mask { position:relative; -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); }
+.marquee-track { display:flex; align-items:center; gap:clamp(56px,6vw,88px); width:max-content; animation: marquee 34s linear infinite; }
+.marquee-track:hover { animation-play-state:paused; }
+.logo-name { height:clamp(56px,6.8vw,72px); width:auto; max-width:280px; object-fit:contain; flex-shrink:0; }
+@keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+/* WHY US */
+.why-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.why-split { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(32px,5vw,72px); align-items:start; }
+.why-lead-h { font-size:clamp(26px,3.2vw,42px); font-weight:700; letter-spacing:-0.03em; line-height:1.12; margin-top:12px; }
+.why-rows { display:flex; flex-direction:column; }
+.why-row { display:grid; grid-template-columns:auto 1fr; gap:20px; padding:26px 0; border-top:1px solid var(--ink-06); position:relative; }
+.why-row:first-child { border-top:none; }
+.why-row-num { font-size:22px; font-weight:700; letter-spacing:-0.03em; color:var(--ink-20); line-height:1.3; }
+.why-row-title { font-size:17px; font-weight:700; letter-spacing:-0.015em; margin-bottom:8px; }
+.why-row-body { font-size:15px; line-height:1.65; color:var(--ink-55); }
+@media (max-width:860px){ .why-split{grid-template-columns:1fr;} }
+
+.stats-ribbon { margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(32px,4vw,48px); padding:clamp(28px,3vw,40px); background:var(--beige); }
+@media (prefers-color-scheme: dark) { .stats-ribbon { background:transparent; padding:0; } }
+:root[data-theme="light"] .stats-ribbon { background:var(--beige); padding:clamp(28px,3vw,40px); }
+:root[data-theme="dark"] .stats-ribbon { background:transparent; padding:0; }
+.ribbon-cell { display:flex; flex-direction:column; }
+.ribbon-num { font-size:clamp(30px,3.4vw,42px); font-weight:700; letter-spacing:-0.04em; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; }
+.ribbon-rule { border:none; border-top:2px solid var(--accent-2); margin:14px 0; width:28px; }
+.ribbon-lbl { font-size:13px; color:var(--ink-55); line-height:1.5; }
+@media (max-width:768px){ .stats-ribbon{grid-template-columns:repeat(2,1fr);} .ribbon-cell{align-items:center; text-align:center;} .ribbon-rule{margin-left:auto; margin-right:auto;} .ribbon-lbl{font-size:15px;} }
+
+/* EXPERTISE */
+.exp-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.exp-card { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); padding:var(--pad-card); transition: transform .2s; display:flex; flex-direction:column; color:var(--ink); }
+.exp-card:hover { transform: translateY(-3px); }
+.exp-num { font-size:12px; font-weight:700; letter-spacing:0.1em; color:var(--accent-2); margin-bottom:16px; }
+.exp-title { font-size:18px; font-weight:700; letter-spacing:-0.015em; margin-bottom:10px; color:var(--ink); }
+.exp-body { font-size:15px; line-height:1.65; color:var(--ink-55); margin-bottom:18px; flex-grow:1; }
+.exp-tags { display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.exp-tags .tag { border:1.5px solid var(--ink); color:var(--ink); font-weight:600; text-transform:uppercase; letter-spacing:0.04em; padding:3px 9px; }
+@media (max-width:860px){ .exp-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:480px){ .exp-grid{grid-template-columns:1fr;} }
+
+/* TALENT */
+.talent-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.talent-grid { grid-template-columns:repeat(4,1fr); gap:20px; border:none; background:none; }
+.tcard { position:relative; background:var(--card); overflow:hidden; cursor:pointer; align-self:start; }
+.tcard-photo { aspect-ratio:610/833; position:relative; overflow:hidden; background:var(--beige); }
+@media (prefers-color-scheme: dark) { .tcard-photo { background:var(--fixed-beige); } }
+:root[data-theme="dark"] .tcard-photo { background:var(--fixed-beige); }
+.tcard-photo svg { width:42%; height:auto; color:var(--ink-55); position:absolute; top:50%; left:50%; transform:translate(-50%,-56%); transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.tcard-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block; transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.tcard:hover .tcard-photo svg { transform: translate(-50%,-56%) scale(1.05); }
+.tcard:hover .tcard-photo img { transform: scale(1.05); }
+.tcard-tag { position:absolute; bottom:12px; left:12px; background:#1c1a17; color:#f7f4ee; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 8px; z-index:2; }
+.tcard-info { padding:16px 16px 20px; border-top:1px solid var(--ink-06); }
+.tcard-name { font-size:16px; font-weight:700; margin-bottom:3px; display:flex; align-items:center; justify-content:space-between; gap:6px; }
+.tcard-li { display:inline-flex; color:var(--ink-55); transition:color .12s; flex-shrink:0; }
+.tcard-li:hover { color:var(--ink); }
+.tcard-li svg { width:18px; height:18px; display:block; }
+.tcard-role { font-size:13px; color:var(--ink-55); margin-bottom:2px; }
+.tcard-years { font-size:12px; color:var(--ink-55); margin-bottom:12px; }
+.tcard-overlay { max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.22,1,.36,1); }
+.tcard.is-open .tcard-overlay { max-height:280px; }
+.tcard-quote { font-size:14px; color:var(--ink-55); line-height:1.65; font-style:italic; margin-bottom:14px; padding-top:2px; }
+.tcard-traits { display:flex; flex-wrap:wrap; gap:4px; padding-bottom:2px; }
+.trait { font-size:11px; font-weight:500; letter-spacing:0.04em; color:var(--ink-55); border:1px solid var(--ink-10); padding:3px 9px; }
+@media (max-width:860px){ .talent-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:768px){
+  .talent-grid { display:flex; grid-template-columns:none; overflow-x:auto; background:none; border:none; gap:14px; }
+  .talent-grid .tcard { flex:0 0 220px; }
+}
+
+/* VETTING */
+.vetting-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.vetting-head { display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px,5vw,64px); align-items:start; padding-bottom:40px; border-bottom:1px solid var(--ink-06); margin-bottom:56px; }
+.v-ew { margin-bottom:12px; }
+.v-h2 { font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-0.025em; line-height:1.1; }
+.v-stat-num { font-size:clamp(28px,3.2vw,36px); font-weight:700; letter-spacing:-0.04em; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; }
+.v-stat-rule { border:none; border-top:2px solid var(--accent-2); margin:12px 0; width:28px; }
+.v-stat-body { font-size:15px; color:var(--ink-55); line-height:1.65; max-width:280px; }
+.vline { position:relative; }
+.vline::before { content:''; position:absolute; top:15px; left:0; right:0; height:1px; background:var(--ink-06); }
+.vsteps { position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:20px; }
+.vstep { position:relative; padding-top:44px; }
+.vgate { position:absolute; top:0; left:0; width:30px; height:30px; border-radius:50%; border:1.5px solid var(--ink-20); background:var(--paper); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; z-index:1; transition:border-color .2s, color .2s; }
+.vstep:hover .vgate { border-color:var(--accent); color:var(--accent); }
+.vstep-title { font-size:17px; font-weight:700; margin-bottom:8px; }
+.vstep-body { font-size:15px; color:var(--ink-55); line-height:1.65; }
+.vetting-foot { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:48px; padding-top:20px; border-top:1px solid var(--ink-06); flex-wrap:wrap; }
+.vf-note { font-size:13px; color:var(--ink-55); }
+.vf-rate { font-size:13px; font-weight:500; color:var(--ink); }
+@media (max-width:860px){ .vetting-head{grid-template-columns:1fr;} .vline::before{display:none;} .vsteps{grid-template-columns:repeat(2,1fr); gap:32px 20px;} }
+
+/* CASES */
+.cases-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.cases-stack { display:flex; flex-direction:column; gap:1px; background:var(--ink-06); border:1px solid var(--ink-06); }
+.casecard { position:relative; display:grid; grid-template-columns:1fr 1fr; text-decoration:none; color:inherit; background:var(--card); overflow:hidden; }
+.casecard.is-dark { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-06:var(--dark-line); --ink-10:rgba(247,244,238,0.14); color:var(--ink); }
+@media (prefers-color-scheme: dark) { .casecard:not(.is-dark) { background:var(--dark-bg); } }
+:root[data-theme="light"] .casecard:not(.is-dark) { background:var(--card); }
+:root[data-theme="dark"] .casecard:not(.is-dark) { background:var(--dark-bg); }
+.casecard:nth-child(even) { direction:rtl; }
+.casecard:nth-child(even) > * { direction:ltr; }
+.case-img { position:relative; aspect-ratio:16/10; overflow:hidden; background:var(--fixed-beige); display:flex; align-items:center; justify-content:center; }
+.case-img img { width:70%; height:70%; object-fit:contain; transform:rotate(-3deg); transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.casecard:nth-child(even) .case-img img { transform:rotate(3deg); }
+.casecard:hover .case-img img { transform:rotate(-3deg) scale(1.04); }
+.casecard:nth-child(even):hover .case-img img { transform:rotate(3deg) scale(1.04); }
+.case-img-featured { justify-content:flex-end; padding-right:6%; }
+.case-photo { position:absolute; left:6%; bottom:0; height:80%; z-index:2; }
+.case-photo img { height:100%; width:auto; display:block; transform:none !important; }
+.case-body { padding:clamp(28px,3.4vw,48px); display:flex; flex-direction:column; gap:14px; justify-content:center; }
+.case-cat { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-2); }
+.case-title { font-size:clamp(19px,2vw,26px); font-weight:700; letter-spacing:-0.02em; line-height:1.25; }
+.case-intro { font-size:15px; color:var(--ink-55); line-height:1.65; max-width:420px; }
+.case-credit { font-size:13px; color:var(--ink-55); }
+@media (max-width:768px){ .casecard, .casecard:nth-child(even){grid-template-columns:1fr; direction:ltr;} }
+
+/* TESTIMONIALS */
+.tm-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.tm-list { display:grid; grid-template-columns:1fr 1fr; }
+.tmcard { position:relative; padding:36px clamp(16px,2.6vw,40px); border-bottom:1px solid var(--ink-06); }
+.tmcard:nth-child(odd){ border-right:1px solid var(--ink-06); }
+.tm-mark { font-size:44px; font-weight:700; color:var(--accent-2); line-height:0.6; margin-bottom:6px; display:block; }
+.tm-q { font-size:18px; line-height:1.55; letter-spacing:-0.01em; margin-bottom:20px; max-width:460px; }
+.tm-author { display:flex; align-items:center; gap:10px; }
+.tm-init { width:30px; height:30px; flex-shrink:0; border:1px solid var(--ink-20); display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; }
+.tm-name { font-size:13px; font-weight:700; }
+.tm-co { font-size:12px; color:var(--ink-55); margin-top:1px; }
+@media (max-width:768px){ .tm-list{grid-template-columns:1fr;} .tmcard:nth-child(odd){border-right:none;} }
+
+/* PRICING */
+.pricing-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.pricing-box { display:grid; grid-template-columns:1fr 1fr; }
+.pricing-left { background:var(--card); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
+@media (prefers-color-scheme: dark) { .pricing-left { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); } }
+:root[data-theme="light"] .pricing-left { background:var(--card); --ink:inherit; --ink-55:inherit; color:inherit; }
+:root[data-theme="dark"] .pricing-left { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
+.pricing-right { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
+.pricing-h2 { font-size:clamp(22px,2.6vw,34px); font-weight:700; letter-spacing:-0.025em; margin:12px 0 0; }
+.pricing-sub { font-size:16px; color:var(--ink-55); line-height:1.65; margin:14px 0 0; }
+.pricing-big { display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+.pricing-pct { font-size:clamp(56px,6.4vw,80px); font-weight:700; letter-spacing:-0.05em; line-height:1; font-variant-numeric:tabular-nums; }
+.pricing-flat { font-size:14px; color:var(--ink-55); }
+.pricing-rule { width:44px; height:2px; background:var(--accent-2); margin-bottom:24px; }
+.pricing-items { display:flex; flex-direction:column; gap:18px; }
+.pricing-item { font-size:15px; line-height:1.6; }
+@media (max-width:640px){ .pricing-box{grid-template-columns:1fr;} }
+
+/* CTA */
+.cta-section { padding:clamp(64px,8vw,120px) 0; }
+.cta-inner-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center; }
+.cta-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; margin:14px 0 0; max-width:460px; }
+.cta-sub { font-size:16px; color:var(--ink-55); line-height:1.65; margin:0 0 24px; max-width:380px; }
+.cta-btns { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+@media (max-width:640px){ .cta-inner-grid{grid-template-columns:1fr;} }
+
+/* FOOTER */
+.site-footer { border-top:1px solid var(--dark-line); padding:56px 0 28px; }
+.footer-top { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--dark-line); margin-bottom:24px; }
+.footer-logo { display:flex; align-items:center; gap:8px; font-size:16px; font-weight:700; letter-spacing:-0.02em; }
+.footer-logo img { height:26px; width:auto; display:block; }
+.footer-nav { display:flex; flex-direction:column; gap:12px; }
+.footer-col-label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--fixed-cream-55); margin-bottom:6px; }
+.footer-link { font-size:14px; color:var(--fixed-cream-55); transition:color .12s; width:fit-content; }
+.footer-link:hover { color:var(--fixed-cream); }
+.footer-bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.footer-copy { font-size:12px; color:var(--fixed-cream-55); }
+
+</style>
+</head>
+<body>
+
+<svg style="position:absolute; width:0; height:0" aria-hidden="true">
+  <symbol id="icon-avatar" viewBox="0 0 100 120">
+    <circle cx="50" cy="38" r="22"/>
+    <path d="M12 112c0-24 17-38 38-38s38 14 38 38"/>
+  </symbol>
+</svg>
+
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo"><img class="logo-light" src="Assets/Images/Logo/metodas-mark-black.png" alt=""><img class="logo-dark" src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+    <nav class="nav-links">
+      <a href="#talent" class="nav-link" data-section="talent">Talents</a>
+      <a href="#vetting" class="nav-link" data-section="vetting">Sélection</a>
+      <a href="#cases" class="nav-link" data-section="cases">Réalisations</a>
+      <a href="#pricing" class="nav-link" data-section="pricing">Tarifs</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="lang-toggle" href="index.html" aria-label="Switch to English">EN</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Activer/désactiver le mode clair/sombre">
+        <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.3"/><g stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><line x1="8" y1="0.8" x2="8" y2="2.4"/><line x1="8" y1="13.6" x2="8" y2="15.2"/><line x1="0.8" y1="8" x2="2.4" y2="8"/><line x1="13.6" y1="8" x2="15.2" y2="8"/><line x1="2.6" y1="2.6" x2="3.7" y2="3.7"/><line x1="12.3" y1="12.3" x2="13.4" y2="13.4"/><line x1="2.6" y1="13.4" x2="3.7" y2="12.3"/><line x1="12.3" y1="3.7" x2="13.4" y2="2.6"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 9.8A6 6 0 1 1 6.2 2.8a6.6 6.6 0 1 0 7 7z" fill="currentColor"/></svg>
+      </button>
+      <a href="Validated elements/contact-fr.html" class="btn-red">Travailler avec nous</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="#talent" class="nav-link">Talents</a>
+      <a href="#vetting" class="nav-link">Sélection</a>
+      <a href="#cases" class="nav-link">Réalisations</a>
+      <a href="#pricing" class="nav-link">Tarifs</a>
+      <a href="index.html" class="nav-link">EN</a>
+      <a href="Validated elements/contact-fr.html" class="btn-red mobile-cta">Travailler avec nous</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="top" class="hero">
+  <div class="hero-col">
+    <p class="ew hero-ew"><span class="sec-num">01</span>Talents seniors en marketing · France et États-Unis</p>
+    <h1 class="hero-h1">Des talents en marketing, sélectionnés par des humains.</h1>
+    <p class="hero-sub">Des experts seniors en marketing, création et IA, sélectionnés pour leur discernement, leur capacité d'exécution et leur aptitude à prendre les choses en main dès le premier jour.</p>
+  </div>
+  <div class="hero-grid reveal" id="heroGrid">
+    <div class="hcard"><span class="hcard-tag">Marque</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2489.webp" alt=""></div>
+    <div class="hcard"><span class="hcard-tag">Growth</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2480.webp" alt=""></div>
+    <div class="hcard"><span class="hcard-tag">Contenu</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2479.webp" alt=""></div>
+    <div class="hcard"><span class="hcard-tag">CRM</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2483.webp" alt=""></div>
+    <div class="hcard"><span class="hcard-tag">Réseaux sociaux</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2481.webp" alt=""></div>
+    <div class="hcard"><span class="hcard-tag">Analytique</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2482.webp" alt=""></div>
+  </div>
+</section>
+
+<div class="logo-bar">
+  <div class="inner">
+  <p class="ew logo-ew"><span class="sec-num">02</span>Nos talents ont travaillé pour</p>
+  <div class="marquee-mask">
+        <div class="marquee-track">
+      <img class="logo-name" src="Assets/Images/Logos/Netflix GRIS.png" alt="Netflix">
+      <img class="logo-name" src="Assets/Images/Logos/Google GRIS.png" alt="Google">
+      <img class="logo-name" src="Assets/Images/Logos/Spotify.png" alt="Spotify">
+      <img class="logo-name" src="Assets/Images/Logos/GUCCI.png" alt="Gucci">
+      <img class="logo-name" src="Assets/Images/Logos/LOREAL.png" alt="L'Oréal">
+      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
+      <img class="logo-name" src="Assets/Images/Logos/Microsoft GRIS.png" alt="Microsoft">
+      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
+      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
+      <img class="logo-name" src="Assets/Images/Logos/TIKTOK GRIS.png" alt="TikTok">
+      <img class="logo-name" src="Assets/Images/Logos/Cartier.png" alt="Cartier">
+      <img class="logo-name" src="Assets/Images/Logos/Netflix GRIS.png" alt="Netflix">
+      <img class="logo-name" src="Assets/Images/Logos/Google GRIS.png" alt="Google">
+      <img class="logo-name" src="Assets/Images/Logos/Spotify.png" alt="Spotify">
+      <img class="logo-name" src="Assets/Images/Logos/GUCCI.png" alt="Gucci">
+      <img class="logo-name" src="Assets/Images/Logos/LOREAL.png" alt="L'Oréal">
+      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
+      <img class="logo-name" src="Assets/Images/Logos/Microsoft GRIS.png" alt="Microsoft">
+      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
+      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
+      <img class="logo-name" src="Assets/Images/Logos/TIKTOK GRIS.png" alt="TikTok">
+      <img class="logo-name" src="Assets/Images/Logos/Cartier.png" alt="Cartier">
+    </div>
+  </div>
+  </div>
+</div>
+
+<section id="why" class="why-section">
+  <div class="inner">
+    <div class="why-split">
+      <div class="reveal">
+        <p class="ew"><span class="sec-num">03</span>Pourquoi nous choisir</p>
+        <h2 class="why-lead-h">L'expertise, sans intermédiaires ni superflu.</h2>
+      </div>
+      <div class="why-rows">
+        <div class="why-row reveal">
+          <p class="why-row-num">01</p>
+          <div><h3 class="why-row-title">De la responsabilisation</h3><p class="why-row-body">Les plateformes de freelance vous proposent des options sans assumer aucune responsabilité. Nous sélectionnons nos talents avec suffisamment de rigueur pour garantir des résultats — ce qu'aucune plateforme ne fera.</p></div>
+        </div>
+        <div class="why-row reveal reveal-d1">
+          <p class="why-row-num">02</p>
+          <div><h3 class="why-row-title">Pas des marges cachées</h3><p class="why-row-body">Les agences prélèvent une marge de 50 %, puis confient l'exécution à des juniors. Nous vous mettons directement en relation avec les talents, et vous approuvez chaque personne impliquée.</p></div>
+        </div>
+        <div class="why-row reveal reveal-d2">
+          <p class="why-row-num">03</p>
+          <div><h3 class="why-row-title">Zéro formalité administrative</h3><p class="why-row-body">La conformité, les contrats et les paiements sont à notre charge. Pas de problèmes de facturation, pas de va-et-vient juridique. Vous donnez le brief, nous exécutons — c'est tout.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-ribbon reveal">
+      <div class="ribbon-cell"><p class="ribbon-num">+250</p><hr class="ribbon-rule"><p class="ribbon-lbl">Profils pré-validés</p></div>
+      <div class="ribbon-cell"><p class="ribbon-num">7 ans</p><hr class="ribbon-rule"><p class="ribbon-lbl">Expérience moyenne</p></div>
+      <div class="ribbon-cell"><p class="ribbon-num">48 h</p><hr class="ribbon-rule"><p class="ribbon-lbl">Délai de remise de la 1<sup>ère</sup> proposition</p></div>
+      <div class="ribbon-cell"><p class="ribbon-num">+15</p><hr class="ribbon-rule"><p class="ribbon-lbl">Rôles couverts en Marketing &amp; Création</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="expertise" class="exp-section">
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">04</span>Nos expertises</p>
+      <div><h2 class="sh-h">De la vision à l'exécution.</h2><p class="sh-b">Un interlocuteur unique, l'expert qu'il vous faut à chaque fois.</p></div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <p class="exp-num">— 01</p><h3 class="exp-title">Go to Market</h3><p class="exp-body">Orientation stratégique pour les lancements, le repositionnement et l'expansion commerciale.</p>
+        <div class="exp-tags"><span class="tag">Launch Strategy</span><span class="tag">Positionnement</span><span class="tag">Architecture du funnel</span></div>
+      </div>
+      <div class="exp-card reveal reveal-d1">
+        <p class="exp-num">— 02</p><h3 class="exp-title">Contenu et création</h3><p class="exp-body">Du récit de marque aux contenus viraux, sur tous les formats et canaux.</p>
+        <div class="exp-tags"><span class="tag">Image de marque et IA</span><span class="tag">Production vidéo</span><span class="tag">Réseaux sociaux</span></div>
+      </div>
+      <div class="exp-card reveal reveal-d2">
+        <p class="exp-num">— 03</p><h3 class="exp-title">Growth et publicité</h3><p class="exp-body">Des spécialistes qui maîtrisent le canal, le budget et les résultats.</p>
+        <div class="exp-tags"><span class="tag">Acquisition</span><span class="tag">Attribution</span><span class="tag">Optimisation du funnel</span></div>
+      </div>
+      <div class="exp-card reveal reveal-d3">
+        <p class="exp-num">— 04</p><h3 class="exp-title">IA et Data</h3><p class="exp-body">Suivi, automatisation par l'IA et expertise technologique pour se développer sans augmenter les effectifs.</p>
+        <div class="exp-tags"><span class="tag">Workflows IA</span><span class="tag">Automatisation CRM</span><span class="tag">Analytique</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="talent" class="talent-section">
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">05</span>Les personnes</p>
+      <div><h2 class="sh-h">Le type de talents avec lesquels nous aimons travailler.</h2><p class="sh-b">Des experts choisis pour leur maîtrise, leur exigence et leur capacité à évoluer avec leur métier.</p></div>
+    </div>
+    <div class="cluster talent-grid">
+      <div class="tcard reveal" tabindex="0" role="button" aria-expanded="false">
+        <div class="tcard-photo">
+          <span class="tcard-tag">Contenu</span>
+          <img src="Assets/Images/Profiles/Group 2500.webp" alt="Cécilia D." loading="lazy">
+        </div>
+        <div class="tcard-info">
+          <h3 class="tcard-name">Cécilia D. <a href="https://www.linkedin.com/in/cdivet/" class="tcard-li" target="_blank" rel="noopener" aria-label="Cécilia D. sur LinkedIn" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="0.5" y="0.5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="8" y="11.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="currentColor">in</text></svg></a></h3>
+          <p class="tcard-role">Responsable de la stratégie de contenu et de la création</p>
+          <p class="tcard-years">+14 ans d'exp.</p>
+          <div class="tcard-overlay">
+            <p class="tcard-quote">Stratège créative formée chez Publicis et auprès de grandes marques, alliant idées percutantes, expérience utilisateur et réflexion axée sur la conversion. Conteuse d'histoires instinctive ; résolument axée sur la valeur.</p>
+            <div class="tcard-traits"><span class="trait">Inventive</span><span class="trait">Perspicace</span><span class="trait">Pragmatique</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard reveal reveal-d1" tabindex="0" role="button" aria-expanded="false">
+        <div class="tcard-photo">
+          <span class="tcard-tag">Création</span>
+          <img src="Assets/Images/Profiles/Group 2498.webp" alt="Andy L." loading="lazy">
+        </div>
+        <div class="tcard-info">
+          <h3 class="tcard-name">Andy L. <a href="https://www.linkedin.com/in/andy-lechapelier-60566a9b/?skipRedirect=true" class="tcard-li" target="_blank" rel="noopener" aria-label="Andy L. sur LinkedIn" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="0.5" y="0.5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="8" y="11.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="currentColor">in</text></svg></a></h3>
+          <p class="tcard-role">Directeur de création spécialisé en IA</p>
+          <p class="tcard-years">+18 ans d'exp.</p>
+          <div class="tcard-overlay">
+            <p class="tcard-quote">Directeur de création spécialisé dans l'IA, alliant animation, effets spéciaux et systèmes visuels pour l'ESA, Thales et Toyota. Passionné par la direction artistique, le sens et la recherche de meilleures méthodes de création.</p>
+            <div class="tcard-traits"><span class="trait">Visionnaire</span><span class="trait">Rigoureuse</span><span class="trait">Curieuse</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard reveal reveal-d2" tabindex="0" role="button" aria-expanded="false">
+        <div class="tcard-photo">
+          <span class="tcard-tag">Opérations</span>
+          <img src="Assets/Images/Profiles/Group 2495.webp" alt="Hibiki N." loading="lazy">
+        </div>
+        <div class="tcard-info">
+          <h3 class="tcard-name">Hibiki N. <a href="https://www.linkedin.com/in/hibiki-nakatake-52265111a/" class="tcard-li" target="_blank" rel="noopener" aria-label="Hibiki N. sur LinkedIn" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="0.5" y="0.5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="8" y="11.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="currentColor">in</text></svg></a></h3>
+          <p class="tcard-role">Responsable marketing et opérations internationales</p>
+          <p class="tcard-years">+10 ans d'exp.</p>
+          <div class="tcard-overlay">
+            <p class="tcard-quote">Spécialiste du marketing international ayant travaillé chez Gucci, dans le sport et dans le secteur technologique. Elle transforme la complexité des marchés croisés en systèmes clairs, en une exécution sereine et en décisions culturellement pertinentes.</p>
+            <div class="tcard-traits"><span class="trait">Structurée</span><span class="trait">Adaptable</span><span class="trait">Imperturbable</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard reveal reveal-d3" tabindex="0" role="button" aria-expanded="false">
+        <div class="tcard-photo">
+          <span class="tcard-tag">Données et IA</span>
+          <img src="Assets/Images/Profiles/Group 2497.webp" alt="Aquiles P." loading="lazy">
+        </div>
+        <div class="tcard-info">
+          <h3 class="tcard-name">Aquiles P. <a href="https://www.linkedin.com/in/aquiles-p%C3%A1ez-78914039/" class="tcard-li" target="_blank" rel="noopener" aria-label="Aquiles P. sur LinkedIn" onclick="event.stopPropagation()"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="0.5" y="0.5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="8" y="11.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="currentColor">in</text></svg></a></h3>
+          <p class="tcard-role">IA et intelligence des données</p>
+          <p class="tcard-years">+11 ans d'exp.</p>
+          <div class="tcard-overlay">
+            <p class="tcard-quote">Spécialiste de l'IA et des données, il transforme des ensembles de données complexes en modèles prédictifs, en intelligence économique et en décisions marketing plus pertinentes. Curieux, collaboratif et animé par la volonté d'avoir un impact concret.</p>
+            <div class="tcard-traits"><span class="trait">Curieuse</span><span class="trait">Collaborative</span><span class="trait">Analytique</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="vetting" class="vetting-section section-dark">
+  <div class="inner">
+    <div class="vetting-head">
+      <div class="reveal"><p class="v-ew ew"><span class="sec-num">06</span>Notre sélection du talent</p><h2 class="v-h2">Notre processus</h2></div>
+      <div class="reveal reveal-d1"><p class="v-stat-num">&lt;10%</p><hr class="v-stat-rule"><p class="v-stat-body">des candidats sont retenus. Un processus de 1 à 2 semaines, dont chaque étape est gérée par notre équipe.</p></div>
+    </div>
+    <div class="vline">
+      <div class="vsteps">
+        <div class="vstep reveal"><div class="vgate">01</div><h3 class="vstep-title">Évaluation des compétences</h3><p class="vstep-body">Examen du CV et des références au regard des exigences réelles de la mission.</p></div>
+        <div class="vstep reveal reveal-d1"><div class="vgate">02</div><h3 class="vstep-title">Entretien</h3><p class="vstep-body">Entretien structuré portant sur l'expérience, l'état d'esprit et l'adéquation avec le poste.</p></div>
+        <div class="vstep reveal reveal-d2"><div class="vgate">03</div><h3 class="vstep-title">Résolution de problèmes</h3><p class="vstep-body">Un défi stratégique qui teste la réflexion, et pas seulement la capacité d'exécution.</p></div>
+        <div class="vstep reveal reveal-d3"><div class="vgate">04</div><h3 class="vstep-title">Évaluation de la personnalité</h3><p class="vstep-body">Style de communication et aptitude à travailler en équipe, en adéquation avec la culture du client.</p></div>
+        <div class="vstep reveal reveal-d4"><div class="vgate">05</div><h3 class="vstep-title">Proposition de projet</h3><p class="vstep-body">Une proposition complète sur un brief réel — le test final avant l'intégration.</p></div>
+      </div>
+    </div>
+    <div class="vetting-foot">
+      <p class="vf-note">De la candidature au profil actif, rien n'est externalisé.</p>
+      <span class="vf-rate">Taux d'acceptation · 8 %</span>
+    </div>
+  </div>
+</section>
+
+<section id="cases" class="cases-section">
+  <div class="inner">
+    <div class="sh"><p class="ew"><span class="sec-num">07</span>Études de cas</p><div><h2 class="sh-h">Des briefs réels. Des résultats concrets.</h2></div></div>
+    <div class="cases-stack">
+      <a href="usecase-sales-editorial-fr.html" class="casecard reveal">
+        <div class="case-img case-img-featured">
+          <div class="case-photo"><img src="Assets/Images/Profiles/laurence-c-crop.webp" alt="Laurence C." loading="lazy"></div>
+          <img src="Assets/Images/Use case images/webp/lead-scoring-matrix.webp" alt="Lead scoring matrix chart" loading="lazy">
+        </div>
+        <div class="case-body">
+          <p class="case-cat">Stratégie de mise sur le marché et ventes</p>
+          <p class="case-title">Les prospects affluaient mais sans se concrétiser.</p>
+          <p class="case-intro">Un groupe de 50 M€ recevait des prospects, mais ne disposait d'aucun système pour les convertir. Nous avons repensé le système de notation, le processus de conclusion de vente et le guide des événements.</p>
+          <p class="case-credit">Réalisé par une ancienne directrice commerciale · 20 ans d'exp.</p>
+        </div>
+      </a>
+      <a href="usecase-seo-editorial-fr.html" class="casecard is-dark reveal">
+        <div class="case-img case-img-featured">
+          <div class="case-photo"><img src="Assets/Images/Profiles/marc-d-crop.webp" alt="Marc D." loading="lazy"></div>
+          <img src="Assets/Images/Use case images/webp/entity-graph-rebuild.webp" alt="Entity graph rebuild diagram" loading="lazy">
+        </div>
+        <div class="case-body">
+          <p class="case-cat">IA et référencement naturel (SEO)</p>
+          <p class="case-title">Invisible pour les moteurs de recherche basés sur l'IA.</p>
+          <p class="case-intro">Une entreprise Tech juridique disposait d'une réelle expertise, mais restait invisible dans les recherches IA. Nous avons restructuré son contenu pour en faire une base de données compatible avec les IA les plus utilisées.</p>
+          <p class="case-credit">Réalisé par un spécialiste du référencement naturel (SEO) · 11 ans d'exp.</p>
+        </div>
+      </a>
+      <a href="usecase-event-editorial-fr.html" class="casecard reveal">
+        <div class="case-img case-img-featured">
+          <div class="case-photo"><img src="Assets/Images/Profiles/claire-l-crop.webp" alt="Claire L." loading="lazy"></div>
+          <img src="Assets/Images/Use case images/webp/budget-segmentation.webp" alt="Budget segmentation chart" loading="lazy">
+        </div>
+        <div class="case-body">
+          <p class="case-cat">Automatisation par IA</p>
+          <p class="case-title">Opérations intérimaires : sauvetage d'un événement de 150 K€ en 30 jours.</p>
+          <p class="case-intro">Une chargée de com. a démissionné un mois avant un événement de 150 K€, alors que la logistique n'était pas encore finalisée. Nous avons pris en charge le budget, les prestataires et plus de 100 participants, et avons mené à bien l'événement dans les délais.</p>
+          <p class="case-credit">Réalisé par une responsable évènementielle · 14 ans d'exp.</p>
+        </div>
+      </a>
+      <a href="usecase-video-editorial-fr.html" class="casecard is-dark reveal">
+        <div class="case-img case-img-featured">
+          <div class="case-photo"><img src="Assets/Images/Profiles/julien-r-crop.webp" alt="Julien R." loading="lazy"></div>
+          <img src="Assets/Images/Use case images/webp/full-video-suite-timeline.webp" alt="Video production timeline" loading="lazy">
+        </div>
+        <div class="case-body">
+          <p class="case-cat">Contenu et vidéo</p>
+          <p class="case-title">Suite vidéo Corporate en moins de 7 jours.</p>
+          <p class="case-intro">Un groupe avait besoin d'une suite vidéo complète en moins d'une semaine, sans aucune direction artistique définie. Nous avons géré la production de A à Z et livré le projet avec 48 heures d'avance.</p>
+          <p class="case-credit">Réalisé par un directeur de création · 9 ans d'exp.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="tm-section">
+  <div class="inner">
+    <div class="sh"><p class="ew"><span class="sec-num">08</span>Avis clients</p><div><h2 class="sh-h">La confiance des équipes qui ne se contentent pas du minimum.</h2></div></div>
+    <div class="tm-list">
+      <div class="tmcard reveal"><span class="tm-mark">&ldquo;</span><p class="tm-q">Chaque personne amenée par Metodas savait exactement ce qu'elle faisait. Pas de réunions de façade — juste des gens qui tiennent leurs engagements.</p><div class="tm-author"><div class="tm-init">CM</div><div><p class="tm-name">Clara Moreno</p><p class="tm-co">Fresh</p></div></div></div>
+      <div class="tmcard reveal reveal-d1"><span class="tm-mark">&ldquo;</span><p class="tm-q">Un processus clair, une véritable responsabilisation. Je n'ai pas eu à courir après qui que ce soit, pas une seule fois. C'est tout le contraire des plateformes de freelance.</p><div class="tm-author"><div class="tm-init">SR</div><div><p class="tm-name">Sonia Rahmani</p><p class="tm-co">Style Central</p></div></div></div>
+      <div class="tmcard reveal"><span class="tm-mark">&ldquo;</span><p class="tm-q">Nous avons évité les honoraires élevés des agences et les tracas liés à la gestion des freelances. L'accès à des professionnels qualifiés a été simple et efficace.</p><div class="tm-author"><div class="tm-init">TR</div><div><p class="tm-name">Taylor Reed</p><p class="tm-co">Been There Done That</p></div></div></div>
+      <div class="tmcard reveal reveal-d1"><span class="tm-mark">&ldquo;</span><p class="tm-q">Ils ont compris l'objectif, remis en question ce que nous ne voyions pas et fait en sorte que cela fonctionne. Les plateformes de freelance ne vont jamais aussi loin.</p><div class="tm-author"><div class="tm-init">LB</div><div><p class="tm-name">Laurent Berset</p><p class="tm-co">Bizlink</p></div></div></div>
+      <div class="tmcard reveal"><span class="tm-mark">&ldquo;</span><p class="tm-q">L'expertise, les compétences et la réactivité de Metodas nous ont permis de faire évoluer notre entreprise de manière spectaculaire.</p><div class="tm-author"><div class="tm-init">PB</div><div><p class="tm-name">Pierre Beffeyte</p><p class="tm-co">Scène &amp; Public</p></div></div></div>
+      <div class="tmcard reveal reveal-d1"><span class="tm-mark">&ldquo;</span><p class="tm-q">Metodas a apporté une expertise véritablement précieuse à l'ensemble de notre planification marketing.</p><div class="tm-author"><div class="tm-init">BF</div><div><p class="tm-name">Beatrice Ferrant</p><p class="tm-co">Uncouture</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing-section">
+  <div class="inner">
+    <div class="sh"><p class="ew"><span class="sec-num">09</span>Tarifs</p><div><h2 class="sh-h">Des tarifs transparents.</h2></div></div>
+    <div class="pricing-box reveal">
+      <div class="pricing-left">
+        <p class="ew">Le modèle</p>
+        <h3 class="pricing-h2">Une commission forfaitaire unique sans surprises.</h3>
+        <p class="pricing-sub">Une commission forfaitaire unique de 25 % sur le projet. Pas de marge d'agence, pas d'embauche à temps plein, pas de contrat à durée déterminée — et vous connaissez tous les tarifs avant de vous engager.</p>
+      </div>
+      <div class="pricing-right">
+        <div class="pricing-big"><span class="pricing-pct">25%</span><span class="pricing-flat">forfaitaire</span></div>
+        <div class="pricing-rule"></div>
+        <div class="pricing-items">
+          <p class="pricing-item">Des frais transparents — pas de majoration cachée</p>
+          <p class="pricing-item">Pas d'engagement à long terme ni d'embauche à temps plein</p>
+          <p class="pricing-item">Nous gérons les contrats, la conformité et les paiements</p>
+          <p class="pricing-item">Le profil ne vous convient pas ? Remplacement gratuit dans les deux premières semaines.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-section section-dark">
+  <div class="inner">
+    <div class="cta-inner-grid">
+      <div class="reveal"><p class="ew"><span class="sec-num">10</span>Prêt à travailler avec nous ?</p><h2 class="cta-h2">Construisons votre projet avec des gens qui tiennent leurs engagements.</h2></div>
+      <div class="reveal reveal-d1">
+        <p class="cta-sub">Dites-nous ce dont vous avez besoin. Nous vous proposerons une approche claire et des profils ciblés avant que vous ne signiez quoi que ce soit.</p>
+        <div class="cta-btns">
+          <a href="Validated elements/contact-fr.html" class="btn-red-lg">Contactez-nous</a>
+          <a href="#vetting" class="btn-stroke-lg">Découvrez notre méthode</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="inner" style="padding-top:0; padding-bottom:0;">
+    <div class="footer-top">
+      <a href="#top" class="footer-logo"><img src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <div class="footer-nav">
+        <p class="footer-col-label">Navigation</p>
+        <a href="#talent" class="footer-link">Talents</a>
+        <a href="#vetting" class="footer-link">Processus de sélection</a>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-col-label">&nbsp;</p>
+        <a href="#cases" class="footer-link">Réalisations</a>
+        <a href="#pricing" class="footer-link">Tarifs</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Metodas. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('siteNav');
+const navLinks = Array.from(document.querySelectorAll('.nav-links .nav-link'));
+const sections = navLinks.map(l => document.getElementById(l.dataset.section)).filter(Boolean);
+
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive:true });
+
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const link = navLinks.find(l => l.dataset.section === entry.target.id);
+    if (!link) return;
+    if (entry.isIntersecting) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+sections.forEach(s => spy.observe(s));
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}));
+
+document.querySelectorAll('.tcard').forEach(card => {
+  const toggleCard = () => {
+    card.classList.toggle('is-open');
+    card.setAttribute('aria-expanded', card.classList.contains('is-open') ? 'true' : 'false');
+  };
+  card.addEventListener('click', toggleCard);
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleCard(); }
+  });
+});
+
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentTheme = systemPrefersDark ? 'dark' : 'light';
+themeToggle.addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', currentTheme);
+});
+
+</script>
+
+</body>
+</html>

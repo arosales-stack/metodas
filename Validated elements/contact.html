@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work with us — Metodas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* TOKENS — copied verbatim from index.html */
+:root {
+  color-scheme: light dark;
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --pad-x: clamp(20px, 4vw, 48px);
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+  --fixed-cream: #f7f4ee; --fixed-cream-55: rgba(247,244,238,0.55);
+  --fixed-ink: #1c1a17; --fixed-ink-55: rgba(28,26,23,0.64);
+  --fixed-beige: #e4ddcd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+    --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+    --paper-r: 23; --paper-g: 21; --paper-b: 18;
+    --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10);
+  }
+}
+:root[data-theme="light"] {
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+}
+:root[data-theme="dark"] {
+  --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+  --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+  --paper-r: 23; --paper-g: 21; --paper-b: 18;
+  --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; -webkit-font-smoothing:antialiased; overflow:hidden; }
+a { color:inherit; text-decoration:none; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+
+/* NAV — same pattern as the use-case pages */
+.form-nav { position:fixed; top:0; left:0; right:0; height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 var(--pad-x); z-index:100; }
+.logo { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:700; letter-spacing:-0.02em; }
+.logo img { height:30px; width:auto; display:block; }
+.logo img.logo-dark { display:none; }
+@media (prefers-color-scheme: dark) { .logo img.logo-light { display:none; } .logo img.logo-dark { display:block; } }
+:root[data-theme="light"] .logo img.logo-light { display:block; }
+:root[data-theme="light"] .logo img.logo-dark { display:none; }
+:root[data-theme="dark"] .logo img.logo-light { display:none; }
+:root[data-theme="dark"] .logo img.logo-dark { display:block; }
+.nav-right { display:flex; align-items:center; gap:20px; }
+.back-link { font-size:13px; font-weight:500; color:var(--ink-55); transition:color .12s; }
+.back-link:hover { color:var(--ink); }
+.theme-toggle { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); cursor:pointer; transition:border-color .12s; flex-shrink:0; }
+.theme-toggle:hover { border-color:var(--ink-55); }
+.lang-toggle { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:12px; font-weight:500; letter-spacing:0.02em; transition:border-color .12s; flex-shrink:0; }
+.lang-toggle:hover { border-color:var(--ink-55); }
+.theme-toggle svg { width:17px; height:17px; display:block; }
+.theme-toggle .icon-moon { display:none; }
+@media (prefers-color-scheme: dark) { .theme-toggle .icon-sun { display:none; } .theme-toggle .icon-moon { display:block; } }
+:root[data-theme="light"] .theme-toggle .icon-sun { display:block; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display:block; }
+
+/* PROGRESS BAR */
+.progress-bar { position:fixed; top:64px; left:0; right:0; height:1.5px; background:var(--ink-06); z-index:100; }
+.progress-fill { height:100%; background:var(--accent); width:0%; transition:width 0.6s cubic-bezier(0.4,0,0.2,1); }
+
+/* WRAPPER */
+.form-wrapper { height:100vh; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+
+/* STEPS */
+.form-step { position:absolute; width:100%; max-width:520px; padding:0 var(--pad-x); display:flex; flex-direction:column; gap:32px; transition:transform 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.45s cubic-bezier(0.4,0,0.2,1); }
+.form-step.active { opacity:1; transform:translateY(0); pointer-events:auto; }
+.form-step.hidden { opacity:0; transform:translateY(56px); pointer-events:none; }
+.form-step.exit-up { opacity:0; transform:translateY(-56px); pointer-events:none; }
+.form-step.exit-dn { opacity:0; transform:translateY(56px); pointer-events:none; }
+
+/* STEP LABEL — reuses the .ew eyebrow pattern from the rest of the site */
+.step-label { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
+.step-label::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+
+/* HEADING */
+.form-heading { font-size:clamp(30px,5vw,44px); font-weight:700; line-height:1.12; letter-spacing:-0.03em; color:var(--ink); }
+
+/* SUBTEXT */
+.form-subtext { font-size:14px; color:var(--ink-55); line-height:1.6; margin-top:-14px; }
+
+/* FIELDS */
+.fields-group { display:flex; flex-direction:column; gap:26px; }
+.field { display:flex; flex-direction:column; gap:7px; }
+.field label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); transition:color .2s; }
+.field:focus-within label { color:var(--accent); }
+.field input, .field textarea { background:transparent; border:none; border-bottom:1px solid var(--ink-20); color:var(--ink); font-family:inherit; font-size:17px; font-weight:400; padding:6px 0 12px; outline:none; width:100%; transition:border-color .2s; caret-color:var(--accent); }
+.field input::placeholder, .field textarea::placeholder { color:var(--ink-20); }
+.field input:focus, .field textarea:focus { border-bottom-color:var(--accent); }
+.field textarea { resize:none; line-height:1.65; min-height:96px; }
+.optional-tag { font-size:11px; color:var(--ink-20); font-style:italic; margin-left:6px; text-transform:none; letter-spacing:0; }
+
+/* ERROR */
+.field-error { font-size:11px; color:var(--accent); letter-spacing:0.02em; height:0; overflow:hidden; opacity:0; transform:translateY(-4px); transition:opacity .2s, transform .2s, height .2s; }
+.field.has-error .field-error { height:16px; opacity:1; transform:translateY(0); }
+.field.has-error input { border-bottom-color:var(--accent); }
+
+/* ACTIONS */
+.form-actions { display:flex; align-items:center; gap:24px; }
+.btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:inherit; font-size:14px; font-weight:500; letter-spacing:0.01em; padding:12px 24px; border:1px solid var(--accent); cursor:pointer; transition:transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s; }
+.btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 24px rgba(163,49,26,0.28); }
+.btn-primary .arrow { transition:transform .2s; }
+.btn-primary:hover .arrow { transform:translateX(3px); }
+.btn-back { background:none; border:none; font-family:inherit; font-size:13px; color:var(--ink-55); cursor:pointer; padding:0; letter-spacing:0.01em; transition:color .12s; }
+.btn-back:hover { color:var(--ink); }
+
+/* SUCCESS */
+.success-icon { width:44px; height:44px; border:1.5px solid var(--accent); display:flex; align-items:center; justify-content:center; }
+.success-icon svg { width:18px; height:18px; stroke:var(--accent); stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+.success-heading { font-size:clamp(30px,5vw,44px); font-weight:700; letter-spacing:-0.03em; line-height:1.12; color:var(--ink); }
+.success-body { font-size:14px; color:var(--ink-55); line-height:1.6; max-width:360px; margin-top:-14px; }
+.success-back { font-size:13px; color:var(--ink-55); letter-spacing:0.01em; transition:color .12s; }
+.success-back:hover { color:var(--ink); }
+
+/* MOBILE */
+@media (max-width:768px){ .form-nav{ padding:0 20px; } .form-step{ gap:26px; padding:0 20px; } }
+
+</style>
+</head>
+<body>
+
+<nav class="form-nav">
+  <a class="logo" href="../index.html#top"><img class="logo-light" src="../Assets/Images/Logo/metodas-mark-black.png" alt=""><img class="logo-dark" src="../Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+  <div class="nav-right">
+    <a class="back-link" href="../index.html#top">← Back to site</a>
+    <a class="lang-toggle" href="contact-fr.html" aria-label="Switch to French">FR</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+      <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.3"/><g stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><line x1="8" y1="0.8" x2="8" y2="2.4"/><line x1="8" y1="13.6" x2="8" y2="15.2"/><line x1="0.8" y1="8" x2="2.4" y2="8"/><line x1="13.6" y1="8" x2="15.2" y2="8"/><line x1="2.6" y1="2.6" x2="3.7" y2="3.7"/><line x1="12.3" y1="12.3" x2="13.4" y2="13.4"/><line x1="2.6" y1="13.4" x2="3.7" y2="12.3"/><line x1="12.3" y1="3.7" x2="13.4" y2="2.6"/></g></svg>
+      <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 9.8A6 6 0 1 1 6.2 2.8a6.6 6.6 0 1 0 7 7z" fill="currentColor"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="progress-bar">
+  <div class="progress-fill" id="progressFill"></div>
+</div>
+
+<div class="form-wrapper">
+
+  <!-- Step 1 -->
+  <div class="form-step active" id="step1">
+    <div class="step-label">Step 1 of 2</div>
+    <h1 class="form-heading">A few basics<br>to get started.</h1>
+    <div class="fields-group">
+      <div class="field" id="field-name">
+        <label for="name">Your name</label>
+        <input type="text" id="name" placeholder="First and last name" autocomplete="name">
+        <div class="field-error">Please enter your name.</div>
+      </div>
+      <div class="field" id="field-company">
+        <label for="company">Company</label>
+        <input type="text" id="company" placeholder="Your company name" autocomplete="organization">
+        <div class="field-error">Please enter your company.</div>
+      </div>
+      <div class="field" id="field-email">
+        <label for="email">Company email</label>
+        <input type="email" id="email" placeholder="you@company.com" autocomplete="email">
+        <div class="field-error">Please use your company email address.</div>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn-primary" onclick="goToStep2()">
+        Continue <span class="arrow">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 2 -->
+  <div class="form-step hidden" id="step2">
+    <div class="step-label">Step 2 of 2</div>
+    <h1 class="form-heading">What are you<br>looking for?</h1>
+    <p class="form-subtext">We'll read this before we call — no need to be exhaustive.</p>
+    <div class="fields-group">
+      <div class="field">
+        <label for="need">Your need <span class="optional-tag">optional</span></label>
+        <textarea id="need" placeholder="e.g. We're launching a product and need a senior content strategist for 3 months..." rows="4"></textarea>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn-primary" onclick="submitForm()">
+        Send request <span class="arrow">→</span>
+      </button>
+      <button class="btn-back" onclick="goToStep1()">← Back</button>
+    </div>
+  </div>
+
+  <!-- Success -->
+  <div class="form-step hidden" id="stepSuccess">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1 class="success-heading">We'll be<br>in touch.</h1>
+    <p class="success-body">Expect a message within 24 hours with the right profiles for your brief.</p>
+    <a class="success-back" href="../index.html#top">← Back to site</a>
+  </div>
+
+</div>
+
+<script>
+  const fill = document.getElementById('progressFill');
+
+  function transition(fromEl, toEl, fromClass, toStartClass) {
+    fromEl.classList.remove('active');
+    fromEl.classList.add(fromClass);
+    setTimeout(() => {
+      fromEl.classList.add('hidden');
+      fromEl.classList.remove(fromClass);
+      toEl.classList.remove('hidden');
+      toEl.classList.add(toStartClass);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        toEl.classList.remove(toStartClass);
+        toEl.classList.add('active');
+      }));
+    }, 380);
+  }
+
+  function goToStep2() {
+    const name    = document.getElementById('name');
+    const company = document.getElementById('company');
+    const email   = document.getElementById('email');
+    let ok = true;
+
+    [
+      { el: name,    fid: 'field-name',    fn: v => v.trim().length > 1 },
+      { el: company, fid: 'field-company', fn: v => v.trim().length > 0 },
+      { el: email,   fid: 'field-email',   fn: v => {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return false;
+        const blocked = ['gmail','yahoo','hotmail','outlook','live','msn','icloud','me','mac','aol','orange','wanadoo','free','sfr','laposte','numericable','neuf','bbox','ymail','googlemail','protonmail','pm','tutanota','gmx','web','mail','yandex'];
+        const domain = v.split('@')[1].split('.')[0].toLowerCase();
+        return !blocked.includes(domain);
+      }}
+    ].forEach(({ el, fid, fn }) => {
+      const f = document.getElementById(fid);
+      fn(el.value) ? f.classList.remove('has-error') : (f.classList.add('has-error'), ok = false);
+    });
+
+    if (!ok) return;
+    fill.style.width = '50%';
+    transition(document.getElementById('step1'), document.getElementById('step2'), 'exit-up', 'hidden');
+  }
+
+  function goToStep1() {
+    fill.style.width = '0%';
+    transition(document.getElementById('step2'), document.getElementById('step1'), 'exit-dn', 'hidden');
+  }
+
+  function submitForm() {
+    fill.style.width = '100%';
+    transition(document.getElementById('step2'), document.getElementById('stepSuccess'), 'exit-up', 'hidden');
+  }
+
+  ['name','company','email'].forEach(id => {
+    document.getElementById(id).addEventListener('input', function() {
+      this.closest('.field').classList.remove('has-error');
+    });
+  });
+
+  document.getElementById('name').addEventListener('keydown',    e => { if (e.key==='Enter') document.getElementById('company').focus(); });
+  document.getElementById('company').addEventListener('keydown', e => { if (e.key==='Enter') document.getElementById('email').focus(); });
+  document.getElementById('email').addEventListener('keydown',   e => { if (e.key==='Enter') goToStep2(); });
+
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  let currentTheme = systemPrefersDark ? 'dark' : 'light';
+  themeToggle.addEventListener('click', () => {
+    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', currentTheme);
+  });
+</script>
+
+</body>
+</html>
