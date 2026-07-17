@@ -202,6 +202,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .uc-slide { overflow:hidden; }
 .uc-slide img { width:100%; height:auto; display:block; }
 @media (max-width:640px){ .uc-slides{ grid-template-columns:repeat(2, minmax(0,1fr)); padding:20px; gap:14px; margin:8px 0 40px; } }
+.uc-slide-video { margin:8px 0 56px; }
+.uc-slide-video video { width:100%; max-width:640px; height:auto; display:block; margin:0 auto; }
+@media (max-width:640px){ .uc-slide-video { margin:8px 0 40px; } }
 
 /* RESULT */
 .uc-result-section { border-bottom:1px solid var(--ink-06); }
@@ -356,9 +359,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
       <p class="ew">Ce qu'a fait notre freelance</p>
       <div><h2 class="sh-h">Il ne s'agissait pas d'une mission de vente, mais d'architecture commerciale.</h2></div>
     </div>
-    <div class="uc-slides" id="ucSlides">
-      <div class="uc-slide"><img src="Assets/Images/Use case images/webp/lead-scoring-matrix.webp" alt="Lead scoring matrix chart" loading="lazy"></div>
-      <div class="uc-slide"><img src="Assets/Images/Use case images/webp/structural-diagnostic.webp" alt="Structural diagnostic chart" loading="lazy"></div>
+    <div class="uc-slide-video" id="ucSlides">
+      <video autoplay muted loop playsinline>
+        <source src="Assets/Videos/lead-scoring.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="uc-stepline">
       <div class="uc-steps">
