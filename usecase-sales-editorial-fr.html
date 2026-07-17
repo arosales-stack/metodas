@@ -213,8 +213,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .result-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .result-card { padding:clamp(24px,2.8vw,32px); display:flex; flex-direction:column; transition:transform .2s; }
 .result-card:hover { transform:translateY(-3px); }
-.result-card:nth-child(1){ background:#171512; border:1px solid rgba(247,244,238,0.14); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); }
-.result-card:nth-child(2){ background:#0a0908; --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); }
+.result-card:nth-child(1){ background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
+.result-card:nth-child(2){ background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
 .result-card:nth-child(3){ background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
 .result-card-label { font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-2); margin-bottom:18px; display:flex; align-items:center; gap:7px; }
 .result-card-label::before { content:''; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
