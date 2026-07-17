@@ -15,6 +15,7 @@
   4. Only on explicit "merge it" / "ship it" does `dev` → `main`, which deploys to production.
 - Why the dashboard felt confusing the first time: Workers' UI separates "build/version" from "visit this deployment" — unlike Pages, which jumps straight from a build to its preview. With the stable alias above, that dashboard flow is now avoidable entirely for day-to-day checks.
 - This file lives in the repo root and travels with the code — keep it updated after every confirmed change so context survives across sessions/tools.
+- **`CLAUDE.md` itself is exempt from the dev→main workflow above.** It's documentation, not live-site content — there is no risk in it going live immediately. Every edit to this file gets committed and pushed straight to `main` only. Never touch it on `dev`, never merge it separately, never maintain two versions of it.
 
 ## The Files
 - `index.html` — homepage (English)
