@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité — Metodas</title>
+<meta name="description" content="Comment Metodas collecte, utilise et protège vos informations personnelles.">
+<link rel="canonical" href="https://metodas.co/privacy-policy-fr.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  color-scheme: light dark;
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --pad-x: clamp(20px, 4vw, 48px); --pad-y: clamp(48px, 6vw, 72px);
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+  --fixed-cream: #f7f4ee; --fixed-cream-55: rgba(247,244,238,0.55);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+    --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+    --paper-r: 23; --paper-g: 21; --paper-b: 18; --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10); }
+}
+:root[data-theme="light"] { --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238; --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12); }
+:root[data-theme="dark"] { --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+  --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+  --paper-r: 23; --paper-g: 21; --paper-b: 18; --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10); }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light dark; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; font-size:16px; font-weight:400; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+p, h1, h2, h3 { margin:0; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.inner { max-width:1200px; margin:0 auto; padding:var(--pad-y) var(--pad-x); }
+.section-dark { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-06:var(--dark-line); --card:var(--dark-surface); --paper:var(--dark-bg); color:var(--ink); }
+.ew { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
+.ew::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+
+/* NAV */
+.site-nav { position:sticky; top:0; z-index:100; background:rgba(var(--paper-r),var(--paper-g),var(--paper-b),0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--ink-06); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:16px var(--pad-x); display:flex; align-items:center; justify-content:space-between; gap:24px; transition:padding .2s ease; }
+.site-nav.scrolled .nav-inner { padding-top:10px; padding-bottom:10px; }
+.nav-left { display:flex; align-items:center; gap:24px; min-width:0; }
+.nav-logo { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:700; letter-spacing:-0.02em; flex-shrink:0; }
+.nav-logo img { height:34px; width:auto; display:block; }
+.nav-logo img.logo-dark { display:none; }
+@media (prefers-color-scheme: dark) { .nav-logo img.logo-light { display:none; } .nav-logo img.logo-dark { display:block; } }
+:root[data-theme="light"] .nav-logo img.logo-light { display:block; } :root[data-theme="light"] .nav-logo img.logo-dark { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-light { display:none; } :root[data-theme="dark"] .nav-logo img.logo-dark { display:block; }
+.nav-back { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:500; color:var(--ink-55); transition:color .12s; min-width:0; }
+.nav-back:hover { color:var(--ink); }
+.nav-actions { display:flex; align-items:center; gap:16px; flex-shrink:0; }
+.theme-toggle, .lang-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); cursor:pointer; transition:border-color .12s; flex-shrink:0; font-family:inherit; font-size:13px; font-weight:500; letter-spacing:0.02em; }
+.theme-toggle:hover, .lang-toggle:hover { border-color:var(--ink-55); }
+.theme-toggle svg { width:19px; height:19px; display:block; }
+.theme-toggle .icon-moon { display:none; }
+@media (prefers-color-scheme: dark) { .theme-toggle .icon-sun { display:none; } .theme-toggle .icon-moon { display:block; } }
+:root[data-theme="light"] .theme-toggle .icon-sun { display:block; } :root[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display:none; } :root[data-theme="dark"] .theme-toggle .icon-moon { display:block; }
+@media (max-width:640px){ .nav-back span.nav-back-text{display:none;} }
+
+/* LEGAL CONTENT */
+.legal-hero { max-width:1200px; margin:0 auto; padding:clamp(40px,5vw,64px) var(--pad-x) clamp(24px,3vw,32px); }
+.legal-h1 { font-size:clamp(28px,3.6vw,44px); font-weight:700; letter-spacing:-0.03em; line-height:1.1; margin-top:14px; }
+.legal-body { max-width:1200px; margin:0 auto; padding:0 var(--pad-x) clamp(64px,7vw,96px); display:grid; grid-template-columns:220px 1fr; gap:clamp(32px,4vw,56px); align-items:start; }
+@media (max-width:780px){ .legal-body{ grid-template-columns:1fr; } }
+.legal-toc { display:flex; flex-direction:column; gap:10px; position:sticky; top:96px; }
+.legal-toc a { font-size:13px; color:var(--ink-55); transition:color .12s; line-height:1.5; }
+.legal-toc a:hover { color:var(--ink); }
+.legal-prose { max-width:720px; }
+.legal-prose section { padding:28px 0; border-bottom:1px solid var(--ink-06); }
+.legal-prose section:first-child { padding-top:0; }
+.legal-prose section:last-child { border-bottom:none; }
+.legal-h2 { font-size:19px; font-weight:700; letter-spacing:-0.01em; margin-bottom:12px; }
+.legal-prose p { font-size:15px; color:var(--ink-55); line-height:1.7; margin-bottom:12px; }
+.legal-prose p:last-child { margin-bottom:0; }
+.legal-prose p strong { color:var(--ink); font-weight:700; }
+.legal-prose address { font-size:15px; color:var(--ink-55); line-height:1.7; font-style:normal; }
+.legal-table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+.legal-table th, .legal-table td { text-align:left; padding:10px 14px; border:1px solid var(--ink-06); color:var(--ink-55); vertical-align:top; }
+.legal-table th { color:var(--ink); font-weight:700; background:var(--ink-06); }
+
+/* FOOTER */
+.site-footer { border-top:1px solid var(--dark-line); padding:56px 0 28px; }
+.footer-top { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--dark-line); margin-bottom:24px; }
+.footer-logo { display:flex; align-items:center; gap:8px; font-size:16px; font-weight:700; letter-spacing:-0.02em; }
+.footer-logo img { height:26px; width:auto; display:block; }
+.footer-nav { display:flex; flex-direction:column; gap:12px; }
+.footer-col-label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--fixed-cream-55); margin-bottom:6px; }
+.footer-link { font-size:14px; color:var(--fixed-cream-55); transition:color .12s; width:fit-content; }
+.footer-link:hover { color:var(--fixed-cream); }
+.footer-bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.footer-copy { font-size:12px; color:var(--fixed-cream-55); }
+.footer-legal-links { display:flex; gap:16px; }
+.footer-legal-links a { font-size:12px; color:var(--fixed-cream-55); transition:color .12s; }
+.footer-legal-links a:hover { color:var(--fixed-cream); }
+@media (max-width:640px){ .footer-top{ grid-template-columns:1fr; gap:20px; } }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html#top" class="nav-logo"><img class="logo-light" src="Assets/Images/Logo/metodas-mark-black.png" alt=""><img class="logo-dark" src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <a href="index.html" class="nav-back">← <span class="nav-back-text">Retour à l'accueil</span></a>
+    </div>
+    <div class="nav-actions">
+      <a class="lang-toggle" href="privacy-policy.html" aria-label="Switch to English">EN</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.3"/><g stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><line x1="8" y1="0.8" x2="8" y2="2.4"/><line x1="8" y1="13.6" x2="8" y2="15.2"/><line x1="0.8" y1="8" x2="2.4" y2="8"/><line x1="13.6" y1="8" x2="15.2" y2="8"/><line x1="2.6" y1="2.6" x2="3.7" y2="3.7"/><line x1="12.3" y1="12.3" x2="13.4" y2="13.4"/><line x1="2.6" y1="13.4" x2="3.7" y2="12.3"/><line x1="12.3" y1="3.7" x2="13.4" y2="2.6"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 9.8A6 6 0 1 1 6.2 2.8a6.6 6.6 0 1 0 7 7z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="legal-hero">
+  <p class="ew">Mentions légales</p>
+  <h1 class="legal-h1">Politique de Confidentialité</h1>
+  <p style="font-size:15px; color:var(--ink-55); margin-top:14px; max-width:640px; line-height:1.7;">Chez Metodas, nous respectons votre vie privée. Notre politique décrit comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous visitez notre site ou utilisez nos services.</p>
+</section>
+
+<div class="legal-body">
+  <nav class="legal-toc">
+    <a href="#summary">Résumé des points clés</a>
+    <a href="#collect">Quelles informations collectons-nous ?</a>
+    <a href="#process">Comment traitons-nous vos informations ?</a>
+    <a href="#legal-bases">Bases légales du traitement</a>
+    <a href="#share">Partage des informations</a>
+    <a href="#cookies">Cookies et suivi</a>
+    <a href="#ai">Produits basés sur l'IA</a>
+    <a href="#retention">Durée de conservation</a>
+    <a href="#security">Sécurité des informations</a>
+    <a href="#minors">Informations des mineurs</a>
+    <a href="#rights">Vos droits</a>
+    <a href="#dnt">Ne pas suivre (DNT)</a>
+    <a href="#us-rights">Droits des résidents américains</a>
+    <a href="#updates">Mises à jour de cette notice</a>
+    <a href="#contact-privacy">Nous contacter</a>
+  </nav>
+
+  <div class="legal-prose">
+    <section id="summary">
+      <h2 class="legal-h2">Résumé des points clés</h2>
+      <p>Ce résumé présente les points clés de notre Notice de Confidentialité ; vous pouvez consulter les détails de chaque sujet via la table des matières.</p>
+      <p><strong>Quelles informations personnelles traitons-nous ?</strong> Lorsque vous visitez, utilisez ou naviguez sur nos Services, nous pouvons traiter des informations personnelles selon la manière dont vous interagissez avec nous, les choix que vous faites et les produits et fonctionnalités que vous utilisez.</p>
+      <p><strong>Traitons-nous des informations personnelles sensibles ?</strong> Certaines informations peuvent être considérées comme « particulières » ou « sensibles » dans certaines juridictions, par exemple vos origines raciales ou ethniques, votre orientation sexuelle et vos convictions religieuses. Nous ne traitons pas d'informations personnelles sensibles.</p>
+      <p><strong>Collectons-nous des informations auprès de tiers ?</strong> Nous ne collectons aucune information auprès de tiers.</p>
+      <p><strong>Comment traitons-nous vos informations ?</strong> Nous traitons vos informations pour fournir, améliorer et administrer nos Services, communiquer avec vous, assurer la sécurité et la prévention de la fraude, et respecter la loi. Nous pouvons traiter vos informations à d'autres fins avec votre consentement. Nous ne traitons vos informations que lorsque nous disposons d'un motif légal valable.</p>
+      <p><strong>Dans quelles situations et avec quelles parties partageons-nous les informations personnelles ?</strong> Nous pouvons partager des informations dans des situations spécifiques et avec des tiers spécifiques.</p>
+      <p><strong>Comment protégeons-nous vos informations ?</strong> Nous disposons de processus organisationnels et techniques adéquats pour protéger vos informations personnelles. Cependant, aucune transmission électronique sur Internet ni aucune technologie de stockage d'informations ne peut être garantie à 100 % sécurisée ; nous ne pouvons donc pas garantir que des pirates informatiques, cybercriminels ou autres tiers non autorisés ne parviendront pas à contourner notre sécurité et à collecter, accéder, voler ou modifier vos informations de manière inappropriée.</p>
+      <p><strong>Quels sont vos droits ?</strong> Selon votre situation géographique, la loi applicable en matière de confidentialité peut vous conférer certains droits concernant vos informations personnelles.</p>
+      <p><strong>Comment exercer vos droits ?</strong> Le moyen le plus simple d'exercer vos droits est de soumettre une demande d'accès aux données ou de nous contacter. Nous examinerons et traiterons toute demande conformément aux lois applicables en matière de protection des données.</p>
+    </section>
+
+    <section id="collect">
+      <h2 class="legal-h2">1. Quelles informations collectons-nous ?</h2>
+      <p><strong>Informations personnelles que vous nous communiquez.</strong> Nous collectons les informations personnelles que vous nous fournissez volontairement lorsque vous manifestez un intérêt pour nos informations, produits ou Services, participez à des activités sur les Services, ou nous contactez. Les informations personnelles que nous collectons peuvent inclure vos nom, numéros de téléphone, adresses e-mail et intitulés de poste. Nous ne traitons pas d'informations sensibles. Toutes les informations personnelles que vous nous fournissez doivent être exactes, complètes et à jour, et vous devez nous informer de tout changement.</p>
+      <p><strong>Informations collectées automatiquement.</strong> Certaines informations — telles que votre adresse IP et/ou les caractéristiques de votre navigateur et appareil — sont collectées automatiquement lorsque vous visitez nos Services. Ces informations ne révèlent pas votre identité spécifique mais peuvent inclure des données d'appareil et d'utilisation, le navigateur, le système d'exploitation, les préférences linguistiques, les URL de référence, le nom de l'appareil, le pays, la localisation et d'autres informations techniques, principalement nécessaires au maintien de la sécurité et du fonctionnement de nos Services ainsi qu'à des fins d'analyse interne.</p>
+      <p><strong>Données de journal et d'utilisation.</strong> Informations liées au service, diagnostiques, d'utilisation et de performance collectées automatiquement lorsque vous accédez à nos Services, incluant votre adresse IP, les informations sur l'appareil, le type de navigateur, les paramètres, les détails d'utilisation et les horodatages d'activité.</p>
+      <p><strong>Données d'appareil.</strong> Données concernant votre ordinateur, téléphone, tablette ou autre appareil utilisé pour accéder aux Services, telles que le modèle, le système d'exploitation, le type de navigateur, l'identifiant matériel et d'autres données de diagnostic.</p>
+      <p><strong>Données de localisation.</strong> Nous collectons des données de localisation pour déterminer la position approximative de votre appareil, plus ou moins précise selon les paramètres de votre appareil. Vous pouvez désactiver la collecte de données de localisation dans les paramètres de votre appareil.</p>
+    </section>
+
+    <section id="process">
+      <h2 class="legal-h2">2. Comment traitons-nous vos informations ?</h2>
+      <p>Nous traitons vos informations personnelles pour diverses raisons selon la manière dont vous interagissez avec nos Services, notamment : pour fournir et faciliter la prestation de services ; pour répondre à vos demandes et vous offrir un support ; pour vous envoyer des informations administratives telles que des mises à jour sur les produits ou les modifications des conditions et politiques ; pour exécuter et gérer les commandes, paiements et échanges ; et pour préserver ou protéger l'intérêt vital d'une personne, par exemple pour prévenir un dommage.</p>
+    </section>
+
+    <section id="legal-bases">
+      <h2 class="legal-h2">3. Sur quelles bases légales nous appuyons-nous pour traiter vos informations ?</h2>
+      <p>Si vous résidez dans l'UE ou au Royaume-Uni, le Règlement Général sur la Protection des Données (RGPD) et le UK GDPR nous imposent d'expliquer les bases légales sur lesquelles nous nous appuyons. Celles-ci peuvent inclure : <strong>le consentement</strong> — lorsque vous nous avez autorisés à utiliser vos informations personnelles à une fin spécifique ; <strong>l'exécution d'un contrat</strong> — lorsque cela est nécessaire pour remplir nos obligations contractuelles envers vous ; <strong>les obligations légales</strong> — lorsque le respect d'obligations légales l'exige, par exemple répondre à des demandes des autorités ; et <strong>les intérêts vitaux</strong> — lorsque cela est nécessaire pour protéger vos intérêts vitaux ou ceux d'autrui, par exemple en cas d'urgence.</p>
+    </section>
+
+    <section id="share">
+      <h2 class="legal-h2">4. Quand et avec qui partageons-nous vos informations personnelles ?</h2>
+      <p>Nous pouvons partager vos informations personnelles dans les situations suivantes : <strong>transferts d'entreprise</strong> — nous pouvons partager ou transférer vos informations lors de négociations ou dans le cadre d'une fusion, d'une vente ou d'un transfert similaire d'actifs commerciaux ; <strong>partenaires commerciaux</strong> — nous pouvons partager vos informations avec des partenaires commerciaux afin de vous proposer certains produits ou services.</p>
+    </section>
+
+    <section id="cookies">
+      <h2 class="legal-h2">5. Utilisons-nous des cookies et autres technologies de suivi ?</h2>
+      <p>Nous pouvons utiliser des cookies, balises et pixels pour recueillir des informations lorsque vous interagissez avec nos Services. Ces technologies nous aident à analyser les tendances, suivre votre utilisation et assurer certaines fonctions essentielles. Nous pouvons également utiliser Google Analytics et des outils similaires pour suivre et analyser l'utilisation du site, y compris les rapports démographiques et d'intérêts de Google Analytics. Vous pouvez vous désinscrire du suivi par Google Analytics en visitant la <a href="https://tools.google.com/dlpage/gaoptout" style="text-decoration:underline;">page de désinscription de Google</a>, ainsi que via les paramètres publicitaires pour les applications mobiles. D'autres moyens de désinscription incluent la <a href="http://optout.networkadvertising.org/" style="text-decoration:underline;">Network Advertising Initiative</a>.</p>
+    </section>
+
+    <section id="ai">
+      <h2 class="legal-h2">6. Proposons-nous des produits basés sur l'intelligence artificielle ?</h2>
+      <p>Dans le cadre de nos Services, nous proposons des produits, fonctionnalités ou outils fondés sur l'intelligence artificielle, l'apprentissage automatique ou des technologies similaires (collectivement, les « Produits IA »), conçus pour enrichir votre expérience et vous offrir des solutions innovantes. Nous fournissons ces Produits IA via des prestataires tiers (« Prestataires IA »), notamment OpenAI. Vos entrées, sorties et informations personnelles seront partagées avec et traitées par ces Prestataires IA afin de permettre votre utilisation de nos Produits IA, aux fins décrites dans « Sur quelles bases légales nous appuyons-nous pour traiter vos informations ? ». Vous ne devez pas utiliser les Produits IA d'une manière qui enfreint les conditions ou politiques d'un Prestataire IA. Nos Produits IA sont conçus pour des fonctions d'automatisation par IA. Toutes les informations personnelles traitées via nos Produits IA sont gérées conformément à la présente Notice de Confidentialité et à nos accords avec les tiers.</p>
+    </section>
+
+    <section id="retention">
+      <h2 class="legal-h2">7. Combien de temps conservons-nous vos informations ?</h2>
+      <p>Nous ne conservons vos informations personnelles que le temps nécessaire aux fins énoncées dans la présente Notice de Confidentialité, sauf si une durée de conservation plus longue est requise ou autorisée par la loi (obligations fiscales, comptables ou autres exigences légales). Lorsque nous n'avons plus de besoin commercial légitime de traiter vos informations personnelles, nous les supprimerons ou les anonymiserons, ou, si cela n'est pas possible (par exemple parce qu'elles sont stockées dans des archives de sauvegarde), nous les stockerons de manière sécurisée et les isolerons de tout traitement ultérieur jusqu'à ce que leur suppression soit possible.</p>
+    </section>
+
+    <section id="security">
+      <h2 class="legal-h2">8. Comment protégeons-nous vos informations ?</h2>
+      <p>Nous avons mis en place des mesures de sécurité techniques et organisationnelles appropriées et raisonnables, conçues pour protéger la sécurité des informations personnelles que nous traitons. Cependant, malgré nos mesures de protection, aucune transmission électronique sur Internet ni aucune technologie de stockage ne peut être garantie à 100 % sécurisée ; nous ne pouvons donc pas garantir que des pirates informatiques, cybercriminels ou autres tiers non autorisés ne parviendront pas à contourner notre sécurité. La transmission de vos informations personnelles vers et depuis nos Services se fait à vos propres risques. Vous ne devriez accéder aux Services que dans un environnement sécurisé.</p>
+    </section>
+
+    <section id="minors">
+      <h2 class="legal-h2">9. Collectons-nous des informations auprès de mineurs ?</h2>
+      <p>Nous ne collectons pas sciemment de données auprès d'enfants de moins de 18 ans, ni ne leur adressons de sollicitations commerciales, et nous ne vendons pas sciemment de telles informations personnelles. En utilisant les Services, vous déclarez avoir au moins 18 ans, ou être le parent ou tuteur légal d'un mineur et consentir à l'utilisation des Services par ce mineur. Si nous apprenons que des informations personnelles d'utilisateurs de moins de 18 ans ont été collectées, nous désactiverons le compte concerné et prendrons des mesures raisonnables pour supprimer rapidement ces données de nos dossiers. Si vous avez connaissance de données que nous aurions pu collecter auprès d'un enfant de moins de 18 ans, veuillez nous contacter à <a href="mailto:contact@metodas.co" style="text-decoration:underline;">contact@metodas.co</a>.</p>
+    </section>
+
+    <section id="rights">
+      <h2 class="legal-h2">10. Quels sont vos droits en matière de confidentialité ?</h2>
+      <p>Selon votre lieu de résidence aux États-Unis ou dans certaines régions comme l'Espace Économique Européen (EEE), le Royaume-Uni et la Suisse, vous disposez de droits vous donnant un plus grand accès et contrôle sur vos informations personnelles. Dans certaines régions, ceux-ci peuvent inclure le droit de demander l'accès et une copie de vos informations personnelles, de demander leur rectification ou suppression, de restreindre leur traitement, à la portabilité des données lorsque applicable, et de ne pas faire l'objet d'une décision entièrement automatisée. Vous pouvez faire une telle demande en nous contactant via les coordonnées indiquées dans « Comment nous contacter au sujet de cette notice ? » ci-dessous.</p>
+      <p>Si vous résidez dans l'EEE ou au Royaume-Uni et estimez que nous traitons vos informations personnelles de manière illicite, vous avez le droit de déposer une plainte auprès de l'autorité de protection des données de votre État membre ou de l'autorité britannique. Si vous résidez en Suisse, vous pouvez contacter le Préposé fédéral à la protection des données et à la transparence.</p>
+      <p><strong>Retrait de votre consentement.</strong> Si nous nous appuyons sur votre consentement pour traiter vos informations personnelles, vous avez le droit de le retirer à tout moment en nous contactant. Cela n'affectera pas la licéité du traitement effectué avant ce retrait.</p>
+      <p><strong>Désinscription des communications marketing.</strong> Vous pouvez vous désinscrire à tout moment en cliquant sur le lien de désinscription dans nos e-mails, en répondant « STOP » ou « UNSUBSCRIBE », ou en nous contactant directement. Vous serez alors retiré des listes marketing, bien que nous puissions continuer à vous envoyer des messages liés au service nécessaires à la gestion de votre compte.</p>
+      <p><strong>Cookies et technologies similaires.</strong> La plupart des navigateurs acceptent les cookies par défaut ; vous pouvez généralement configurer votre navigateur pour les supprimer ou les refuser, ce qui pourrait toutefois affecter certaines fonctionnalités de nos Services.</p>
+    </section>
+
+    <section id="dnt">
+      <h2 class="legal-h2">11. Contrôles pour la fonctionnalité « Ne pas suivre »</h2>
+      <p>La plupart des navigateurs web et certains systèmes d'exploitation ou applications mobiles incluent une fonctionnalité « Ne pas suivre » (« DNT ») que vous pouvez activer pour signaler votre préférence de ne pas voir vos activités de navigation en ligne surveillées et collectées. Aucune norme technologique uniforme pour la reconnaissance et la mise en œuvre des signaux DNT n'a été finalisée à ce jour ; nous ne répondons donc pas actuellement aux signaux DNT des navigateurs ni à tout autre mécanisme communiquant automatiquement votre choix de ne pas être suivi en ligne. Si une norme légale que nous devons respecter est adoptée à l'avenir, nous vous en informerons dans une version révisée de cette Notice de Confidentialité. La loi californienne nous impose d'indiquer comment nous répondons aux signaux DNT des navigateurs — en l'absence de norme industrielle ou légale reconnue à ce jour, nous n'y répondons pas actuellement.</p>
+    </section>
+
+    <section id="us-rights">
+      <h2 class="legal-h2">12. Les résidents des États-Unis disposent-ils de droits spécifiques en matière de confidentialité ?</h2>
+      <p>Si vous résidez en Californie, au Colorado, au Connecticut, au Delaware, en Floride, en Indiana, en Iowa, au Kentucky, au Minnesota, au Montana, au Nebraska, au New Hampshire, au New Jersey, en Oregon, au Tennessee, au Texas, en Utah ou en Virginie, vous pouvez avoir le droit de demander l'accès aux informations personnelles que nous détenons à votre sujet et des détails sur leur traitement, de corriger les inexactitudes, d'en obtenir une copie, de les supprimer, et de retirer votre consentement à leur traitement. Ces droits peuvent être limités dans certaines circonstances par la loi applicable.</p>
+      <p><strong>Catégories d'informations personnelles collectées au cours des douze (12) derniers mois :</strong></p>
+      <table class="legal-table">
+        <tr><th>Catégorie</th><th>Exemples</th><th>Collecté</th></tr>
+        <tr><td>Identifiants</td><td>Coordonnées telles que nom réel, alias, adresse postale, numéro de téléphone, identifiant personnel unique, identifiant en ligne, adresse IP, adresse e-mail, nom de compte</td><td>Non</td></tr>
+        <tr><td>Informations personnelles (California Customer Records)</td><td>Nom, coordonnées, formation, emploi, historique professionnel, informations financières</td><td>Non</td></tr>
+        <tr><td>Caractéristiques de classification protégées</td><td>Sexe, âge, date de naissance, origine ethnique, origine nationale, statut marital, autres données démographiques</td><td>Oui</td></tr>
+        <tr><td>Informations commerciales</td><td>Informations de transaction, historique d'achats, détails financiers, informations de paiement</td><td>Oui</td></tr>
+        <tr><td>Informations biométriques</td><td>Empreintes digitales et vocales</td><td>Non</td></tr>
+        <tr><td>Activité sur Internet ou réseaux similaires</td><td>Historique de navigation, historique de recherche, comportement en ligne, données d'intérêt, interactions avec nos sites/applications/publicités</td><td>Oui</td></tr>
+        <tr><td>Données de géolocalisation</td><td>Localisation de l'appareil</td><td>Oui</td></tr>
+        <tr><td>Informations audio, électroniques, sensorielles</td><td>Images, enregistrements audio, vidéo ou d'appels dans le cadre de nos activités commerciales</td><td>Non</td></tr>
+        <tr><td>Informations professionnelles ou liées à l'emploi</td><td>Coordonnées professionnelles, intitulé de poste, historique professionnel, qualifications</td><td>Oui</td></tr>
+        <tr><td>Informations sur l'éducation</td><td>Dossiers scolaires et informations d'annuaire</td><td>Non</td></tr>
+        <tr><td>Inférences issues des informations personnelles collectées</td><td>Inférences visant à créer un profil sur les préférences et caractéristiques d'un individu</td><td>Non</td></tr>
+        <tr><td>Informations personnelles sensibles</td><td>N/A</td><td>Non</td></tr>
+      </table>
+      <p>Nous pouvons collecter d'autres informations personnelles en dehors de ces catégories lorsque vous interagissez avec nous en personne, en ligne, par téléphone ou par courrier — par exemple via nos canaux de support client, la participation à des enquêtes ou concours, ou la facilitation de la prestation de nos Services. Nous conservons les données des Catégories C, G, H et I pendant 2 ans.</p>
+      <p>Nous pouvons communiquer vos informations personnelles à nos prestataires de services en vertu d'un contrat écrit conclu avec chaque prestataire. Nous pouvons utiliser vos informations personnelles à des fins commerciales internes, telles que la recherche technologique et la démonstration — cela n'est pas considéré comme une « vente » de vos informations personnelles. Nous n'avons divulgué, vendu ou partagé aucune information personnelle à des tiers à des fins commerciales au cours des douze (12) derniers mois, et nous ne le ferons pas à l'avenir.</p>
+      <p><strong>Vos droits incluent :</strong> le droit de savoir si nous traitons vos données personnelles, d'y accéder, de corriger les inexactitudes, de les supprimer, d'en obtenir une copie que vous nous avez précédemment communiquée, et de vous opposer au traitement de vos données personnelles lorsqu'il est utilisé pour la publicité ciblée, la vente, ou le profilage aux fins de décisions produisant des effets juridiques ou similairement significatifs.</p>
+      <p>Pour exercer ces droits, contactez-nous en soumettant une demande d'accès aux données ou en écrivant à <a href="mailto:contact@metodas.co" style="text-decoration:underline;">contact@metodas.co</a>. En vertu de certaines lois d'États américains, vous pouvez désigner un mandataire autorisé pour effectuer une demande en votre nom ; nous pouvons refuser une demande d'un mandataire ne pouvant prouver une autorisation valide. Dès réception de votre demande, nous devrons vérifier votre identité, et si la demande est soumise par un mandataire autorisé, nous pourrons demander des informations supplémentaires, y compris une autorisation écrite et signée de votre part.</p>
+      <p><strong>Loi californienne « Shine The Light ».</strong> L'article 1798.83 du Code civil californien permet aux résidents de Californie de demander et d'obtenir de notre part, une fois par an et gratuitement, des informations sur les catégories d'informations personnelles que nous avons divulguées à des tiers à des fins de marketing direct, ainsi que les noms et adresses de ces tiers au cours de l'année civile précédente. Pour effectuer une telle demande, veuillez nous écrire en utilisant les coordonnées ci-dessous.</p>
+    </section>
+
+    <section id="updates">
+      <h2 class="legal-h2">13. Apportons-nous des mises à jour à cette notice ?</h2>
+      <p>Oui, nous mettrons à jour cette notice si nécessaire afin de rester conforme aux lois applicables. La version mise à jour sera indiquée par une date de « révision » actualisée. En cas de modifications substantielles, nous pourrons vous en informer en publiant un avis visible ou en vous adressant directement une notification. Nous vous encourageons à consulter régulièrement cette Notice de Confidentialité.</p>
+    </section>
+
+    <section id="contact-privacy">
+      <h2 class="legal-h2">14. Comment nous contacter au sujet de cette notice ?</h2>
+      <p>Pour toute question ou commentaire concernant cette notice, vous pouvez nous écrire à <a href="mailto:contact@metodas.co" style="text-decoration:underline;">contact@metodas.co</a> ou nous contacter par courrier à :</p>
+      <address>METODAS LLC<br>5511 Parkcrest Drive, Suite 103<br>Austin, TX 78731<br>États-Unis</address>
+    </section>
+
+    <section id="review-data">
+      <h2 class="legal-h2">15. Comment consulter, mettre à jour ou supprimer les données que nous collectons ?</h2>
+      <p>Vous avez le droit de demander l'accès aux informations personnelles que nous collectons à votre sujet, des détails sur leur traitement, de corriger les inexactitudes ou de supprimer vos informations personnelles. Vous pouvez également avoir le droit de retirer votre consentement au traitement de vos informations personnelles. Ces droits peuvent être limités dans certaines circonstances par la loi applicable. Pour demander à consulter, mettre à jour ou supprimer vos informations personnelles, veuillez remplir et soumettre une demande d'accès aux données.</p>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="site-footer section-dark">
+  <div class="inner" style="padding-top:0; padding-bottom:0;">
+    <div class="footer-top">
+      <a href="index-fr.html#top" class="footer-logo"><img src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <div class="footer-nav">
+        <p class="footer-col-label">Navigation</p>
+        <a href="index-fr.html#talent" class="footer-link">Talents</a>
+        <a href="index-fr.html#vetting" class="footer-link">Sélection</a>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-col-label">&nbsp;</p>
+        <a href="index-fr.html#cases" class="footer-link">Réalisations</a>
+        <a href="index-fr.html#pricing" class="footer-link">Tarifs</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Metodas. Tous droits réservés.</p>
+      <div class="footer-legal-links">
+        <a href="terms-of-service-fr.html">Conditions Générales</a>
+        <a href="privacy-policy-fr.html">Politique de Confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+const nav = document.getElementById('siteNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive:true });
+
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentTheme = systemPrefersDark ? 'dark' : 'light';
+themeToggle.addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', currentTheme);
+});
+</script>
+
+</body>
+</html>
