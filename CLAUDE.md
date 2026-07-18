@@ -24,9 +24,15 @@
 - `usecase-event-editorial.html` / `-fr` — Claire L., Event Management
 - `usecase-seo-editorial.html` / `-fr` — Marc D., AI Search/SEO
 - `usecase-video-editorial.html` / `-fr` — Julien R., Video Production
-- `Validated elements/contact.html` / `contact-fr.html` — standalone Typeform-style contact form
+- `terms-of-service.html` / `-fr` — legal page, linked from footer on all 10 pages below
+- `privacy-policy.html` / `-fr` — legal page, linked from footer on all 10 pages below
+- `Validated elements/contact.html` / `contact-fr.html` — standalone Typeform-style contact form (no standard site-footer, not linked to legal pages)
 - `Assets/Images/` — Logo, Logos (client marquee), Profiles, Use case images
+- `Assets/Videos/` — decorative use-case videos (muted, looped, no audio track — audio is always stripped before adding). Currently: `lead-scoring.mp4` (sales use-case), `event-recovery.mp4` (event use-case)
 - No frameworks, no build step — plain HTML/CSS/JS, self-contained.
+
+## Use-Case Page Slides → Video Pattern
+The sales and event use-case pages have had their two static decorative slide images (in `.uc-slides`, with a beige/dark background container) replaced with a single full-width video (`.uc-slide-video`, no background container, no second slide). SEO and video use-case pages still use the original two-slide image grid — same treatment applies if/when their videos arrive. Pattern per page: strip audio from the source video first, drop it in `Assets/Videos/`, add `.uc-slide-video` CSS (video full width, no max-width cap, no centering — it must match the width of the steps section below it), replace the `.uc-slides` div with `.uc-slide-video` + `<video autoplay muted loop playsinline>`. Apply to both language versions.
 
 ## Brand Tokens (current — "editorial" system)
 Named colors so we can say "Rust" instead of a hex code. Full reference: `brand-colors.html` (not deployed, internal reference only — do not add it to this repo).
@@ -80,3 +86,7 @@ Any visual/design/styling change (colors, layout, spacing, animations, card trea
 
 ## Update Rule
 After every confirmed change to a live file, update this file if the change affects something documented here (a section's state, a color, a structural rule). This is how context survives between sessions and tools.
+
+## Current State — `dev` vs `main` (2026-07-18)
+On `main` (production): Result cards fix on all 8 use-case pages, both sales and event use-case videos (audio-stripped, full-width), Terms of Service + Privacy Policy pages with footer links on all 10 pages.
+On `dev` only, not yet approved for `main`: hero eyebrow text change dropping "France & USA" on the homepage (both languages), and a swapped photo on the homepage's "Growth" hero card (`Group 2505.webp`, both languages) — still being reviewed, don't assume approval.
