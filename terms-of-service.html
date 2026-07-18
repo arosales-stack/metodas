@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Metodas</title>
+<meta name="description" content="Terms of Service governing the provision of marketing services by Metodas LLC to its clients.">
+<link rel="canonical" href="https://metodas.co/terms-of-service.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  color-scheme: light dark;
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --pad-x: clamp(20px, 4vw, 48px); --pad-y: clamp(48px, 6vw, 72px);
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+  --fixed-cream: #f7f4ee; --fixed-cream-55: rgba(247,244,238,0.55);
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+    --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+    --paper-r: 23; --paper-g: 21; --paper-b: 18; --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10); }
+}
+:root[data-theme="light"] { --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238; --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12); }
+:root[data-theme="dark"] { --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+  --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+  --paper-r: 23; --paper-g: 21; --paper-b: 18; --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10); }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light dark; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; font-size:16px; font-weight:400; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+a { color:inherit; text-decoration:none; }
+img { display:block; max-width:100%; }
+p, h1, h2, h3 { margin:0; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.inner { max-width:1200px; margin:0 auto; padding:var(--pad-y) var(--pad-x); }
+.section-dark { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-06:var(--dark-line); --card:var(--dark-surface); --paper:var(--dark-bg); color:var(--ink); }
+.ew { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
+.ew::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+
+/* NAV */
+.site-nav { position:sticky; top:0; z-index:100; background:rgba(var(--paper-r),var(--paper-g),var(--paper-b),0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--ink-06); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:16px var(--pad-x); display:flex; align-items:center; justify-content:space-between; gap:24px; transition:padding .2s ease; }
+.site-nav.scrolled .nav-inner { padding-top:10px; padding-bottom:10px; }
+.nav-left { display:flex; align-items:center; gap:24px; min-width:0; }
+.nav-logo { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:700; letter-spacing:-0.02em; flex-shrink:0; }
+.nav-logo img { height:34px; width:auto; display:block; }
+.nav-logo img.logo-dark { display:none; }
+@media (prefers-color-scheme: dark) { .nav-logo img.logo-light { display:none; } .nav-logo img.logo-dark { display:block; } }
+:root[data-theme="light"] .nav-logo img.logo-light { display:block; } :root[data-theme="light"] .nav-logo img.logo-dark { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-light { display:none; } :root[data-theme="dark"] .nav-logo img.logo-dark { display:block; }
+.nav-back { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:500; color:var(--ink-55); transition:color .12s; min-width:0; }
+.nav-back:hover { color:var(--ink); }
+.nav-actions { display:flex; align-items:center; gap:16px; flex-shrink:0; }
+.theme-toggle, .lang-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); cursor:pointer; transition:border-color .12s; flex-shrink:0; font-family:inherit; font-size:13px; font-weight:500; letter-spacing:0.02em; }
+.theme-toggle:hover, .lang-toggle:hover { border-color:var(--ink-55); }
+.theme-toggle svg { width:19px; height:19px; display:block; }
+.theme-toggle .icon-moon { display:none; }
+@media (prefers-color-scheme: dark) { .theme-toggle .icon-sun { display:none; } .theme-toggle .icon-moon { display:block; } }
+:root[data-theme="light"] .theme-toggle .icon-sun { display:block; } :root[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display:none; } :root[data-theme="dark"] .theme-toggle .icon-moon { display:block; }
+@media (max-width:640px){ .nav-back span.nav-back-text{display:none;} }
+
+/* LEGAL CONTENT */
+.legal-hero { max-width:1200px; margin:0 auto; padding:clamp(40px,5vw,64px) var(--pad-x) clamp(24px,3vw,32px); }
+.legal-h1 { font-size:clamp(28px,3.6vw,44px); font-weight:700; letter-spacing:-0.03em; line-height:1.1; margin-top:14px; }
+.legal-body { max-width:1200px; margin:0 auto; padding:0 var(--pad-x) clamp(64px,7vw,96px); display:grid; grid-template-columns:220px 1fr; gap:clamp(32px,4vw,56px); align-items:start; }
+@media (max-width:780px){ .legal-body{ grid-template-columns:1fr; } }
+.legal-toc { display:flex; flex-direction:column; gap:10px; position:sticky; top:96px; }
+.legal-toc a { font-size:13px; color:var(--ink-55); transition:color .12s; line-height:1.5; }
+.legal-toc a:hover { color:var(--ink); }
+.legal-prose { max-width:720px; }
+.legal-prose section { padding:28px 0; border-bottom:1px solid var(--ink-06); }
+.legal-prose section:first-child { padding-top:0; }
+.legal-prose section:last-child { border-bottom:none; }
+.legal-h2 { font-size:19px; font-weight:700; letter-spacing:-0.01em; margin-bottom:12px; }
+.legal-prose p { font-size:15px; color:var(--ink-55); line-height:1.7; margin-bottom:12px; }
+.legal-prose p:last-child { margin-bottom:0; }
+.legal-prose p strong { color:var(--ink); font-weight:700; }
+.legal-prose address { font-size:15px; color:var(--ink-55); line-height:1.7; font-style:normal; }
+.legal-table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+.legal-table th, .legal-table td { text-align:left; padding:10px 14px; border:1px solid var(--ink-06); color:var(--ink-55); vertical-align:top; }
+.legal-table th { color:var(--ink); font-weight:700; background:var(--ink-06); }
+
+/* FOOTER */
+.site-footer { border-top:1px solid var(--dark-line); padding:56px 0 28px; }
+.footer-top { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--dark-line); margin-bottom:24px; }
+.footer-logo { display:flex; align-items:center; gap:8px; font-size:16px; font-weight:700; letter-spacing:-0.02em; }
+.footer-logo img { height:26px; width:auto; display:block; }
+.footer-nav { display:flex; flex-direction:column; gap:12px; }
+.footer-col-label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--fixed-cream-55); margin-bottom:6px; }
+.footer-link { font-size:14px; color:var(--fixed-cream-55); transition:color .12s; width:fit-content; }
+.footer-link:hover { color:var(--fixed-cream); }
+.footer-bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.footer-copy { font-size:12px; color:var(--fixed-cream-55); }
+.footer-legal-links { display:flex; gap:16px; }
+.footer-legal-links a { font-size:12px; color:var(--fixed-cream-55); transition:color .12s; }
+.footer-legal-links a:hover { color:var(--fixed-cream); }
+@media (max-width:640px){ .footer-top{ grid-template-columns:1fr; gap:20px; } }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index.html#top" class="nav-logo"><img class="logo-light" src="Assets/Images/Logo/metodas-mark-black.png" alt=""><img class="logo-dark" src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <a href="index.html" class="nav-back">← <span class="nav-back-text">Back to home</span></a>
+    </div>
+    <div class="nav-actions">
+      <a class="lang-toggle" href="terms-of-service-fr.html" aria-label="Switch to French">FR</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.3"/><g stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><line x1="8" y1="0.8" x2="8" y2="2.4"/><line x1="8" y1="13.6" x2="8" y2="15.2"/><line x1="0.8" y1="8" x2="2.4" y2="8"/><line x1="13.6" y1="8" x2="15.2" y2="8"/><line x1="2.6" y1="2.6" x2="3.7" y2="3.7"/><line x1="12.3" y1="12.3" x2="13.4" y2="13.4"/><line x1="2.6" y1="13.4" x2="3.7" y2="12.3"/><line x1="12.3" y1="3.7" x2="13.4" y2="2.6"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 9.8A6 6 0 1 1 6.2 2.8a6.6 6.6 0 1 0 7 7z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="legal-hero">
+  <p class="ew">Legal</p>
+  <h1 class="legal-h1">Terms of Service</h1>
+</section>
+
+<div class="legal-body">
+  <nav class="legal-toc">
+    <a href="#parties">Identification of Parties</a>
+    <a href="#scope">Scope of Services</a>
+    <a href="#projects">Types of Projects We Cover</a>
+    <a href="#pricing">Pricing and Payment</a>
+    <a href="#duration">Contract Duration and Termination</a>
+    <a href="#ip">Intellectual Property</a>
+    <a href="#deliverables">Deliverables &amp; Timelines</a>
+    <a href="#third-party">Third-Party Services</a>
+    <a href="#confidentiality">Confidentiality</a>
+    <a href="#disputes">Dispute Resolution</a>
+    <a href="#data">Data Protection</a>
+    <a href="#non-compete">Non-Compete Clause</a>
+    <a href="#contact">Contact Information</a>
+  </nav>
+
+  <div class="legal-prose">
+    <p style="margin-bottom:28px;">The following terms and conditions govern the provision of digital marketing services by Metodas LLC, hereinafter referred to as "Metodas," to its clients. Please read these terms carefully as they form a binding contract between you and Metodas.</p>
+
+    <section id="parties">
+      <h2 class="legal-h2">Identification of Parties</h2>
+      <p>Metodas LLC, a company domiciled in the United States, operates under the name Metodas.</p>
+    </section>
+
+    <section id="scope">
+      <h2 class="legal-h2">Scope of Services</h2>
+      <p>Metodas is a collective of elite freelance marketing professionals. We are not a traditional agency, but a network of top-tier freelancers specializing in various aspects of digital marketing. Our mission is to provide flexible, high-quality marketing solutions tailored to the unique needs of our clients.</p>
+    </section>
+
+    <section id="projects">
+      <h2 class="legal-h2">Types of Projects We Cover</h2>
+      <p><strong>Content Marketing.</strong> Blogs, social content items, e-commerce content, video production, AI content, creative strategies…</p>
+      <p><strong>Strategy &amp; Analytics.</strong> GA4 set-up, acquisition funnel optimization, user segmentation, digital strategies…</p>
+      <p><strong>Channel Expertise.</strong> Social media management, e-mailing, SEO, influence marketing…</p>
+      <p><strong>Advertising.</strong> Campaign strategy, campaign management, landing pages, sales analysis…</p>
+    </section>
+
+    <section id="pricing">
+      <h2 class="legal-h2">Pricing and Payment</h2>
+      <p>Pricing is structured on a case-by-case basis, with Metodas taking a small percentage (5%) over the freelancer's daily rate, and a percentage out of the entire project. Payments are accepted via wire. A 40% initial down payment is required, with specific payment rules tailored for each project concerning length and commitment.</p>
+    </section>
+
+    <section id="duration">
+      <h2 class="legal-h2">Contract Duration and Termination</h2>
+      <p>Contracts typically range from 1 month to a year or more, with termination possible with a one-week notice. Specific conditions may apply concerning the nature of each commitment.</p>
+    </section>
+
+    <section id="ip">
+      <h2 class="legal-h2">Intellectual Property</h2>
+      <p>All intellectual property in the deliverables arising from the project will belong to the client. However, Metodas retains the right to use the project as a reference in its portfolio.</p>
+    </section>
+
+    <section id="deliverables">
+      <h2 class="legal-h2">Deliverables &amp; Timelines</h2>
+      <p>The specifics concerning deliverables and timelines will be outlined in individual agreements with clients.</p>
+      <p>Any out-of-scope work not covered by the original contract will require pre-approval in writing.</p>
+    </section>
+
+    <section id="third-party">
+      <h2 class="legal-h2">Third-Party Services</h2>
+      <p>Metodas is not liable for issues arising from third-party platform APIs or technology.</p>
+    </section>
+
+    <section id="confidentiality">
+      <h2 class="legal-h2">Confidentiality</h2>
+      <p>Standard confidentiality clauses will apply to protect the information exchanged between the parties.</p>
+    </section>
+
+    <section id="disputes">
+      <h2 class="legal-h2">Dispute Resolution</h2>
+      <p>In the event of any disputes arising out of or in connection with these Terms and Conditions or the services provided, the parties shall first attempt to resolve the matter amicably through discussions. If the dispute remains unresolved after thirty (30) days of discussions, the parties agree to proceed to mediation under the guidance of a mutually agreed upon mediator.</p>
+      <p>If the mediation fails to resolve the dispute, the parties agree to submit the dispute to binding arbitration under the rules of the International Chamber of Commerce. The seat of arbitration shall be in Texas, United States, and the language of the arbitration shall be English.</p>
+      <p>Each party shall bear its own costs in the arbitration, and the costs of the arbitrator and the arbitration shall be shared equally between the parties unless the arbitration award provides otherwise.</p>
+    </section>
+
+    <section id="data">
+      <h2 class="legal-h2">Data Protection</h2>
+      <p>Metodas adheres to its <a href="privacy-policy.html" style="text-decoration:underline;">Privacy Policy</a>, which complies with the General Data Protection Regulation (GDPR) for clients within the European Union. Where required by GDPR or other applicable laws, Metodas will enter into data processing agreements with clients to ensure the lawful processing and protection of personal data.</p>
+    </section>
+
+    <section id="non-compete">
+      <h2 class="legal-h2">Non-Compete Clause</h2>
+      <p>Freelancers introduced to or coming into contact with Metodas clients, whether engaged in a project or not, agree not to directly solicit or engage with said clients for a period of twenty-four (24) months following the termination of their contract with Metodas or from the date of introduction, whichever occurs later, without the written consent of Metodas. Should this clause be violated, Metodas reserves the right to take appropriate legal action to protect its interests.</p>
+    </section>
+
+    <section id="contact">
+      <h2 class="legal-h2">Contact Information</h2>
+      <p>For any questions regarding these terms and conditions, please contact us at <a href="mailto:contact@metodas.co" style="text-decoration:underline;">contact@metodas.co</a>.</p>
+    </section>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="inner" style="padding-top:0; padding-bottom:0;">
+    <div class="footer-top">
+      <a href="index.html#top" class="footer-logo"><img src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <div class="footer-nav">
+        <p class="footer-col-label">Navigate</p>
+        <a href="index.html#talent" class="footer-link">Talent</a>
+        <a href="index.html#vetting" class="footer-link">Vetting</a>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-col-label">&nbsp;</p>
+        <a href="index.html#cases" class="footer-link">Cases</a>
+        <a href="index.html#pricing" class="footer-link">Pricing</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Metodas. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('siteNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive:true });
+
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentTheme = systemPrefersDark ? 'dark' : 'light';
+themeToggle.addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', currentTheme);
+});
+</script>
+
+</body>
+</html>
