@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://metodas.co/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/index-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/"/>
+  </url>
+  <url>
+    <loc>https://metodas.co/index-fr.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/index-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/"/>
+  </url>
+
+  <url>
+    <loc>https://metodas.co/usecase-sales-editorial.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/usecase-sales-editorial-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/usecase-sales-editorial.html"/>
+  </url>
+  <url>
+    <loc>https://metodas.co/usecase-sales-editorial-fr.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/usecase-sales-editorial-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/usecase-sales-editorial.html"/>
+  </url>
+
+  <url>
+    <loc>https://metodas.co/usecase-event-editorial.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/usecase-event-editorial-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/usecase-event-editorial.html"/>
+  </url>
+  <url>
+    <loc>https://metodas.co/usecase-event-editorial-fr.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/usecase-event-editorial-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/usecase-event-editorial.html"/>
+  </url>
+
+  <url>
+    <loc>https://metodas.co/usecase-seo-editorial.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/usecase-seo-editorial-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/usecase-seo-editorial.html"/>
+  </url>
+  <url>
+    <loc>https://metodas.co/usecase-seo-editorial-fr.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/usecase-seo-editorial-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/usecase-seo-editorial.html"/>
+  </url>
+
+  <url>
+    <loc>https://metodas.co/usecase-video-editorial.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/usecase-video-editorial-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/usecase-video-editorial.html"/>
+  </url>
+  <url>
+    <loc>https://metodas.co/usecase-video-editorial-fr.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/usecase-video-editorial-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/usecase-video-editorial.html"/>
+  </url>
+
+  <url>
+    <loc>https://metodas.co/terms-of-service.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/terms-of-service-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/terms-of-service.html"/>
+  </url>
+  <url>
+    <loc>https://metodas.co/terms-of-service-fr.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/terms-of-service-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/terms-of-service.html"/>
+  </url>
+
+  <url>
+    <loc>https://metodas.co/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/privacy-policy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://metodas.co/privacy-policy-fr.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/privacy-policy-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/privacy-policy.html"/>
+  </url>
+
+  <url>
+    <loc>https://metodas.co/Validated%20elements/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/Validated%20elements/contact-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/Validated%20elements/contact.html"/>
+  </url>
+  <url>
+    <loc>https://metodas.co/Validated%20elements/contact-fr.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://metodas.co/Validated%20elements/contact-fr.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://metodas.co/Validated%20elements/contact.html"/>
+  </url>
+
+</urlset>
