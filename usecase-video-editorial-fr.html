@@ -206,6 +206,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .uc-slide { overflow:hidden; }
 .uc-slide img { width:100%; height:auto; display:block; }
 @media (max-width:640px){ .uc-slides{ grid-template-columns:repeat(2, minmax(0,1fr)); padding:20px; gap:14px; margin:8px 0 40px; } }
+.uc-slide-video { margin:8px 0 56px; }
+.uc-slide-video video { width:100%; height:auto; display:block; }
+@media (max-width:640px){ .uc-slide-video { margin:8px 0 40px; } }
 
 /* RESULT */
 .uc-result-section { border-bottom:1px solid var(--ink-06); }
@@ -363,9 +366,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
       <p class="ew">Ce qu'a réalisé notre freelance</p>
       <div><h2 class="sh-h">D'un message disparate à une identité visuelle complète, en moins d'une semaine.</h2></div>
     </div>
-    <div class="uc-slides" id="ucSlides">
-      <div class="uc-slide"><img src="Assets/Images/Use case images/webp/moodboard.webp" alt="AI-generated moodboard" loading="lazy"></div>
-      <div class="uc-slide"><img src="Assets/Images/Use case images/webp/full-video-suite-timeline.webp" alt="Full video suite production timeline" loading="lazy"></div>
+    <div class="uc-slide-video" id="ucSlides">
+      <video autoplay muted loop playsinline>
+        <source src="Assets/Videos/video-production.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="uc-stepline">
       <div class="uc-steps">
