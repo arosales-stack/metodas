@@ -7,7 +7,7 @@
 - **Preview URL for `dev` (bookmark this, it never changes):**
   **`https://dev-metodas.a-rosales.workers.dev`**
   Every push to `dev` updates this same link automatically — refresh it to see the latest change. No need to open the Cloudflare dashboard, no need to click into a specific build/deployment. This works because `preview_urls` is enabled in `wrangler.jsonc` and Workers auto-generates a stable alias from the branch name (`<branch>-<worker-name>.<subdomain>.workers.dev`). **Confirmed working and verified by the user (2026-07-17) — every change pushed to `dev` shows up at this exact URL after the build finishes. Do not re-explain or re-verify this mechanism again; just push and tell the user to refresh this link.**
-- **Production URL:** `https://metodas.a-rosales.workers.dev` — this is what `main` deploys to. Do not push to `main` without explicit approval.
+- **Production URL:** `https://metodas.co` (live custom domain, connected 2026-07-19) and `https://metodas.a-rosales.workers.dev` (same deployment, still works) — this is what `main` deploys to. Do not push to `main` without explicit approval. Custom Domains only attach to the production deployment — the `dev` preview alias below is unaffected by this and needs no changes.
 - Workflow:
   1. Make the change on `dev`, commit, push.
   2. Cloudflare Workers Build runs automatically (`npx wrangler versions upload`) and updates the `dev` preview link above.
