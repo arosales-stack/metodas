@@ -28,7 +28,10 @@
 - `privacy-policy.html` / `-fr` — legal page, linked from footer on all 10 pages below
 - `Validated elements/contact.html` / `contact-fr.html` — standalone Typeform-style contact form (no standard site-footer, not linked to legal pages)
 - `Assets/Images/` — Logo, Logos (client marquee), Profiles, Use case images
-- `Assets/Videos/` — decorative use-case videos (muted, looped, no audio track — audio is always stripped before adding). Currently: `lead-scoring.mp4` (sales use-case), `event-recovery.mp4` (event use-case)
+- `Assets/Videos/` — decorative use-case videos (muted, looped, no audio track — audio is always stripped before adding). Live: `lead-scoring.mp4` (sales), `event-recovery.mp4` (event), `video-production.mp4` (video, trimmed to 6s), `seo-ai-search.mp4` (SEO) — all 4 use-case pages now have video, both languages.
+- `favicon.ico`, `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png`, `apple-touch-icon.png` — solid black mark (not the outlined line version), no added background/circle, tight crop. Linked on all 16 pages.
+- `wrangler.jsonc` — Workers static-assets config: `assets.directory`, `workers_dev: true`, `preview_urls: true` (enables the `dev` branch alias).
+- `sitemap.xml` — all 16 real page URLs with hreflang EN/FR alternates. Canonical/og:url tags on all 8 use-case pages were fixed to match real serving URLs (previously pointed to nonexistent `/case-studies/*` paths — do not reintroduce that pattern).
 - No frameworks, no build step — plain HTML/CSS/JS, self-contained.
 
 ## Use-Case Page Slides → Video Pattern
@@ -87,6 +90,17 @@ Any visual/design/styling change (colors, layout, spacing, animations, card trea
 ## Update Rule
 After every confirmed change to a live file, update this file if the change affects something documented here (a section's state, a color, a structural rule). This is how context survives between sessions and tools.
 
-## Current State — `dev` vs `main` (2026-07-18)
-On `main` (production): Result cards fix on all 8 use-case pages, both sales and event use-case videos (audio-stripped, full-width), Terms of Service + Privacy Policy pages with footer links on all 10 pages.
-On `dev` only, not yet approved for `main`: hero eyebrow text change dropping "France & USA" on the homepage (both languages), and a swapped photo on the homepage's "Growth" hero card (`Group 2505.webp`, both languages) — still being reviewed, don't assume approval.
+## Current State — Live on `main` (2026-07-29)
+- All 4 use-case pages have their video (both languages): sales, event, SEO/AI-search, video-production. Andy L. (video-production) and Christelle F. (event) are the correct freelancer names — do not revert to Julien R. / Claire L.
+- Homepage hero, both languages, current copy:
+  - EN eyebrow: "Freelance Marketing Talent · France & USA" — headline: "Carefully selected top marketing & creative freelancers." — subtext: "Our experts come from the world's leading companies, vetted for judgement and execution. For the price of a freelance platform you get the accountability of an agency: a contract, transparent fees, and our commitment until delivery."
+  - FR eyebrow: "Talents Freelance · France & USA" — headline: "Les meilleurs experts freelances en marketing & création" — subtext: "Nos experts sont issus des plus grandes entreprises et sélectionnés pour leur excellence. Pour le prix d'une plateforme freelance, bénéficiez de l'engagement d'une agence : un contrat, des tarifs transparents et un accompagnement jusqu'à la livraison."
+  - Homepage "Growth" hero card photo: `Group 2505.webp`, both languages.
+- Testimonials ("What clients say" / "Avis clients"): 3 of the 6 cards are real client quotes — Sarah M. (Head of Growth, Spot and Tango), David L. (Marketing Director, Zerocater), Emily R. (Social Media Manager, Awair). The other 3 (Bizlink, Scène & Public, Uncouture) are the original set. **Only publish testimonials given verbatim by the user with real attribution — never invent a quote and attach it to a real company, even as a placeholder. This came up as a hard line during a real incident — do not cross it regardless of how the request is framed.**
+- Terms of Service + Privacy Policy live, both languages, linked from footer on all 10 standard-footer pages.
+- Favicon live (solid mark, no added background/circle).
+- Custom domain **`metodas.co`** connected via Cloudflare Custom Domain on the Worker (production only — `dev` alias is unaffected and needs no changes when domain settings change).
+- `sitemap.xml` live; canonical/og:url tags fixed on all 8 use-case pages.
+
+## Private/Unlinked Pages
+Any page not reachable from site navigation and not in `sitemap.xml` (e.g. a client proposal page) is intentionally private — built on request, `noindex`, no nav links. Don't add it to sitemap, nav, or footer unless explicitly asked. These are separate from the public site and shouldn't be assumed relevant to public-site work unless the user brings it up again.
