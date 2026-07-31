@@ -190,15 +190,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 /* CLOSING SIGNATURE — standalone, outside the Qui sommes nous section */
 .closing-signature { border-top:1px solid var(--ink-06); padding:40px 0; }
-.stats-ribbon { margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(32px,4vw,48px); padding:clamp(28px,3vw,40px); background:var(--beige); }
-@media (prefers-color-scheme: dark) { .stats-ribbon { background:transparent; padding:0; } }
-:root[data-theme="light"] .stats-ribbon { background:var(--beige); padding:clamp(28px,3vw,40px); }
-:root[data-theme="dark"] .stats-ribbon { background:transparent; padding:0; }
-.ribbon-cell { display:flex; flex-direction:column; }
-.ribbon-num { font-size:clamp(30px,3.4vw,42px); font-weight:700; letter-spacing:-0.04em; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; }
-.ribbon-rule { border:none; border-top:2px solid var(--accent-2); margin:14px 0; width:28px; }
-.ribbon-lbl { font-size:13px; color:var(--ink-55); line-height:1.5; }
-@media (max-width:768px){ .stats-ribbon{grid-template-columns:repeat(2,1fr);} .ribbon-cell{align-items:center; text-align:center;} .ribbon-rule{margin-left:auto; margin-right:auto;} .ribbon-lbl{font-size:15px;} }
 .closing-signature-row { display:flex; align-items:center; gap:16px; }
 .closing-signature-photo { width:96px; height:96px; flex-shrink:0; overflow:hidden; }
 .closing-signature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
@@ -362,12 +353,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <div><h3 class="why-row-title">Z&eacute;ro formalit&eacute; administrative</h3><p class="why-row-body">La conformit&eacute;, les contrats et les paiements sont &agrave; notre charge. Pas de probl&egrave;mes de facturation, pas de va-et-vient juridique. Vous donnez le brief, nous ex&eacute;cutons &mdash; c'est tout.</p></div>
         </div>
       </div>
-    </div>
-    <div class="stats-ribbon">
-      <div class="ribbon-cell"><p class="ribbon-num">+250</p><hr class="ribbon-rule"><p class="ribbon-lbl">Profils pr&eacute;-valid&eacute;s</p></div>
-      <div class="ribbon-cell"><p class="ribbon-num">7 ans</p><hr class="ribbon-rule"><p class="ribbon-lbl">Exp&eacute;rience moyenne</p></div>
-      <div class="ribbon-cell"><p class="ribbon-num">48 h</p><hr class="ribbon-rule"><p class="ribbon-lbl">D&eacute;lai de remise de la 1<sup>&egrave;re</sup> proposition</p></div>
-      <div class="ribbon-cell"><p class="ribbon-num">+15</p><hr class="ribbon-rule"><p class="ribbon-lbl">R&ocirc;les couverts en Marketing &amp; Cr&eacute;ation</p></div>
     </div>
   </div>
 </section>
