@@ -50,13 +50,13 @@ p, h1, h2, h3 { margin:0; }
 a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
 .inner { max-width:1200px; margin:0 auto; padding:var(--pad-y) var(--pad-x); }
 
-.ew { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
+.ew { font-size:15px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
 .ew::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
 .sec-num { color:var(--accent-2); font-weight:700; margin-right:2px; }
 
 .sh { margin-bottom:40px; }
 .sh-h { font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-0.025em; line-height:1.1; margin-bottom:10px; }
-.sh-b { font-size:15px; color:var(--ink-55); line-height:1.65; }
+.sh-b { font-size:17px; color:var(--ink-55); line-height:1.8; }
 
 /* NAV */
 .site-nav { position:sticky; top:0; z-index:100; background:rgba(var(--paper-r),var(--paper-g),var(--paper-b),0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--ink-06); }
@@ -88,32 +88,32 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 /* HERO — new: H1 hook + 16:9 video placeholder (video pattern/margins copied from usecase-sales-editorial.html's .uc-slide-video) */
 .hook-hero { text-align:center; }
+.hook-hero .inner { padding-bottom:24px; }
 .hero-ew { justify-content:center; margin-bottom:16px; }
 .hook-h1 { font-size:clamp(30px,4.6vw,54px); font-weight:700; letter-spacing:-0.03em; line-height:1.12; max-width:840px; margin:0 auto; }
-.hook-video { margin:40px auto 0; max-width:1000px; aspect-ratio:16/9; background:var(--beige); display:flex; align-items:center; justify-content:center; overflow:hidden; }
-.hook-video video { width:100%; height:100%; object-fit:cover; display:block; }
+.hook-video { margin:40px auto 0; max-width:1000px; aspect-ratio:3/2; background:var(--beige); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.hook-video img, .hook-video video { width:100%; height:100%; object-fit:cover; display:block; }
 .hook-video-label { font-size:13px; color:var(--ink-55); letter-spacing:0.04em; text-transform:uppercase; }
 @media (max-width:640px){ .hook-video { margin-top:28px; } }
 
 /* INTRO TEXT — plain paragraphs under the hero */
 .intro-section { border-bottom:1px solid var(--ink-06); }
-.intro-body { font-size:16px; color:var(--ink-55); line-height:1.7; max-width:720px; margin:0 auto 16px; text-align:center; }
+.intro-section .inner { padding-top:24px; }
+.intro-body { font-size:19px; color:var(--ink-55); line-height:1.6; max-width:720px; margin:0 auto 16px; text-align:center; }
 .intro-body:last-child { margin-bottom:0; }
-.intro-body.is-bold { font-weight:700; color:var(--ink); }
-.intro-list { font-size:16px; color:var(--ink); line-height:1.7; max-width:720px; margin:24px auto 0; text-align:center; font-weight:700; }
-.intro-list p { margin-bottom:4px; }
+.intro-body.is-bold { font-weight:400; color:var(--ink); }
 
 /* WHY-SECTION LAYOUT (Notre conviction) — copied verbatim from index.html */
 .why-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
 .why-split { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(32px,5vw,72px); align-items:start; }
 .why-lead-h { font-size:clamp(26px,3.2vw,42px); font-weight:700; letter-spacing:-0.03em; line-height:1.12; }
-.why-intro-b { margin-top:14px; font-size:15px; color:var(--ink-55); line-height:1.65; max-width:420px; }
+.why-intro-b { margin-top:14px; font-size:17px; color:var(--ink-55); line-height:1.8; max-width:420px; }
 .why-rows { display:flex; flex-direction:column; }
 .why-row { display:grid; grid-template-columns:auto 1fr; gap:20px; padding:26px 0; border-top:1px solid var(--ink-06); }
 .why-row:first-child { border-top:none; }
 .why-row-num { font-size:22px; font-weight:700; letter-spacing:-0.03em; color:var(--ink-20); line-height:1.3; }
 .why-row-title { font-size:17px; font-weight:700; letter-spacing:-0.015em; margin-bottom:8px; }
-.why-row-body { font-size:15px; line-height:1.65; color:var(--ink-55); }
+.why-row-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
 @media (max-width:860px){ .why-split{grid-template-columns:1fr;} }
 
 /* EXPERTISE GRID (Notre approche) — copied verbatim from index.html, tags removed */
@@ -121,7 +121,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .exp-card { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); padding:var(--pad-card); display:flex; flex-direction:column; color:var(--ink); }
 .exp-num { font-size:12px; font-weight:700; letter-spacing:0.1em; color:var(--accent-2); margin-bottom:16px; }
 .exp-title { font-size:18px; font-weight:700; letter-spacing:-0.015em; margin-bottom:10px; color:var(--ink); }
-.exp-body { font-size:15px; line-height:1.65; color:var(--ink-55); }
+.exp-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
 @media (max-width:860px){ .exp-grid{grid-template-columns:1fr;} }
 
 /* PRICING — copied verbatim from index.html */
@@ -131,7 +131,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .pricing-left { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
 .pricing-right { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
 .pricing-h2 { font-size:clamp(22px,2.6vw,34px); font-weight:700; letter-spacing:-0.025em; margin:12px 0 0; }
-.pricing-sub { font-size:16px; color:var(--ink-55); line-height:1.65; margin:14px 0 0; }
 .pricing-big { display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
 .pricing-pct { font-size:clamp(56px,6.4vw,80px); font-weight:700; letter-spacing:-0.05em; line-height:1; font-variant-numeric:tabular-nums; }
 .pricing-flat { font-size:14px; color:var(--ink-55); }
@@ -144,7 +143,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .founder-closing { padding:clamp(64px,8vw,120px) 0; }
 .founder-closing-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(40px,5vw,72px); align-items:center; }
 .founder-closing-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; }
-.founder-closing-sub { font-size:16px; color:var(--ink-55); line-height:1.65; margin:14px 0 0; max-width:440px; }
+.founder-closing-sub { font-size:17px; color:var(--ink-55); line-height:1.8; margin:14px 0 0; max-width:440px; }
 .stat-list { list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; }
 .stat-list li { display:flex; align-items:baseline; gap:10px; font-size:15px; color:var(--ink); }
 .stat-list li::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
@@ -157,7 +156,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .hcard img { width:100%; height:100%; object-fit:cover; display:block; }
 .founder-signature { display:flex; align-items:center; gap:16px; margin-top:32px; }
 .founder-closing-name { font-size:17px; font-weight:700; letter-spacing:-0.015em; }
-.founder-closing-role { font-size:13px; color:var(--ink-55); margin-top:2px; }
 .founder-closing-btn { display:inline-block; margin-top:10px; padding:10px 20px; background:var(--accent); color:var(--fixed-cream); font-size:14px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; }
 .founder-closing-btn:hover { background:var(--accent-2); }
 @media (max-width:680px){
@@ -178,7 +176,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .footer-logo img { height:26px; width:auto; display:block; }
 .footer-nav { display:flex; flex-direction:column; gap:12px; }
 .footer-col-label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--fixed-cream-55); margin-bottom:6px; }
-.footer-link { font-size:14px; color:var(--fixed-cream-55); transition:color .12s; width:fit-content; }
+.footer-link { font-size:13px; color:var(--fixed-cream-55); transition:color .12s; width:fit-content; }
 .footer-link:hover { color:var(--fixed-cream); }
 .footer-bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
 .footer-legal-links { display:flex; gap:16px; }
@@ -194,10 +192,30 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .closing-signature-photo { width:96px; height:96px; flex-shrink:0; overflow:hidden; }
 .closing-signature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
 .closing-signature-name { font-size:15px; font-weight:700; letter-spacing:-0.015em; }
-.closing-signature-role { font-size:13px; color:var(--ink-55); margin-top:2px; }
-.closing-signature-btn { display:inline-block; margin-left:auto; padding:10px 20px; background:var(--accent); color:var(--fixed-cream); font-size:14px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; flex-shrink:0; }
+.closing-signature-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
+.closing-signature-btn { display:inline-block; margin-left:auto; padding:10px 20px; background:var(--accent); color:var(--fixed-cream); font-size:15px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; flex-shrink:0; }
 .closing-signature-btn:hover { background:var(--accent-2); }
-@media (max-width:480px){ .closing-signature-row{flex-wrap:wrap;} .closing-signature-btn{margin-left:0; width:100%; text-align:center;} }
+@media (max-width:480px){
+  .closing-signature-row{flex-direction:column; align-items:center; text-align:center; gap:14px;}
+  .closing-signature-photo{width:110px; height:110px;}
+  .closing-signature-btn{margin-left:0; width:auto; padding:9px 22px; font-size:14px;}
+}
+/* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
+.profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
+.profile-badge { position:absolute; top:16px; right:16px; width:26px; height:26px; border-radius:50%; background:var(--accent-2); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.profile-top { display:flex; align-items:center; gap:16px; padding-right:36px; }
+.profile-photo { width:64px; height:64px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
+.profile-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.profile-photo-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; color:var(--ink-55); }
+.profile-name { font-size:19px; font-weight:700; letter-spacing:-0.015em; }
+.profile-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
+.profile-meta { font-size:15px; color:var(--ink-55); margin-top:10px; }
+.profile-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.profile-tags .tag { font-size:12px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:4px 10px; }
+.profile-rule { border:none; border-top:1px solid var(--ink-20); margin:18px 0 16px; }
+.profile-desc { font-size:15px; color:var(--ink-55); line-height:1.65; }
+@media (max-width:860px){ .profile-grid{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -225,7 +243,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <p class="ew hero-ew"><span class="sec-num">01</span>Le mandat</p>
     <h1 class="hook-h1">Un autre regard sur votre mandat &mdash; 600&nbsp;k&euro; d'investissement m&eacute;dia m&eacute;ritent une deuxi&egrave;me opinion.</h1>
     <div class="hook-video">
-      <video src="hero-video-media-investment.mp4" autoplay muted loop playsinline></video>
+      <img src="Assets/Images/Use case images/media-investment-hero.jpg" alt="Cuisine avec budget m&eacute;dia 600K sur tableau noir">
     </div>
   </div>
 </section>
@@ -299,10 +317,82 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 </section>
 
 <!-- CE QUE NOUS FERIONS — exp-grid, exact copy dark cards, 3 cards -->
+<!-- PROFILS — new component, real freelancer profiles -->
 <section>
   <div class="inner">
     <div class="sh">
-      <p class="ew"><span class="sec-num">04</span>Approche</p>
+      <p class="ew"><span class="sec-num">04</span>Profils</p>
+      <h2 class="sh-h" style="margin-top:14px;">Quelques profils que nous pourrions activer</h2>
+      <p class="sh-b" style="margin-top:10px;">Voici quelques profils d&eacute;j&agrave; dans notre r&eacute;seau qui nous semblent pertinents, que ce soit pour le r&ocirc;le central ou des interventions tr&egrave;s ponctuelles.</p>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-card is-accent-photo">
+        <div class="profile-badge">01</div>
+        <div class="profile-top">
+          <div class="profile-photo"><img src="Assets/Images/Profiles/romain-lacoste.png" alt="Romain Lacoste"></div>
+          <div>
+            <p class="profile-name">Romain</p>
+            <p class="profile-role">Growth Marketer</p>
+          </div>
+        </div>
+        <p class="profile-meta">Paris, France &middot; ~11 ans exp.</p>
+        <div class="profile-tags">
+          <span class="tag">Electra</span>
+          <span class="tag">Colonies</span>
+          <span class="tag">Bigblue</span>
+          <span class="tag">Station F</span>
+          <span class="tag">Nalo</span>
+        </div>
+        <hr class="profile-rule">
+        <p class="profile-desc">&mdash; Growth Marketing freelance ayant accompagn&eacute; plus de 50 startups sur l'acquisition payante, dont Electra, Colonies et Bigblue, avec plus de 2M&euro; de spend m&eacute;dia g&eacute;r&eacute; par an. Il intervient &eacute;galement comme mentor Growth &agrave; Station F. Romain a un vrai sens du contact et de l'&eacute;coute, on se sent bien en lui parlant. Au-del&agrave; de son talent analytique, c'est quelqu'un de profond&eacute;ment humain.</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-badge">02</div>
+        <div class="profile-top">
+          <div class="profile-photo"><img src="Assets/Images/Profiles/katia-borodina.png" alt="Katia Borodina"></div>
+          <div>
+            <p class="profile-name">Katia</p>
+            <p class="profile-role">Graphiste &amp; DA</p>
+          </div>
+        </div>
+        <p class="profile-meta">Paris, France &middot; ~7 ans exp.</p>
+        <div class="profile-tags">
+          <span class="tag">Groupe Rocher</span>
+          <span class="tag">Havas Group</span>
+          <span class="tag">BBC</span>
+          <span class="tag">Bloomberg</span>
+          <span class="tag">Nissan</span>
+        </div>
+        <hr class="profile-rule">
+        <p class="profile-desc">&mdash; Graphiste &amp; Directrice Artistique sp&eacute;cialis&eacute;e dans la cr&eacute;ation d'identit&eacute;s visuelles et la production de contenus statiques et anim&eacute;s, pour des marques comme Groupe Rocher, Havas Group ou Bloomberg. Katia a ce m&eacute;lange rare entre sensibilit&eacute; artistique et rigueur d'ex&eacute;cution, &ccedil;a se sent jusque dans les moindres d&eacute;tails de son travail. Portfolio sur demande.</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-badge">03</div>
+        <div class="profile-top">
+          <div class="profile-photo"><img src="Assets/Images/Profiles/baptiste-moisan.png" alt="Baptiste Moisan"></div>
+          <div>
+            <p class="profile-name">Baptiste</p>
+            <p class="profile-role">Expert Tracking</p>
+          </div>
+        </div>
+        <p class="profile-meta">France &middot; ~7 ans exp.</p>
+        <div class="profile-tags">
+          <span class="tag">GA4</span>
+          <span class="tag">Google Ads</span>
+          <span class="tag">Meta Ads</span>
+          <span class="tag">BigQuery</span>
+        </div>
+        <hr class="profile-rule">
+        <p class="profile-desc">&mdash; Expert Tracking &amp; Analytics freelance depuis plus de 6 ans, sp&eacute;cialis&eacute; dans le d&eacute;ploiement de plans de marquage fiables sur GA4, Google Ads et Meta Ads. Il accompagne des dizaines d'agences et d'annonceurs dans la lecture et l'analyse de leurs performances. Baptiste a un processus pour absolument tout, on sent une discipline rare chez lui.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">05</span>Approche</p>
       <h2 class="sh-h" style="margin-top:14px;">Ce que nous ferions</h2>
     </div>
     <div class="exp-grid">
@@ -336,7 +426,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   <div class="inner">
     <div class="why-split">
       <div>
-        <p class="ew"><span class="sec-num">05</span>Pourquoi nous choisir</p>
+        <p class="ew"><span class="sec-num">06</span>Pourquoi nous choisir</p>
         <h2 class="why-lead-h">L'expertise, sans interm&eacute;diaires ni superflu.</h2>
       </div>
       <div class="why-rows">
