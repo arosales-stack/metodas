@@ -195,7 +195,11 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .closing-signature-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
 .closing-signature-btn { display:inline-block; margin-left:auto; padding:10px 20px; background:var(--accent); color:var(--fixed-cream); font-size:15px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; flex-shrink:0; }
 .closing-signature-btn:hover { background:var(--accent-2); }
-@media (max-width:480px){ .closing-signature-row{flex-wrap:wrap;} .closing-signature-btn{margin-left:0; width:100%; text-align:center;} }
+@media (max-width:480px){
+  .closing-signature-row{flex-direction:column; align-items:center; text-align:center; gap:14px;}
+  .closing-signature-photo{width:110px; height:110px;}
+  .closing-signature-btn{margin-left:0; width:auto; padding:9px 22px; font-size:14px;}
+}
 /* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
 .profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
