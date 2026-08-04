@@ -187,19 +187,16 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 
 /* CLOSING SIGNATURE — standalone, outside the Qui sommes nous section */
-.closing-signature { border-top:1px solid var(--ink-06); padding:40px 0; }
-.closing-signature-row { display:flex; align-items:center; gap:16px; }
-.closing-signature-photo { width:96px; height:96px; flex-shrink:0; overflow:hidden; }
+.closing-signature { border-top:1px solid var(--ink-06); padding:48px 0; }
+.closing-signature-grid { display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; max-width:600px; margin:0 auto; }
+.closing-signature-identity { display:flex; flex-direction:column; align-items:center; }
+.closing-signature-photo { width:110px; height:110px; overflow:hidden; }
 .closing-signature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
-.closing-signature-name { font-size:15px; font-weight:700; letter-spacing:-0.015em; }
-.closing-signature-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
-.closing-signature-btn { display:inline-block; margin-left:auto; padding:10px 20px; background:var(--accent); color:var(--fixed-cream); font-size:15px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; flex-shrink:0; }
+.closing-signature-name { font-size:19px; font-weight:700; letter-spacing:-0.015em; margin-top:14px; }
+.closing-signature-role { font-size:17px; color:var(--ink-55); margin-top:4px; }
+.closing-signature-btn { display:inline-block; padding:10px 22px; background:var(--accent); color:var(--fixed-cream); font-size:16px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; }
 .closing-signature-btn:hover { background:var(--accent-2); }
-@media (max-width:480px){
-  .closing-signature-row{flex-direction:column; align-items:center; text-align:center; gap:14px;}
-  .closing-signature-photo{width:110px; height:110px;}
-  .closing-signature-btn{margin-left:0; width:auto; padding:9px 22px; font-size:14px;}
-}
+.closing-signature-bio { font-size:17px; color:var(--ink-55); line-height:1.8; }
 /* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
 .profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
@@ -215,6 +212,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .profile-tags .tag { font-size:12px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:4px 10px; }
 .profile-rule { border:none; border-top:1px solid var(--ink-20); margin:18px 0 16px; }
 .profile-desc { font-size:15px; color:var(--ink-55); line-height:1.65; }
+.profile-mission { font-size:15px; font-style:italic; color:var(--ink-55); line-height:1.65; margin-bottom:14px; }
+.profile-mission-label { font-style:normal; font-weight:700; color:var(--ink); }
 @media (max-width:860px){ .profile-grid{grid-template-columns:1fr;} }
 </style>
 </head>
@@ -344,6 +343,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <span class="tag">Nalo</span>
         </div>
         <hr class="profile-rule">
+        <p class="profile-mission"><span class="profile-mission-label">R&ocirc;le potentiel&nbsp;:</span> R&ocirc;le central de la mission&nbsp;: pilotage de l'agence d'acquisition, des leviers payants et arbitrage du budget m&eacute;dia sur les d&eacute;cisions &agrave; plus fort impact.</p>
         <p class="profile-desc">&mdash; Growth Marketing freelance ayant accompagn&eacute; plus de 50 startups sur l'acquisition payante, dont Electra, Colonies et Bigblue, avec plus de 2M&euro; de spend m&eacute;dia g&eacute;r&eacute; par an. Il intervient &eacute;galement comme mentor Growth &agrave; Station F. Romain a un vrai sens du contact et de l'&eacute;coute, on se sent bien en lui parlant. Au-del&agrave; de son talent analytique, c'est quelqu'un de profond&eacute;ment humain.</p>
       </div>
       <div class="profile-card">
@@ -364,6 +364,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <span class="tag">Nissan</span>
         </div>
         <hr class="profile-rule">
+        <p class="profile-mission"><span class="profile-mission-label">R&ocirc;le potentiel&nbsp;:</span> Conception de templates propres et d&eacute;clinables pour les cr&eacute;as publicitaires, avec adaptation des campagnes au march&eacute; allemand.</p>
         <p class="profile-desc">&mdash; Graphiste &amp; Directrice Artistique sp&eacute;cialis&eacute;e dans la cr&eacute;ation d'identit&eacute;s visuelles et la production de contenus statiques et anim&eacute;s, pour des marques comme Groupe Rocher, Havas Group ou Bloomberg. Katia a ce m&eacute;lange rare entre sensibilit&eacute; artistique et rigueur d'ex&eacute;cution, &ccedil;a se sent jusque dans les moindres d&eacute;tails de son travail. Portfolio sur demande.</p>
       </div>
       <div class="profile-card">
@@ -383,6 +384,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <span class="tag">BigQuery</span>
         </div>
         <hr class="profile-rule">
+        <p class="profile-mission"><span class="profile-mission-label">R&ocirc;le potentiel&nbsp;:</span> Intervention ponctuelle pour fiabiliser les circuits de donn&eacute;es et s'assurer que la performance m&eacute;dia est correctement track&eacute;e.</p>
         <p class="profile-desc">&mdash; Expert Tracking &amp; Analytics freelance depuis plus de 6 ans, sp&eacute;cialis&eacute; dans le d&eacute;ploiement de plans de marquage fiables sur GA4, Google Ads et Meta Ads. Il accompagne des dizaines d'agences et d'annonceurs dans la lecture et l'analyse de leurs performances. Baptiste a un processus pour absolument tout, on sent une discipline rare chez lui.</p>
       </div>
     </div>
@@ -449,12 +451,15 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 <section class="closing-signature">
   <div class="inner" style="padding-top:0; padding-bottom:0;">
-    <div class="closing-signature-row">
-      <div class="closing-signature-photo"><img src="Assets/Images/Profiles/audra-rosales.jpg" alt="Audra Rosales"></div>
-      <div>
-        <p class="closing-signature-name">Audra Rosales</p>
-        <p class="closing-signature-role">Fondatrice de Metodas &amp; Experte Marketing</p>
+    <div class="closing-signature-grid">
+      <div class="closing-signature-identity">
+        <div class="closing-signature-photo"><img src="Assets/Images/Profiles/audra-rosales.jpg" alt="Audra Rosales"></div>
+        <div>
+          <p class="closing-signature-name">Audra Rosales</p>
+          <p class="closing-signature-role">Fondatrice de Metodas &amp; Experte Marketing</p>
+        </div>
       </div>
+      <p class="closing-signature-bio">Apr&egrave;s 12 ans en strat&eacute;gie marketing (agence et in-house), Audra a fond&eacute; Metodas pour proposer une autre fa&ccedil;on de travailler avec les freelances&nbsp;: sourcing rigoureux, engagement de r&eacute;sultat, du brief &agrave; la livraison. Elle a notamment travaill&eacute; avec BNP Paribas, Allianz, Coca-Cola, Lotus Bakeries et CNIEL.</p>
       <a class="closing-signature-btn" href="https://calendly.com/audrar/30min-chat" target="_blank" rel="noopener">Parlons-en&nbsp;!</a>
     </div>
   </div>
