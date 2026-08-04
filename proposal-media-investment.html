@@ -196,7 +196,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .closing-signature-role { font-size:17px; color:var(--ink-55); margin-top:4px; }
 .closing-signature-btn { display:inline-block; padding:10px 22px; background:var(--accent); color:var(--fixed-cream); font-size:16px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; }
 .closing-signature-btn:hover { background:var(--accent-2); }
-.closing-signature-bio { font-size:17px; color:var(--ink-55); line-height:1.8; }
+.closing-signature-li { display:inline-flex; color:var(--ink-55); transition:color .12s; margin-top:6px; }
+.closing-signature-li:hover { color:var(--ink); }
+.closing-signature-li svg { width:20px; height:20px; display:block; }
 /* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
 .profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
@@ -459,7 +461,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <p class="closing-signature-role">Fondatrice de Metodas &amp; Experte Marketing</p>
         </div>
       </div>
-      <p class="closing-signature-bio">Apr&egrave;s 12 ans en strat&eacute;gie marketing (agence et in-house), Audra a fond&eacute; Metodas pour proposer une autre fa&ccedil;on de travailler avec les freelances&nbsp;: sourcing rigoureux, engagement de r&eacute;sultat, du brief &agrave; la livraison. Elle a notamment travaill&eacute; avec BNP Paribas, Allianz, Coca-Cola, Lotus Bakeries et CNIEL.</p>
+      <a class="closing-signature-li" href="https://www.linkedin.com/in/audrarosales" target="_blank" rel="noopener" aria-label="Audra Rosales sur LinkedIn"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="0.5" y="0.5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="8" y="11.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="currentColor">in</text></svg></a>
       <a class="closing-signature-btn" href="https://calendly.com/audrar/30min-chat" target="_blank" rel="noopener">Parlons-en&nbsp;!</a>
     </div>
   </div>
