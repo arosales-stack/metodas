@@ -57,7 +57,27 @@ Named colors so we can say "Rust" instead of a hex code. Full reference: `brand-
 - Clay `#d9714a` (`--accent`) — buttons/active nav in dark mode
 - Rust `#a3311a` (`--accent-2`) — decorative in dark mode
 
-Rust and Clay swap jobs between themes (same two colors, swapped roles). Font: **Space Grotesk** throughout, no other typeface.
+## Typography Scale — Never Pick a Size By Feel
+Font: **Space Grotesk** throughout, no other typeface (see Brand Tokens above). This is the actual scale currently in use across the live site — check this before writing a new `font-size` rather than guessing a number.
+
+**Headings (all `clamp()`, responsive):**
+- Hero H1: `clamp(36px,5vw,60px)`
+- Large stat/key-figure numbers: `clamp(56px,6.4vw,80px)` (e.g. pricing `25%`)
+- Section H2 (most sections): `clamp(26px,3.2vw,44px)` or `clamp(26px,3.2vw,42px)` — these two coexist on the real site, treat them as interchangeable
+- Smaller section H2 variant (denser sections, e.g. pricing box): `clamp(22px,2.6vw,34px)`
+- Sub-heading / card title: `clamp(24px,2.8vw,36px)` or 17–18px static, depending on context
+
+**Body text — 15px is the real baseline, not a new invention:**
+- Standard paragraph / `sh-b` / `why-row-body` / `hero-sub`: **15px** — this is what "body text" means on this site; a new component's paragraph copy should default here, not to 13px or 12px because it "felt like a caption."
+- Slightly larger emphasis paragraph (e.g. `intro-body`, a lead statement): 16–19px, still not bold — use color/size for emphasis, not `font-weight:700` on body copy.
+- 16px also appears as an alternate body size in a few places (e.g. hero-sub itself) — 15 and 16 both exist; don't introduce a third close-but-different value like 14.5px or 15.5px.
+
+**Micro-labels — legitimately smaller, but each one is a deliberate, named exception, not a default:**
+- Eyebrow labels (`.ew`, section numbers): 13px on the real live site today. (Exception: on `proposal-media-investment.html`, this was deliberately raised to 15px after a user correction that nothing on that page should read smaller than its own body text — that page's `.ew` no longer matches the sitewide 13px. Don't "fix" it back without asking.)
+- Footer nav labels/links/copyright: 11–14px on the real live site today.
+- Corner photo tags (`.hcard-tag`), numbered badges, card eyebrow numbers (`.exp-num`): 10–13px on the real live site today.
+- These small sizes are original, intentional design choices on the public site (footer, photo tags, badges reading as compact metadata) — they are not a bug to retroactively fix everywhere. The rule going forward is narrower: **don't invent a new small size out of nowhere for a new component.** If something is genuinely a micro-label matching one of the patterns above, match that pattern's existing size exactly. If it's actually body copy (a sentence someone will read, not a 1-2 word tag), it does not get to be smaller than 15px just because it fits better visually — that's exactly the mistake that happened on the Profils cards (role/meta/tags/description dropped to 11-12px with no reason) and forced a same-day full-page audit and fix.
+- When building a brand-new page or section: default to 15px body text. Only go smaller for something that is unambiguously a short tag/label/badge in the pattern of the examples above, and say so explicitly rather than silently shrinking text to make a layout fit.
 
 ## Theme System
 - 3-layer override pattern on every page: `@media (prefers-color-scheme: dark)`, `:root[data-theme="light"]`, `:root[data-theme="dark"]` — all three must stay in sync whenever a token changes, or manual toggle and system-preference will disagree.
