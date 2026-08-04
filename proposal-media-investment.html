@@ -200,23 +200,22 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .closing-signature-btn { display:inline-block; margin-left:auto; padding:10px 20px; background:var(--accent); color:var(--fixed-cream); font-size:14px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; flex-shrink:0; }
 .closing-signature-btn:hover { background:var(--accent-2); }
 @media (max-width:480px){ .closing-signature-row{flex-wrap:wrap;} .closing-signature-btn{margin-left:0; width:100%; text-align:center;} }
-/* PROFILES — two-column card: photo/name/role/meta left, tags+description right */
+/* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
 .profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); }
-.profile-badge { position:absolute; top:16px; right:16px; width:26px; height:26px; border-radius:50%; background:var(--accent-2); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
-.profile-split { display:grid; grid-template-columns:140px 1fr; gap:16px; padding-right:34px; }
-.profile-photo { width:56px; height:56px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
+.profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
+.profile-badge { position:absolute; top:16px; right:16px; width:28px; height:28px; border-radius:50%; background:var(--accent-2); color:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.profile-top { display:flex; align-items:center; gap:16px; padding-right:36px; }
+.profile-photo { width:64px; height:64px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
 .profile-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
-.profile-photo-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700; color:var(--ink-55); }
-.profile-name { font-size:16px; font-weight:700; letter-spacing:-0.015em; margin-top:12px; }
-.profile-role { font-size:12px; color:var(--ink-55); margin-top:2px; }
-.profile-meta { font-size:11px; color:var(--ink-55); margin-top:8px; }
-.profile-tags { display:flex; flex-wrap:wrap; gap:6px; }
-.profile-tags .tag { font-size:11px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:3px 9px; }
-.profile-rule { border:none; border-top:1px solid var(--ink-20); margin:14px 0 12px; }
-.profile-desc { font-size:12px; color:var(--ink-55); line-height:1.6; }
+.profile-photo-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; color:var(--ink-55); }
+.profile-name { font-size:19px; font-weight:700; letter-spacing:-0.015em; }
+.profile-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
+.profile-meta { font-size:15px; color:var(--ink-55); margin-top:10px; }
+.profile-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.profile-tags .tag { font-size:15px; font-weight:500; letter-spacing:0.01em; color:var(--ink-55); border:1px solid var(--accent-2); padding:5px 12px; }
+.profile-rule { border:none; border-top:1px solid var(--ink-20); margin:18px 0 16px; }
+.profile-desc { font-size:15px; color:var(--ink-55); line-height:1.65; }
 @media (max-width:860px){ .profile-grid{grid-template-columns:1fr;} }
-@media (max-width:640px){ .profile-split{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -329,67 +328,61 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <div class="profile-grid">
       <div class="profile-card is-accent-photo">
         <div class="profile-badge">01</div>
-        <div class="profile-split">
+        <div class="profile-top">
+          <div class="profile-photo"><img src="Assets/Images/Profiles/romain-lacoste.png" alt="Romain Lacoste"></div>
           <div>
-            <div class="profile-photo"><img src="Assets/Images/Profiles/romain-lacoste.png" alt="Romain Lacoste"></div>
             <p class="profile-name">Romain</p>
             <p class="profile-role">Growth Marketing Manager &amp; Paid Media</p>
-            <p class="profile-meta">Paris, France &middot; ~11 ans exp.</p>
           </div>
-          <div>
-            <div class="profile-tags">
+        </div>
+        <p class="profile-meta">Paris, France &middot; ~11 ans exp.</p>
+        <div class="profile-tags">
           <span class="tag">Electra</span>
           <span class="tag">Colonies</span>
           <span class="tag">Bigblue</span>
           <span class="tag">Station F</span>
           <span class="tag">Nalo</span>
         </div>
-            <hr class="profile-rule">
-            <p class="profile-desc">&mdash; Growth Marketing freelance ayant accompagn&eacute; plus de 50 startups sur l'acquisition payante, dont Electra, Colonies et Bigblue, avec plus de 2M&euro; de spend m&eacute;dia g&eacute;r&eacute; par an. Il intervient &eacute;galement comme mentor Growth &agrave; Station F. Reconnu pour son approche transparente et sa proximit&eacute; avec ses clients.</p>
-          </div>
-        </div>
+        <hr class="profile-rule">
+        <p class="profile-desc">&mdash; Growth Marketing freelance ayant accompagn&eacute; plus de 50 startups sur l'acquisition payante, dont Electra, Colonies et Bigblue, avec plus de 2M&euro; de spend m&eacute;dia g&eacute;r&eacute; par an. Il intervient &eacute;galement comme mentor Growth &agrave; Station F. Reconnu pour son approche transparente et sa proximit&eacute; avec ses clients.</p>
       </div>
       <div class="profile-card">
         <div class="profile-badge">02</div>
-        <div class="profile-split">
+        <div class="profile-top">
+          <div class="profile-photo"><img src="Assets/Images/Profiles/sebastien-chaix.png" alt="S&eacute;bastien Chaix"></div>
           <div>
-            <div class="profile-photo"><img src="Assets/Images/Profiles/sebastien-chaix.png" alt="S&eacute;bastien Chaix"></div>
             <p class="profile-name">S&eacute;bastien</p>
             <p class="profile-role">Growth Marketer &amp; Expert CRM</p>
-            <p class="profile-meta">Toulouse, France &middot; ~13 ans exp.</p>
           </div>
-          <div>
-            <div class="profile-tags">
+        </div>
+        <p class="profile-meta">Toulouse, France &middot; ~13 ans exp.</p>
+        <div class="profile-tags">
           <span class="tag">Pipedrive</span>
           <span class="tag">AARRR</span>
           <span class="tag">Zapier</span>
           <span class="tag">Google Ads</span>
         </div>
-            <hr class="profile-rule">
-            <p class="profile-desc">&mdash; Growth Marketer ind&eacute;pendant sp&eacute;cialis&eacute; dans l'int&eacute;gration CRM (Pipedrive), l'automatisation des process commerciaux et la g&eacute;n&eacute;ration de leads via l'analyse de funnels d'acquisition (m&eacute;thodologie AARRR). Son approche est pragmatique et enti&egrave;rement adapt&eacute;e &agrave; la r&eacute;alit&eacute; de chaque entreprise.</p>
-          </div>
-        </div>
+        <hr class="profile-rule">
+        <p class="profile-desc">&mdash; Growth Marketer ind&eacute;pendant sp&eacute;cialis&eacute; dans l'int&eacute;gration CRM (Pipedrive), l'automatisation des process commerciaux et la g&eacute;n&eacute;ration de leads via l'analyse de funnels d'acquisition (m&eacute;thodologie AARRR). Son approche est pragmatique et enti&egrave;rement adapt&eacute;e &agrave; la r&eacute;alit&eacute; de chaque entreprise.</p>
       </div>
       <div class="profile-card">
         <div class="profile-badge">03</div>
-        <div class="profile-split">
+        <div class="profile-top">
+          <div class="profile-photo"><img src="Assets/Images/Profiles/baptiste-moisan.png" alt="Baptiste Moisan"></div>
           <div>
-            <div class="profile-photo"><img src="Assets/Images/Profiles/baptiste-moisan.png" alt="Baptiste Moisan"></div>
             <p class="profile-name">Baptiste</p>
             <p class="profile-role">Expert Tracking &amp; Analytics</p>
-            <p class="profile-meta">France &middot; ~7 ans exp.</p>
           </div>
-          <div>
-            <div class="profile-tags">
+        </div>
+        <p class="profile-meta">France &middot; ~7 ans exp.</p>
+        <div class="profile-tags">
           <span class="tag">GA4</span>
           <span class="tag">Google Ads</span>
           <span class="tag">Meta Ads</span>
           <span class="tag">BigQuery</span>
         </div>
-            <hr class="profile-rule">
-            <p class="profile-desc">&mdash; Expert Tracking &amp; Analytics freelance depuis plus de 6 ans, sp&eacute;cialis&eacute; dans le d&eacute;ploiement de plans de marquage fiables sur GA4, Google Ads et Meta Ads. Il accompagne des dizaines d'agences et d'annonceurs dans la lecture et l'analyse de leurs performances. Reconnu pour la clart&eacute; de sa communication et la rigueur de ses process.</p>
-          </div>
-        </div>
+        <hr class="profile-rule">
+        <p class="profile-desc">&mdash; Expert Tracking &amp; Analytics freelance depuis plus de 6 ans, sp&eacute;cialis&eacute; dans le d&eacute;ploiement de plans de marquage fiables sur GA4, Google Ads et Meta Ads. Il accompagne des dizaines d'agences et d'annonceurs dans la lecture et l'analyse de leurs performances. Reconnu pour la clart&eacute; de sa communication et la rigueur de ses process.</p>
       </div>
     </div>
   </div>
