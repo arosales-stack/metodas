@@ -90,6 +90,9 @@ Any visual/design/styling change (colors, layout, spacing, animations, card trea
 ## Update Rule
 After every confirmed change to a live file, update this file if the change affects something documented here (a section's state, a color, a structural rule). This is how context survives between sessions and tools.
 
+## Other In-Progress Work (Separate Sessions)
+- A freelancer onboarding flow (portfolio submission + signed agreement) is being planned/built in a **separate Claude conversation**, not this one. It doesn't exist in the repo yet as of this note. If you're working from this file and encounter files/pages related to onboarding, portfolio submission, or freelancer agreements that aren't described elsewhere in this doc, they likely came from that other session — read them fully before touching, same as anything else, and add them to this file once confirmed. Flag to the user if this work appears to touch shared assets (nav, footer, `Validated elements/contact.html`) so nothing gets silently overwritten between sessions.
+
 ## Current State — Live on `main` (2026-07-30)
 - All 4 use-case pages have their video (both languages): sales, event, SEO/AI-search, video-production. Andy L. (video-production) and Christelle F. (event) are the correct freelancer names — do not revert to Julien R. / Claire L.
 - Homepage hero, both languages, current copy:
