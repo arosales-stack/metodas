@@ -112,12 +112,12 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 @media (max-width:860px){ .why-split{grid-template-columns:1fr;} }
 
 /* APPROCHE — 2x2 grid (4 steps), dark cards, exact copy of exp-grid pattern */
-.exp-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.exp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .exp-card { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); padding:var(--pad-card); display:flex; flex-direction:column; color:var(--ink); }
 .exp-num { font-size:12px; font-weight:700; letter-spacing:0.1em; color:var(--accent-2); margin-bottom:16px; }
 .exp-title { font-size:18px; font-weight:700; letter-spacing:-0.015em; margin-bottom:10px; color:var(--ink); }
 .exp-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
-@media (max-width:768px){ .exp-grid{grid-template-columns:1fr;} }
+@media (max-width:860px){ .exp-grid{grid-template-columns:1fr;} }
 
 /* QUI SOMMES NOUS — real homepage hero duplicated */
 .founder-closing { padding:clamp(64px,8vw,120px) 0; }
@@ -175,7 +175,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .closing-signature-li svg { width:16px; height:16px; display:block; }
 
 /* SINGLE FEATURED PROFILE — Thomas */
-.feature-profile { max-width:900px; margin:0 auto; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(28px,4vw,44px); }
+.feature-profile { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(28px,4vw,44px); }
 .feature-top { display:flex; align-items:center; gap:20px; }
 .feature-photo { width:96px; height:96px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
 .feature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
@@ -313,7 +313,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   <div class="inner">
     <div class="sh">
       <p class="ew"><span class="sec-num">04</span>Profil</p>
-      <h2 class="sh-h" style="margin-top:14px;">Un profil d&eacute;j&agrave; identifi&eacute; dans notre r&eacute;seau</h2>
+      <h2 class="sh-h" style="margin-top:14px;">Exemple de profil que nous challengerions sur votre mandat</h2>
     </div>
     <div class="feature-profile">
       <div class="feature-top">
@@ -323,12 +323,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <p class="feature-role">Senior Product &amp; UX Designer &middot; 10 ans d'exp&eacute;rience</p>
         </div>
       </div>
-      <div class="feature-desc">
-        <p>Thomas combine une solide expertise UX avec une vraie culture produit, acquise comme cofondateur/CPO puis sur des environnements digitaux complexes pour Renault Digital, Digitas et de nombreuses marques internationales. Son parcours couvre notamment UX Research, CRO, conception de parcours et optimisation de produits digitaux.</p>
-        <p>C'est pr&eacute;cis&eacute;ment le type de profil que nous souhaiterions challenger pour cette mission&nbsp;: suffisamment senior pour comprendre une organisation d&eacute;j&agrave; mature, avec une exp&eacute;rience produit qui d&eacute;passe l'ex&eacute;cution UX pure.</p>
-        <p class="is-bold">Avant de vous le pr&eacute;senter formellement, nous lui demanderions une lecture d&eacute;taill&eacute;e de votre probl&eacute;matique, ses premi&egrave;res hypoth&egrave;ses CRO et les donn&eacute;es dont il aurait besoin pour les valider.</p>
-      </div>
-      <div class="feature-tags">
+      <div class="feature-tags" style="border-top:none; padding-top:0; margin-top:20px;">
         <span class="tag">Renault</span>
         <span class="tag">Dacia</span>
         <span class="tag">Alpine</span>
@@ -337,8 +332,11 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <span class="tag">Tourism Australia</span>
         <span class="tag">Digitas</span>
         <span class="tag">Decathlon</span>
-        <span class="tag">TAL</span>
-        <span class="tag">Domain</span>
+      </div>
+      <div class="feature-desc">
+        <p>Thomas combine une solide expertise UX avec une vraie culture produit, acquise comme cofondateur/CPO puis sur des environnements digitaux complexes pour Renault Digital, Digitas et de nombreuses marques internationales. Son parcours couvre notamment UX Research, CRO, conception de parcours et optimisation de produits digitaux.</p>
+        <p>C'est pr&eacute;cis&eacute;ment le type de profil que nous souhaiterions challenger pour cette mission&nbsp;: suffisamment senior pour comprendre une organisation d&eacute;j&agrave; mature, avec une exp&eacute;rience produit qui d&eacute;passe l'ex&eacute;cution UX pure.</p>
+        <p class="is-bold">Avant de vous le pr&eacute;senter formellement, nous lui demanderions une lecture d&eacute;taill&eacute;e de votre probl&eacute;matique, ses premi&egrave;res hypoth&egrave;ses CRO et les donn&eacute;es dont il aurait besoin pour les valider.</p>
       </div>
     </div>
   </div>
@@ -354,23 +352,18 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <div class="exp-grid">
       <div class="exp-card">
         <p class="exp-num">&mdash; 01</p>
-        <h3 class="exp-title">Cadrage du profil</h3>
-        <p class="exp-body">Un premier &eacute;change nous permettrait de pr&eacute;ciser les enjeux du funnel, l'organisation actuelle des tests, les responsabilit&eacute;s du freelance et surtout les qualit&eacute;s qui feront la diff&eacute;rence dans votre environnement. Nous traduisons ensuite ces &eacute;l&eacute;ments en crit&egrave;res de s&eacute;lection techniques, analytiques et humains.</p>
+        <h3 class="exp-title">Cadrer le vrai profil</h3>
+        <p class="exp-body">Un premier &eacute;change pour comprendre o&ugrave; vous souhaitez r&eacute;ellement donner de l'autonomie, comment vos &eacute;quipes CRO, Acquisition, Data, Design et Dev travaillent ensemble, et surtout quel type de personnalit&eacute; pourra les challenger sans ralentir une organisation d&eacute;j&agrave; experte.</p>
       </div>
       <div class="exp-card">
         <p class="exp-num">&mdash; 02</p>
-        <h3 class="exp-title">Recherche et s&eacute;lection en une &agrave; deux semaines</h3>
-        <p class="exp-body">Nous commencerions par les profils UX/CRO que nous connaissons d&eacute;j&agrave; et qui correspondent &agrave; ce niveau de mission. Si n&eacute;cessaire, nous compl&eacute;terions imm&eacute;diatement par du sourcing direct. L'objectif est de s&eacute;curiser le profil en une &agrave; deux semaines maximum, sans limiter la recherche aux personnes qui ont vu l'annonce et d&eacute;cid&eacute; d'y r&eacute;pondre.</p>
+        <h3 class="exp-title">Sourcer et challenger en 1 &agrave; 2 semaines</h3>
+        <p class="exp-body">Nous commen&ccedil;ons par les profils UX/CRO seniors d&eacute;j&agrave; dans notre r&eacute;seau, puis &eacute;largissons par sourcing direct si n&eacute;cessaire. Chaque profil est challeng&eacute; sur votre probl&eacute;matique&nbsp;: lecture du funnel, priorisation des tests, rapport &agrave; la donn&eacute;e et capacit&eacute; &agrave; d&eacute;fendre ses recommandations face &agrave; vos &eacute;quipes.</p>
       </div>
       <div class="exp-card">
         <p class="exp-num">&mdash; 03</p>
-        <h3 class="exp-title">Validation sur votre probl&eacute;matique</h3>
-        <p class="exp-body">Nous ne nous arr&ecirc;terions pas au CV ou au portfolio. Les profils retenus seraient challeng&eacute;s en entretien sur leur lecture du mandat, leur mani&egrave;re de prioriser des exp&eacute;rimentations, leur rapport &agrave; la donn&eacute;e et leur capacit&eacute; &agrave; d&eacute;fendre une recommandation face &agrave; des &eacute;quipes expertes. Nous ne vous pr&eacute;senterions que les profils qui nous ont r&eacute;ellement convaincus.</p>
-      </div>
-      <div class="exp-card">
-        <p class="exp-num">&mdash; 04</p>
-        <h3 class="exp-title">S&eacute;curisation de la mission</h3>
-        <p class="exp-body">Vous travaillez directement avec le freelance, sans couche suppl&eacute;mentaire entre vos &eacute;quipes et lui. Nous prenons en charge le contrat, les paiements et la conformit&eacute; et restons garants de la mission jusqu'&agrave; son terme. Si le profil ne fonctionne pas au d&eacute;marrage, nous pouvons le remplacer sans vous faire recommencer un nouveau cycle de sourcing.</p>
+        <h3 class="exp-title">S&eacute;curiser le choix</h3>
+        <p class="exp-body">Vous travaillez directement avec le freelance, sans interm&eacute;diaire op&eacute;rationnel. Nous restons garants de la mission et g&eacute;rons contrat, paiements et conformit&eacute;. Si le fit humain ou op&eacute;rationnel ne fonctionne pas au d&eacute;marrage, nous rempla&ccedil;ons le profil sans vous faire recommencer un cycle de sourcing.</p>
       </div>
     </div>
   </div>
