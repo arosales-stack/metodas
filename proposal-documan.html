@@ -106,6 +106,23 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .intro-btn:hover { border-color:var(--ink-55); }
 .intro-btn svg { width:14px; height:14px; flex-shrink:0; }
 
+/* VISION MODAL — répartition détaillée */
+.vision-btn-wrap { text-align:center; margin-top:40px; }
+.modal-overlay { position:fixed; inset:0; background:rgba(28,26,23,0.6); display:none; align-items:center; justify-content:center; z-index:200; padding:24px; }
+.modal-overlay.is-open { display:flex; }
+.modal-panel { background:var(--paper); color:var(--ink); max-width:1040px; width:100%; max-height:85vh; overflow-y:auto; padding:clamp(24px,3.2vw,40px); position:relative; }
+.modal-close { position:absolute; top:16px; right:16px; width:38px; height:38px; display:flex; align-items:center; justify-content:center; border:1px solid var(--ink-20); background:transparent; cursor:pointer; color:var(--ink); }
+.modal-close:hover { border-color:var(--ink-55); }
+.modal-close svg { width:14px; height:14px; }
+.modal-title { font-size:clamp(20px,2.2vw,26px); font-weight:700; letter-spacing:-0.02em; margin:0 0 8px; padding-right:40px; }
+.modal-sub { font-size:15px; color:var(--ink-55); line-height:1.6; margin:0 0 28px; }
+.vision-table-wrap { overflow-x:auto; }
+.vision-table { width:100%; border-collapse:collapse; min-width:760px; }
+.vision-table th { text-align:left; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-55); padding:10px 14px; border-bottom:2px solid var(--ink-20); white-space:nowrap; }
+.vision-table td { font-size:14px; line-height:1.55; color:var(--ink-55); padding:14px; border-bottom:1px solid var(--ink-06); vertical-align:top; }
+.vision-table td:first-child { font-weight:700; color:var(--ink); white-space:nowrap; }
+@media (max-width:640px){ .modal-panel{padding:24px 16px;} }
+
 /* WHY-SECTION LAYOUT (Notre conviction) — copied verbatim from index.html */
 .why-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
 .why-split { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(32px,5vw,72px); align-items:start; }
@@ -367,6 +384,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         </div>
       </div>
     </div>
+    <div class="vision-btn-wrap">
+      <button class="intro-btn" onclick="document.getElementById('visionModal').classList.add('is-open')" type="button">Voir la r&eacute;partition d&eacute;taill&eacute;e<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.2"/><line x1="1" y1="5.5" x2="15" y2="5.5" stroke="currentColor" stroke-width="1.2"/><line x1="6" y1="5.5" x2="6" y2="15" stroke="currentColor" stroke-width="1.2"/><line x1="10.5" y1="5.5" x2="10.5" y2="15" stroke="currentColor" stroke-width="1.2"/></svg></button>
+    </div>
   </div>
 </section>
 
@@ -548,6 +568,87 @@ themeToggle.addEventListener('click', () => {
   currentTheme = currentTheme === 'light' ? 'dark' : 'light';
   root.setAttribute('data-theme', currentTheme);
 });
+</script>
+
+<div class="modal-overlay" id="visionModal">
+  <div class="modal-panel">
+    <button class="modal-close" onclick="closeVisionModal()" aria-label="Fermer" type="button">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </button>
+    <h3 class="modal-title">R&eacute;partition d&eacute;taill&eacute;e des responsabilit&eacute;s</h3>
+    <p class="modal-sub">Comment nous r&eacute;partirions les blocs du mandat entre le Senior Growth Lead, le syst&egrave;me IA/automatisation, un expert ponctuel si besoin, et vos fondateurs.</p>
+    <div class="vision-table-wrap">
+      <table class="vision-table">
+        <thead>
+          <tr>
+            <th>Bloc</th>
+            <th>Senior Growth Lead</th>
+            <th>IA / automatisation</th>
+            <th>Expert ponctuel</th>
+            <th>Fondateurs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Strat&eacute;gie &amp; acquisition</td>
+            <td>Strat&eacute;gie, budget, canaux, arbitrages, performance</td>
+            <td>Analyse, monitoring</td>
+            <td>Paid/SEO si profondeur n&eacute;cessaire</td>
+            <td>Direction business</td>
+          </tr>
+          <tr>
+            <td>CRM &amp; contenu</td>
+            <td>Strat&eacute;gie, priorit&eacute;s, validation</td>
+            <td>Emailing, d&eacute;clinaisons, production</td>
+            <td>Copy/design si besoin</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Web &amp; SEO/GEO</td>
+            <td>Parcours, conversion, priorit&eacute;s</td>
+            <td>Recherche, briefs, production assist&eacute;e</td>
+            <td>Design/dev/SEO technique</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Customer intelligence</td>
+            <td>Entretiens cibl&eacute;s, analyse, d&eacute;cisions</td>
+            <td>Transcription, synth&egrave;se, knowledge base</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Data &amp; reporting</td>
+            <td>Lecture, conclusions, d&eacute;cisions</td>
+            <td>Collecte, dashboards, reporting</td>
+            <td>Data si n&eacute;cessaire</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Partenariats &amp; march&eacute;</td>
+            <td>Relations strat&eacute;giques, opportunit&eacute;s</td>
+            <td>Veille, recherche, qualification</td>
+            <td>&mdash;</td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Syst&egrave;me IA Growth</td>
+            <td>D&eacute;finit les usages et supervise</td>
+            <td>Agents, workflows, automatisations</td>
+            <td>Build technique complexe</td>
+            <td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const visionModal = document.getElementById('visionModal');
+function closeVisionModal() { visionModal.classList.remove('is-open'); }
+visionModal.addEventListener('click', (e) => { if (e.target === visionModal) closeVisionModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVisionModal(); });
 </script>
 
 </body>
