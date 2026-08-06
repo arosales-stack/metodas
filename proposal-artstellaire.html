@@ -209,6 +209,21 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .closing-signature-li:hover { color:var(--ink); }
 .closing-signature-li svg { width:16px; height:16px; display:block; }
 /* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
+/* SINGLE FEATURED PROFILE — duplicated from proposal-verisure.html */
+.feature-profile { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(28px,4vw,44px); }
+.feature-top { display:flex; align-items:center; gap:20px; }
+.feature-photo { width:96px; height:96px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
+.feature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.feature-name { font-size:22px; font-weight:700; letter-spacing:-0.015em; }
+.feature-role { font-size:17px; color:var(--ink-55); margin-top:4px; }
+.feature-desc { font-size:17px; line-height:1.8; color:var(--ink-55); margin-top:24px; }
+.feature-desc p { margin:0 0 16px; }
+.feature-desc p:last-child { margin-bottom:0; }
+.feature-desc .is-bold { font-weight:700; color:var(--ink); }
+.feature-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; padding-top:24px; border-top:1px solid var(--ink-20); }
+.feature-tags .tag { font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:5px 12px; }
+@media (max-width:640px){ .feature-top{flex-direction:column; text-align:center;} }
+
 .profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
 .profile-badge { position:absolute; top:16px; right:16px; width:26px; height:26px; border-radius:50%; background:var(--accent-2); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
@@ -366,75 +381,28 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   <div class="inner">
     <div class="sh">
       <p class="ew"><span class="sec-num">05</span>Profils</p>
-      <h2 class="sh-h" style="margin-top:14px;">Quelques profils que nous pourrions activer</h2>
-      <p class="sh-b" style="margin-top:10px;">Ces profils font d&eacute;j&agrave; partie de notre r&eacute;seau et pr&eacute;sentent, sur la base de leur parcours, un potentiel tr&egrave;s int&eacute;ressant pour votre mandat. Avant toute pr&eacute;sentation formelle, nous recueillerions leur recommandation d&eacute;taill&eacute;e sur votre probl&eacute;matique afin de valider leur pertinence.</p>
+      <h2 class="sh-h" style="margin-top:14px;">Un profil d&eacute;j&agrave; identifi&eacute; dans notre r&eacute;seau</h2>
     </div>
-    <div class="profile-grid">
-      <div class="profile-card is-accent-photo">
-        <div class="profile-badge">01</div>
-        <div class="profile-top">
-          <div class="profile-photo"><img src="Assets/Images/Profiles/josephine.png" alt="Jos&eacute;phine"></div>
-          <div>
-            <p class="profile-name">Jos&eacute;phine</p>
-            <p class="profile-role">Chef de projet Digital</p>
-          </div>
+    <div class="feature-profile">
+      <div class="feature-top">
+        <div class="feature-photo"><img src="Assets/Images/Profiles/josephine.png" alt="Jos&eacute;phine"></div>
+        <div>
+          <p class="feature-name">Jos&eacute;phine</p>
+          <p class="feature-role">Chef de projet Digital &amp; E-commerce &middot; ~9 ans d'exp&eacute;rience</p>
         </div>
-        <p class="profile-meta">Paris, France &middot; ~9 ans exp.</p>
-        <div class="profile-tags">
-          <span class="tag">Renault</span>
-          <span class="tag">Carrefour</span>
-          <span class="tag">Krug</span>
-          <span class="tag">Hennessy</span>
-          <span class="tag">Quick</span>
-          <span class="tag">Bally</span>
-        </div>
-        <hr class="profile-rule">
-        <p class="profile-mission"><span class="profile-mission-label">R&ocirc;le potentiel&nbsp;:</span> Launch &amp; Marketing Lead</p>
-        <p class="profile-desc">&mdash; Jos&eacute;phine pilote des projets digitaux de bout en bout&nbsp;: cadrage, planning, budgets, coordination, recette, KPI et reporting, avec une pratique directe de Shopify, CMS et landing pages. Son parcours combine gestion de projets complexes et vraie polyvalence op&eacute;rationnelle, jusqu'au contenu et au social media. C'est surtout sa capacit&eacute; &agrave; faire converger plusieurs expertises vers une livraison qui nous semble particuli&egrave;rement pertinente pour votre lancement.</p>
       </div>
-      <div class="profile-card">
-        <div class="profile-badge">02</div>
-        <div class="profile-top">
-          <div class="profile-photo"><img src="Assets/Images/Profiles/nathalie.png" alt="Nathalie"></div>
-          <div>
-            <p class="profile-name">Nathalie</p>
-            <p class="profile-role">Experte CRM &amp; Marketing Automation</p>
-          </div>
-        </div>
-        <p class="profile-meta">France &middot; ~10 ans exp.</p>
-        <div class="profile-tags">
-          <span class="tag">Mo&euml;t &amp; Chandon</span>
-          <span class="tag">Dom P&eacute;rignon</span>
-          <span class="tag">Dyson</span>
-          <span class="tag">Accor</span>
-          <span class="tag">Chanel</span>
-          <span class="tag">BY TERRY</span>
-        </div>
-        <hr class="profile-rule">
-        <p class="profile-mission"><span class="profile-mission-label">R&ocirc;le potentiel&nbsp;:</span> CRM &amp; Lifecycle &mdash; expertise ponctuelle / post-lancement</p>
-        <p class="profile-desc">&mdash; Nathalie combine strat&eacute;gie CRM et ex&eacute;cution op&eacute;rationnelle&nbsp;: s&eacute;quences automatis&eacute;es, emailings, triggers, r&eacute;tention, acquisition et analyse de performance. Chez Dyson, elle a notamment travaill&eacute; sur les parcours pr&eacute;/post-achat et l'abandon de panier&nbsp;; chez Mo&euml;t Hennessy, elle pilotait strat&eacute;gie, activations et coordination CRM internationale. Un profil particuli&egrave;rement int&eacute;ressant pour structurer l'animation et la performance apr&egrave;s le lancement.</p>
+      <div class="feature-tags" style="border-top:none; padding-top:0; margin-top:20px;">
+        <span class="tag">Renault</span>
+        <span class="tag">Carrefour</span>
+        <span class="tag">Krug</span>
+        <span class="tag">Hennessy</span>
+        <span class="tag">Quick</span>
+        <span class="tag">Bally</span>
       </div>
-      <div class="profile-card">
-        <div class="profile-badge">03</div>
-        <div class="profile-top">
-          <div class="profile-photo"><img src="Assets/Images/Profiles/cecilia.png" alt="C&eacute;cilia"></div>
-          <div>
-            <p class="profile-name">C&eacute;cilia</p>
-            <p class="profile-role">Head of Content &amp; UX Writer Senior</p>
-          </div>
-        </div>
-        <p class="profile-meta">Paris, France &middot; 15+ ans exp.</p>
-        <div class="profile-tags">
-          <span class="tag">L'Occitane</span>
-          <span class="tag">Yves Rocher</span>
-          <span class="tag">Nature &amp; D&eacute;couvertes</span>
-          <span class="tag">Herm&egrave;s</span>
-          <span class="tag">Nescaf&eacute;</span>
-          <span class="tag">Publicis</span>
-        </div>
-        <hr class="profile-rule">
-        <p class="profile-mission"><span class="profile-mission-label">R&ocirc;le potentiel&nbsp;:</span> Content, Social &amp; Conversion &mdash; expertise ponctuelle</p>
-        <p class="profile-desc">&mdash; C&eacute;cilia travaille depuis plus de 15 ans sur le contenu, les parcours utilisateurs, la conversion et le social media. Elle pilote aujourd'hui strat&eacute;gie &eacute;ditoriale, production 360&deg;, SEO, social et community management, apr&egrave;s avoir travaill&eacute; notamment sur le CRM de Nescaf&eacute; et les strat&eacute;gies de contenu de L'Occitane, Yves Rocher et Nature &amp; D&eacute;couvertes. Son exp&eacute;rience des univers bien-&ecirc;tre et marques &agrave; forte dimension &eacute;ditoriale est particuli&egrave;rement coh&eacute;rente avec Maison Art Stellaire.</p>
+      <div class="feature-desc">
+        <p>Jos&eacute;phine n'est pas une cheffe de projet cantonn&eacute;e &agrave; la coordination. Elle combine pilotage de projets digitaux et ex&eacute;cution op&eacute;rationnelle&nbsp;: Shopify, CMS, landing pages, recette, contenus, analytics et reporting, tout en g&eacute;rant planning, budgets et coordination des diff&eacute;rentes expertises. Son parcours l'a amen&eacute;e &agrave; intervenir sur des environnements e-commerce et digitaux pour des marques comme Renault, Carrefour, Krug et Hennessy.</p>
+        <p>Ce qui nous int&eacute;resse pour Maison Art Stellaire&nbsp;: cette capacit&eacute; &agrave; passer du pilotage &agrave; l'ex&eacute;cution. Votre lancement demande quelqu'un capable de reprendre rapidement un projet d&eacute;j&agrave; engag&eacute;, faire avancer les prestataires et s&eacute;curiser le calendrier, tout en mettant directement les mains dans les outils lorsque n&eacute;cessaire.</p>
+        <p class="is-bold">Avant toute pr&eacute;sentation formelle, nous la challengerions sp&eacute;cifiquement sur votre lancement&nbsp;: sa ma&icirc;trise d'ActiveCampaign, les priorit&eacute;s qu'elle identifierait jusqu'&agrave; la mise en ligne, ce qu'elle prendrait directement en charge et ce qu'elle laisserait aux prestataires d&eacute;j&agrave; en place. Sa r&eacute;ponse ferait partie de notre s&eacute;lection.</p>
       </div>
     </div>
   </div>
