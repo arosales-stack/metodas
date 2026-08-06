@@ -102,6 +102,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .intro-body { font-size:19px; color:var(--ink-55); line-height:1.6; max-width:720px; margin:0 auto 16px; text-align:center; }
 .intro-body:last-child { margin-bottom:0; }
 .intro-body.is-bold { font-weight:400; color:var(--ink); }
+.intro-btn { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:10px 18px; border:1px solid var(--ink-20); color:var(--ink); font-size:14px; font-weight:500; }
+.intro-btn:hover { border-color:var(--ink-55); }
+.intro-btn svg { width:14px; height:14px; flex-shrink:0; }
 
 /* WHY-SECTION LAYOUT (Notre conviction) — copied verbatim from index.html */
 .why-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
@@ -255,6 +258,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   <div class="inner">
     <p class="intro-body">Votre annonce nous a int&eacute;ress&eacute;s par l'ambition du profil recherch&eacute;&nbsp;: r&eacute;unir dans une m&ecirc;me mission pilotage de la croissance, proximit&eacute; client, forte autonomie op&eacute;rationnelle et ma&icirc;trise avanc&eacute;e de l'IA.</p>
     <p class="intro-body">Plut&ocirc;t que de vous envoyer uniquement un CV, nous avons pris le temps d'analyser le mandat. Cette page vous pr&eacute;sente notre lecture du besoin, les points qui nous semblent d&eacute;terminants dans la s&eacute;lection du profil et l'organisation que nous recommanderions autour de lui.</p>
+    <div style="text-align:center;">
+      <a class="intro-btn" href="#" download>Lettre de motivation<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v9M8 10.5L4.5 7M8 10.5L11.5 7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 12.5v1a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-1" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -412,7 +418,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <span class="tag">Google Ads</span>
         </div>
         <hr class="profile-rule">
-        <p class="profile-desc">&mdash; Growth Marketer ind&eacute;pendant sp&eacute;cialis&eacute; dans l'int&eacute;gration CRM (Pipedrive), l'automatisation des process commerciaux et la g&eacute;n&eacute;ration de leads via l'analyse de funnels d'acquisition (m&eacute;thodologie AARRR). Son approche est pragmatique et enti&egrave;rement adapt&eacute;e &agrave; la r&eacute;alit&eacute; de chaque entreprise. S&eacute;bastien a une approche m&eacute;thodique et bas&eacute;e sur la donn&eacute;e, il prend le temps de comprendre un business avant d'agir.</p>
+        <p class="profile-desc">&mdash; Growth Marketer ind&eacute;pendant sp&eacute;cialis&eacute; dans l'int&eacute;gration CRM (Pipedrive), l'automatisation des process commerciaux et la g&eacute;n&eacute;ration de leads via l'analyse de funnels d'acquisition (m&eacute;thodologie AARRR). Son approche est pragmatique et enti&egrave;rement adapt&eacute;e &agrave; la r&eacute;alit&eacute; de chaque entreprise. S&eacute;bastien n'est pas du genre &agrave; s'enfermer dans un seul framework Growth &mdash; son parcours entre agence, startup et ind&eacute;pendance lui a appris &agrave; s'adapter plut&ocirc;t qu'&agrave; imposer une m&eacute;thode.</p>
         <p class="profile-mission"><span class="profile-mission-label">R&ocirc;le potentiel&nbsp;:</span> Lead Growth</p>
       </div>
       <div class="profile-card">
