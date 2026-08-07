@@ -123,7 +123,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 :root[data-theme="dark"] .modal-close:hover { border-color:rgba(28,26,23,0.5); }
 .modal-close svg { width:14px; height:14px; }
 .modal-title { font-size:clamp(20px,2.2vw,26px); font-weight:700; letter-spacing:-0.02em; margin:0 0 8px; padding-right:40px; }
-.modal-sub { font-size:15px; opacity:0.7; line-height:1.6; margin:0 0 28px; }
+.modal-sub { font-size:15px; opacity:0.7; line-height:1.6; margin:0 0 12px; }
+.modal-disclaimer { font-size:13px; opacity:0.55; font-style:italic; line-height:1.5; margin:0 0 28px; }
 .vision-table-wrap { overflow-x:auto; }
 .vision-table { width:100%; border-collapse:collapse; min-width:760px; }
 .vision-table th { text-align:left; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; opacity:0.6; padding:10px 14px; border-bottom:2px solid rgba(247,244,238,0.24); white-space:nowrap; }
@@ -591,6 +592,7 @@ themeToggle.addEventListener('click', () => {
     </button>
     <h3 class="modal-title">R&eacute;partition d&eacute;taill&eacute;e des responsabilit&eacute;s</h3>
     <p class="modal-sub">Comment nous r&eacute;partirions les blocs du mandat entre le Senior Growth Lead, le syst&egrave;me IA/automatisation, un expert ponctuel si besoin, et vos fondateurs.</p>
+    <p class="modal-disclaimer">&Agrave; titre indicatif et uniquement pour illustrer un propos.</p>
     <div class="vision-table-wrap">
       <table class="vision-table">
         <thead>
