@@ -111,6 +111,14 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 @media (max-width:640px){ .modal-panel{padding:24px 16px;} }
 
+/* PORTFOLIO — no card, pure background, Pinterest-style masonry (CSS columns, native aspect ratios kept) */
+.portfolio-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.portfolio-masonry { column-count:3; column-gap:14px; }
+.portfolio-item { break-inside:avoid; margin-bottom:14px; background:var(--ink-06); overflow:hidden; position:relative; }
+.portfolio-media { width:100%; height:auto; display:block; }
+@media (max-width:860px){ .portfolio-masonry{column-count:2;} }
+@media (max-width:480px){ .portfolio-masonry{column-gap:10px;} .portfolio-item{margin-bottom:10px;} }
+
 /* WHY-SECTION LAYOUT (Notre conviction) — copied verbatim from index.html */
 .why-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
 .why-split { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(32px,5vw,72px); align-items:start; }
@@ -396,12 +404,66 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   </div>
 </section>
 
+<!-- PORTFOLIO — no card, pure background, masonry of Kamel's own work -->
+<section class="portfolio-section">
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">03</span>Portfolio</p>
+      <h2 class="sh-h" style="margin-top:14px;">Une s&eacute;lection des r&eacute;alisations de Kamel</h2>
+      <p class="sh-b" style="margin-top:10px;">Plus de 100 autres r&eacute;alisations sont disponibles sur demande.</p>
+    </div>
+    <div class="portfolio-masonry">
+      <div class="portfolio-item">
+        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-01-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-01.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item">
+        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-02-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-02.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item">
+        <img class="portfolio-media" src="Assets/Images/kamel-portfolio/kamel-08.webp" loading="lazy" alt="">
+      </div>
+      <div class="portfolio-item">
+        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-03-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-03.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item">
+        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-04-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-04.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item">
+        <img class="portfolio-media" src="Assets/Images/kamel-portfolio/kamel-09.webp" loading="lazy" alt="">
+      </div>
+      <div class="portfolio-item">
+        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-05-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-05.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item">
+        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-06-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-06.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item">
+        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-07-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-07.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- NOTRE LECTURE — why-section layout, 3 rows -->
 <section class="why-section">
   <div class="inner">
     <div class="why-split">
       <div>
-        <p class="ew"><span class="sec-num">03</span>Notre lecture</p>
+        <p class="ew"><span class="sec-num">04</span>Notre lecture</p>
         <h2 class="why-lead-h" style="margin-top:14px;">Ce qui nous semble important pour Curculia</h2>
       </div>
       <div class="why-rows">
@@ -435,7 +497,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <!-- PROFILS — new component, real freelancer profiles -->
 <section class="founder-closing">
   <div class="inner">
-    <p class="ew"><span class="sec-num">04</span>Qui sommes nous</p>
+    <p class="ew"><span class="sec-num">05</span>Qui sommes nous</p>
     <div class="founder-closing-grid" style="margin-top:32px;">
       <div>
         <h2 class="founder-closing-h2">Nous ne sommes ni une agence, ni une plateforme.</h2>
@@ -465,7 +527,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <section>
   <div class="inner">
     <div class="sh">
-      <p class="ew"><span class="sec-num">05</span>Approche</p>
+      <p class="ew"><span class="sec-num">06</span>Approche</p>
       <h2 class="sh-h" style="margin-top:14px;">Comment &ccedil;a fonctionne</h2>
       <p class="sh-b" style="margin-top:10px;">Un freelance directement int&eacute;gr&eacute; &agrave; votre &eacute;quipe. Metodas derri&egrave;re.</p>
     </div>
@@ -491,7 +553,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 <section id="pricing" class="pricing-section">
   <div class="inner">
-    <div class="sh"><p class="ew"><span class="sec-num">06</span>Tarifs</p><div><h2 class="sh-h">Un mod&egrave;le simple et transparent.</h2></div></div>
+    <div class="sh"><p class="ew"><span class="sec-num">07</span>Tarifs</p><div><h2 class="sh-h">Un mod&egrave;le simple et transparent.</h2></div></div>
     <div class="pricing-box">
       <div class="pricing-left">
         <p class="ew">Le mod&egrave;le</p>
@@ -580,6 +642,27 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   carousel.querySelector('.next').addEventListener('click', () => show(index + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
 });
+</script>
+
+<script>
+const portfolioVideos = document.querySelectorAll('.portfolio-media[preload="none"]');
+if (portfolioVideos.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const v = entry.target;
+      if (entry.isIntersecting) {
+        if (v.preload !== 'auto') v.preload = 'auto';
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.4 });
+  portfolioVideos.forEach((v) => {
+    io.observe(v);
+    v.addEventListener('click', () => { v.paused ? v.play().catch(() => {}) : v.pause(); });
+  });
+}
 </script>
 
 </body>
