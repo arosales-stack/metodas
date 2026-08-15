@@ -258,8 +258,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .feature-identity-name { font-size:22px; font-weight:700; letter-spacing:-0.015em; margin-top:20px; }
 .feature-identity-role { font-size:16px; color:var(--ink-55); margin-top:4px; }
 .feature-identity-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; padding-top:20px; border-top:1px solid var(--ink-20); }
-.feature-identity-location { display:flex; align-items:center; gap:8px; font-size:15px; color:var(--ink-55); margin-top:20px; padding-top:20px; border-top:1px solid var(--ink-20); }
-.feature-identity-location::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.feature-identity-tags .tag { font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:5px 12px; }
+.feature-identity-exp { margin-top:20px; padding-top:20px; border-top:1px solid var(--ink-20); }
+.feature-identity-exp .expertise-list { margin:0; padding:0; border-top:none; }
 .feature-content { display:flex; flex-direction:column; }
 .feature-lead { font-size:17px; line-height:1.8; color:var(--ink-55); }
 .feature-why-label { font-size:15px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; margin-top:28px; padding-top:24px; border-top:1px solid var(--ink-20); }
@@ -272,7 +273,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .feature-why-body { font-size:16px; line-height:1.75; color:var(--ink-55); }
 .feature-closing { font-size:17px; line-height:1.8; font-weight:700; color:var(--ink); margin-top:26px; padding-top:24px; border-top:1px solid var(--ink-20); }
 @media (max-width:860px){ .feature-grid{grid-template-columns:1fr;} }
-@media (max-width:640px){ .feature-photo-lg{max-width:160px; margin:0 auto;} .feature-identity{text-align:center; align-items:center;} .feature-identity-tags{justify-content:center;} .feature-identity-location{justify-content:center;} }
+@media (max-width:640px){ .feature-photo-lg{max-width:160px; margin:0 auto;} .feature-identity{text-align:center; align-items:center;} .feature-identity-tags{justify-content:center;} }
 
 .profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
@@ -341,6 +342,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <div class="feature-photo-lg"><img src="Assets/Images/Profiles/kamel.png" alt="Kamel"></div>
           <p class="feature-identity-name">Kamel</p>
           <p class="feature-identity-role">Creative Director &middot; AI Image &amp; Video</p>
+          <p class="feature-identity-role">15+ ans d'exp&eacute;rience</p>
           <div class="feature-identity-tags">
             <span class="tag">Chanel</span>
             <span class="tag">Lanc&ocirc;me</span>
@@ -349,7 +351,17 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
             <span class="tag">Nike</span>
             <span class="tag">The North Face</span>
           </div>
-          <p class="feature-identity-location">Barcelone &middot; 15+ ans d'exp&eacute;rience</p>
+          <div class="feature-identity-exp">
+            <ul class="expertise-list">
+              <li>Direction cr&eacute;ative &amp; conception visuelle</li>
+              <li>AI Image &amp; AI Video</li>
+              <li>Photographie &amp; r&eacute;alisation</li>
+              <li>Motion Design &amp; VFX</li>
+              <li>Post-production vid&eacute;o</li>
+              <li>Brand Content &amp; Social Content</li>
+              <li>Creative Production &amp; workflows IA</li>
+            </ul>
+          </div>
         </div>
         <div class="feature-content">
           <p class="feature-lead">Kamel combine 15+ ans de direction cr&eacute;ative et de production avec une ma&icirc;trise avanc&eacute;e de la g&eacute;n&eacute;ration image et vid&eacute;o. Film, photographie, direction artistique, motion et post-production font partie du m&ecirc;me profil.</p>
@@ -380,16 +392,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <p class="feature-closing">L'int&eacute;r&ecirc;t pour Curculia est simple&nbsp;: un niveau cr&eacute;atif senior, une forte capacit&eacute; d'ex&eacute;cution et une structure de production IA particuli&egrave;rement l&eacute;g&egrave;re.</p>
         </div>
       </div>
-
-      <ul class="expertise-list">
-        <li>Direction cr&eacute;ative &amp; conception visuelle</li>
-        <li>AI Image &amp; AI Video</li>
-        <li>Photographie &amp; r&eacute;alisation</li>
-        <li>Motion Design &amp; VFX</li>
-        <li>Post-production vid&eacute;o</li>
-        <li>Brand Content &amp; Social Content</li>
-        <li>Creative Production &amp; workflows IA</li>
-      </ul>
     </div>
   </div>
 </section>
