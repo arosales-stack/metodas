@@ -115,7 +115,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .portfolio-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
 .portfolio-masonry { column-count:3; column-gap:14px; }
 .portfolio-item { break-inside:avoid; margin-bottom:14px; background:var(--ink-06); overflow:hidden; position:relative; }
-.portfolio-media { width:100%; height:auto; display:block; }
+.portfolio-media { width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:860px){ .portfolio-masonry{column-count:2;} }
 @media (max-width:480px){ .portfolio-masonry{column-gap:10px;} .portfolio-item{margin-bottom:10px;} }
 
@@ -413,44 +413,44 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
       <p class="sh-b" style="margin-top:10px;">Plus de 100 autres r&eacute;alisations sont disponibles sur demande.</p>
     </div>
     <div class="portfolio-masonry">
-      <div class="portfolio-item">
-        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-01-poster.jpg">
+      <div class="portfolio-item" style="aspect-ratio:720/970;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-01-poster.jpg">
           <source src="Assets/Video/kamel/kamel-01.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="portfolio-item">
-        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-02-poster.jpg">
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-02-poster.jpg">
           <source src="Assets/Video/kamel/kamel-02.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="portfolio-item">
+      <div class="portfolio-item" style="aspect-ratio:768/1376;">
         <img class="portfolio-media" src="Assets/Images/kamel-portfolio/kamel-08.webp" loading="lazy" alt="">
       </div>
-      <div class="portfolio-item">
-        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-03-poster.jpg">
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-03-poster.jpg">
           <source src="Assets/Video/kamel/kamel-03.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="portfolio-item">
-        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-04-poster.jpg">
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-04-poster.jpg">
           <source src="Assets/Video/kamel/kamel-04.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="portfolio-item">
+      <div class="portfolio-item" style="aspect-ratio:1080/1920;">
         <img class="portfolio-media" src="Assets/Images/kamel-portfolio/kamel-09.webp" loading="lazy" alt="">
       </div>
-      <div class="portfolio-item">
-        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-05-poster.jpg">
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-05-poster.jpg">
           <source src="Assets/Video/kamel/kamel-05.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="portfolio-item">
-        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-06-poster.jpg">
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-06-poster.jpg">
           <source src="Assets/Video/kamel/kamel-06.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="portfolio-item">
-        <video class="portfolio-media" muted loop playsinline preload="none" poster="Assets/Images/kamel-portfolio/kamel-07-poster.jpg">
+      <div class="portfolio-item" style="aspect-ratio:720/1274;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-07-poster.jpg">
           <source src="Assets/Video/kamel/kamel-07.mp4" type="video/mp4">
         </video>
       </div>
@@ -645,7 +645,7 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
 </script>
 
 <script>
-const portfolioVideos = document.querySelectorAll('.portfolio-media[preload="none"]');
+const portfolioVideos = document.querySelectorAll('.portfolio-media[preload="metadata"]');
 if (portfolioVideos.length) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
