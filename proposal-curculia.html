@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposition — Curculia / Metodas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* TOKENS — copied verbatim from usecase-sales-editorial.html */
+:root {
+  color-scheme: light dark;
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --pad-x: clamp(20px, 4vw, 48px); --pad-y: clamp(48px, 6vw, 72px); --pad-card: clamp(20px, 2vw, 28px);
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+  --fixed-cream: #f7f4ee; --fixed-cream-55: rgba(247,244,238,0.55);
+  --fixed-ink: #1c1a17; --fixed-ink-55: rgba(28,26,23,0.64);
+  --fixed-beige: #e4ddcd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+    --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+    --paper-r: 23; --paper-g: 21; --paper-b: 18;
+    --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10);
+  }
+}
+:root[data-theme="light"] {
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+}
+:root[data-theme="dark"] {
+  --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+  --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+  --paper-r: 23; --paper-g: 21; --paper-b: 18;
+  --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light dark; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; font-size:16px; font-weight:400; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+a { color:inherit; text-decoration:none; }
+p, h1, h2, h3 { margin:0; }
+a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.inner { max-width:1200px; margin:0 auto; padding:var(--pad-y) var(--pad-x); }
+
+.ew { font-size:15px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
+.ew::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.sec-num { color:var(--accent-2); font-weight:700; margin-right:2px; }
+
+.sh { margin-bottom:40px; }
+.sh-h { font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-0.025em; line-height:1.1; margin-bottom:10px; }
+.sh-b { font-size:17px; color:var(--ink-55); line-height:1.8; }
+
+/* NAV */
+.site-nav { position:sticky; top:0; z-index:100; background:rgba(var(--paper-r),var(--paper-g),var(--paper-b),0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--ink-06); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:16px var(--pad-x); display:flex; align-items:center; justify-content:space-between; gap:24px; transition:padding .2s ease; }
+.nav-left { display:flex; align-items:center; gap:24px; min-width:0; }
+.nav-logo { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:700; letter-spacing:-0.02em; flex-shrink:0; }
+.nav-logo img { height:34px; width:auto; display:block; }
+.nav-logo img.logo-dark { display:none; }
+@media (prefers-color-scheme: dark) { .nav-logo img.logo-light{display:none;} .nav-logo img.logo-dark{display:block;} }
+:root[data-theme="light"] .nav-logo img.logo-light { display:block; }
+:root[data-theme="light"] .nav-logo img.logo-dark { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-light { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-dark { display:block; }
+.nav-actions { display:flex; align-items:center; gap:16px; flex-shrink:0; }
+.btn-red { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:inherit; font-weight:500; border:1px solid var(--accent); text-decoration:none; transition: transform .2s cubic-bezier(.22,1,.36,1), opacity .12s, box-shadow .2s; font-size:14px; padding:11px 20px; letter-spacing:0.01em; }
+.btn-red:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(163,49,26,0.28); }
+.theme-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); cursor:pointer; }
+.lang-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:13px; font-weight:500; letter-spacing:0.02em; transition:border-color .12s; flex-shrink:0; }
+.lang-toggle:hover { border-color:var(--ink-55); }
+@media (max-width:640px){ .nav-inner .btn-red{display:none;} .nav-actions{gap:10px;} }
+.theme-toggle:hover { border-color:var(--ink-55); }
+.theme-toggle svg { width:19px; height:19px; display:block; }
+.theme-toggle .icon-moon { display:none; }
+@media (prefers-color-scheme: dark) { .theme-toggle .icon-sun { display:none; } .theme-toggle .icon-moon { display:block; } }
+:root[data-theme="light"] .theme-toggle .icon-sun { display:block; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display:block; }
+
+/* HERO — new: H1 hook + 16:9 video placeholder (video pattern/margins copied from usecase-sales-editorial.html's .uc-slide-video) */
+.hook-hero { text-align:center; }
+.hook-hero .inner { padding-bottom:24px; }
+.hero-ew { justify-content:center; margin-bottom:16px; }
+.hook-h1 { font-size:clamp(30px,4.6vw,54px); font-weight:700; letter-spacing:-0.03em; line-height:1.12; max-width:840px; margin:0 auto; }
+.hook-video { margin:40px auto 0; max-width:1000px; aspect-ratio:3/2; background:var(--beige); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.section-image-wrap { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.section-image { max-width:1200px; margin:0 auto; aspect-ratio:16/9; overflow:hidden; }
+.section-image img { width:100%; height:100%; object-fit:cover; display:block; }
+.hook-video img, .hook-video video { width:100%; height:100%; object-fit:cover; display:block; }
+.hook-video-label { font-size:13px; color:var(--ink-55); letter-spacing:0.04em; text-transform:uppercase; }
+@media (max-width:640px){ .hook-video { margin-top:28px; } }
+
+/* INTRO TEXT — plain paragraphs under the hero */
+.intro-section { border-bottom:1px solid var(--ink-06); }
+.intro-section .inner { padding-top:24px; }
+.intro-body { font-size:19px; color:var(--ink-55); line-height:1.6; max-width:720px; margin:0 auto 16px; text-align:center; }
+.intro-body:last-child { margin-bottom:0; }
+.intro-body.is-bold { font-weight:400; color:var(--ink); }
+.intro-btn { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:10px 18px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; cursor:pointer; appearance:none; -webkit-appearance:none; border-radius:0; }
+.intro-btn:hover { border-color:var(--ink-55); }
+.intro-btn svg { width:14px; height:14px; flex-shrink:0; }
+
+@media (max-width:640px){ .modal-panel{padding:24px 16px;} }
+
+/* PORTFOLIO — no card, pure background, Pinterest-style masonry (CSS columns, native aspect ratios kept) */
+.portfolio-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.portfolio-masonry { column-count:3; column-gap:14px; }
+.portfolio-item { break-inside:avoid; margin-bottom:14px; background:var(--ink-06); overflow:hidden; position:relative; }
+.portfolio-media { width:100%; height:100%; object-fit:cover; display:block; }
+@media (max-width:860px){ .portfolio-masonry{column-count:2;} }
+@media (max-width:480px){ .portfolio-masonry{column-gap:10px;} .portfolio-item{margin-bottom:10px;} }
+
+/* WHY-SECTION LAYOUT (Notre conviction) — copied verbatim from index.html */
+.why-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.why-split { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(32px,5vw,72px); align-items:start; }
+.why-lead-h { font-size:clamp(26px,3.2vw,42px); font-weight:700; letter-spacing:-0.03em; line-height:1.12; }
+.why-intro-b { margin-top:14px; font-size:17px; color:var(--ink-55); line-height:1.8; max-width:420px; }
+.why-rows { display:flex; flex-direction:column; }
+.why-row { display:grid; grid-template-columns:auto 1fr; gap:20px; padding:26px 0; border-top:1px solid var(--ink-06); }
+.why-row:first-child { border-top:none; }
+.why-row-num { font-size:22px; font-weight:700; letter-spacing:-0.03em; color:var(--ink-20); line-height:1.3; }
+.why-row-title { font-size:17px; font-weight:700; letter-spacing:-0.015em; margin-bottom:8px; }
+.why-row-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
+.why-row-body p { margin:0 0 14px; }
+.why-row-body p:last-child { margin-bottom:0; }
+@media (max-width:860px){ .why-split{grid-template-columns:1fr;} }
+
+/* EXPERTISE GRID (Notre approche) — copied verbatim from index.html, tags removed */
+.exp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.exp-card { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); padding:var(--pad-card); display:flex; flex-direction:column; color:var(--ink); }
+.exp-num { font-size:12px; font-weight:700; letter-spacing:0.1em; color:var(--accent-2); margin-bottom:16px; }
+.exp-title { font-size:18px; font-weight:700; letter-spacing:-0.015em; margin-bottom:10px; color:var(--ink); }
+.exp-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
+@media (max-width:860px){ .exp-grid{grid-template-columns:1fr;} }
+
+/* PRICING — copied verbatim from index.html */
+.pricing-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.pricing-box { display:grid; grid-template-columns:1fr 1fr; }
+.pricing-left { background:var(--card); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
+.pricing-left { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
+.pricing-right { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
+.pricing-h2 { font-size:clamp(22px,2.6vw,34px); font-weight:700; letter-spacing:-0.025em; margin:12px 0 0; }
+.pricing-sub { font-size:15px; color:var(--ink-55); line-height:1.65; margin:14px 0 0; }
+.pricing-item { font-size:15px; line-height:1.6; display:flex; align-items:center; gap:10px; }
+.pricing-check { width:16px; height:16px; flex-shrink:0; color:var(--accent-2); }
+.pricing-big { display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+.pricing-pct { font-size:clamp(56px,6.4vw,80px); font-weight:700; letter-spacing:-0.05em; line-height:1; font-variant-numeric:tabular-nums; }
+.pricing-flat { font-size:14px; color:var(--ink-55); }
+.pricing-rule { width:44px; height:2px; background:var(--accent-2); margin-bottom:24px; }
+.pricing-items { display:flex; flex-direction:column; gap:18px; }
+@media (max-width:640px){ .pricing-box{grid-template-columns:1fr;} }
+
+/* FOUNDER CLOSING — two-column, equal width: section label left, photo-on-top card right, brand beige */
+.founder-closing { padding:clamp(64px,8vw,120px) 0; }
+.founder-closing-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(40px,5vw,72px); align-items:center; }
+.founder-closing-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; }
+.founder-closing-sub { font-size:17px; color:var(--ink-55); line-height:1.8; margin:14px 0 0; max-width:440px; }
+.stat-list { list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.stat-list li { display:flex; align-items:baseline; gap:10px; font-size:15px; color:var(--ink); }
+.stat-list li::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--ink-06); border:1px solid var(--ink-06); }
+.hcard { aspect-ratio:3/4; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative; background:var(--dark-bg); }
+@media (prefers-color-scheme: dark) { .hcard { background:var(--fixed-beige); } }
+:root[data-theme="light"] .hcard { background:var(--dark-bg); }
+:root[data-theme="dark"] .hcard { background:var(--fixed-beige); }
+.hcard-tag { position:absolute; bottom:12px; left:12px; background:#1c1a17; color:#f7f4ee; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 8px; z-index:2; }
+.hcard img { width:100%; height:100%; object-fit:cover; display:block; }
+.founder-signature { display:flex; align-items:center; gap:16px; margin-top:32px; }
+.founder-closing-name { font-size:17px; font-weight:700; letter-spacing:-0.015em; }
+.founder-closing-btn { display:inline-block; margin-top:10px; padding:10px 20px; background:var(--accent); color:var(--fixed-cream); font-size:14px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; }
+.founder-closing-btn:hover { background:var(--accent-2); }
+@media (max-width:680px){
+  .founder-closing-grid{grid-template-columns:1fr;}
+  .founder-closing-grid > .hero-grid{order:1;}
+  .founder-closing-grid > div:first-child{order:2;}
+}
+
+/* section-dark — copied verbatim from usecase-sales-editorial.html */
+.section-dark { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-20:rgba(247,244,238,0.24); --ink-10:rgba(247,244,238,0.12); --ink-06:var(--dark-line); --card:var(--dark-surface); --paper:var(--dark-bg); color:var(--ink); }
+
+
+/* FOOTER */
+.site-footer { border-top:1px solid var(--dark-line); background:var(--dark-bg); padding:56px 0 28px; }
+.site-footer, .site-footer .inner { --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); }
+.footer-top { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--dark-line); margin-bottom:24px; }
+.footer-logo { display:flex; align-items:center; gap:8px; font-size:16px; font-weight:700; letter-spacing:-0.02em; color:var(--fixed-cream); }
+.footer-logo img { height:26px; width:auto; display:block; }
+.footer-nav { display:flex; flex-direction:column; gap:12px; }
+.footer-col-label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--fixed-cream-55); margin-bottom:6px; }
+.footer-link { font-size:13px; color:var(--fixed-cream-55); transition:color .12s; width:fit-content; }
+.footer-link:hover { color:var(--fixed-cream); }
+.footer-bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.footer-legal-links { display:flex; gap:16px; }
+.footer-legal-links a { font-size:12px; color:var(--fixed-cream-55); transition:color .12s; }
+.footer-legal-links a:hover { color:var(--fixed-cream); }
+.footer-copy { font-size:12px; color:var(--fixed-cream-55); }
+@media (max-width:640px){ .footer-top{grid-template-columns:1fr;} }
+
+
+/* CLOSING SIGNATURE — standalone, outside the Qui sommes nous section */
+.closing-signature { border-top:1px solid var(--ink-06); padding:48px 0; }
+.closing-signature-grid { display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; max-width:600px; margin:0 auto; }
+.closing-signature-identity { display:flex; flex-direction:column; align-items:center; }
+.closing-signature-photo { width:110px; height:110px; overflow:hidden; }
+.closing-signature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.closing-signature-name { font-size:19px; font-weight:700; letter-spacing:-0.015em; margin-top:14px; display:flex; align-items:center; gap:8px; justify-content:center; }
+.closing-signature-role { font-size:17px; color:var(--ink-55); margin-top:4px; }
+.closing-signature-btn { display:inline-block; padding:10px 22px; background:var(--accent); color:var(--fixed-cream); font-size:16px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; }
+.closing-signature-btn:hover { background:var(--accent-2); }
+.closing-signature-li { display:inline-flex; color:var(--ink-55); transition:color .12s; }
+.closing-signature-li:hover { color:var(--ink); }
+.closing-signature-li svg { width:16px; height:16px; display:block; }
+/* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
+/* SINGLE FEATURED PROFILE — duplicated from proposal-verisure.html */
+.feature-profile { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(28px,4vw,44px); }
+.feature-top { display:flex; align-items:center; gap:20px; }
+.feature-photo { width:96px; height:96px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
+.feature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.feature-name { font-size:22px; font-weight:700; letter-spacing:-0.015em; }
+.feature-role { font-size:17px; color:var(--ink-55); margin-top:4px; }
+.feature-desc { font-size:17px; line-height:1.8; color:var(--ink-55); margin-top:24px; }
+.feature-desc p { margin:0 0 16px; }
+.feature-desc p:last-child { margin-bottom:0; }
+.feature-desc .is-bold { font-weight:700; color:var(--ink); }
+
+/* SES EXPERTISES — bullet list, reusing stat-list pattern */
+.expertise-list { list-style:none; margin:32px 0 0; padding:24px 0 0; border-top:1px solid var(--ink-20); display:flex; flex-direction:column; gap:10px; }
+.expertise-list li { display:flex; align-items:baseline; gap:10px; font-size:15px; color:var(--ink); }
+.expertise-list li::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+
+/* USE CASES — one carousel, 3 slides (one per use case), each slide = 2x2 image grid */
+.usecase-carousel { margin-top:32px; padding-top:24px; border-top:1px solid var(--ink-20); position:relative; }
+.usecase-slide { display:none; }
+.usecase-slide.is-active { display:block; }
+.usecase-title { font-size:16px; font-weight:700; letter-spacing:-0.01em; }
+.usecase-desc { font-size:15px; color:var(--ink-55); line-height:1.6; margin-top:6px; }
+.usecase-img-grid { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; aspect-ratio:1/1; gap:3px; margin-top:16px; }
+.usecase-img-cell { background:var(--ink-06); overflow:hidden; position:relative; }
+.usecase-img-cell img { width:100%; height:100%; object-fit:cover; display:block; }
+.usecase-img-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--ink-55); letter-spacing:0.04em; text-transform:uppercase; }
+.usecase-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:16px; }
+.usecase-arrow { width:32px; height:32px; background:transparent; border:1px solid var(--ink-20); color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0; flex-shrink:0; }
+.usecase-arrow:hover { border-color:var(--ink-55); }
+.usecase-arrow svg { width:14px; height:14px; }
+.usecase-dots { display:flex; gap:6px; }
+.usecase-dot { width:6px; height:6px; border-radius:50%; background:var(--ink-20); border:none; padding:0; cursor:pointer; }
+.usecase-dot.is-active { background:var(--accent-2); }
+.feature-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; padding-top:24px; border-top:1px solid var(--ink-20); }
+.feature-tags .tag { font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:5px 12px; }
+@media (max-width:640px){ .feature-top{flex-direction:column; text-align:center;} }
+
+/* FEATURE PROFILE — two-column split (identity left, narrative right), single-profile pages */
+.feature-grid { display:grid; grid-template-columns:0.82fr 1.18fr; gap:clamp(32px,4vw,56px); align-items:start; }
+.feature-identity { display:flex; flex-direction:column; }
+.feature-photo-lg { width:100%; max-width:220px; aspect-ratio:3/4; overflow:hidden; background:var(--accent-2); }
+.feature-photo-lg img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.feature-identity-name { font-size:22px; font-weight:700; letter-spacing:-0.015em; margin-top:20px; }
+.feature-identity-role { font-size:16px; color:var(--ink-55); margin-top:4px; }
+.feature-identity-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; padding-top:20px; border-top:1px solid var(--ink-20); }
+.feature-identity-tags .tag { font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:5px 12px; }
+.feature-identity-exp { margin-top:20px; padding-top:20px; border-top:1px solid var(--ink-20); }
+.feature-identity-exp .expertise-list { margin:0; padding:0; border-top:none; }
+.feature-content { display:flex; flex-direction:column; }
+.feature-lead { font-size:17px; line-height:1.8; color:var(--ink-55); }
+.feature-why-label { font-size:15px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; margin-top:28px; padding-top:24px; border-top:1px solid var(--ink-20); }
+.feature-why-label::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.feature-why-rows { display:flex; flex-direction:column; margin-top:6px; }
+.feature-why-row { display:grid; grid-template-columns:auto 1fr; gap:16px; padding:18px 0; border-top:1px solid var(--ink-06); }
+.feature-why-row:first-child { border-top:none; }
+.feature-why-num { font-size:18px; font-weight:700; letter-spacing:-0.03em; color:var(--ink-20); line-height:1.3; }
+.feature-why-title { font-size:16px; font-weight:700; letter-spacing:-0.015em; margin-bottom:6px; }
+.feature-why-body { font-size:16px; line-height:1.75; color:var(--ink-55); }
+.feature-closing { font-size:17px; line-height:1.8; font-weight:700; color:var(--ink); margin-top:26px; padding-top:24px; border-top:1px solid var(--ink-20); }
+@media (max-width:860px){ .feature-grid{grid-template-columns:1fr;} }
+@media (max-width:640px){ .feature-photo-lg{max-width:160px; margin:0 auto;} .feature-identity{text-align:center; align-items:center;} .feature-identity-tags{justify-content:center;} }
+
+.profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
+.profile-badge { position:absolute; top:16px; right:16px; width:26px; height:26px; border-radius:50%; background:var(--accent-2); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.profile-top { display:flex; align-items:center; gap:16px; padding-right:36px; min-height:80px; }
+.profile-photo { width:64px; height:64px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
+.profile-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.profile-photo-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; color:var(--ink-55); }
+.profile-name { font-size:19px; font-weight:700; letter-spacing:-0.015em; }
+.profile-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
+.profile-meta { font-size:15px; color:var(--ink-55); margin-top:10px; }
+.profile-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.profile-tags .tag { font-size:12px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:4px 10px; }
+.profile-rule { border:none; border-top:1px solid var(--ink-20); margin:18px 0 16px; }
+.profile-desc { font-size:15px; color:var(--ink-55); line-height:1.65; }
+.profile-mission { font-size:15px; font-style:italic; color:var(--ink-55); line-height:1.65; margin-bottom:14px; }
+.profile-mission-label { font-style:normal; font-weight:700; color:var(--ink); }
+@media (max-width:860px){ .profile-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index-fr.html#top" class="nav-logo"><img class="logo-light" src="Assets/Images/Logo/metodas-mark-black.png" alt=""><img class="logo-dark" src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.3"/><g stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><line x1="8" y1="0.8" x2="8" y2="2.4"/><line x1="8" y1="13.6" x2="8" y2="15.2"/><line x1="0.8" y1="8" x2="2.4" y2="8"/><line x1="13.6" y1="8" x2="15.2" y2="8"/><line x1="2.6" y1="2.6" x2="3.7" y2="3.7"/><line x1="12.3" y1="12.3" x2="13.4" y2="13.4"/><line x1="2.6" y1="13.4" x2="3.7" y2="12.3"/><line x1="12.3" y1="3.7" x2="13.4" y2="2.6"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 9.8A6 6 0 1 1 6.2 2.8a6.6 6.6 0 1 0 7 7z" fill="currentColor"/></svg>
+      </button>
+      <a href="Validated elements/contact-fr.html" class="btn-red">Travailler avec nous</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hook-hero">
+  <div class="inner">
+    <p class="ew hero-ew"><span class="sec-num">01</span>Le mandat</p>
+    <h1 class="hook-h1">Sur la skincare, le r&eacute;alisme n'est pas un d&eacute;tail cr&eacute;atif. C'est une condition de cr&eacute;dibilit&eacute;.</h1>
+  </div>
+</section>
+
+<!-- INTRO — remaining opening copy -->
+<section class="intro-section">
+  <div class="inner">
+    <p class="intro-body">Curculia vend des r&eacute;sultats visibles sur des sujets o&ugrave; l'image est d&eacute;terminante&nbsp;: imperfections, acn&eacute;, taches, hyperpigmentation, texture de peau.</p>
+    <p class="intro-body">Votre recherche d'un AI Creative pose donc une contrainte particuli&egrave;rement forte&nbsp;: produire davantage et explorer davantage, sans que la peau, les textures, le produit ou le mouvement ne trahissent l'IA.</p>
+    <p class="intro-body">C'est pr&eacute;cis&eacute;ment pour cette raison que nous vous pr&eacute;sentons ce profil.</p>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">02</span>Profil</p>
+      <h2 class="sh-h" style="margin-top:14px;">Profil recommand&eacute;</h2>
+    </div>
+    <div class="feature-profile">
+      <div class="feature-grid">
+        <div class="feature-identity">
+          <div class="feature-photo-lg"><img src="Assets/Images/Profiles/camel.png" alt="Camel"></div>
+          <p class="feature-identity-name">Camel</p>
+          <p class="feature-identity-role">Creative Director &middot; AI Image &amp; Video</p>
+          <p class="feature-identity-role">15+ ans d'exp&eacute;rience</p>
+          <div class="feature-identity-tags">
+            <span class="tag">Chanel</span>
+            <span class="tag">Lanc&ocirc;me</span>
+            <span class="tag">L'Or&eacute;al</span>
+            <span class="tag">Adidas</span>
+            <span class="tag">Nike</span>
+            <span class="tag">The North Face</span>
+          </div>
+          <div class="feature-identity-exp">
+            <ul class="expertise-list">
+              <li>Direction cr&eacute;ative &amp; conception visuelle</li>
+              <li>AI Image &amp; AI Video</li>
+              <li>Photographie &amp; r&eacute;alisation</li>
+              <li>Motion Design &amp; VFX</li>
+              <li>Post-production vid&eacute;o</li>
+              <li>Brand Content &amp; Social Content</li>
+              <li>Creative Production &amp; workflows IA</li>
+            </ul>
+          </div>
+        </div>
+        <div class="feature-content">
+          <p class="feature-lead">Camel combine 15+ ans de direction cr&eacute;ative et de production avec une ma&icirc;trise avanc&eacute;e de la g&eacute;n&eacute;ration image et vid&eacute;o. Film, photographie, direction artistique, motion et post-production font partie du m&ecirc;me profil.</p>
+          <p class="feature-why-label">Pourquoi ce profil nous int&eacute;resse pour Curculia</p>
+          <div class="feature-why-rows">
+            <div class="feature-why-row">
+              <p class="feature-why-num">01</p>
+              <div>
+                <h3 class="feature-why-title">15+ ans de production avant la g&eacute;n&eacute;ration.</h3>
+                <p class="feature-why-body">Camel a pass&eacute; plus de 15 ans entre r&eacute;alisation, photographie, direction artistique et post-production, notamment pour un label musical fran&ccedil;ais de premier plan et des marques internationales. L'IA s'ajoute donc &agrave; une pratique d&eacute;j&agrave; construite de l'image, de la lumi&egrave;re, du mouvement et de la finition.</p>
+              </div>
+            </div>
+            <div class="feature-why-row">
+              <p class="feature-why-num">02</p>
+              <div>
+                <h3 class="feature-why-title">Un profil qui a d&eacute;j&agrave; r&eacute;uni cr&eacute;ation et production dans les m&ecirc;mes r&ocirc;les.</h3>
+                <p class="feature-why-body">Au sein d'une agence cr&eacute;ative sp&eacute;cialis&eacute;e mode et culture, Camel concevait les strat&eacute;gies Brand Content puis r&eacute;alisait et produisait les films. Il a &eacute;galement dirig&eacute; la cr&eacute;ation d'une agence et showroom &agrave; Barcelone, avec management des &eacute;quipes, organisation des shootings et op&eacute;rations marketing.</p>
+              </div>
+            </div>
+            <div class="feature-why-row">
+              <p class="feature-why-num">03</p>
+              <div>
+                <h3 class="feature-why-title">Une infrastructure IA qu'il a lui-m&ecirc;me d&eacute;velopp&eacute;e.</h3>
+                <p class="feature-why-body">Camel ne d&eacute;pend pas d'une accumulation d'abonnements aux plateformes g&eacute;n&eacute;ratives. Il a d&eacute;velopp&eacute; son propre environnement pour centraliser l'acc&egrave;s aux mod&egrave;les et ses workflows image et vid&eacute;o, r&eacute;duisant ainsi ses co&ucirc;ts outils et les frictions entre plateformes.</p>
+              </div>
+            </div>
+          </div>
+          <p class="feature-closing">L'int&eacute;r&ecirc;t pour Curculia est simple&nbsp;: un niveau cr&eacute;atif senior, une forte capacit&eacute; d'ex&eacute;cution et une structure de production IA particuli&egrave;rement l&eacute;g&egrave;re.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO — no card, pure background, masonry of Camel's own work -->
+<section class="portfolio-section">
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">03</span>Portfolio</p>
+      <h2 class="sh-h" style="margin-top:14px;">Une s&eacute;lection des r&eacute;alisations de Camel</h2>
+      <p class="sh-b" style="margin-top:10px;">Plus de 100 autres r&eacute;alisations sont disponibles sur demande.</p>
+    </div>
+    <div class="portfolio-masonry">
+      <div class="portfolio-item" style="aspect-ratio:720/970;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-01-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-01.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-02-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-02.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item" style="aspect-ratio:768/1376;">
+        <img class="portfolio-media" src="Assets/Images/kamel-portfolio/kamel-08.webp" loading="lazy" alt="">
+      </div>
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-03-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-03.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-04-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-04.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item" style="aspect-ratio:1080/1920;">
+        <img class="portfolio-media" src="Assets/Images/kamel-portfolio/kamel-09.webp" loading="lazy" alt="">
+      </div>
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-05-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-05.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-06-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-06.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="portfolio-item" style="aspect-ratio:720/1274;">
+        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-07-poster.jpg">
+          <source src="Assets/Video/kamel/kamel-07.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTRE LECTURE — why-section layout, 3 rows -->
+<section class="why-section">
+  <div class="inner">
+    <div class="why-split">
+      <div>
+        <p class="ew"><span class="sec-num">04</span>Notre lecture</p>
+        <h2 class="why-lead-h" style="margin-top:14px;">Ce qui nous semble important pour Curculia</h2>
+      </div>
+      <div class="why-rows">
+        <div class="why-row">
+          <p class="why-row-num">01</p>
+          <div>
+            <h3 class="why-row-title">Vous &ecirc;tes en train de construire une creative machine, pas simplement de recruter deux profils.</h3>
+            <p class="why-row-body">Le recrutement simultan&eacute; d'un Creative Strategist orient&eacute; performance et d'un AI Creative orient&eacute; production montre une s&eacute;paration claire entre identification des angles gagnants et capacit&eacute; &agrave; les produire rapidement. Le vrai enjeu sera la vitesse de circulation entre data, concept, production et nouveau test.</p>
+          </div>
+        </div>
+        <div class="why-row">
+          <p class="why-row-num">02</p>
+          <div>
+            <h3 class="why-row-title">Votre mod&egrave;le rend la qualit&eacute; de la preuve visuelle particuli&egrave;rement sensible.</h3>
+            <p class="why-row-body">Curculia vend une am&eacute;lioration observable sur taches, hyperpigmentation, cicatrices et imperfections, avec avant/apr&egrave;s, avis clients et garantie de r&eacute;sultat &agrave; 60 jours au c&oelig;ur de la r&eacute;assurance. Plus la production devient g&eacute;n&eacute;rative, plus il devient strat&eacute;gique de distinguer clairement cr&eacute;ation publicitaire et preuve produit, pour prot&eacute;ger la confiance qui soutient la conversion.</p>
+          </div>
+        </div>
+        <div class="why-row">
+          <p class="why-row-num">03</p>
+          <div>
+            <h3 class="why-row-title">L'IA peut surtout changer l'&eacute;conomie de votre acquisition cr&eacute;ative.</h3>
+            <p class="why-row-body">Vous disposez de budgets publicitaires cons&eacute;quents et recrutez pour augmenter production, analyse et capacit&eacute; de scale sur Meta/TikTok. Le gain majeur n'est pas de produire une cr&eacute;a moins ch&egrave;re. C'est de pouvoir tester davantage d'hypoth&egrave;ses avant d'augmenter le spend sur celles qui prouvent leur performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE NOUS FERIONS — exp-grid, exact copy dark cards, 3 cards -->
+<!-- PROFILS — new component, real freelancer profiles -->
+<section class="founder-closing">
+  <div class="inner">
+    <p class="ew"><span class="sec-num">05</span>Qui sommes nous</p>
+    <div class="founder-closing-grid" style="margin-top:32px;">
+      <div>
+        <h2 class="founder-closing-h2">Nous ne sommes ni une agence, ni une plateforme.</h2>
+        <p class="founder-closing-sub" style="max-width:520px;">Metodas identifie des freelances Marketing &amp; Cr&eacute;atifs seniors pour des missions &agrave; fort enjeu. Nous s&eacute;lectionnons les profils, cadrons la collaboration et en restons garants jusqu'&agrave; son terme, sans cr&eacute;er d'interm&eacute;diaire entre vous et le freelance.</p>
+        <ul class="stat-list">
+          <li>+250 profils pr&eacute;-&eacute;valu&eacute;s</li>
+          <li>+100 missions plac&eacute;es</li>
+          <li>+15 r&ocirc;les Marketing &amp; Cr&eacute;atifs</li>
+          <li>+7 ans d'exp&eacute;rience en moyenne</li>
+        </ul>
+        <p class="founder-closing-sub" style="margin-top:20px; font-size:14px;">Marque &middot; Cr&eacute;ation &middot; Contenu &middot; Growth &middot; CRM &middot; Social</p>
+      </div>
+      <div class="hero-grid">
+        <div class="hcard"><span class="hcard-tag">Marque</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2489.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">Growth</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2505.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">Contenu</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2479.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">CRM</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2483.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">Social</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2481.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">Analytique</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2482.webp" alt=""></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS — copied verbatim from index-fr.html pricing-box, new item list -->
+<!-- CE QUE NOUS FERIONS — exp-grid, exact copy dark cards, 3 cards -->
+<section>
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">06</span>Approche</p>
+      <h2 class="sh-h" style="margin-top:14px;">Comment &ccedil;a fonctionne</h2>
+      <p class="sh-b" style="margin-top:10px;">Un freelance directement int&eacute;gr&eacute; &agrave; votre &eacute;quipe. Metodas derri&egrave;re.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card">
+        <p class="exp-num">&mdash; 01</p>
+        <h3 class="exp-title">Une s&eacute;lection avant la pr&eacute;sentation</h3>
+        <p class="exp-body">Nous ne transmettons pas simplement des CV. Chaque profil est &eacute;valu&eacute; sur votre mandat, son exp&eacute;rience, sa disponibilit&eacute; et sa capacit&eacute; &agrave; r&eacute;pondre concr&egrave;tement &agrave; vos enjeux.</p>
+      </div>
+      <div class="exp-card">
+        <p class="exp-num">&mdash; 02</p>
+        <h3 class="exp-title">Une collaboration directe</h3>
+        <p class="exp-body">Vous travaillez directement avec le freelance, sans chef de projet ni interm&eacute;diaire Metodas dans les &eacute;changes op&eacute;rationnels.</p>
+      </div>
+      <div class="exp-card">
+        <p class="exp-num">&mdash; 03</p>
+        <h3 class="exp-title">Un cadre unique et s&eacute;curis&eacute;</h3>
+        <p class="exp-body">Metodas contractualise la mission et centralise conformit&eacute;, facturation et paiements. Nous restons votre point de contact sur le cadre de la collaboration et intervenons si celui-ci doit &eacute;voluer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing-section">
+  <div class="inner">
+    <div class="sh"><p class="ew"><span class="sec-num">07</span>Tarifs</p><div><h2 class="sh-h">Un mod&egrave;le simple et transparent.</h2></div></div>
+    <div class="pricing-box">
+      <div class="pricing-left">
+        <p class="ew">Le mod&egrave;le</p>
+        <h3 class="pricing-h2">Une commission forfaitaire unique sans surprises.</h3>
+        <p class="pricing-sub">Metodas applique une commission forfaitaire unique sur la mission. Vous connaissez le tarif du freelance et notre commission avant de vous engager.</p>
+      </div>
+      <div class="pricing-right">
+        <div class="pricing-items">
+          <p class="pricing-item"><svg class="pricing-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5L6.5 12L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Cadrage du mandat</p>
+          <p class="pricing-item"><svg class="pricing-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5L6.5 12L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Sourcing et &eacute;valuation des profils</p>
+          <p class="pricing-item"><svg class="pricing-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5L6.5 12L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Garantie contractuelle &amp; remplacement</p>
+          <p class="pricing-item"><svg class="pricing-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5L6.5 12L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Contrats, conformit&eacute; &amp; facturation du freelance</p>
+          <p class="pricing-item"><svg class="pricing-check" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5L6.5 12L13 4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Suivi de mission sans interm&eacute;diation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing-signature">
+  <div class="inner" style="padding-top:0; padding-bottom:0;">
+    <div class="closing-signature-grid">
+      <div class="closing-signature-identity">
+        <div class="closing-signature-photo"><img src="Assets/Images/Profiles/audra-rosales.jpg" alt="Audra Rosales"></div>
+        <div>
+          <p class="closing-signature-name">Audra Rosales <a class="closing-signature-li" href="https://www.linkedin.com/in/audrarosales" target="_blank" rel="noopener" aria-label="Audra Rosales sur LinkedIn"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="0.5" y="0.5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="8" y="11.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="currentColor">in</text></svg></a></p>
+          <p class="closing-signature-role">Fondatrice de Metodas | Marketing Strategy &amp; Talent</p>
+        </div>
+      </div>
+      <a class="closing-signature-btn" href="https://calendly.com/audrar/30min-chat" target="_blank" rel="noopener">Obtenir un devis</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner" style="padding-top:0; padding-bottom:0;">
+    <div class="footer-top">
+      <a href="index-fr.html#top" class="footer-logo"><img src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <div class="footer-nav">
+        <p class="footer-col-label">Navigation</p>
+        <a href="index-fr.html#talent" class="footer-link">Talents</a>
+        <a href="index-fr.html#vetting" class="footer-link">Processus de s&eacute;lection</a>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-col-label">&nbsp;</p>
+        <a href="index-fr.html#cases" class="footer-link">R&eacute;alisations</a>
+        <a href="index-fr.html#pricing" class="footer-link">Tarifs</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Metodas. Tous droits r&eacute;serv&eacute;s.</p>
+      <div class="footer-legal-links">
+        <a href="terms-of-service-fr.html">Conditions G&eacute;n&eacute;rales</a>
+        <a href="privacy-policy-fr.html">Politique de Confidentialit&eacute;</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentTheme = systemPrefersDark ? 'dark' : 'light';
+themeToggle.addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', currentTheme);
+});
+</script>
+
+<script>
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const slides = carousel.querySelectorAll('.usecase-slide');
+  const dots = carousel.querySelectorAll('.usecase-dot');
+  let index = 0;
+  function show(i) {
+    slides.forEach(s => s.classList.remove('is-active'));
+    dots.forEach(d => d.classList.remove('is-active'));
+    index = (i + slides.length) % slides.length;
+    slides[index].classList.add('is-active');
+    if (dots[index]) dots[index].classList.add('is-active');
+  }
+  carousel.querySelector('.prev').addEventListener('click', () => show(index - 1));
+  carousel.querySelector('.next').addEventListener('click', () => show(index + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+});
+</script>
+
+<script>
+const portfolioVideos = document.querySelectorAll('.portfolio-media[preload="metadata"]');
+if (portfolioVideos.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const v = entry.target;
+      if (entry.isIntersecting) {
+        if (v.preload !== 'auto') v.preload = 'auto';
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.4 });
+  portfolioVideos.forEach((v) => {
+    io.observe(v);
+    v.addEventListener('click', () => { v.paused ? v.play().catch(() => {}) : v.pause(); });
+  });
+}
+</script>
+
+</body>
+</html>
+<!-- redeploy trigger 1786902908 -->
