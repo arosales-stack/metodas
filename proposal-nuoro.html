@@ -72,6 +72,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 :root[data-theme="dark"] .nav-logo img.logo-dark { display:block; }
 .nav-actions { display:flex; align-items:center; gap:16px; flex-shrink:0; }
 .btn-red { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:inherit; font-weight:500; border:1px solid var(--accent); text-decoration:none; transition: transform .2s cubic-bezier(.22,1,.36,1), opacity .12s, box-shadow .2s; font-size:14px; padding:11px 20px; letter-spacing:0.01em; }
+.btn-red-lg { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:inherit; font-weight:500; border:1px solid var(--accent); text-decoration:none; transition: transform .2s cubic-bezier(.22,1,.36,1), opacity .12s, box-shadow .2s; font-size:14px; padding:13px 24px; }
+.btn-red-lg:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(163,49,26,0.28); }
 .btn-red:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(163,49,26,0.28); }
 .theme-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); cursor:pointer; }
 .lang-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:13px; font-weight:500; letter-spacing:0.02em; transition:border-color .12s; flex-shrink:0; }
@@ -219,6 +221,14 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .closing-signature-li { display:inline-flex; color:var(--ink-55); transition:color .12s; }
 .closing-signature-li:hover { color:var(--ink); }
 .closing-signature-li svg { width:16px; height:16px; display:block; }
+.cta-section { padding:clamp(64px,8vw,120px) 0; }
+.cta-inner-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center; }
+.cta-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; margin:14px 0 0; max-width:460px; }
+.cta-sub { font-size:16px; color:var(--ink-55); line-height:1.65; margin:0 0 24px; max-width:380px; }
+.cta-btns { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.btn-stroke-lg { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; padding:12px 24px; border:1px solid var(--ink-20); text-decoration:none; transition: border-color .12s, transform .2s; }
+.btn-stroke-lg:hover { border-color:var(--ink-55); transform: translateY(-2px); }
+@media (max-width:640px){ .cta-inner-grid{grid-template-columns:1fr;} }
 /* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
 /* SINGLE FEATURED PROFILE — duplicated from proposal-verisure.html */
 .feature-profile { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(28px,4vw,44px); }
@@ -504,17 +514,16 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   </div>
 </section>
 
-<section class="closing-signature">
-  <div class="inner" style="padding-top:0; padding-bottom:0;">
-    <div class="closing-signature-grid">
-      <div class="closing-signature-identity">
-        <div class="closing-signature-photo"><img src="Assets/Images/Profiles/audra-rosales.jpg" alt="Audra Rosales"></div>
-        <div>
-          <p class="closing-signature-name">Audra Rosales <a class="closing-signature-li" href="https://www.linkedin.com/in/audrarosales" target="_blank" rel="noopener" aria-label="Audra Rosales sur LinkedIn"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="0.5" y="0.5" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.2"/><text x="8" y="11.3" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="currentColor">in</text></svg></a></p>
-          <p class="closing-signature-role">Fondatrice de Metodas | Marketing Strategy &amp; Talent</p>
+<section id="contact" class="cta-section section-dark">
+  <div class="inner">
+    <div class="cta-inner-grid">
+      <div><p class="ew"><span class="sec-num">06</span>Pr&ecirc;t &agrave; travailler avec nous&nbsp;?</p><h2 class="cta-h2">Construisons ce projet ensemble</h2></div>
+      <div>
+        <p class="cta-sub">Un premier &eacute;change pour faire connaissance, parler de votre projet et voir si le match est l&agrave;. Sans engagement.</p>
+        <div class="cta-btns">
+          <a href="https://calendly.com/audrar/30min-chat" target="_blank" rel="noopener" class="btn-red-lg">&Eacute;changer</a>
         </div>
       </div>
-      <a class="closing-signature-btn" href="https://calendly.com/audrar/30min-chat" target="_blank" rel="noopener">Obtenir un devis</a>
     </div>
   </div>
 </section>
