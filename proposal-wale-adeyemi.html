@@ -619,11 +619,15 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
 
 <script>
 const portfolioVideos = document.querySelectorAll('.portfolio-media[preload="metadata"]');
+const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 portfolioVideos.forEach((v) => {
   const item = v.closest('.portfolio-item');
-  item.addEventListener('mouseenter', () => { v.play().catch(() => {}); });
-  item.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
-  v.addEventListener('click', () => { v.paused ? v.play().catch(() => {}) : v.pause(); });
+  if (supportsHover) {
+    item.addEventListener('mouseenter', () => { v.play().catch(() => {}); });
+    item.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
+  } else {
+    item.addEventListener('click', () => { v.paused ? v.play().catch(() => {}) : v.pause(); });
+  }
 });
 </script>
 
