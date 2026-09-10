@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposition — Documan / Metodas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* TOKENS — copied verbatim from usecase-sales-editorial.html */
+:root {
+  color-scheme: light dark;
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --pad-x: clamp(20px, 4vw, 48px); --pad-y: clamp(48px, 6vw, 72px); --pad-card: clamp(20px, 2vw, 28px);
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+  --fixed-cream: #f7f4ee; --fixed-cream-55: rgba(247,244,238,0.55);
+  --fixed-ink: #1c1a17; --fixed-ink-55: rgba(28,26,23,0.64);
+  --fixed-beige: #e4ddcd;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+    --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+    --paper-r: 23; --paper-g: 21; --paper-b: 18;
+    --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10);
+  }
+}
+:root[data-theme="light"] {
+  --ink: #1c1a17; --paper: #f7f4ee; --beige: #e4ddcd; --card: #ffffff; --accent: #a3311a; --accent-2: #d9714a;
+  --ink-55: rgba(28,26,23,0.64); --ink-20: rgba(28,26,23,0.20); --ink-10: rgba(28,26,23,0.10); --ink-06: rgba(28,26,23,0.06);
+  --paper-r: 247; --paper-g: 244; --paper-b: 238;
+  --dark-bg: #221f1b; --dark-surface: #2c2822; --dark-line: rgba(247,244,238,0.12);
+}
+:root[data-theme="dark"] {
+  --ink: #f2ede4; --paper: #171512; --beige: #332f28; --card: #282219; --accent: #d9714a; --accent-2: #a3311a;
+  --ink-55: rgba(242,237,228,0.55); --ink-20: rgba(242,237,228,0.20); --ink-10: rgba(242,237,228,0.10); --ink-06: rgba(242,237,228,0.06);
+  --paper-r: 23; --paper-g: 21; --paper-b: 18;
+  --dark-bg: #0a0908; --dark-surface: #2a251e; --dark-line: rgba(247,244,238,0.10);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light dark; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:'Space Grotesk', system-ui, sans-serif; font-size:16px; font-weight:400; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+a { color:inherit; text-decoration:none; }
+p, h1, h2, h3 { margin:0; }
+a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.inner { max-width:1200px; margin:0 auto; padding:var(--pad-y) var(--pad-x); }
+
+.ew { font-size:15px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; }
+.ew::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.sec-num { color:var(--accent-2); font-weight:700; margin-right:2px; }
+
+.sh { margin-bottom:40px; }
+.sh-h { font-size:clamp(24px,2.8vw,36px); font-weight:700; letter-spacing:-0.025em; line-height:1.1; margin-bottom:10px; }
+.sh-b { font-size:17px; color:var(--ink-55); line-height:1.8; }
+
+/* NAV */
+.site-nav { position:sticky; top:0; z-index:100; background:rgba(var(--paper-r),var(--paper-g),var(--paper-b),0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--ink-06); }
+.nav-inner { max-width:1200px; margin:0 auto; padding:16px var(--pad-x); display:flex; align-items:center; justify-content:space-between; gap:24px; transition:padding .2s ease; }
+.nav-left { display:flex; align-items:center; gap:24px; min-width:0; }
+.nav-logo { display:flex; align-items:center; gap:8px; font-size:15px; font-weight:700; letter-spacing:-0.02em; flex-shrink:0; }
+.nav-logo img { height:34px; width:auto; display:block; }
+.nav-logo img.logo-dark { display:none; }
+@media (prefers-color-scheme: dark) { .nav-logo img.logo-light{display:none;} .nav-logo img.logo-dark{display:block;} }
+:root[data-theme="light"] .nav-logo img.logo-light { display:block; }
+:root[data-theme="light"] .nav-logo img.logo-dark { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-light { display:none; }
+:root[data-theme="dark"] .nav-logo img.logo-dark { display:block; }
+.nav-actions { display:flex; align-items:center; gap:16px; flex-shrink:0; }
+.btn-red { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:inherit; font-weight:500; border:1px solid var(--accent); text-decoration:none; transition: transform .2s cubic-bezier(.22,1,.36,1), opacity .12s, box-shadow .2s; font-size:14px; padding:11px 20px; letter-spacing:0.01em; }
+.btn-red-lg { display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff; font-family:inherit; font-weight:500; border:1px solid var(--accent); text-decoration:none; transition: transform .2s cubic-bezier(.22,1,.36,1), opacity .12s, box-shadow .2s; font-size:14px; padding:13px 24px; }
+.btn-red-lg:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(163,49,26,0.28); }
+.btn-red:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(163,49,26,0.28); }
+.theme-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); cursor:pointer; }
+.lang-toggle { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:13px; font-weight:500; letter-spacing:0.02em; transition:border-color .12s; flex-shrink:0; }
+.lang-toggle:hover { border-color:var(--ink-55); }
+@media (max-width:640px){ .nav-inner .btn-red{display:none;} .nav-actions{gap:10px;} }
+.theme-toggle:hover { border-color:var(--ink-55); }
+.theme-toggle svg { width:19px; height:19px; display:block; }
+.theme-toggle .icon-moon { display:none; }
+@media (prefers-color-scheme: dark) { .theme-toggle .icon-sun { display:none; } .theme-toggle .icon-moon { display:block; } }
+:root[data-theme="light"] .theme-toggle .icon-sun { display:block; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display:none; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display:block; }
+
+/* HERO — new: H1 hook + 16:9 video placeholder (video pattern/margins copied from usecase-sales-editorial.html's .uc-slide-video) */
+.hook-hero { text-align:center; }
+.hook-hero .inner { padding-bottom:24px; }
+.hero-ew { justify-content:center; margin-bottom:16px; }
+.hook-h1 { font-size:clamp(30px,4.6vw,54px); font-weight:700; letter-spacing:-0.03em; line-height:1.12; max-width:840px; margin:0 auto; }
+.hook-video { margin:40px auto 0; max-width:1000px; aspect-ratio:3/2; background:var(--beige); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.section-image-wrap { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.section-image { max-width:1200px; margin:0 auto; aspect-ratio:16/9; overflow:hidden; }
+.section-image img { width:100%; height:100%; object-fit:cover; display:block; }
+.hook-video img, .hook-video video { width:100%; height:100%; object-fit:cover; display:block; }
+.hook-video-label { font-size:13px; color:var(--ink-55); letter-spacing:0.04em; text-transform:uppercase; }
+@media (max-width:640px){ .hook-video { margin-top:28px; } }
+
+/* INTRO TEXT — plain paragraphs under the hero */
+.intro-section { border-bottom:1px solid var(--ink-06); }
+.intro-section .inner { padding-top:24px; }
+.intro-body { font-size:19px; color:var(--ink-55); line-height:1.6; max-width:720px; margin:0 auto 16px; text-align:center; }
+.intro-body:last-child { margin-bottom:0; }
+.intro-body.is-bold { font-weight:400; color:var(--ink); }
+.intro-btn { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:10px 18px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; cursor:pointer; appearance:none; -webkit-appearance:none; border-radius:0; }
+.intro-btn:hover { border-color:var(--ink-55); }
+.intro-btn svg { width:14px; height:14px; flex-shrink:0; }
+
+@media (max-width:640px){ .modal-panel{padding:24px 16px;} }
+
+/* WHY-SECTION LAYOUT (Notre conviction) — copied verbatim from index.html */
+.why-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.why-split { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(32px,5vw,72px); align-items:start; }
+.why-lead-h { font-size:clamp(26px,3.2vw,42px); font-weight:700; letter-spacing:-0.03em; line-height:1.12; }
+.why-intro-b { margin-top:14px; font-size:17px; color:var(--ink-55); line-height:1.8; max-width:420px; }
+.why-rows { display:flex; flex-direction:column; }
+.why-row { display:grid; grid-template-columns:auto 1fr; gap:20px; padding:26px 0; border-top:1px solid var(--ink-06); }
+.why-row:first-child { border-top:none; }
+.why-row-num { font-size:22px; font-weight:700; letter-spacing:-0.03em; color:var(--ink-20); line-height:1.3; }
+.why-row-title { font-size:17px; font-weight:700; letter-spacing:-0.015em; margin-bottom:8px; }
+.why-row-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
+.why-row-body p { margin:0 0 14px; }
+.why-row-body p:last-child { margin-bottom:0; }
+@media (max-width:860px){ .why-split{grid-template-columns:1fr;} }
+
+/* EXPERTISE GRID (Notre approche) — copied verbatim from index.html, tags removed */
+.exp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.exp-card { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); padding:var(--pad-card); display:flex; flex-direction:column; color:var(--ink); }
+.exp-num { font-size:12px; font-weight:700; letter-spacing:0.1em; color:var(--accent-2); margin-bottom:16px; }
+.exp-title { font-size:18px; font-weight:700; letter-spacing:-0.015em; margin-bottom:10px; color:var(--ink); }
+.exp-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
+@media (max-width:860px){ .exp-grid{grid-template-columns:1fr;} }
+
+/* PRICING — copied verbatim from index.html */
+.pricing-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.pricing-box { display:grid; grid-template-columns:1fr 1fr; }
+.pricing-left { background:var(--card); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
+.pricing-left { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
+.pricing-right { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
+.pricing-h2 { font-size:clamp(22px,2.6vw,34px); font-weight:700; letter-spacing:-0.025em; margin:12px 0 0; }
+.pricing-sub { font-size:15px; color:var(--ink-55); line-height:1.65; margin:14px 0 0; }
+.pricing-item { font-size:15px; line-height:1.6; display:flex; align-items:center; gap:10px; }
+.pricing-check { width:16px; height:16px; flex-shrink:0; color:var(--accent-2); }
+.pricing-big { display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+.pricing-pct { font-size:clamp(56px,6.4vw,80px); font-weight:700; letter-spacing:-0.05em; line-height:1; font-variant-numeric:tabular-nums; }
+.pricing-flat { font-size:14px; color:var(--ink-55); }
+.pricing-rule { width:44px; height:2px; background:var(--accent-2); margin-bottom:24px; }
+.pricing-items { display:flex; flex-direction:column; gap:18px; }
+@media (max-width:640px){ .pricing-box{grid-template-columns:1fr;} }
+
+/* FOUNDER CLOSING — two-column, equal width: section label left, photo-on-top card right, brand beige */
+.founder-closing { padding:clamp(64px,8vw,120px) 0; }
+.founder-closing-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:clamp(40px,5vw,72px); align-items:center; }
+.founder-closing-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; }
+.founder-closing-sub { font-size:17px; color:var(--ink-55); line-height:1.8; margin:14px 0 0; max-width:440px; }
+.stat-list { list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; }
+.stat-list li { display:flex; align-items:baseline; gap:10px; font-size:15px; color:var(--ink); }
+.stat-list li::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--ink-06); border:1px solid var(--ink-06); }
+.hcard { aspect-ratio:3/4; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative; background:var(--dark-bg); }
+@media (prefers-color-scheme: dark) { .hcard { background:var(--fixed-beige); } }
+:root[data-theme="light"] .hcard { background:var(--dark-bg); }
+:root[data-theme="dark"] .hcard { background:var(--fixed-beige); }
+.hcard-tag { position:absolute; bottom:12px; left:12px; background:#1c1a17; color:#f7f4ee; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 8px; z-index:2; }
+.hcard img { width:100%; height:100%; object-fit:cover; display:block; }
+.founder-signature { display:flex; align-items:center; gap:16px; margin-top:32px; }
+.founder-closing-name { font-size:17px; font-weight:700; letter-spacing:-0.015em; }
+.founder-closing-btn { display:inline-block; margin-top:10px; padding:10px 20px; background:var(--accent); color:var(--fixed-cream); font-size:14px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; }
+.founder-closing-btn:hover { background:var(--accent-2); }
+@media (max-width:680px){
+  .founder-closing-grid{grid-template-columns:1fr;}
+  .founder-closing-grid > .hero-grid{order:1;}
+  .founder-closing-grid > div:first-child{order:2;}
+}
+
+/* section-dark — copied verbatim from usecase-sales-editorial.html */
+.section-dark { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-20:rgba(247,244,238,0.24); --ink-10:rgba(247,244,238,0.12); --ink-06:var(--dark-line); --card:var(--dark-surface); --paper:var(--dark-bg); color:var(--ink); }
+
+
+/* FOOTER */
+.site-footer { border-top:1px solid var(--dark-line); background:var(--dark-bg); padding:56px 0 28px; }
+.site-footer, .site-footer .inner { --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); }
+.footer-top { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--dark-line); margin-bottom:24px; }
+.footer-logo { display:flex; align-items:center; gap:8px; font-size:16px; font-weight:700; letter-spacing:-0.02em; color:var(--fixed-cream); }
+.footer-logo img { height:26px; width:auto; display:block; }
+.footer-nav { display:flex; flex-direction:column; gap:12px; }
+.footer-col-label { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--fixed-cream-55); margin-bottom:6px; }
+.footer-link { font-size:13px; color:var(--fixed-cream-55); transition:color .12s; width:fit-content; }
+.footer-link:hover { color:var(--fixed-cream); }
+.footer-bottom { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; }
+.footer-legal-links { display:flex; gap:16px; }
+.footer-legal-links a { font-size:12px; color:var(--fixed-cream-55); transition:color .12s; }
+.footer-legal-links a:hover { color:var(--fixed-cream); }
+.footer-copy { font-size:12px; color:var(--fixed-cream-55); }
+@media (max-width:640px){ .footer-top{grid-template-columns:1fr;} }
+
+
+/* CLOSING SIGNATURE — standalone, outside the Qui sommes nous section */
+.closing-signature { border-top:1px solid var(--ink-06); padding:48px 0; }
+.closing-signature-grid { display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; max-width:600px; margin:0 auto; }
+.closing-signature-identity { display:flex; flex-direction:column; align-items:center; }
+.closing-signature-photo { width:110px; height:110px; overflow:hidden; }
+.closing-signature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.closing-signature-name { font-size:19px; font-weight:700; letter-spacing:-0.015em; margin-top:14px; display:flex; align-items:center; gap:8px; justify-content:center; }
+.closing-signature-role { font-size:17px; color:var(--ink-55); margin-top:4px; }
+.closing-signature-btn { display:inline-block; padding:10px 22px; background:var(--accent); color:var(--fixed-cream); font-size:16px; font-weight:600; letter-spacing:-0.01em; text-decoration:none; }
+.closing-signature-btn:hover { background:var(--accent-2); }
+.closing-signature-li { display:inline-flex; color:var(--ink-55); transition:color .12s; }
+.closing-signature-li:hover { color:var(--ink); }
+.closing-signature-li svg { width:16px; height:16px; display:block; }
+.cta-section { padding:clamp(64px,8vw,120px) 0; }
+.cta-inner-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center; }
+.cta-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; margin:14px 0 0; max-width:460px; }
+.cta-sub { font-size:16px; color:var(--ink-55); line-height:1.65; margin:0 0 24px; max-width:380px; }
+.cta-btns { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+.btn-stroke-lg { display:inline-flex; align-items:center; gap:8px; background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; padding:12px 24px; border:1px solid var(--ink-20); text-decoration:none; transition: border-color .12s, transform .2s; }
+.btn-stroke-lg:hover { border-color:var(--ink-55); transform: translateY(-2px); }
+@media (max-width:640px){ .cta-inner-grid{grid-template-columns:1fr;} }
+/* PROFILES — single-column card, no internal split (3 cards already share the row on desktop) */
+/* SINGLE FEATURED PROFILE — duplicated from proposal-verisure.html */
+.feature-profile { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(28px,4vw,44px); }
+.feature-top { display:flex; align-items:center; gap:20px; }
+.feature-photo { width:96px; height:96px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
+.feature-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.feature-name { font-size:22px; font-weight:700; letter-spacing:-0.015em; }
+.feature-role { font-size:17px; color:var(--ink-55); margin-top:4px; }
+.feature-desc { font-size:17px; line-height:1.8; color:var(--ink-55); margin-top:24px; }
+.feature-desc p { margin:0 0 16px; }
+.feature-desc p:last-child { margin-bottom:0; }
+.feature-desc .is-bold { font-weight:700; color:var(--ink); }
+
+/* SES EXPERTISES — bullet list, reusing stat-list pattern */
+.expertise-list { list-style:none; margin:32px 0 0; padding:24px 0 0; border-top:1px solid var(--ink-20); display:flex; flex-direction:column; gap:10px; }
+
+/* RESULTS — quantified case study cards */
+.results-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.result-card { background:var(--card); border:1px solid var(--ink-10); padding:clamp(24px,3.5vw,40px); margin-top:28px; }
+.result-grid { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(28px,4vw,48px); align-items:start; }
+.result-side { display:flex; flex-direction:column; }
+.result-logo { width:64px; height:64px; overflow:hidden; flex-shrink:0; }
+.result-logo img { width:100%; height:100%; object-fit:cover; display:block; }
+.result-company { font-size:19px; font-weight:700; letter-spacing:-0.015em; margin-top:18px; }
+.result-category { font-size:13px; color:var(--ink-55); margin-top:2px; }
+.result-stats { display:flex; gap:20px; margin-top:22px; padding-top:20px; border-top:1px solid var(--ink-20); }
+.result-stat-num { font-size:26px; font-weight:700; letter-spacing:-0.02em; color:var(--accent-2); line-height:1.1; }
+.result-stat-label { font-size:12.5px; color:var(--ink-55); margin-top:4px; line-height:1.35; }
+.result-highlight { font-size:13px; font-weight:600; color:var(--ink); margin-top:18px; padding-top:16px; border-top:1px solid var(--ink-20); }
+.result-main p { font-size:15.5px; line-height:1.7; color:var(--ink-55); margin:0 0 14px; }
+.result-main p:last-of-type { margin-bottom:0; }
+.result-quote { margin:22px 0 0; padding-left:18px; border-left:2px solid var(--accent-2); }
+.result-quote p { font-style:italic; color:var(--ink); font-size:15px; line-height:1.65; margin:0; }
+.result-quote-attr { font-style:normal !important; font-weight:700; font-size:13px !important; margin-top:10px !important; color:var(--ink) !important; }
+.result-quote-attr span { font-weight:400; color:var(--ink-55); }
+@media (max-width:760px){ .result-grid{grid-template-columns:1fr;} .result-stats{flex-wrap:wrap;} }
+.expertise-list li { display:flex; align-items:baseline; gap:10px; font-size:15px; color:var(--ink); }
+.expertise-list li::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+
+/* USE CASES — one carousel, 3 slides (one per use case), each slide = 2x2 image grid */
+.usecase-carousel { margin-top:32px; padding-top:24px; border-top:1px solid var(--ink-20); position:relative; }
+.usecase-slide { display:none; }
+.usecase-slide.is-active { display:block; }
+.usecase-title { font-size:16px; font-weight:700; letter-spacing:-0.01em; }
+.usecase-desc { font-size:15px; color:var(--ink-55); line-height:1.6; margin-top:6px; }
+.usecase-img-grid { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; aspect-ratio:1/1; gap:3px; margin-top:16px; }
+.usecase-img-cell { background:var(--ink-06); overflow:hidden; position:relative; }
+.usecase-img-cell img { width:100%; height:100%; object-fit:cover; display:block; }
+.usecase-img-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:11px; color:var(--ink-55); letter-spacing:0.04em; text-transform:uppercase; }
+.usecase-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:16px; }
+.usecase-arrow { width:32px; height:32px; background:transparent; border:1px solid var(--ink-20); color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0; flex-shrink:0; }
+.usecase-arrow:hover { border-color:var(--ink-55); }
+.usecase-arrow svg { width:14px; height:14px; }
+.usecase-dots { display:flex; gap:6px; }
+.usecase-dot { width:6px; height:6px; border-radius:50%; background:var(--ink-20); border:none; padding:0; cursor:pointer; }
+.usecase-dot.is-active { background:var(--accent-2); }
+.feature-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; padding-top:24px; border-top:1px solid var(--ink-20); }
+.feature-tags .tag { font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:5px 12px; }
+@media (max-width:640px){ .feature-top{flex-direction:column; text-align:center;} }
+
+.profile-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.profile-card { position:relative; background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.20); --ink-06:rgba(28,26,23,0.06); color:var(--ink); padding:clamp(22px,2.4vw,28px); display:flex; flex-direction:column; }
+.profile-badge { position:absolute; top:16px; right:16px; width:26px; height:26px; border-radius:50%; background:var(--accent-2); color:#fff; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.profile-top { display:flex; align-items:center; gap:16px; padding-right:36px; min-height:80px; }
+.profile-photo { width:64px; height:64px; overflow:hidden; flex-shrink:0; background:var(--accent-2); }
+.profile-photo img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.profile-photo-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:18px; font-weight:700; color:var(--ink-55); }
+.profile-name { font-size:19px; font-weight:700; letter-spacing:-0.015em; }
+.profile-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
+.profile-meta { font-size:15px; color:var(--ink-55); margin-top:10px; }
+.profile-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.profile-tags .tag { font-size:12px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:4px 10px; }
+.profile-rule { border:none; border-top:1px solid var(--ink-20); margin:18px 0 16px; }
+.profile-desc { font-size:15px; color:var(--ink-55); line-height:1.65; }
+.profile-mission { font-size:15px; font-style:italic; color:var(--ink-55); line-height:1.65; margin-bottom:14px; }
+.profile-mission-label { font-style:normal; font-weight:700; color:var(--ink); }
+@media (max-width:860px){ .profile-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="index-fr.html#top" class="nav-logo"><img class="logo-light" src="Assets/Images/Logo/metodas-mark-black.png" alt=""><img class="logo-dark" src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+        <svg class="icon-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.3"/><g stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><line x1="8" y1="0.8" x2="8" y2="2.4"/><line x1="8" y1="13.6" x2="8" y2="15.2"/><line x1="0.8" y1="8" x2="2.4" y2="8"/><line x1="13.6" y1="8" x2="15.2" y2="8"/><line x1="2.6" y1="2.6" x2="3.7" y2="3.7"/><line x1="12.3" y1="12.3" x2="13.4" y2="13.4"/><line x1="2.6" y1="13.4" x2="3.7" y2="12.3"/><line x1="12.3" y1="3.7" x2="13.4" y2="2.6"/></g></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" aria-hidden="true"><path d="M13.2 9.8A6 6 0 1 1 6.2 2.8a6.6 6.6 0 1 0 7 7z" fill="currentColor"/></svg>
+      </button>
+      <a href="Validated elements/contact-fr.html" class="btn-red">Travailler avec nous</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hook-hero">
+  <div class="inner">
+    <p class="ew hero-ew"><span class="sec-num">01</span>Le mandat</p>
+    <h1 class="hook-h1">Les profils les plus recherch&eacute;s ne sont pas toujours ceux qui candidatent.</h1>
+  </div>
+</section>
+
+<!-- INTRO — remaining opening copy -->
+<section class="intro-section">
+  <div class="inner">
+    <p class="intro-body">Votre recherche exige un profil senior capable de piloter la croissance avec une vraie autonomie&nbsp;: d&eacute;finir la strat&eacute;gie d'acquisition, arbitrer les investissements, exp&eacute;rimenter, mesurer les r&eacute;sultats et rester suffisamment proche des clients pour comprendre ce qui g&eacute;n&egrave;re r&eacute;ellement de la valeur.</p>
+    <p class="intro-body">Des profils capables de combiner Growth, culture B2B, autonomie d&eacute;cisionnelle et compr&eacute;hension commerciale sont souvent d&eacute;j&agrave; engag&eacute;s et doivent &ecirc;tre approch&eacute;s directement.</p>
+    <p class="intro-body">C'est pr&eacute;cis&eacute;ment l&agrave; que nous intervenons. Nous avons identifi&eacute; un premier profil particuli&egrave;rement pertinent pour Documan, et voici pourquoi.</p>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">02</span>Profil</p>
+      <h2 class="sh-h" style="margin-top:14px;">Profil recommand&eacute;</h2>
+    </div>
+    <div class="feature-profile">
+      <div class="feature-top">
+        <div class="feature-photo"><img src="Assets/Images/Profiles/romain-lacoste.png" alt="Romain"></div>
+        <div>
+          <p class="feature-name">Romain</p>
+          <p class="feature-role">Senior Growth &amp; Paid Acquisition</p>
+        </div>
+      </div>
+      <div class="feature-tags" style="border-top:none; padding-top:0; margin-top:20px;">
+        <span class="tag">Electra</span>
+        <span class="tag">Colonies</span>
+        <span class="tag">Bigblue</span>
+        <span class="tag">Nalo</span>
+        <span class="tag">Growth Tribe</span>
+        <span class="tag">Station F</span>
+      </div>
+      <p class="feature-role" style="margin-top:20px;">Paris, France &middot; ~10 ans d'exp&eacute;rience</p>
+      <div class="feature-desc">
+        <p>Romain accompagne aujourd'hui des entreprises sur leurs enjeux Growth et Paid Media, avec plus de 50 entreprises accompagn&eacute;es et plus de 2&nbsp;M&euro; de d&eacute;penses m&eacute;dia g&eacute;r&eacute;es par an. Il a notamment pilot&eacute; l'acquisition d'Electra, Colonies et Bigblue et intervient &agrave; Station F sur les sujets Growth et acquisition payante.</p>
+        <p>Mais son int&eacute;r&ecirc;t pour Documan va au-del&agrave; du Paid Media. Avant de s'y sp&eacute;cialiser, Romain a pilot&eacute; l'acquisition de leads B2B et le d&eacute;veloppement commercial sur cinq march&eacute;s pour un SaaS, apr&egrave;s plusieurs ann&eacute;es en vente B2B.</p>
+        <p><strong>Pourquoi Romain pour Documan</strong></p>
+        <p>Romain combine pr&eacute;cis&eacute;ment les deux dimensions centrales de votre mandat&nbsp;: piloter l'acquisition et comprendre ce qui se passe apr&egrave;s le lead.</p>
+        <p>Son parcours lui permet d'aborder le Growth avec une lecture commerciale du funnel, de la g&eacute;n&eacute;ration de demande jusqu'&agrave; la qualification et &agrave; la rentabilit&eacute; des opportunit&eacute;s. Dans un SaaS B2B comme Documan, o&ugrave; le Growth travaille directement avec les fondateurs et au contact des clients, cette double culture nous para&icirc;t particuli&egrave;rement pertinente.</p>
+        <p class="is-bold">Romain est aujourd'hui le profil de notre r&eacute;seau qui nous semble le plus pertinent pour votre recherche.</p>
+      </div>
+
+      <ul class="expertise-list">
+        <li>Strat&eacute;gie Growth &amp; Paid Acquisition</li>
+        <li>Lead Generation B2B</li>
+        <li>CRO &amp; optimisation de conversion</li>
+        <li>Analyse, tracking &amp; reporting</li>
+        <li>Acquisition connect&eacute;e aux enjeux commerciaux</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS — quantified case studies, own component -->
+<section class="results-section">
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">03</span>R&eacute;sultats</p>
+      <h2 class="sh-h" style="margin-top:14px;">Quelques r&eacute;sultats directement pertinents pour Documan</h2>
+    </div>
+
+    <div class="result-card">
+      <div class="result-grid">
+        <div class="result-side">
+          <div class="result-logo"><img src="Assets/Images/Logo/Clients/bigblue.png" alt="Bigblue"></div>
+          <p class="result-company">Bigblue</p>
+          <p class="result-category">Lead Generation B2B</p>
+          <div class="result-stats">
+            <div class="result-stat">
+              <p class="result-stat-num">+33%</p>
+              <p class="result-stat-label">de MQL sur 12 mois</p>
+            </div>
+            <div class="result-stat">
+              <p class="result-stat-num">-10%</p>
+              <p class="result-stat-label">de CPL</p>
+            </div>
+          </div>
+          <p class="result-highlight">Rentabilit&eacute; r&eacute;elle identifi&eacute;e par levier</p>
+        </div>
+        <div class="result-main">
+          <p>Pour Bigblue, Romain devait g&eacute;n&eacute;rer davantage de MQL aupr&egrave;s d'une cible B2B pr&eacute;cise, les e-commer&ccedil;ants r&eacute;alisant plus de 500 commandes par mois, tout en d&eacute;terminant quelles sources d'acquisition produisaient r&eacute;ellement du business.</p>
+          <p>Il a optimis&eacute; les crit&egrave;res de qualification et le taux de remplissage du formulaire, structur&eacute; le tracking UTM jusqu'au MQL et construit une analyse permettant de suivre le CAC SQL jusqu'au mot-cl&eacute; et &agrave; la cr&eacute;a. L'objectif&nbsp;: arbitrer les investissements m&eacute;dia selon la qualit&eacute; et la rentabilit&eacute; r&eacute;elle des opportunit&eacute;s g&eacute;n&eacute;r&eacute;es, et non simplement selon leur co&ucirc;t.</p>
+          <blockquote class="result-quote">
+            <p>&laquo;&nbsp;Romain a toujours livr&eacute; des r&eacute;sultats de qualit&eacute;, surpassant souvent nos attentes. Je recommande vivement ce partenaire, fiable et ax&eacute; sur les r&eacute;sultats.&nbsp;&raquo;</p>
+            <p class="result-quote-attr">Bastien P. <span>&middot; Growth Lead, Bigblue</span></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-grid">
+        <div class="result-side">
+          <div class="result-logo"><img src="Assets/Images/Logo/Clients/colonies.png" alt="Colonies"></div>
+          <p class="result-company">Colonies</p>
+          <p class="result-category">Meta Ads &amp; g&eacute;n&eacute;ration de leads qualifi&eacute;s</p>
+          <div class="result-stats">
+            <div class="result-stat">
+              <p class="result-stat-num">+266%</p>
+              <p class="result-stat-label">de volume de MQL via Meta Ads</p>
+            </div>
+            <div class="result-stat">
+              <p class="result-stat-num">-60%</p>
+              <p class="result-stat-label">de CPL</p>
+            </div>
+          </div>
+        </div>
+        <div class="result-main">
+          <p>Chez Colonies, l'enjeu n'&eacute;tait pas simplement d'augmenter le volume de leads, mais de g&eacute;n&eacute;rer davantage de candidats r&eacute;ellement qualifi&eacute;s, notamment selon leur budget et leurs garanties, alors que le Search &eacute;tait d&eacute;j&agrave; largement exploit&eacute;.</p>
+          <p>Romain a structur&eacute; la strat&eacute;gie cr&eacute;ative Meta autour d'une nomenclature permettant d'identifier pr&eacute;cis&eacute;ment les angles, concepts et hooks les plus performants. La remont&eacute;e des donn&eacute;es dans Looker permettait ensuite d'identifier les concepts produisant les meilleurs MQL, d'it&eacute;rer continuellement et de d&eacute;ployer des flux dynamiques sur plusieurs pays. Les campagnes ont g&eacute;n&eacute;r&eacute; +266&nbsp;% de MQL avec une r&eacute;duction de 60&nbsp;% du CPL.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-grid">
+        <div class="result-side">
+          <div class="result-logo"><img src="Assets/Images/Logo/Clients/motto.png" alt="Motto"></div>
+          <p class="result-company">Motto</p>
+          <p class="result-category">Acquisition, CRO &amp; optimisation du funnel</p>
+          <div class="result-stats">
+            <div class="result-stat">
+              <p class="result-stat-num">+60%</p>
+              <p class="result-stat-label">de conversion sur la cr&eacute;ation de compte</p>
+            </div>
+            <div class="result-stat">
+              <p class="result-stat-num" style="font-size:22px;">Stock &eacute;coul&eacute;</p>
+              <p class="result-stat-label">certains mois</p>
+            </div>
+          </div>
+        </div>
+        <div class="result-main">
+          <p>Pour le lancement en France de Motto, l'acquisition &eacute;tait &agrave; construire sur un march&eacute; tr&egrave;s concurrentiel et le site, con&ccedil;u comme une vitrine, convertissait insuffisamment.</p>
+          <p>Romain a d&eacute;ploy&eacute; les campagnes Google et Meta, mis en place le tracking &agrave; chaque &eacute;tape du parcours, analys&eacute; les comportements via GA et Hotjar, cr&eacute;&eacute; des landing pages d&eacute;di&eacute;es et structur&eacute; les tests de cr&eacute;as, angles et hooks. Une strat&eacute;gie de lead generation d&eacute;di&eacute;e aux essais de v&eacute;los a &eacute;galement &eacute;t&eacute; d&eacute;velopp&eacute;e en parall&egrave;le.</p>
+          <p>R&eacute;sultat&nbsp;: +60&nbsp;% de conversion sur la cr&eacute;ation de compte et, certains mois, un stock enti&egrave;rement &eacute;coul&eacute;, permettant ensuite de r&eacute;duire les d&eacute;penses d'acquisition n&eacute;cessaires.</p>
+          <blockquote class="result-quote">
+            <p>&laquo;&nbsp;Je travaille avec Romain depuis 2 ans sur nos sujets d'acquisition chez Motto. Je suis tr&egrave;s content de son accompagnement, il est extr&ecirc;mement comp&eacute;tent et r&eacute;actif. Ravi de cette collaboration que je recommande vivement&nbsp;!&nbsp;&raquo;</p>
+            <p class="result-quote-attr">Antoine B. <span>&middot; CEO &amp; Co-Founder, Motto</span></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTRE LECTURE — why-section layout, 3 rows -->
+<section class="why-section">
+  <div class="inner">
+    <div class="why-split">
+      <div>
+        <p class="ew"><span class="sec-num">04</span>Notre lecture</p>
+        <h2 class="why-lead-h" style="margin-top:14px;">Ce qui nous semble important pour Documan</h2>
+      </div>
+      <div class="why-rows">
+        <div class="why-row">
+          <p class="why-row-num">01</p>
+          <div>
+            <h3 class="why-row-title">Growth + Customer est une excellente boucle d'information. Pas n&eacute;cessairement un double poste.</h3>
+            <p class="why-row-body">La proximit&eacute; client peut consid&eacute;rablement am&eacute;liorer l'acquisition, le positionnement et le produit. Nous la structurerions comme une m&eacute;canique de customer intelligence directement exploitable par le Growth, plut&ocirc;t que comme une seconde fonction permanente qui finirait par diluer son temps.</p>
+          </div>
+        </div>
+        <div class="why-row">
+          <p class="why-row-num">02</p>
+          <div>
+            <h3 class="why-row-title">Un senior Growth doit d&eacute;cider o&ugrave; investir son temps, pas n&eacute;cessairement tout produire.</h3>
+            <p class="why-row-body">&Agrave; 3 jours par semaine, nous concentrerions Romain sur ce qui exige r&eacute;ellement son niveau d'expertise&nbsp;: strat&eacute;gie, budget, exp&eacute;rimentation, analyse et arbitrages. Landing pages, reporting, contenus, automatisations ou SEO peuvent &ecirc;tre automatis&eacute;s, industrialis&eacute;s ou ponctuellement d&eacute;l&eacute;gu&eacute;s lorsque cela cr&eacute;e davantage de valeur.</p>
+          </div>
+        </div>
+        <div class="why-row">
+          <p class="why-row-num">03</p>
+          <div>
+            <h3 class="why-row-title">Ma&icirc;triser l'IA ne signifie pas devoir construire soi-m&ecirc;me toute son infrastructure.</h3>
+            <p class="why-row-body">Romain doit pouvoir identifier les bons cas d'usage, d&eacute;finir les besoins m&eacute;tier et travailler efficacement avec vos agents, automatisations et bases de connaissance. La construction technique de ces syst&egrave;mes peut rester port&eacute;e par vos capacit&eacute;s IA internes, afin que son expertise reste concentr&eacute;e sur la croissance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE NOUS FERIONS — exp-grid, exact copy dark cards, 3 cards -->
+<!-- PROFILS — new component, real freelancer profiles -->
+<section class="founder-closing">
+  <div class="inner">
+    <p class="ew"><span class="sec-num">05</span>Qui sommes nous</p>
+    <div class="founder-closing-grid" style="margin-top:32px;">
+      <div>
+        <h2 class="founder-closing-h2">Nous ne sommes ni une agence, ni une plateforme.</h2>
+        <p class="founder-closing-sub" style="max-width:520px;">Metodas identifie des freelances Marketing &amp; Cr&eacute;atifs seniors pour des missions &agrave; fort enjeu. Nous s&eacute;lectionnons les profils, cadrons la collaboration et en restons garants jusqu'&agrave; son terme, sans cr&eacute;er d'interm&eacute;diaire entre vous et le freelance.</p>
+        <ul class="stat-list">
+          <li>+250 profils pr&eacute;-&eacute;valu&eacute;s</li>
+          <li>+100 missions plac&eacute;es</li>
+          <li>+15 r&ocirc;les Marketing &amp; Cr&eacute;atifs</li>
+          <li>+7 ans d'exp&eacute;rience en moyenne</li>
+        </ul>
+      </div>
+      <div class="hero-grid">
+        <div class="hcard"><span class="hcard-tag">Marque</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2489.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">Growth</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2505.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">Contenu</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2479.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">CRM</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2483.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">Social</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2481.webp" alt=""></div>
+        <div class="hcard"><span class="hcard-tag">Analytique</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2482.webp" alt=""></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="cta-section section-dark">
+  <div class="inner">
+    <div class="cta-inner-grid">
+      <div><p class="ew"><span class="sec-num">06</span>Pr&ecirc;t &agrave; travailler avec nous&nbsp;?</p><h2 class="cta-h2">Construisons ce projet ensemble</h2></div>
+      <div>
+        <p class="cta-sub">Un premier &eacute;change pour faire connaissance, parler de votre projet et voir si le match est l&agrave;. Sans engagement.</p>
+        <div class="cta-btns">
+          <a href="https://calendly.com/audrar/30min-chat" target="_blank" rel="noopener" class="btn-red-lg">&Eacute;changer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="inner" style="padding-top:0; padding-bottom:0;">
+    <div class="footer-top">
+      <a href="index-fr.html#top" class="footer-logo"><img src="Assets/Images/Logo/metodas-mark-white.png" alt="">Metodas</a>
+      <div class="footer-nav">
+        <p class="footer-col-label">Navigation</p>
+        <a href="index-fr.html#talent" class="footer-link">Talents</a>
+        <a href="index-fr.html#vetting" class="footer-link">Processus de s&eacute;lection</a>
+      </div>
+      <div class="footer-nav">
+        <p class="footer-col-label">&nbsp;</p>
+        <a href="index-fr.html#cases" class="footer-link">R&eacute;alisations</a>
+        <a href="index-fr.html#pricing" class="footer-link">Tarifs</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Metodas. Tous droits r&eacute;serv&eacute;s.</p>
+      <div class="footer-legal-links">
+        <a href="terms-of-service-fr.html">Conditions G&eacute;n&eacute;rales</a>
+        <a href="privacy-policy-fr.html">Politique de Confidentialit&eacute;</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+let currentTheme = systemPrefersDark ? 'dark' : 'light';
+themeToggle.addEventListener('click', () => {
+  currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+  root.setAttribute('data-theme', currentTheme);
+});
+</script>
+
+<script>
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const slides = carousel.querySelectorAll('.usecase-slide');
+  const dots = carousel.querySelectorAll('.usecase-dot');
+  let index = 0;
+  function show(i) {
+    slides.forEach(s => s.classList.remove('is-active'));
+    dots.forEach(d => d.classList.remove('is-active'));
+    index = (i + slides.length) % slides.length;
+    slides[index].classList.add('is-active');
+    if (dots[index]) dots[index].classList.add('is-active');
+  }
+  carousel.querySelector('.prev').addEventListener('click', () => show(index - 1));
+  carousel.querySelector('.next').addEventListener('click', () => show(index + 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+});
+</script>
+
+</body>
+</html>
