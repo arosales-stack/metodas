@@ -236,6 +236,27 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 /* SES EXPERTISES — bullet list, reusing stat-list pattern */
 .expertise-list { list-style:none; margin:32px 0 0; padding:24px 0 0; border-top:1px solid var(--ink-20); display:flex; flex-direction:column; gap:10px; }
+
+/* RESULTS — quantified case study cards */
+.results-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.result-card { background:var(--card); border:1px solid var(--ink-10); padding:clamp(24px,3.5vw,40px); margin-top:28px; }
+.result-grid { display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(28px,4vw,48px); align-items:start; }
+.result-side { display:flex; flex-direction:column; }
+.result-logo { width:64px; height:64px; overflow:hidden; flex-shrink:0; }
+.result-logo img { width:100%; height:100%; object-fit:cover; display:block; }
+.result-company { font-size:19px; font-weight:700; letter-spacing:-0.015em; margin-top:18px; }
+.result-category { font-size:13px; color:var(--ink-55); margin-top:2px; }
+.result-stats { display:flex; gap:20px; margin-top:22px; padding-top:20px; border-top:1px solid var(--ink-20); }
+.result-stat-num { font-size:26px; font-weight:700; letter-spacing:-0.02em; color:var(--accent-2); line-height:1.1; }
+.result-stat-label { font-size:12.5px; color:var(--ink-55); margin-top:4px; line-height:1.35; }
+.result-highlight { font-size:13px; font-weight:600; color:var(--ink); margin-top:18px; padding-top:16px; border-top:1px solid var(--ink-20); }
+.result-main p { font-size:15.5px; line-height:1.7; color:var(--ink-55); margin:0 0 14px; }
+.result-main p:last-of-type { margin-bottom:0; }
+.result-quote { margin:22px 0 0; padding-left:18px; border-left:2px solid var(--accent-2); }
+.result-quote p { font-style:italic; color:var(--ink); font-size:15px; line-height:1.65; margin:0; }
+.result-quote-attr { font-style:normal !important; font-weight:700; font-size:13px !important; margin-top:10px !important; color:var(--ink) !important; }
+.result-quote-attr span { font-weight:400; color:var(--ink-55); }
+@media (max-width:760px){ .result-grid{grid-template-columns:1fr;} .result-stats{flex-wrap:wrap;} }
 .expertise-list li { display:flex; align-items:baseline; gap:10px; font-size:15px; color:var(--ink); }
 .expertise-list li::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
 
@@ -343,7 +364,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <p><strong>Pourquoi Romain pour Pallini</strong></p>
         <p>Romain conna&icirc;t les deux c&ocirc;t&eacute;s de l'&eacute;quation&nbsp;: g&eacute;n&eacute;rer des leads et comprendre lesquels ont r&eacute;ellement de la valeur pour une &eacute;quipe commerciale. Dans votre contexte, cette double culture nous para&icirc;t d&eacute;terminante pour construire une acquisition pilot&eacute;e non seulement au CPL, mais jusqu'au RDV, au pipeline et au business g&eacute;n&eacute;r&eacute;.</p>
         <p class="is-bold">Romain est aujourd'hui le profil de notre r&eacute;seau qui nous semble le plus pertinent pour votre recherche. Avant toute recommandation formelle, nous validerions avec lui votre mandat et sa roadmap d&eacute;taill&eacute;e.</p>
-        <p style="font-weight:700; color:var(--accent-2);">Portfolio avec &eacute;tudes des cas chiffr&eacute;s disponible</p>
       </div>
 
       <ul class="expertise-list">
@@ -357,12 +377,104 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   </div>
 </section>
 
+<!-- RESULTS — quantified case studies, own component -->
+<section class="results-section">
+  <div class="inner">
+    <div class="sh">
+      <p class="ew"><span class="sec-num">03</span>R&eacute;sultats</p>
+      <h2 class="sh-h" style="margin-top:14px;">Quelques r&eacute;sultats directement pertinents pour Pallini</h2>
+    </div>
+
+    <div class="result-card">
+      <div class="result-grid">
+        <div class="result-side">
+          <div class="result-logo"><img src="Assets/Images/Logo/Clients/bigblue.png" alt="Bigblue"></div>
+          <p class="result-company">Bigblue</p>
+          <p class="result-category">Lead Generation B2B</p>
+          <div class="result-stats">
+            <div class="result-stat">
+              <p class="result-stat-num">+33%</p>
+              <p class="result-stat-label">de MQL sur 12 mois</p>
+            </div>
+            <div class="result-stat">
+              <p class="result-stat-num">-10%</p>
+              <p class="result-stat-label">de CPL</p>
+            </div>
+          </div>
+          <p class="result-highlight">Rentabilit&eacute; r&eacute;elle identifi&eacute;e par levier</p>
+        </div>
+        <div class="result-main">
+          <p>Pour Bigblue, Romain devait g&eacute;n&eacute;rer davantage de MQL aupr&egrave;s d'une cible B2B pr&eacute;cise, les e-commer&ccedil;ants r&eacute;alisant plus de 500 commandes par mois, tout en d&eacute;terminant quelles sources d'acquisition produisaient r&eacute;ellement du business.</p>
+          <p>Il a optimis&eacute; les crit&egrave;res de qualification et le taux de remplissage du formulaire, structur&eacute; le tracking UTM jusqu'au MQL et construit une analyse permettant de suivre le CAC SQL jusqu'au mot-cl&eacute; et &agrave; la cr&eacute;a. L'objectif&nbsp;: arbitrer les investissements m&eacute;dia selon la qualit&eacute; et la rentabilit&eacute; r&eacute;elle des opportunit&eacute;s g&eacute;n&eacute;r&eacute;es, et non simplement selon leur co&ucirc;t.</p>
+          <blockquote class="result-quote">
+            <p>&laquo;&nbsp;Romain a toujours livr&eacute; des r&eacute;sultats de qualit&eacute;, surpassant souvent nos attentes. Je recommande vivement ce partenaire, fiable et ax&eacute; sur les r&eacute;sultats.&nbsp;&raquo;</p>
+            <p class="result-quote-attr">Bastien P. <span>&middot; Growth Lead, Bigblue</span></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-grid">
+        <div class="result-side">
+          <div class="result-logo"><img src="Assets/Images/Logo/Clients/colonies.png" alt="Colonies"></div>
+          <p class="result-company">Colonies</p>
+          <p class="result-category">Meta Ads &amp; g&eacute;n&eacute;ration de leads qualifi&eacute;s</p>
+          <div class="result-stats">
+            <div class="result-stat">
+              <p class="result-stat-num">+266%</p>
+              <p class="result-stat-label">de volume de MQL via Meta Ads</p>
+            </div>
+            <div class="result-stat">
+              <p class="result-stat-num">-60%</p>
+              <p class="result-stat-label">de CPL</p>
+            </div>
+          </div>
+        </div>
+        <div class="result-main">
+          <p>Chez Colonies, l'enjeu n'&eacute;tait pas simplement d'augmenter le volume de leads, mais de g&eacute;n&eacute;rer davantage de candidats r&eacute;ellement qualifi&eacute;s, notamment selon leur budget et leurs garanties, alors que le Search &eacute;tait d&eacute;j&agrave; largement exploit&eacute;.</p>
+          <p>Romain a structur&eacute; la strat&eacute;gie cr&eacute;ative Meta autour d'une nomenclature permettant d'identifier pr&eacute;cis&eacute;ment les angles, concepts et hooks les plus performants. La remont&eacute;e des donn&eacute;es dans Looker permettait ensuite d'identifier les concepts produisant les meilleurs MQL, d'it&eacute;rer continuellement et de d&eacute;ployer des flux dynamiques sur plusieurs pays. Les campagnes ont g&eacute;n&eacute;r&eacute; +266&nbsp;% de MQL avec une r&eacute;duction de 60&nbsp;% du CPL.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <div class="result-grid">
+        <div class="result-side">
+          <div class="result-logo"><img src="Assets/Images/Logo/Clients/motto.png" alt="Motto"></div>
+          <p class="result-company">Motto</p>
+          <p class="result-category">Acquisition, CRO &amp; optimisation du funnel</p>
+          <div class="result-stats">
+            <div class="result-stat">
+              <p class="result-stat-num">+60%</p>
+              <p class="result-stat-label">de conversion sur la cr&eacute;ation de compte</p>
+            </div>
+            <div class="result-stat">
+              <p class="result-stat-num" style="font-size:22px;">Stock &eacute;coul&eacute;</p>
+              <p class="result-stat-label">certains mois</p>
+            </div>
+          </div>
+        </div>
+        <div class="result-main">
+          <p>Pour le lancement en France de Motto, l'acquisition &eacute;tait &agrave; construire sur un march&eacute; tr&egrave;s concurrentiel et le site, con&ccedil;u comme une vitrine, convertissait insuffisamment.</p>
+          <p>Romain a d&eacute;ploy&eacute; les campagnes Google et Meta, mis en place le tracking &agrave; chaque &eacute;tape du parcours, analys&eacute; les comportements via GA et Hotjar, cr&eacute;&eacute; des landing pages d&eacute;di&eacute;es et structur&eacute; les tests de cr&eacute;as, angles et hooks. Une strat&eacute;gie de lead generation d&eacute;di&eacute;e aux essais de v&eacute;los a &eacute;galement &eacute;t&eacute; d&eacute;velopp&eacute;e en parall&egrave;le.</p>
+          <p>R&eacute;sultat&nbsp;: +60&nbsp;% de conversion sur la cr&eacute;ation de compte et, certains mois, un stock enti&egrave;rement &eacute;coul&eacute;, permettant ensuite de r&eacute;duire les d&eacute;penses d'acquisition n&eacute;cessaires.</p>
+          <blockquote class="result-quote">
+            <p>&laquo;&nbsp;Je travaille avec Romain depuis 2 ans sur nos sujets d'acquisition chez Motto. Je suis tr&egrave;s content de son accompagnement, il est extr&ecirc;mement comp&eacute;tent et r&eacute;actif. Ravi de cette collaboration que je recommande vivement&nbsp;!&nbsp;&raquo;</p>
+            <p class="result-quote-attr">Antoine B. <span>&middot; CEO &amp; Co-Founder, Motto</span></p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- NOTRE LECTURE — why-section layout, 3 rows -->
 <section class="why-section">
   <div class="inner">
     <div class="why-split">
       <div>
-        <p class="ew"><span class="sec-num">03</span>Notre lecture</p>
+        <p class="ew"><span class="sec-num">04</span>Notre lecture</p>
         <h2 class="why-lead-h" style="margin-top:14px;">Ce qui nous semble important pour Pallini</h2>
       </div>
       <div class="why-rows">
@@ -396,7 +508,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <!-- PROFILS — new component, real freelancer profiles -->
 <section class="founder-closing">
   <div class="inner">
-    <p class="ew"><span class="sec-num">04</span>Qui sommes nous</p>
+    <p class="ew"><span class="sec-num">05</span>Qui sommes nous</p>
     <div class="founder-closing-grid" style="margin-top:32px;">
       <div>
         <h2 class="founder-closing-h2">Nous ne sommes ni une agence, ni une plateforme.</h2>
@@ -423,7 +535,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <section id="contact" class="cta-section section-dark">
   <div class="inner">
     <div class="cta-inner-grid">
-      <div><p class="ew"><span class="sec-num">05</span>Pr&ecirc;t &agrave; travailler avec nous&nbsp;?</p><h2 class="cta-h2">Construisons ce projet ensemble</h2></div>
+      <div><p class="ew"><span class="sec-num">06</span>Pr&ecirc;t &agrave; travailler avec nous&nbsp;?</p><h2 class="cta-h2">Construisons ce projet ensemble</h2></div>
       <div>
         <p class="cta-sub">Un premier &eacute;change pour faire connaissance, parler de votre projet et voir si le match est l&agrave;. Sans engagement.</p>
         <div class="cta-btns">
