@@ -237,13 +237,20 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 /* SES EXPERTISES — bullet list, reusing stat-list pattern */
 .expertise-list { list-style:none; margin:32px 0 0; padding:24px 0 0; border-top:1px solid var(--ink-20); display:flex; flex-direction:column; gap:10px; }
 
-/* Inline profile stats + "what he brings" list — unique to this page */
-.stat-row { display:flex; flex-wrap:wrap; gap:24px; margin-top:14px; }
-.stat-num { font-size:24px; font-weight:700; letter-spacing:-0.02em; color:var(--accent-2); line-height:1.1; }
-.stat-label { font-size:12.5px; color:var(--ink-55); margin-top:4px; max-width:180px; line-height:1.35; }
-.brings-list { display:flex; flex-direction:column; gap:16px; margin-top:14px; }
-.brings-title { font-size:15px; font-weight:700; color:var(--ink); }
-.brings-body { font-size:14.5px; color:var(--ink-55); line-height:1.6; margin-top:3px; }
+/* Boxed stats card + "what he brings" rows — unique to this page */
+.stat-card { background:var(--card); border:1px solid var(--ink-10); padding:24px; margin-top:16px; display:flex; flex-wrap:wrap; }
+.stat-block { flex:1 1 140px; padding:0 20px; border-left:1px solid var(--ink-10); }
+.stat-block:first-child { border-left:none; padding-left:0; }
+.stat-num { font-size:26px; font-weight:700; letter-spacing:-0.02em; color:var(--accent-2); line-height:1.1; }
+.stat-label { font-size:12.5px; color:var(--ink-55); margin-top:6px; line-height:1.4; }
+.feature-why-label { font-size:15px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); display:flex; align-items:center; gap:8px; margin-top:28px; padding-top:24px; border-top:1px solid var(--ink-20); }
+.feature-why-label::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.feature-why-rows { display:flex; flex-direction:column; margin-top:6px; }
+.feature-why-row { display:grid; grid-template-columns:auto 1fr; gap:16px; padding:18px 0; border-top:1px solid var(--ink-06); }
+.feature-why-row:first-child { border-top:none; }
+.feature-why-num { font-size:18px; font-weight:700; letter-spacing:-0.03em; color:var(--ink-20); line-height:1.3; }
+.feature-why-title { font-size:16px; font-weight:700; letter-spacing:-0.015em; margin-bottom:6px; }
+.feature-why-body { font-size:16px; line-height:1.75; color:var(--ink-55); }
 .expertise-list li { display:flex; align-items:baseline; gap:10px; font-size:15px; color:var(--ink); }
 .expertise-list li::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
 
@@ -348,8 +355,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <p>Juan specializes in scaling consumer brands through performance marketing, with particular experience in DTC fashion and apparel.</p>
         <p>Today, he manages $40k to $80k in daily media spend across Google, TikTok, Pinterest and other acquisition channels for brands including Trafilea and Shapermint. His scope goes beyond media buying, covering acquisition strategy, creative performance, revenue and profitability targets, and international expansion.</p>
 
-        <p style="margin-top:28px;"><strong>Proven performance at scale</strong></p>
-        <div class="stat-row">
+        <p class="feature-why-label">Proven performance at scale</p>
+        <div class="stat-card">
           <div class="stat-block">
             <p class="stat-num">$40k&ndash;$80k</p>
             <p class="stat-label">Daily media spend managed</p>
@@ -363,29 +370,44 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
             <p class="stat-label">ROAS achieved on accounts spending $20k+ per day</p>
           </div>
         </div>
-        <p style="font-size:13px; font-style:italic; color:var(--ink-55); margin-top:14px;">Juan measured this performance against overall revenue in Tableau, rather than relying solely on advertising-platform attribution.</p>
+        <p style="font-size:13px; font-style:italic; color:var(--ink-55); margin-top:12px;">Juan measured this performance against overall revenue in Tableau, rather than relying solely on advertising-platform attribution.</p>
 
-        <p style="margin-top:28px;"><strong>What he brings</strong></p>
-        <div class="brings-list">
-          <div class="brings-item">
-            <p class="brings-title">Performance acquisition</p>
-            <p class="brings-body">Strategy, execution and optimization across Google, Meta, TikTok, Pinterest, Bing and YouTube.</p>
+        <p class="feature-why-label">What he brings</p>
+        <div class="feature-why-rows">
+          <div class="feature-why-row">
+            <p class="feature-why-num">01</p>
+            <div>
+              <h3 class="feature-why-title">Performance acquisition</h3>
+              <p class="feature-why-body">Strategy, execution and optimization across Google, Meta, TikTok, Pinterest, Bing and YouTube.</p>
+            </div>
           </div>
-          <div class="brings-item">
-            <p class="brings-title">DTC &amp; fashion expertise</p>
-            <p class="brings-body">Hands-on experience scaling fashion and apparel products in highly performance-driven environments.</p>
+          <div class="feature-why-row">
+            <p class="feature-why-num">02</p>
+            <div>
+              <h3 class="feature-why-title">DTC &amp; fashion expertise</h3>
+              <p class="feature-why-body">Hands-on experience scaling fashion and apparel products in highly performance-driven environments.</p>
+            </div>
           </div>
-          <div class="brings-item">
-            <p class="brings-title">Creative strategy</p>
-            <p class="brings-body">Works directly with creative teams to identify, develop and iterate high-converting assets based on campaign data.</p>
+          <div class="feature-why-row">
+            <p class="feature-why-num">03</p>
+            <div>
+              <h3 class="feature-why-title">Creative strategy</h3>
+              <p class="feature-why-body">Works directly with creative teams to identify, develop and iterate high-converting assets based on campaign data.</p>
+            </div>
           </div>
-          <div class="brings-item">
-            <p class="brings-title">International growth</p>
-            <p class="brings-body">Experience taking consumer products into new markets and adapting acquisition strategies across geographies.</p>
+          <div class="feature-why-row">
+            <p class="feature-why-num">04</p>
+            <div>
+              <h3 class="feature-why-title">International growth</h3>
+              <p class="feature-why-body">Experience taking consumer products into new markets and adapting acquisition strategies across geographies.</p>
+            </div>
           </div>
-          <div class="brings-item">
-            <p class="brings-title">Business-driven optimization</p>
-            <p class="brings-body">Campaign decisions tied to customer acquisition, revenue, profitability and growth, rather than media metrics in isolation.</p>
+          <div class="feature-why-row">
+            <p class="feature-why-num">05</p>
+            <div>
+              <h3 class="feature-why-title">Business-driven optimization</h3>
+              <p class="feature-why-body">Campaign decisions tied to customer acquisition, revenue, profitability and growth, rather than media metrics in isolation.</p>
+            </div>
           </div>
         </div>
       </div>
