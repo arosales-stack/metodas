@@ -241,6 +241,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .feature-desc p { margin:0 0 16px; }
 .feature-desc p:last-child { margin-bottom:0; }
 .feature-desc .is-bold { font-weight:700; color:var(--ink); }
+.sh-b.is-bold { font-weight:700; color:var(--ink); }
+.dual-image-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.dual-image-grid img { width:100%; height:100%; object-fit:cover; display:block; }
 
 /* SES EXPERTISES — bullet list, reusing stat-list pattern */
 .expertise-list { list-style:none; margin:32px 0 0; padding:24px 0 0; border-top:1px solid var(--ink-20); display:flex; flex-direction:column; gap:10px; }
@@ -476,6 +479,23 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/kamel-portfolio/kamel-p10-poster.jpg">
           <source src="Assets/Video/kamel/kamel-p10.mp4" type="video/mp4">
         </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO — AI production platform, separate from client work above -->
+<section class="portfolio-section">
+  <div class="inner">
+    <div class="cta-inner-grid">
+      <div>
+        <h2 class="sh-h">Au-del&agrave; des outils IA&nbsp;: la capacit&eacute; de construire le sien</h2>
+        <p class="sh-b" style="margin-top:14px;">Kamel a d&eacute;velopp&eacute; de z&eacute;ro une plateforme compl&egrave;te de production cr&eacute;ative IA, capable de g&eacute;n&eacute;rer, transformer et d&eacute;cliner des images, puis de les mettre en mouvement depuis un m&ecirc;me environnement.</p>
+        <p class="sh-b is-bold" style="margin-top:16px;">Pour Primal, l'int&eacute;r&ecirc;t est commercial&nbsp;: ne pas simplement produire 2&ndash;3 vid&eacute;os par jour avec la stack actuelle, mais pouvoir progressivement transformer les t&acirc;ches r&eacute;p&eacute;titives en outils sur mesure &mdash; et augmenter le volume de tests sans augmenter proportionnellement le temps de production.</p>
+      </div>
+      <div class="dual-image-grid">
+        <img src="Assets/Images/kamel-portfolio/kamel-p11-moodboard.webp" loading="lazy" alt="Plateforme IA de Kamel &mdash; moodboard">
+        <img src="Assets/Images/kamel-portfolio/kamel-p12-aitool.webp" loading="lazy" alt="Plateforme IA de Kamel &mdash; outil de cr&eacute;ation">
       </div>
     </div>
   </div>
