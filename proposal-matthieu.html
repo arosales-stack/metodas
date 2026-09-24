@@ -118,6 +118,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .portfolio-stack { display:flex; flex-direction:column; gap:14px; margin-bottom:14px; }
 .portfolio-duo { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
 @media (max-width:640px){ .portfolio-duo{grid-template-columns:1fr;} }
+.portfolio-cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:start; }
+.portfolio-col { display:flex; flex-direction:column; gap:14px; min-width:0; }
+@media (max-width:640px){ .portfolio-cols{grid-template-columns:1fr;} }
 .portfolio-item { break-inside:avoid; margin-bottom:14px; background:var(--ink-06); overflow:hidden; position:relative; }
 .portfolio-media { width:100%; height:100%; object-fit:cover; display:block; }
 @media (max-width:860px){ .portfolio-masonry{column-count:2;} }
@@ -336,7 +339,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <!-- HERO -->
 <section class="hook-hero">
   <div class="inner">
-    <p class="ew hero-ew"><span class="sec-num">01</span>Le brief</p>
+    <p class="ew hero-ew"><span class="sec-num">01</span>Matthieu</p>
     <h1 class="hook-h1">22 ans à créer des images pour des marques parmi les plus exigeantes visuellement.</h1>
   </div>
 </section>
@@ -353,7 +356,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   <div class="inner">
     <div class="sh">
       <p class="ew"><span class="sec-num">02</span>Profil</p>
-      <h2 class="sh-h" style="margin-top:14px;">Profil recommand&eacute;</h2>
+      <h2 class="sh-h" style="margin-top:14px;">Son CV</h2>
     </div>
     <div class="feature-profile">
       <div class="feature-grid">
@@ -390,7 +393,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <div class="feature-content">
           <p class="feature-lead">Matthieu combine 22+ ans de production cr&eacute;ative en ind&eacute;pendant avec une expertise couvrant direction artistique, motion, CGI, photographie, compositing et post-production.</p>
           <p class="feature-lead">Aujourd'hui, l'IA g&eacute;n&eacute;rative s'int&egrave;gre &agrave; ce workflow existant, &eacute;largissant ses possibilit&eacute;s cr&eacute;atives sans remplacer le savoir-faire qui les pr&eacute;c&egrave;de.</p>
-          <p class="feature-why-label">Pourquoi Matthieu pour Malherbe</p>
+          <p class="feature-why-label">Pourquoi nous avons choisi Matthieu</p>
           <div class="feature-why-rows">
             <div class="feature-why-row">
               <p class="feature-why-num">01</p>
@@ -414,11 +417,11 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
               <div>
                 <h3 class="feature-why-title">La g&eacute;n&eacute;ration n'est qu'une &eacute;tape du processus.</h3>
                 <p class="feature-why-body">Matthieu ma&icirc;trise lui-m&ecirc;me l'ensemble de la cha&icirc;ne de production, du concept et de la cr&eacute;ation d'image jusqu'au motion, compositing, retouche et &agrave; la post-production finale.</p>
-                <p class="feature-why-body">Cette diff&eacute;rence est particuli&egrave;rement pertinente ici&nbsp;: Malherbe recherche pr&eacute;cis&eacute;ment quelqu'un capable d'aller au-del&agrave; de la g&eacute;n&eacute;ration brute pour produire des assets luxe aboutis et directement exploitables.</p>
+                <p class="feature-why-body">C'est ce qui lui permet d'aller au-del&agrave; de la g&eacute;n&eacute;ration brute pour produire des assets luxe aboutis et directement exploitables.</p>
               </div>
             </div>
           </div>
-          <p class="feature-closing">Pour Malherbe&nbsp;: 22 ans d'expertise dans l'image de luxe + la production g&eacute;n&eacute;rative int&eacute;gr&eacute;e &agrave; un workflow cr&eacute;atif complet.</p>
+          <p class="feature-closing">22 ans d'expertise dans l'image de luxe + la production g&eacute;n&eacute;rative int&eacute;gr&eacute;e &agrave; un workflow cr&eacute;atif complet.</p>
         </div>
       </div>
     </div>
@@ -433,72 +436,54 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
       <h2 class="sh-h" style="margin-top:14px;">S&eacute;lection de travaux de Matthieu</h2>
       <p class="sh-b" style="margin-top:10px;">Tous les projets pr&eacute;sent&eacute;s ici ont &eacute;t&eacute; r&eacute;alis&eacute;s dans le cadre de missions r&eacute;mun&eacute;r&eacute;es pour ces marques. Aucun mock-up ni projet fictif.</p>
     </div>
-    <div class="portfolio-stack">
-      <div class="portfolio-item" style="aspect-ratio:640/360;">
-        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-06-poster.jpg">
-          <source src="Assets/Video/matthieu/matthieu-06.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="portfolio-item" style="aspect-ratio:640/360;">
-        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-03-poster.jpg">
-          <source src="Assets/Video/matthieu/matthieu-03.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="portfolio-item" style="aspect-ratio:640/360;">
-        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-04-poster.jpg">
-          <source src="Assets/Video/matthieu/matthieu-04.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="portfolio-item" style="aspect-ratio:720/406;">
-        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-05-poster.jpg">
-          <source src="Assets/Video/matthieu/matthieu-05.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-    <div class="portfolio-duo">
-      <div class="portfolio-item" style="aspect-ratio:720/1280;">
-        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-01-poster.jpg">
-          <source src="Assets/Video/matthieu/matthieu-01.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="portfolio-item" style="aspect-ratio:720/900;">
-        <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-02-poster.jpg">
-          <source src="Assets/Video/matthieu/matthieu-02.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NOTRE LECTURE — why-section layout, 3 rows -->
-<section class="why-section">
-  <div class="inner">
-    <div class="why-split">
-      <div>
-        <p class="ew"><span class="sec-num">04</span>Notre vision</p>
-        <h2 class="why-lead-h" style="margin-top:14px;">L&agrave; o&ugrave; nous voyons l'opportunit&eacute;</h2>
-      </div>
-      <div class="why-rows">
-        <div class="why-row">
-          <p class="why-row-num">01</p>
-          <div>
-            <h3 class="why-row-title">L'IA doit &eacute;largir le territoire cr&eacute;atif, pas le d&eacute;finir.</h3>
-            <p class="why-row-body">Les marques de luxe ont de plus en plus acc&egrave;s aux m&ecirc;mes outils g&eacute;n&eacute;ratifs. La diff&eacute;rence se fera moins sur l'acc&egrave;s &agrave; l'IA que sur les id&eacute;es, la culture visuelle et la direction artistique qu'on lui applique.</p>
-          </div>
+    <div class="portfolio-cols">
+      <div class="portfolio-col">
+        <div class="portfolio-item" style="aspect-ratio:640/360;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-06-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-06.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="why-row">
-          <p class="why-row-num">02</p>
-          <div>
-            <h3 class="why-row-title">Les derniers 20&nbsp;% de l'image vont compter davantage.</h3>
-            <p class="why-row-body">&Agrave; mesure que la g&eacute;n&eacute;ration s'acc&eacute;l&egrave;re, la finition devient encore plus diff&eacute;renciante. Pr&eacute;cision produit, mati&egrave;res, retouche, compositing et couleur sont ce qui transforme une g&eacute;n&eacute;ration impressionnante en v&eacute;ritable asset de luxe.</p>
-          </div>
+        <div class="portfolio-item" style="aspect-ratio:640/360;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-03-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-03.mp4" type="video/mp4">
+          </video>
         </div>
-        <div class="why-row">
-          <p class="why-row-num">03</p>
-          <div>
-            <h3 class="why-row-title">Penser syst&egrave;me de campagne, pas contenus isol&eacute;s.</h3>
-            <p class="why-row-body">L'opportunit&eacute; est d'utiliser l'IA pour construire des territoires visuels coh&eacute;rents, capables de se d&eacute;cliner en image, film et formats sociaux, plut&ocirc;t que de produire une succession d'assets IA d&eacute;connect&eacute;s.</p>
-          </div>
+        <div class="portfolio-item" style="aspect-ratio:720/1280;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-01-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-01.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="portfolio-item" style="aspect-ratio:1280/720;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-07-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-07.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="portfolio-item" style="aspect-ratio:1280/720;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-08-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-08.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="portfolio-col">
+        <div class="portfolio-item" style="aspect-ratio:640/360;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-04-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-04.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="portfolio-item" style="aspect-ratio:720/406;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-05-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-05.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="portfolio-item" style="aspect-ratio:1080/1920;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-09-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-09.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="portfolio-item" style="aspect-ratio:720/900;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-02-poster.jpg">
+            <source src="Assets/Video/matthieu/matthieu-02.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -509,7 +494,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <!-- PROFILES — new component, real freelancer profiles -->
 <section class="founder-closing">
   <div class="inner">
-    <p class="ew"><span class="sec-num">05</span>Qui sommes nous</p>
+    <p class="ew"><span class="sec-num">04</span>Qui sommes nous</p>
     <div class="founder-closing-grid" style="margin-top:32px;">
       <div>
         <h2 class="founder-closing-h2">Nous ne sommes ni une agence, ni une plateforme.</h2>
@@ -536,7 +521,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <section id="contact" class="cta-section section-dark">
   <div class="inner">
     <div class="cta-inner-grid">
-      <div><p class="ew"><span class="sec-num">06</span>Pr&ecirc;t &agrave; travailler avec nous&nbsp;?</p><h2 class="cta-h2">Construisons ce projet ensemble</h2></div>
+      <div><p class="ew"><span class="sec-num">05</span>Pr&ecirc;t &agrave; travailler avec nous&nbsp;?</p><h2 class="cta-h2">Construisons ce projet ensemble</h2></div>
       <div>
         <p class="cta-sub">Un premier &eacute;change pour faire connaissance, parler de votre projet et voir si le match est l&agrave;. Sans engagement.</p>
         <div class="cta-btns">
