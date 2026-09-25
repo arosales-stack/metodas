@@ -329,7 +329,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .pricing-flat { font-size:14px; color:var(--ink-55); }
 .pricing-rule { width:44px; height:2px; background:var(--accent-2); margin-bottom:24px; }
 .pricing-items { display:flex; flex-direction:column; gap:18px; }
-.pricing-item { font-size:15px; line-height:1.6; }
+.pricing-item { font-size:15px; line-height:1.6; position:relative; padding-left:24px; }
+.pricing-item::before { content:''; position:absolute; left:2px; top:0.3em; width:5px; height:10px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 @media (max-width:640px){ .pricing-box{grid-template-columns:1fr;} }
 
 /* CTA */
