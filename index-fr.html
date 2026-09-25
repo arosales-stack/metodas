@@ -166,6 +166,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .hero-ew { margin-bottom:16px; }
 .hero-h1 { font-size:clamp(36px,5vw,60px); font-weight:700; letter-spacing:-0.03em; line-height:1.06; }
 .hero-sub { margin-top:18px; font-size:16px; color:var(--ink-55); line-height:1.65; max-width:440px; }
+.hero-points { list-style:none; padding:0; margin:22px 0 0; display:flex; flex-direction:column; gap:10px; }
+.hero-points li { position:relative; padding-left:24px; font-size:15px; line-height:1.5; color:var(--ink); }
+.hero-points li::before { content:''; position:absolute; left:2px; top:0.28em; width:5px; height:10px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--ink-06); border:1px solid var(--ink-06); }
 .hcard { aspect-ratio:3/4; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative; background:var(--dark-bg); }
 @media (prefers-color-scheme: dark) { .hcard { background:var(--fixed-beige); } }
@@ -200,14 +203,14 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .why-row-body { font-size:15px; line-height:1.65; color:var(--ink-55); }
 @media (max-width:860px){ .why-split{grid-template-columns:1fr;} }
 
-.stats-ribbon { margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(32px,4vw,48px); padding:clamp(28px,3vw,40px); background:var(--beige); }
+.stats-ribbon { margin-top:clamp(88px,11vw,160px); margin-bottom:clamp(56px,7vw,104px); display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(32px,4vw,48px); padding:clamp(28px,3vw,40px); background:var(--beige); }
 @media (prefers-color-scheme: dark) { .stats-ribbon { background:transparent; padding:0; } }
 :root[data-theme="light"] .stats-ribbon { background:var(--beige); padding:clamp(28px,3vw,40px); }
 :root[data-theme="dark"] .stats-ribbon { background:transparent; padding:0; }
 .ribbon-cell { display:flex; flex-direction:column; }
 .ribbon-num { font-size:clamp(30px,3.4vw,42px); font-weight:700; letter-spacing:-0.04em; line-height:1; color:var(--ink); font-variant-numeric:tabular-nums; }
 .ribbon-rule { border:none; border-top:2px solid var(--accent-2); margin:14px 0; width:28px; }
-.ribbon-lbl { font-size:13px; color:var(--ink-55); line-height:1.5; }
+.ribbon-lbl { font-size:15px; color:var(--ink-55); line-height:1.5; }
 @media (max-width:768px){ .stats-ribbon{grid-template-columns:repeat(2,1fr);} .ribbon-cell{align-items:center; text-align:center;} .ribbon-rule{margin-left:auto; margin-right:auto;} .ribbon-lbl{font-size:15px;} }
 
 /* EXPERTISE */
@@ -399,7 +402,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
   <div class="hero-col">
     <p class="ew hero-ew"><span class="sec-num">01</span>Talents Freelance</p>
     <h1 class="hero-h1">Les meilleurs experts freelances en marketing &amp; création</h1>
-    <p class="hero-sub">Nos experts sont issus des plus grandes entreprises et sélectionnés pour leur excellence. Pour le prix d'une plateforme freelance, bénéficiez de l'engagement d'une agence : un contrat, des tarifs transparents et un accompagnement jusqu'à la livraison.</p>
+    <p class="hero-sub">Travaillez directement avec des freelances présélectionnés, avec les garanties d’une entreprise : contrats clairs et qualité garantie.</p>
+    <ul class="hero-points">
+      <li>+250 profils pré-validés</li>
+      <li>7 ans d’expérience moyenne</li>
+      <li>1<sup>ère</sup> proposition sous 48 h</li>
+      <li>+15 rôles couverts en Marketing &amp; Création</li>
+    </ul>
   </div>
   <div class="hero-grid reveal" id="heroGrid">
     <div class="hcard"><span class="hcard-tag">Marque</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2489.webp" alt=""></div>
@@ -464,12 +473,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <div><h3 class="why-row-title">Zéro formalité administrative</h3><p class="why-row-body">La conformité, les contrats et les paiements sont à notre charge. Pas de problèmes de facturation, pas de va-et-vient juridique. Vous donnez le brief, nous exécutons — c'est tout.</p></div>
         </div>
       </div>
-    </div>
-    <div class="stats-ribbon reveal">
-      <div class="ribbon-cell"><p class="ribbon-num">+250</p><hr class="ribbon-rule"><p class="ribbon-lbl">Profils pré-validés</p></div>
-      <div class="ribbon-cell"><p class="ribbon-num">7 ans</p><hr class="ribbon-rule"><p class="ribbon-lbl">Expérience moyenne</p></div>
-      <div class="ribbon-cell"><p class="ribbon-num">48 h</p><hr class="ribbon-rule"><p class="ribbon-lbl">Délai de remise de la 1<sup>ère</sup> proposition</p></div>
-      <div class="ribbon-cell"><p class="ribbon-num">+15</p><hr class="ribbon-rule"><p class="ribbon-lbl">Rôles couverts en Marketing &amp; Création</p></div>
     </div>
   </div>
 </section>
