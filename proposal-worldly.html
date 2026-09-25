@@ -267,6 +267,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .feature-why-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
 .expertise-list li { display:flex; align-items:baseline; gap:10px; font-size:15px; color:var(--ink); }
 .expertise-list li::before { content:''; display:inline-block; width:6px; height:6px; background:var(--accent-2); flex-shrink:0; }
+.strengths-list li::before { width:10px; height:1.5px; transform:translateY(-4px); }
 
 /* USE CASES — one carousel, 3 slides (one per use case), each slide = 2x2 image grid */
 .usecase-carousel { margin-top:32px; padding-top:24px; border-top:1px solid var(--ink-20); position:relative; }
@@ -368,16 +369,16 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <p>Deanna combines senior Growth ownership with hands-on execution across paid acquisition, CRM, email, SEO/SEM, content, websites and reporting. Her background spans SaaS, startups and larger organizations, with acquisition consistently connected to leads, sales and revenue.</p>
 
         <p class="feature-why-label">Core strengths</p>
-        <div class="feature-tags" style="border-top:none; padding-top:0; margin-top:14px;">
-          <span class="tag">B2B Growth &amp; Demand Generation</span>
-          <span class="tag">Paid Acquisition</span>
-          <span class="tag">HubSpot &amp; CRM Workflows</span>
-          <span class="tag">Email Marketing &amp; Automation</span>
-          <span class="tag">SEO / SEM</span>
-          <span class="tag">Lead Generation &amp; Funnel Optimization</span>
-          <span class="tag">Reporting &amp; Attribution</span>
-          <span class="tag">Growth Strategy &amp; Execution</span>
-        </div>
+        <ul class="expertise-list strengths-list" style="margin-top:14px; padding-top:0; border-top:none;">
+          <li>B2B Growth &amp; Demand Generation</li>
+          <li>Paid Acquisition</li>
+          <li>HubSpot &amp; CRM Workflows</li>
+          <li>Email Marketing &amp; Automation</li>
+          <li>SEO / SEM</li>
+          <li>Lead Generation &amp; Funnel Optimization</li>
+          <li>Reporting &amp; Attribution</li>
+          <li>Growth Strategy &amp; Execution</li>
+        </ul>
 
         <p class="feature-why-label" style="margin-top:28px;">Why Deanna for Worldly</p>
         <div class="feature-why-rows">
