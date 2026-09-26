@@ -336,6 +336,13 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .intro-center { text-align:center; }
 .result-category { font-size:15px !important; }
 .result-who { font-size:15px; color:var(--ink); margin-top:10px; }
+.result-logo { background:#fff; border:1px solid var(--ink-10); display:flex; align-items:center; justify-content:center; }
+.result-logo img { object-fit:contain !important; }
+.result-mono { font-size:17px; font-weight:700; letter-spacing:-0.02em; color:#1c1a17; }
+.result-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; padding-top:16px; border-top:1px solid var(--ink-20); }
+.result-tags .tag { font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--accent-2); padding:5px 12px; }
+.result-key { font-size:17px !important; font-weight:700; color:var(--accent-2) !important; line-height:1.5 !important; margin-top:18px !important; padding-top:16px; border-top:1px solid var(--ink-20); }
+
 .result-stat-label { font-size:15px !important; }
 .result-highlight { font-size:15px !important; line-height:1.5; }
 .result-main p { font-size:17px !important; line-height:1.8 !important; }
@@ -516,56 +523,60 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <div class="result-card">
       <div class="result-grid">
         <div class="result-side">
-          <p class="result-company" style="margin-top:0;">BNP Paribas</p>
+          <div class="result-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas.png" alt="BNP Paribas"></div>
+          <p class="result-company">BNP Paribas</p>
           <p class="result-category">Social Media</p>
           <p class="result-who">Pierre · Social Media &amp; Content</p>
-          <div class="result-stats" style="flex-wrap:wrap;">
-            <div class="result-stat"><p class="result-stat-num">+20 %</p><p class="result-stat-label">de communauté</p></div>
-            <div class="result-stat"><p class="result-stat-num">+35 %</p><p class="result-stat-label">de reach</p></div>
-            <div class="result-stat"><p class="result-stat-num">1 % → 3,6 %</p><p class="result-stat-label">d’engagement</p></div>
-          </div>
+          <div class="result-tags"><span class="tag">Social Media</span><span class="tag">Ligne éditoriale</span><span class="tag">Reporting</span></div>
         </div>
         <div class="result-main">
           <p>Refonte et optimisation de la stratégie Social Media de Ma Banque : ligne éditoriale, planning, coordination des contenus, reporting et activations.</p>
+          <p class="result-key">+20 % de communauté · +35 % de reach · engagement de 1 % à 3,6 %</p>
         </div>
       </div>
     </div>
     <div class="result-card">
       <div class="result-grid">
         <div class="result-side">
-          <p class="result-company" style="margin-top:0;">Société Générale CIB</p>
+          <div class="result-logo"><span class="result-mono">SG</span></div>
+          <p class="result-company">Société Générale CIB</p>
           <p class="result-category">Product Design</p>
           <p class="result-who">Cyril · Senior Product Designer</p>
-          <p class="result-highlight">3 ans · 10+ produits B2B</p>
+          <div class="result-tags"><span class="tag">Product Design</span><span class="tag">UX Research</span><span class="tag">Design System</span></div>
         </div>
         <div class="result-main">
           <p>Conception et optimisation de produits digitaux B2B dans un environnement financier complexe : recherche utilisateurs, ateliers, prototypage, tests et Design System.</p>
+          <p class="result-key">3 ans · 10+ produits B2B</p>
         </div>
       </div>
     </div>
     <div class="result-card">
       <div class="result-grid">
         <div class="result-side">
-          <p class="result-company" style="margin-top:0;">N26</p>
+          <div class="result-logo"><span class="result-mono">N26</span></div>
+          <p class="result-company">N26</p>
           <p class="result-category">Content &amp; UX Writing</p>
           <p class="result-who">Samuel · Senior Content Specialist</p>
-          <p class="result-highlight">Des incohérences terminologiques identifiées puis intégrées durablement au glossaire N26.</p>
+          <div class="result-tags"><span class="tag">Content</span><span class="tag">UX Writing</span><span class="tag">Compliance</span></div>
         </div>
         <div class="result-main">
           <p>Production et adaptation des contenus français sur l’ensemble du parcours : CRM, notifications, UX, support et contenus légaux/compliance, avec gouvernance de la terminologie.</p>
+          <p class="result-key">Des incohérences terminologiques identifiées puis intégrées durablement au glossaire N26.</p>
         </div>
       </div>
     </div>
     <div class="result-card">
       <div class="result-grid">
         <div class="result-side">
-          <p class="result-company" style="margin-top:0;">BNP Paribas</p>
+          <div class="result-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas.png" alt="BNP Paribas"></div>
+          <p class="result-company">BNP Paribas</p>
           <p class="result-category">Motion Design</p>
           <p class="result-who">Maxime · Motion Designer</p>
-          <p class="result-highlight">200 ans d’histoire racontés en 3 minutes.</p>
+          <div class="result-tags"><span class="tag">Motion Design</span><span class="tag">Storytelling</span><span class="tag">Film institutionnel</span></div>
         </div>
         <div class="result-main">
           <p>Conception d’un film institutionnel entièrement en motion design, condensant l’histoire de BNP Paribas en un format narratif de 3 minutes.</p>
+          <p class="result-key">200 ans d’histoire racontés en 3 minutes.</p>
         </div>
       </div>
     </div>
