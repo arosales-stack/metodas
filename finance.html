@@ -302,7 +302,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 /* TALENT CARDS — copied verbatim from index-fr.html */
 .cluster { border:1px solid var(--ink-06); display:grid; background:var(--ink-06); gap:1px; }
 .talent-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
-.talent-grid { display:flex; gap:20px; border:none; background:none; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; }
+.talent-grid { display:flex; gap:20px; border:none; background:none; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; }
+.talent-grid::-webkit-scrollbar { display:none; }
 .talent-grid .tcard { flex:0 0 calc((100% - 60px) / 4); scroll-snap-align:start; }
 .tcard { position:relative; background:var(--card); overflow:hidden; cursor:pointer; align-self:start; }
 .tcard-photo { aspect-ratio:610/833; position:relative; overflow:hidden; background:var(--beige); }
@@ -416,7 +417,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Pierre</h3>
           <p class="tcard-role">Social Media &amp; Content</p>
           <p class="tcard-years">9+ ans d’expérience</p>
-          <div class="tcard-logos"><img style="height:36px;" src="Assets/Images/Logos/cropped/BNPParibas.png" alt="BNP Paribas"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">9+ ans d’expérience en stratégie Social Media, création de contenu et Community Management, avec une expérience directe de la communication bancaire.</p>
@@ -432,7 +432,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Cyril</h3>
           <p class="tcard-role">Senior Product Designer</p>
           <p class="tcard-years">10+ ans d’expérience</p>
-          <div class="tcard-logos"><img src="Assets/Images/Logos/cropped/Allianz.png" alt="Allianz (logo provisoire)"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Trois ans chez SGCIB, où il a travaillé sur plus de 10 produits B2B dans un environnement financier complexe.</p>
@@ -449,7 +448,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Samuel</h3>
           <p class="tcard-role">Senior Content Specialist</p>
           <p class="tcard-years">10+ ans d’expérience</p>
-          <div class="tcard-logos"><img src="Assets/Images/Logos/cropped/revolut.png" alt="Revolut (logo provisoire)"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Spécialisé dans les environnements fintech : du contenu produit et CRM jusqu'aux sujets réglementaires et compliance.</p>
@@ -466,7 +464,6 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Jérôme</h3>
           <p class="tcard-role">Directeur Artistique / Graphic Designer</p>
           <p class="tcard-years">20+ ans d’expérience</p>
-          <div class="tcard-logos"><img style="height:36px;" src="Assets/Images/Logos/cropped/BNPParibas.png" alt="BNP Paribas Cardif"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Plus de 15 ans chez BNP Paribas Cardif, avec une connaissance particulièrement profonde des codes et contraintes de la bancassurance.</p>
@@ -483,13 +480,17 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Maxime</h3>
           <p class="tcard-role">Motion Designer</p>
           <p class="tcard-years">15+ ans d’expérience</p>
-          <div class="tcard-logos"><img style="height:36px;" src="Assets/Images/Logos/cropped/BNPParibas.png" alt="BNP Paribas"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">15+ ans d’expérience en Motion Design, avec notamment la réalisation pour BNP Paribas d’un film institutionnel retraçant 200 ans d’histoire en 3 minutes.</p>
           </div>
         </div>
       </div>
+    </div>
+    <div class="usecase-nav talent-nav" style="margin-top:24px;">
+      <button class="usecase-arrow prev" type="button" aria-label="Profils pr&eacute;c&eacute;dents"><svg viewBox="0 0 16 16"><path d="M10 2L4 8l6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="usecase-dots"></div>
+      <button class="usecase-arrow next" type="button" aria-label="Profils suivants"><svg viewBox="0 0 16 16"><path d="M6 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     </div>
   </div>
 </section>
@@ -659,6 +660,38 @@ document.querySelectorAll('.tcard').forEach(card => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleCard(); }
   });
 });
+</script>
+<script>
+(() => {
+  const grid = document.querySelector('.talent-grid');
+  const nav = document.querySelector('.talent-nav');
+  if (!grid || !nav) return;
+  const dotsWrap = nav.querySelector('.usecase-dots');
+  const cards = grid.querySelectorAll('.tcard');
+  const step = () => cards[0].getBoundingClientRect().width + 20;
+  const positions = () => Math.max(1, Math.round((grid.scrollWidth - grid.clientWidth) / step()) + 1);
+  const build = () => {
+    dotsWrap.innerHTML = '';
+    const n = positions();
+    nav.style.display = n > 1 ? '' : 'none';
+    for (let i = 0; i < n; i++) {
+      const d = document.createElement('button');
+      d.type = 'button'; d.className = 'usecase-dot'; d.setAttribute('aria-label', 'Position ' + (i + 1));
+      d.addEventListener('click', () => grid.scrollTo({ left: i * step() }));
+      dotsWrap.appendChild(d);
+    }
+    sync();
+  };
+  const sync = () => {
+    const idx = Math.round(grid.scrollLeft / step());
+    dotsWrap.querySelectorAll('.usecase-dot').forEach((d, i) => d.classList.toggle('is-active', i === idx));
+  };
+  nav.querySelector('.prev').addEventListener('click', () => grid.scrollBy({ left: -step() }));
+  nav.querySelector('.next').addEventListener('click', () => grid.scrollBy({ left: step() }));
+  grid.addEventListener('scroll', () => requestAnimationFrame(sync));
+  window.addEventListener('resize', build);
+  build();
+})();
 </script>
 </body>
 </html>
