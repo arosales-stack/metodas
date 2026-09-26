@@ -302,7 +302,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 /* TALENT CARDS — copied verbatim from index-fr.html */
 .cluster { border:1px solid var(--ink-06); display:grid; background:var(--ink-06); gap:1px; }
 .talent-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
-.talent-grid { grid-template-columns:repeat(4,1fr); gap:20px; border:none; background:none; }
+.talent-grid { display:flex; gap:20px; border:none; background:none; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:12px; }
+.talent-grid .tcard { flex:0 0 calc((100% - 60px) / 4); scroll-snap-align:start; }
 .tcard { position:relative; background:var(--card); overflow:hidden; cursor:pointer; align-self:start; }
 .tcard-photo { aspect-ratio:610/833; position:relative; overflow:hidden; background:var(--beige); }
 @media (prefers-color-scheme: dark) { .tcard-photo { background:var(--fixed-beige); } }
@@ -324,7 +325,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .tcard-quote { font-size:15px; color:var(--ink-55); line-height:1.65; font-style:italic; margin-bottom:14px; padding-top:2px; }
 .tcard-traits { display:flex; flex-wrap:wrap; gap:4px; padding-bottom:2px; }
 .trait { font-size:13px; font-weight:500; letter-spacing:0.04em; color:var(--ink-55); border:1px solid var(--ink-10); padding:3px 9px; }
-@media (max-width:860px){ .talent-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:860px){ .talent-grid .tcard{flex-basis:calc((100% - 20px) / 2);} }
 @media (max-width:768px){
   .talent-grid { display:flex; grid-template-columns:none; overflow-x:auto; background:none; border:none; gap:14px; }
   .talent-grid .tcard { flex:0 0 220px; }
@@ -332,8 +333,15 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .intro-btn { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:10px 18px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; text-decoration:none; }
 .intro-btn:hover { border-color:var(--ink-55); }
 .intro-center { text-align:center; }
+.tcard-logos { display:flex; align-items:center; gap:14px; margin:6px 0 14px; }
+.tcard-logos img { height:26px; width:auto; max-width:130px; object-fit:contain; display:block; }
+.tcard-more { display:inline-flex; align-items:center; gap:6px; font-size:15px; color:var(--ink-55); margin-bottom:4px; }
+.tcard-more::after { content:'+'; font-weight:500; }
+.tcard:hover .tcard-more { color:var(--ink); }
+.tcard.is-open .tcard-more { display:none; }
+
 .marquee-mask { position:relative; -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); }
-.marquee-track { display:flex; align-items:center; gap:clamp(56px,6vw,88px); width:max-content; animation: marquee 34s linear infinite; }
+.marquee-track { display:flex; align-items:center; gap:clamp(56px,6vw,88px); width:max-content; animation: marquee 20s linear infinite; }
 .marquee-track:hover { animation-play-state:paused; }
 .logo-name { height:clamp(56px,6.8vw,72px); width:auto; max-width:280px; object-fit:contain; flex-shrink:0; }
 @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
@@ -407,10 +415,11 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <div class="tcard-info">
           <h3 class="tcard-name">Pierre</h3>
           <p class="tcard-role">Social Media &amp; Content</p>
-          <p class="tcard-years">9+ ans d’expérience · BNP Paribas · France Télévisions</p>
+          <p class="tcard-years">9+ ans d’expérience</p>
+          <div class="tcard-logos"><img style="height:36px;" src="Assets/Images/Logos/cropped/BNPParibas.png" alt="BNP Paribas"></div>
+          <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
-            <p class="tcard-quote">Chez BNP Paribas, Pierre a notamment travaillé sur Ma Banque, avec +20 % de communauté, +35 % de reach et un engagement passé de 1 % à 3,6 %.</p>
-            <div class="tcard-traits"><span class="trait">Stratégie Social Media</span><span class="trait">Content</span><span class="trait">Community Management</span><span class="trait">Reporting</span></div>
+            <p class="tcard-quote">9+ ans d’expérience en stratégie Social Media, création de contenu et Community Management, avec une expérience directe de la communication bancaire.</p>
           </div>
         </div>
       </div>
@@ -422,7 +431,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <div class="tcard-info">
           <h3 class="tcard-name">Cyril</h3>
           <p class="tcard-role">Senior Product Designer</p>
-          <p class="tcard-years">10+ ans d’expérience · Société Générale CIB · Bpifrance · AXA</p>
+          <p class="tcard-years">10+ ans d’expérience</p>
+          <div class="tcard-logos"><img src="Assets/Images/Logos/cropped/Allianz.png" alt="Allianz (logo provisoire)"></div>
+          <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Trois ans chez SGCIB, où il a travaillé sur plus de 10 produits B2B dans un environnement financier complexe.</p>
             <div class="tcard-traits"><span class="trait">Product Design</span><span class="trait">UX/UI</span><span class="trait">Design Systems</span><span class="trait">Research</span></div>
@@ -437,7 +448,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <div class="tcard-info">
           <h3 class="tcard-name">Samuel</h3>
           <p class="tcard-role">Senior Content Specialist</p>
-          <p class="tcard-years">10+ ans d’expérience · N26 · Lightyear · SumUp · Square</p>
+          <p class="tcard-years">10+ ans d’expérience</p>
+          <div class="tcard-logos"><img src="Assets/Images/Logos/cropped/revolut.png" alt="Revolut (logo provisoire)"></div>
+          <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Spécialisé dans les environnements fintech : du contenu produit et CRM jusqu'aux sujets réglementaires et compliance.</p>
             <div class="tcard-traits"><span class="trait">Content</span><span class="trait">UX Writing</span><span class="trait">CRM</span><span class="trait">Localisation</span><span class="trait">Compliance</span></div>
@@ -452,10 +465,28 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <div class="tcard-info">
           <h3 class="tcard-name">Jérôme</h3>
           <p class="tcard-role">Directeur Artistique / Graphic Designer</p>
-          <p class="tcard-years">20+ ans d’expérience · BNP Paribas Cardif</p>
+          <p class="tcard-years">20+ ans d’expérience</p>
+          <div class="tcard-logos"><img style="height:36px;" src="Assets/Images/Logos/cropped/BNPParibas.png" alt="BNP Paribas Cardif"></div>
+          <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Plus de 15 ans chez BNP Paribas Cardif, avec une connaissance particulièrement profonde des codes et contraintes de la bancassurance.</p>
             <div class="tcard-traits"><span class="trait">Direction artistique</span><span class="trait">Brand</span><span class="trait">Print</span><span class="trait">Design</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard" tabindex="0" role="button" aria-expanded="false">
+        <div class="tcard-photo">
+          <span class="tcard-tag">Motion</span>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="12" fill="currentColor"/><path d="M8 60c0-13 11-22 24-22s24 9 24 22z" fill="currentColor"/></svg>
+        </div>
+        <div class="tcard-info">
+          <h3 class="tcard-name">Maxime</h3>
+          <p class="tcard-role">Motion Designer</p>
+          <p class="tcard-years">15+ ans d’expérience</p>
+          <div class="tcard-logos"><img style="height:36px;" src="Assets/Images/Logos/cropped/BNPParibas.png" alt="BNP Paribas"></div>
+          <span class="tcard-more">En savoir plus</span>
+          <div class="tcard-overlay">
+            <p class="tcard-quote">15+ ans d’expérience en Motion Design, avec notamment la réalisation pour BNP Paribas d’un film institutionnel retraçant 200 ans d’histoire en 3 minutes.</p>
           </div>
         </div>
       </div>
