@@ -304,7 +304,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .talent-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
 .talent-grid { display:flex; gap:20px; border:none; background:none; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; }
 .talent-grid::-webkit-scrollbar { display:none; }
-.talent-grid .tcard { flex:0 0 calc((100% - 60px) / 4); scroll-snap-align:start; align-self:stretch; }
+.talent-grid .tcard { flex:0 0 calc((100% - 60px) / 4); scroll-snap-align:start; align-self:flex-start; }
 .tcard { position:relative; background:var(--card); overflow:hidden; cursor:pointer; align-self:start; }
 .tcard-photo { aspect-ratio:610/833; position:relative; overflow:hidden; background:var(--beige); }
 @media (prefers-color-scheme: dark) { .tcard-photo { background:var(--fixed-beige); } }
