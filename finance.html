@@ -334,6 +334,12 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .intro-btn { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:10px 18px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; text-decoration:none; }
 .intro-btn:hover { border-color:var(--ink-55); }
 .intro-center { text-align:center; }
+.result-category { font-size:15px !important; }
+.result-who { font-size:15px; color:var(--ink); margin-top:10px; }
+.result-stat-label { font-size:15px !important; }
+.result-highlight { font-size:15px !important; line-height:1.5; }
+.result-main p { font-size:17px !important; line-height:1.8 !important; }
+
 .talent-grid .tcard-photo img { object-fit:cover; object-position:center top; }
 .talent-head { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; }
 @media (max-width:640px){ .talent-head{flex-direction:column; align-items:flex-start;} }
@@ -504,51 +510,62 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <section class="results-section">
   <div class="inner">
     <div class="sh">
-      <p class="ew"><span class="sec-num">03</span>Cas clients</p>
-      <h2 class="sh-h" style="margin-top:14px;">[Titre à compléter]</h2>
+      <p class="ew"><span class="sec-num">03</span>Quelques missions</p>
+      <h2 class="sh-h" style="margin-top:14px;">Des expertises différentes, appliquées aux enjeux du secteur financier.</h2>
     </div>
     <div class="result-card">
       <div class="result-grid">
         <div class="result-side">
-          <p class="result-company" style="margin-top:0;">[Client]</p>
-          <p class="result-category">[Catégorie]</p>
-          <div class="result-stats">
-            <div class="result-stat"><p class="result-stat-num">[chiffre]</p><p class="result-stat-label">[résultat]</p></div>
-            <div class="result-stat"><p class="result-stat-num">[chiffre]</p><p class="result-stat-label">[résultat]</p></div>
+          <p class="result-company" style="margin-top:0;">BNP Paribas</p>
+          <p class="result-category">Social Media</p>
+          <p class="result-who">Pierre · Social Media &amp; Content</p>
+          <div class="result-stats" style="flex-wrap:wrap;">
+            <div class="result-stat"><p class="result-stat-num">+20 %</p><p class="result-stat-label">de communauté</p></div>
+            <div class="result-stat"><p class="result-stat-num">+35 %</p><p class="result-stat-label">de reach</p></div>
+            <div class="result-stat"><p class="result-stat-num">1 % → 3,6 %</p><p class="result-stat-label">d’engagement</p></div>
           </div>
         </div>
         <div class="result-main">
-          <p>[Cas client à compléter — contexte, mission et résultats.]</p>
+          <p>Refonte et optimisation de la stratégie Social Media de Ma Banque : ligne éditoriale, planning, coordination des contenus, reporting et activations.</p>
         </div>
       </div>
     </div>
     <div class="result-card">
       <div class="result-grid">
         <div class="result-side">
-          <p class="result-company" style="margin-top:0;">[Client]</p>
-          <p class="result-category">[Catégorie]</p>
-          <div class="result-stats">
-            <div class="result-stat"><p class="result-stat-num">[chiffre]</p><p class="result-stat-label">[résultat]</p></div>
-            <div class="result-stat"><p class="result-stat-num">[chiffre]</p><p class="result-stat-label">[résultat]</p></div>
-          </div>
+          <p class="result-company" style="margin-top:0;">Société Générale CIB</p>
+          <p class="result-category">Product Design</p>
+          <p class="result-who">Cyril · Senior Product Designer</p>
+          <p class="result-highlight">3 ans · 10+ produits B2B</p>
         </div>
         <div class="result-main">
-          <p>[Cas client à compléter — contexte, mission et résultats.]</p>
+          <p>Conception et optimisation de produits digitaux B2B dans un environnement financier complexe : recherche utilisateurs, ateliers, prototypage, tests et Design System.</p>
         </div>
       </div>
     </div>
     <div class="result-card">
       <div class="result-grid">
         <div class="result-side">
-          <p class="result-company" style="margin-top:0;">[Client]</p>
-          <p class="result-category">[Catégorie]</p>
-          <div class="result-stats">
-            <div class="result-stat"><p class="result-stat-num">[chiffre]</p><p class="result-stat-label">[résultat]</p></div>
-            <div class="result-stat"><p class="result-stat-num">[chiffre]</p><p class="result-stat-label">[résultat]</p></div>
-          </div>
+          <p class="result-company" style="margin-top:0;">N26</p>
+          <p class="result-category">Content &amp; UX Writing</p>
+          <p class="result-who">Samuel · Senior Content Specialist</p>
+          <p class="result-highlight">Des incohérences terminologiques identifiées puis intégrées durablement au glossaire N26.</p>
         </div>
         <div class="result-main">
-          <p>[Cas client à compléter — contexte, mission et résultats.]</p>
+          <p>Production et adaptation des contenus français sur l’ensemble du parcours : CRM, notifications, UX, support et contenus légaux/compliance, avec gouvernance de la terminologie.</p>
+        </div>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-grid">
+        <div class="result-side">
+          <p class="result-company" style="margin-top:0;">BNP Paribas</p>
+          <p class="result-category">Motion Design</p>
+          <p class="result-who">Maxime · Motion Designer</p>
+          <p class="result-highlight">200 ans d’histoire racontés en 3 minutes.</p>
+        </div>
+        <div class="result-main">
+          <p>Conception d’un film institutionnel entièrement en motion design, condensant l’histoire de BNP Paribas en un format narratif de 3 minutes.</p>
         </div>
       </div>
     </div>
