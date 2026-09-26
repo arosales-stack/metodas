@@ -336,7 +336,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .pricing-flat { font-size:14px; color:var(--ink-55); }
 .pricing-rule { width:44px; height:2px; background:var(--accent-2); margin-bottom:24px; }
 .pricing-items { display:flex; flex-direction:column; gap:18px; }
-.pricing-item { font-size:15px; line-height:1.6; }
+.pricing-item { font-size:15px; line-height:1.6; position:relative; padding-left:24px; }
+.pricing-item::before { content:''; position:absolute; left:2px; top:0.3em; width:5px; height:10px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 @media (max-width:640px){ .pricing-box{grid-template-columns:1fr;} }
 
 /* CTA */
@@ -687,10 +688,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="pricing-big"><span class="pricing-pct">25%</span><span class="pricing-flat">flat</span></div>
         <div class="pricing-rule"></div>
         <div class="pricing-items">
-          <p class="pricing-item">One transparent fee — no hidden markup</p>
-          <p class="pricing-item">No long-term commitment or full-time hire</p>
-          <p class="pricing-item">We handle contracts, compliance &amp; payment</p>
-          <p class="pricing-item">Not the right fit? Free replacement within the first two weeks.</p>
+          <p class="pricing-item">Mandate scoping</p>
+          <p class="pricing-item">Profile sourcing &amp; assessment</p>
+          <p class="pricing-item">Contractual guarantee: free replacement within the first two weeks</p>
+          <p class="pricing-item">Freelancer contracts, compliance &amp; invoicing</p>
+          <p class="pricing-item">Mission follow-up, with no intermediary</p>
+          <p class="pricing-item">No long-term commitment</p>
         </div>
       </div>
     </div>

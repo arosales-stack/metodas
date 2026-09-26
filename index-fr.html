@@ -329,7 +329,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .pricing-flat { font-size:14px; color:var(--ink-55); }
 .pricing-rule { width:44px; height:2px; background:var(--accent-2); margin-bottom:24px; }
 .pricing-items { display:flex; flex-direction:column; gap:18px; }
-.pricing-item { font-size:15px; line-height:1.6; }
+.pricing-item { font-size:15px; line-height:1.6; position:relative; padding-left:24px; }
+.pricing-item::before { content:''; position:absolute; left:2px; top:0.3em; width:5px; height:10px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 @media (max-width:640px){ .pricing-box{grid-template-columns:1fr;} }
 
 /* CTA */
@@ -680,10 +681,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="pricing-big"><span class="pricing-pct">25%</span><span class="pricing-flat">forfaitaire</span></div>
         <div class="pricing-rule"></div>
         <div class="pricing-items">
-          <p class="pricing-item">Des frais transparents — pas de majoration cachée</p>
-          <p class="pricing-item">Pas d'engagement à long terme ni d'embauche à temps plein</p>
-          <p class="pricing-item">Nous gérons les contrats, la conformité et les paiements</p>
-          <p class="pricing-item">Le profil ne vous convient pas ? Remplacement gratuit dans les deux premières semaines.</p>
+          <p class="pricing-item">Cadrage du mandat</p>
+          <p class="pricing-item">Sourcing et évaluation des profils</p>
+          <p class="pricing-item">Garantie contractuelle : remplacement gratuit dans les deux premières semaines</p>
+          <p class="pricing-item">Contrats, conformité &amp; facturation du freelance</p>
+          <p class="pricing-item">Suivi de mission sans intermédiation</p>
+          <p class="pricing-item">Sans engagement à long terme</p>
         </div>
       </div>
     </div>
