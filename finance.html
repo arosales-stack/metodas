@@ -339,13 +339,13 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .mission { background:var(--card); border:1px solid var(--ink-10); display:grid; grid-template-columns:0.9fr 1.1fr; }
 .mission-side { padding:clamp(24px,3vw,36px); border-right:1px solid var(--ink-10); display:flex; flex-direction:column; gap:22px; }
 .mission-head { display:flex; align-items:center; gap:16px; }
-.mission-logo { width:56px; height:56px; flex-shrink:0; background:var(--fixed-beige); display:flex; align-items:center; justify-content:center; overflow:hidden; }
-.mission-logo img { width:100%; height:100%; object-fit:contain; display:block; }
+.mission-logo { width:56px; height:56px; flex-shrink:0; background:transparent; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.mission-logo img { width:100%; height:100%; object-fit:cover; display:block; }
 .mission-logo span { font-size:17px; font-weight:700; letter-spacing:-0.02em; color:#1c1a17; }
 .mission-co { font-size:22px; font-weight:700; letter-spacing:-0.02em; line-height:1.15; }
 .mission-cat { font-size:15px; color:var(--ink-55); margin-top:3px; }
 .mission-who { display:flex; align-items:center; gap:14px; padding-top:20px; border-top:1px solid var(--ink-10); }
-.mission-photo { width:52px; height:52px; flex-shrink:0; background:var(--fixed-beige); overflow:hidden; }
+.mission-photo { width:52px; height:52px; flex-shrink:0; background:var(--accent-2); overflow:hidden; }
 .mission-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
 .mission-name { font-size:17px; font-weight:700; }
 .mission-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
@@ -353,9 +353,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .mission-tags .tag { font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--ink-20); padding:5px 12px; }
 .mission-list { list-style:none; margin:0; padding:clamp(24px,3vw,36px); display:flex; flex-direction:column; justify-content:center; gap:14px; }
 .mission-list li { position:relative; padding-left:28px; font-size:17px; line-height:1.55; color:var(--ink); }
-.mission-list li::before { content:''; position:absolute; left:3px; top:0.3em; width:6px; height:11px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
+.mission-list li::before { content:''; position:absolute; left:4px; top:0.62em; width:6px; height:6px; background:var(--accent-2); }
+.mission-list li.is-result::before { left:3px; top:calc(18px + 0.3em); width:6px; height:11px; background:none; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 .mission-list li.is-result { font-weight:700; margin-top:6px; padding-top:18px; border-top:1px solid var(--ink-10); }
-.mission-list li.is-result::before { top:calc(18px + 0.3em); }
 @media (max-width:860px){ .mission{grid-template-columns:1fr;} .mission-side{border-right:none; border-bottom:1px solid var(--ink-10);} }
 
 .result-category { font-size:15px !important; }
@@ -548,7 +548,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <article class="mission">
       <div class="mission-side">
         <div class="mission-head">
-          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas.png" alt="BNP Paribas"></div>
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas"></div>
           <div><p class="mission-co">BNP Paribas</p><p class="mission-cat">Social Media</p></div>
         </div>
         <div class="mission-who">
@@ -562,7 +562,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <article class="mission">
       <div class="mission-side">
         <div class="mission-head">
-          <div class="mission-logo"><span>SG</span></div>
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/societe-generale.png" alt="Société Générale"></div>
           <div><p class="mission-co">Société Générale CIB</p><p class="mission-cat">Product Design</p></div>
         </div>
         <div class="mission-who">
@@ -576,7 +576,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <article class="mission">
       <div class="mission-side">
         <div class="mission-head">
-          <div class="mission-logo"><span>N26</span></div>
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/n26.png" alt="N26"></div>
           <div><p class="mission-co">N26</p><p class="mission-cat">Content &amp; UX Writing</p></div>
         </div>
         <div class="mission-who">
@@ -590,7 +590,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <article class="mission">
       <div class="mission-side">
         <div class="mission-head">
-          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas.png" alt="BNP Paribas"></div>
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas"></div>
           <div><p class="mission-co">BNP Paribas</p><p class="mission-cat">Motion Design</p></div>
         </div>
         <div class="mission-who">
