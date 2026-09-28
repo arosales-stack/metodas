@@ -334,6 +334,30 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .intro-btn { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:10px 18px; border:1px solid var(--ink-20); background:transparent; color:var(--ink); font-family:inherit; font-size:14px; font-weight:500; text-decoration:none; }
 .intro-btn:hover { border-color:var(--ink-55); }
 .intro-center { text-align:center; }
+/* MISSIONS — finance page */
+.missions { display:flex; flex-direction:column; gap:20px; }
+.mission { background:var(--card); border:1px solid var(--ink-10); display:grid; grid-template-columns:0.9fr 1.1fr; }
+.mission-side { padding:clamp(24px,3vw,36px); border-right:1px solid var(--ink-10); display:flex; flex-direction:column; gap:22px; }
+.mission-head { display:flex; align-items:center; gap:16px; }
+.mission-logo { width:56px; height:56px; flex-shrink:0; background:var(--fixed-beige); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.mission-logo img { width:100%; height:100%; object-fit:contain; display:block; }
+.mission-logo span { font-size:17px; font-weight:700; letter-spacing:-0.02em; color:#1c1a17; }
+.mission-co { font-size:22px; font-weight:700; letter-spacing:-0.02em; line-height:1.15; }
+.mission-cat { font-size:15px; color:var(--ink-55); margin-top:3px; }
+.mission-who { display:flex; align-items:center; gap:14px; padding-top:20px; border-top:1px solid var(--ink-10); }
+.mission-photo { width:52px; height:52px; flex-shrink:0; background:var(--fixed-beige); overflow:hidden; }
+.mission-photo img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+.mission-name { font-size:17px; font-weight:700; }
+.mission-role { font-size:15px; color:var(--ink-55); margin-top:2px; }
+.mission-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; }
+.mission-tags .tag { font-size:13px; font-weight:500; letter-spacing:0.02em; color:var(--ink-55); border:1px solid var(--ink-20); padding:5px 12px; }
+.mission-list { list-style:none; margin:0; padding:clamp(24px,3vw,36px); display:flex; flex-direction:column; justify-content:center; gap:14px; }
+.mission-list li { position:relative; padding-left:28px; font-size:17px; line-height:1.55; color:var(--ink); }
+.mission-list li::before { content:''; position:absolute; left:3px; top:0.3em; width:6px; height:11px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
+.mission-list li.is-result { font-weight:700; margin-top:6px; padding-top:18px; border-top:1px solid var(--ink-10); }
+.mission-list li.is-result::before { top:calc(18px + 0.3em); }
+@media (max-width:860px){ .mission{grid-template-columns:1fr;} .mission-side{border-right:none; border-bottom:1px solid var(--ink-10);} }
+
 .result-category { font-size:15px !important; }
 .result-who { font-size:15px; color:var(--ink); margin-top:10px; }
 .result-logo { background:#fff; border:1px solid var(--ink-10); display:flex; align-items:center; justify-content:center; }
@@ -520,65 +544,63 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
       <p class="ew"><span class="sec-num">03</span>Quelques missions</p>
       <h2 class="sh-h" style="margin-top:14px;">Des expertises différentes, appliquées aux enjeux du secteur financier.</h2>
     </div>
-    <div class="result-card">
-      <div class="result-grid">
-        <div class="result-side">
-          <div class="result-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas.png" alt="BNP Paribas"></div>
-          <p class="result-company">BNP Paribas</p>
-          <p class="result-category">Social Media</p>
-          <p class="result-who">Pierre · Social Media &amp; Content</p>
-          <div class="result-tags"><span class="tag">Social Media</span><span class="tag">Ligne éditoriale</span><span class="tag">Reporting</span></div>
+    <div class="missions">
+    <article class="mission">
+      <div class="mission-side">
+        <div class="mission-head">
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas.png" alt="BNP Paribas"></div>
+          <div><p class="mission-co">BNP Paribas</p><p class="mission-cat">Social Media</p></div>
         </div>
-        <div class="result-main">
-          <p>Refonte et optimisation de la stratégie Social Media de Ma Banque : ligne éditoriale, planning, coordination des contenus, reporting et activations.</p>
-          <p class="result-key">+20 % de communauté · +35 % de reach · engagement de 1 % à 3,6 %</p>
+        <div class="mission-who">
+          <div class="mission-photo"><img src="Assets/Images/Profiles/finance/pierre.webp" alt="Pierre"></div>
+          <div><p class="mission-name">Pierre</p><p class="mission-role">Social Media &amp; Content</p></div>
         </div>
+        <div class="mission-tags"><span class="tag">Social Media</span><span class="tag">Ligne éditoriale</span><span class="tag">Reporting</span></div>
       </div>
-    </div>
-    <div class="result-card">
-      <div class="result-grid">
-        <div class="result-side">
-          <div class="result-logo"><span class="result-mono">SG</span></div>
-          <p class="result-company">Société Générale CIB</p>
-          <p class="result-category">Product Design</p>
-          <p class="result-who">Cyril · Senior Product Designer</p>
-          <div class="result-tags"><span class="tag">Product Design</span><span class="tag">UX Research</span><span class="tag">Design System</span></div>
+      <ul class="mission-list"><li>Refonte de la stratégie Social Media de Ma Banque</li><li>Ligne éditoriale, planning et coordination des contenus</li><li>Reporting et activations</li><li class="is-result">+20 % de communauté, +35 % de reach, engagement de 1 % à 3,6 %</li></ul>
+    </article>
+    <article class="mission">
+      <div class="mission-side">
+        <div class="mission-head">
+          <div class="mission-logo"><span>SG</span></div>
+          <div><p class="mission-co">Société Générale CIB</p><p class="mission-cat">Product Design</p></div>
         </div>
-        <div class="result-main">
-          <p>Conception et optimisation de produits digitaux B2B dans un environnement financier complexe : recherche utilisateurs, ateliers, prototypage, tests et Design System.</p>
-          <p class="result-key">3 ans · 10+ produits B2B</p>
+        <div class="mission-who">
+          <div class="mission-photo"><img src="Assets/Images/Profiles/finance/cyril.webp" alt="Cyril"></div>
+          <div><p class="mission-name">Cyril</p><p class="mission-role">Senior Product Designer</p></div>
         </div>
+        <div class="mission-tags"><span class="tag">Product Design</span><span class="tag">UX Research</span><span class="tag">Design System</span></div>
       </div>
-    </div>
-    <div class="result-card">
-      <div class="result-grid">
-        <div class="result-side">
-          <div class="result-logo"><span class="result-mono">N26</span></div>
-          <p class="result-company">N26</p>
-          <p class="result-category">Content &amp; UX Writing</p>
-          <p class="result-who">Samuel · Senior Content Specialist</p>
-          <div class="result-tags"><span class="tag">Content</span><span class="tag">UX Writing</span><span class="tag">Compliance</span></div>
+      <ul class="mission-list"><li>Recherche utilisateurs et ateliers</li><li>Prototypage et tests</li><li>Conception et évolution du Design System</li><li class="is-result">10+ produits digitaux B2B conçus et optimisés en 3 ans</li></ul>
+    </article>
+    <article class="mission">
+      <div class="mission-side">
+        <div class="mission-head">
+          <div class="mission-logo"><span>N26</span></div>
+          <div><p class="mission-co">N26</p><p class="mission-cat">Content &amp; UX Writing</p></div>
         </div>
-        <div class="result-main">
-          <p>Production et adaptation des contenus français sur l’ensemble du parcours : CRM, notifications, UX, support et contenus légaux/compliance, avec gouvernance de la terminologie.</p>
-          <p class="result-key">Des incohérences terminologiques identifiées puis intégrées durablement au glossaire N26.</p>
+        <div class="mission-who">
+          <div class="mission-photo"><img src="Assets/Images/Profiles/finance/samuel.webp" alt="Samuel"></div>
+          <div><p class="mission-name">Samuel</p><p class="mission-role">Senior Content Specialist</p></div>
         </div>
+        <div class="mission-tags"><span class="tag">Content</span><span class="tag">UX Writing</span><span class="tag">Compliance</span></div>
       </div>
-    </div>
-    <div class="result-card">
-      <div class="result-grid">
-        <div class="result-side">
-          <div class="result-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas.png" alt="BNP Paribas"></div>
-          <p class="result-company">BNP Paribas</p>
-          <p class="result-category">Motion Design</p>
-          <p class="result-who">Maxime · Motion Designer</p>
-          <div class="result-tags"><span class="tag">Motion Design</span><span class="tag">Storytelling</span><span class="tag">Film institutionnel</span></div>
+      <ul class="mission-list"><li>Contenus français sur tout le parcours : CRM, notifications, UX, support</li><li>Contenus légaux et compliance</li><li>Gouvernance de la terminologie</li><li class="is-result">Incohérences terminologiques identifiées et intégrées durablement au glossaire N26</li></ul>
+    </article>
+    <article class="mission">
+      <div class="mission-side">
+        <div class="mission-head">
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas.png" alt="BNP Paribas"></div>
+          <div><p class="mission-co">BNP Paribas</p><p class="mission-cat">Motion Design</p></div>
         </div>
-        <div class="result-main">
-          <p>Conception d’un film institutionnel entièrement en motion design, condensant l’histoire de BNP Paribas en un format narratif de 3 minutes.</p>
-          <p class="result-key">200 ans d’histoire racontés en 3 minutes.</p>
+        <div class="mission-who">
+          <div class="mission-photo"><img src="Assets/Images/Profiles/finance/maxime.webp" alt="Maxime"></div>
+          <div><p class="mission-name">Maxime</p><p class="mission-role">Motion Designer</p></div>
         </div>
+        <div class="mission-tags"><span class="tag">Motion Design</span><span class="tag">Storytelling</span><span class="tag">Film institutionnel</span></div>
       </div>
+      <ul class="mission-list"><li>Conception d’un film institutionnel entièrement en motion design</li><li>Écriture d’un format narratif de 3 minutes</li><li class="is-result">200 ans d’histoire racontés en 3 minutes</li></ul>
+    </article>
     </div>
   </div>
 </section>
