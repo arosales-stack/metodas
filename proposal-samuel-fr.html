@@ -309,11 +309,19 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 /* SELECTED WORK — qualitative, no figures */
 .work-list { display:flex; flex-direction:column; gap:20px; }
-.work-card { background:var(--card); border:1px solid var(--ink-10); display:grid; grid-template-columns:0.7fr 1.3fr; gap:clamp(24px,4vw,56px); padding:clamp(26px,3.5vw,42px); }
-.work-company { font-size:clamp(22px,2.2vw,28px); font-weight:700; letter-spacing:-0.025em; line-height:1.15; }
-.work-category { font-size:15px; color:var(--ink-55); margin-top:10px; padding-top:12px; border-top:2px solid var(--accent-2); display:inline-block; }
-.work-body { font-size:17px; line-height:1.8; color:var(--ink-55); }
-@media (max-width:760px){ .work-card{grid-template-columns:1fr;} }
+.work-card { background:var(--card); border:1px solid var(--ink-10); display:grid; grid-template-columns:0.7fr 1.3fr; }
+.work-side { padding:clamp(24px,3vw,36px); border-right:1px solid var(--ink-10); }
+.work-head { display:flex; align-items:center; gap:16px; }
+.work-logo { width:56px; height:56px; flex-shrink:0; background:var(--fixed-cream); padding:7px; border:1px solid var(--ink-10); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.work-logo img { width:100%; height:100%; object-fit:contain; display:block; }
+.work-company { font-size:22px; font-weight:700; letter-spacing:-0.02em; line-height:1.15; }
+.work-category { font-size:15px; color:var(--ink-55); margin-top:3px; }
+.work-main { padding:clamp(24px,3vw,36px); }
+.work-intro { font-size:17px; line-height:1.6; font-weight:500; color:var(--ink); margin:0 0 18px; }
+.work-points { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
+.work-points li { position:relative; padding-left:28px; font-size:17px; line-height:1.55; color:var(--ink-55); }
+.work-points li::before { content:''; position:absolute; left:3px; top:0.3em; width:6px; height:11px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
+@media (max-width:860px){ .work-card{grid-template-columns:1fr;} .work-side{border-right:none; border-bottom:1px solid var(--ink-10);} }
 </style>
 </head>
 <body>
@@ -439,24 +447,39 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <div class="work-list">
     <div class="work-card">
       <div class="work-side">
-        <p class="work-company">Vogue Eyewear</p>
-        <p class="work-category">Brand Voice &amp; Content Governance</p>
+        <div class="work-head">
+          <div class="work-logo"><img src="Assets/Images/Logo/Clients/vogue-eyewear.png" alt="Vogue Eyewear"></div>
+          <div><p class="work-company">Vogue Eyewear</p><p class="work-category">Brand Voice &amp; Content Governance</p></div>
+        </div>
       </div>
-      <p class="work-body">Samuel a construit le framework français de tone of voice de Vogue Eyewear à partir de la stratégie de marque, couvrant l'identité, la segmentation des audiences, les règles liées aux ambassadeurs, la méthode de transcréation, les recommandations par canal et le QA. Ce framework est aujourd'hui la référence pour les contenus français en CRM, e-commerce et Paid Media, transformant des appréciations subjectives de la marque en un standard éditorial utilisable par les équipes.</p>
+      <div class="work-main">
+        <p class="work-intro">Samuel a construit le framework français de tone of voice de Vogue Eyewear, à partir de la stratégie de marque.</p>
+        <ul class="work-points"><li>Identité, segmentation des audiences et règles liées aux ambassadeurs</li><li>Méthode de transcréation, recommandations par canal et QA</li><li>La référence pour les contenus français en CRM, e-commerce et Paid Media</li><li>Des appréciations subjectives transformées en standard éditorial utilisable par les équipes</li></ul>
+      </div>
     </div>
     <div class="work-card">
       <div class="work-side">
-        <p class="work-company">Lightyear</p>
-        <p class="work-category">Content Strategy &amp; Finance</p>
+        <div class="work-head">
+          <div class="work-logo"><img src="Assets/Images/Logo/Clients/lightyear.png" alt="Lightyear"></div>
+          <div><p class="work-company">Lightyear</p><p class="work-category">Content Strategy &amp; Finance</p></div>
+        </div>
       </div>
-      <p class="work-body">Pour Lightyear, plateforme européenne d'investissement, Samuel intervient comme référent Content français sur le CRM, le produit, le web, l'éditorial, le marketing et les contenus réglementés. Il a construit le glossaire, la voix de marque et les règles éditoriales du marché français, sur des sujets allant des ETF et comptes professionnels aux conditions de trading et à la documentation réglementaire, créant ainsi un cadre cohérent entre Marketing, Product, Tech et Compliance.</p>
+      <div class="work-main">
+        <p class="work-intro">Référent Content français pour Lightyear, plateforme européenne d'investissement.</p>
+        <ul class="work-points"><li>CRM, produit, web, éditorial, marketing et contenus réglementés</li><li>Glossaire, voix de marque et règles éditoriales du marché français</li><li>Des ETF et comptes professionnels aux conditions de trading et à la documentation réglementaire</li><li>Un cadre cohérent entre Marketing, Product, Tech et Compliance</li></ul>
+      </div>
     </div>
     <div class="work-card">
       <div class="work-side">
-        <p class="work-company">EssilorLuxottica</p>
-        <p class="work-category">Contenu &amp; campagnes multicanales</p>
+        <div class="work-head">
+          <div class="work-logo"><img src="Assets/Images/Logo/Clients/essilorluxottica.png" alt="EssilorLuxottica"></div>
+          <div><p class="work-company">EssilorLuxottica</p><p class="work-category">Contenu &amp; campagnes multicanales</p></div>
+        </div>
       </div>
-      <p class="work-body">Pour Générale d'Optique, Ray-Ban, Vogue Eyewear, Arnette, Solaris et d'autres marques du groupe, Samuel intervient sur le CRM, le social, le Paid Media, la TV, la radio, le display, l'e-commerce et le direct mail, avec jusqu'à 27 campagnes gérées simultanément. En parallèle de la production, il a construit deux frameworks de tone of voice à partir de zéro, présentés aux équipes marché et toujours utilisés comme références éditoriales.</p>
+      <div class="work-main">
+        <p class="work-intro">Contenus et campagnes pour Générale d'Optique, Ray-Ban, Vogue Eyewear, Arnette, Solaris et d'autres marques du groupe.</p>
+        <ul class="work-points"><li>CRM, social, Paid Media, TV, radio, display, e-commerce et direct mail</li><li>Jusqu'à 27 campagnes gérées simultanément</li><li>Deux frameworks de tone of voice construits de zéro, toujours les références des équipes marché</li></ul>
+      </div>
     </div>
     </div>
   </div>
@@ -474,22 +497,22 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <div class="why-row">
           <p class="why-row-num">01</p>
           <div>
-            <h3 class="why-row-title">Quand produire plus de contenu n'est plus le problème.</h3>
-            <p class="why-row-body">L'IA permet déjà de produire énormément de contenu. Elle rend donc la direction éditoriale plus importante, pas moins. Lorsque tout le monde peut produire rapidement, la valeur se déplace vers ce qui mérite réellement d'être dit et la manière dont une marque choisit de le dire.</p>
+            <h3 class="why-row-title">Quand produire plus n'est plus le problème.</h3>
+            <p class="why-row-body">L'IA rend le contenu abondant. Ce qui devient rare, c'est la direction : savoir ce qui mérite d'être dit, et comment la marque doit le dire.</p>
           </div>
         </div>
         <div class="why-row">
           <p class="why-row-num">02</p>
           <div>
-            <h3 class="why-row-title">Quand une marque commence à parler avec trop de voix différentes.</h3>
-            <p class="why-row-body">Site, CRM, produit, Paid, Social, Sales : chaque nouvelle équipe et chaque nouveau canal créent une occasion supplémentaire de diluer la marque. Une vraie stratégie de contenu doit permettre de multiplier les points de contact sans multiplier les personnalités.</p>
+            <h3 class="why-row-title">Quand la marque parle avec trop de voix.</h3>
+            <p class="why-row-body">Chaque nouvelle équipe, chaque nouveau canal dilue un peu plus la marque. Une vraie stratégie de contenu multiplie les points de contact, pas les personnalités.</p>
           </div>
         </div>
         <div class="why-row">
           <p class="why-row-num">03</p>
           <div>
-            <h3 class="why-row-title">Quand l'expertise métier doit devenir du contenu compréhensible.</h3>
-            <p class="why-row-body">Les entreprises B2B et les produits complexes disposent souvent de beaucoup d'expertise mais peinent à la transformer en contenu clair, différenciant et utile. Les meilleurs profils Content ne sont pas simplement de bons rédacteurs. Ils comprennent suffisamment vite le sujet pour savoir ce qui peut être simplifié et ce qui ne doit surtout pas l'être.</p>
+            <h3 class="why-row-title">Quand l'expertise doit devenir compréhensible.</h3>
+            <p class="why-row-body">Les entreprises complexes ont l'expertise mais peinent à la rendre claire. Les meilleurs profils Content savent ce qui peut être simplifié, et ce qui ne doit surtout pas l'être.</p>
           </div>
         </div>
       </div>
