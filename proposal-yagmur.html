@@ -313,9 +313,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .work-side { padding:clamp(24px,3vw,36px); border-right:1px solid var(--ink-10); }
 .work-head { display:flex; align-items:center; gap:16px; }
 .work-logo { width:56px; height:56px; flex-shrink:0; background:var(--fixed-cream); padding:7px; border:1px solid var(--ink-10); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.work-logo.is-full { padding:0; }
 .work-logo img { width:100%; height:100%; object-fit:contain; display:block; }
-.work-company { font-size:clamp(22px,2.2vw,28px); font-weight:700; letter-spacing:-0.02em; line-height:1.15; }
-.work-category { font-size:15px; color:var(--ink-55); margin-top:10px; padding-top:12px; border-top:2px solid var(--accent-2); display:inline-block; }
+.work-company { font-size:22px; font-weight:700; letter-spacing:-0.02em; line-height:1.15; }
+.work-category { font-size:15px; color:var(--ink-55); margin-top:3px; }
 .work-main { padding:clamp(24px,3vw,36px); }
 .work-intro { font-size:17px; line-height:1.6; font-weight:500; color:var(--ink); margin:0 0 18px; }
 .work-points { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
@@ -386,7 +387,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <span class="tag">Milky Way</span>
         <span class="tag">Fallen Media</span>
       </div>
-      <p class="feature-role" style="margin-top:20px;">New York, USA · ~10 years of experience</p>
+      <p class="feature-role" style="margin-top:20px;">USA · ~10 years of experience</p>
       <div class="feature-desc">
         <p>Yagmur is a Social Creative Director and Strategist specializing in content strategy, branded content, creative development and direction, creator marketing and storytelling.</p>
         <p>Her background combines platform-side creative strategy at Snapchat, agency brand strategy at DDB, leadership as Head of Content, and independent creative direction for brands and media companies.</p>
@@ -449,8 +450,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <div class="work-list">
     <div class="work-card">
       <div class="work-side">
-        <p class="work-company">Snapchat</p>
-        <p class="work-category">Creative Strategy · 4+ years · New York</p>
+        <div class="work-head">
+          <div class="work-logo is-full"><img src="Assets/Images/Logo/Clients/snapchat.png" alt="Snapchat"></div>
+          <div><p class="work-company">Snapchat</p><p class="work-category">Creative Strategy · 4+ years</p></div>
+        </div>
       </div>
       <div class="work-main">
         <p class="work-intro">Yagmur spent more than four years within Snap Inc.’s Creative Strategy team, developing her expertise directly inside one of the platforms that helped define modern social-first creative.</p>
@@ -461,8 +464,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     </div>
     <div class="work-card">
       <div class="work-side">
-        <p class="work-company">DDB / Mars &amp; Wrigley</p>
-        <p class="work-category">Brand Strategy · Consumer Brands</p>
+        <div class="work-head">
+          <div class="work-logo"><img src="Assets/Images/Logo/Clients/ddb.png" alt="DDB"></div>
+          <div><p class="work-company">DDB / Mars &amp; Wrigley</p><p class="work-category">Brand Strategy · Consumer Brands</p></div>
+        </div>
       </div>
       <div class="work-main">
         <p class="work-intro">At DDB, Yagmur worked as a Brand Strategist across major consumer accounts, after initially working in strategy, planning and social media.</p>
@@ -473,8 +478,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     </div>
     <div class="work-card">
       <div class="work-side">
-        <p class="work-company">Fallen Media</p>
-        <p class="work-category">Head of Content · Content Leadership</p>
+        <div class="work-head">
+          <div class="work-logo is-full"><img src="Assets/Images/Logo/Clients/fallen-media.png" alt="Fallen Media"></div>
+          <div><p class="work-company">Fallen Media</p><p class="work-category">Head of Content · Content Leadership</p></div>
+        </div>
       </div>
       <div class="work-main">
         <p class="work-intro">After Snapchat, Yagmur joined Fallen Media as Head of Content, moving from creative strategy into direct content leadership.</p>
@@ -553,7 +560,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <section id="contact" class="cta-section section-dark">
   <div class="inner">
     <div class="cta-inner-grid">
-      <div><p class="ew"><span class="sec-num">06</span>A Social Creative need coming up?</p><h2 class="cta-h2">Tell us about the problem before we talk about the profile.</h2></div>
+      <div><p class="ew"><span class="sec-num">06</span>A Social Creative need coming up?</p><h2 class="cta-h2">Let's build your project with people who really deliver</h2></div>
       <div>
         <p class="cta-sub">We can introduce this freelancer when the context is right, or recommend another expert from our network if the need calls for different expertise.</p>
         <div class="cta-btns">
