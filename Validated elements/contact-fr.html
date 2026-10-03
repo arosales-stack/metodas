@@ -211,7 +211,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
       <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
     <h1 class="success-heading">Nous vous<br>contacterons.</h1>
-    <p class="success-body">Vous recevrez un message dans les 24 heures avec les profils correspondant à votre demande.</p>
+    <p class="success-body">Vous recevrez un message en moins de 24 heures.</p>
     <a class="success-back" href="../index-fr.html#top">← Retour au site</a>
   </div>
 
@@ -266,6 +266,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
 
   function submitForm() {
+    const v = id => (document.getElementById(id) || {}).value || '';
+    fetch('https://formsubmit.co/ajax/a.rosales@metodas.co', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Metodas — nouvelle demande (FR) : ' + v('company'),
+        _template: 'table',
+        _captcha: 'false',
+        Nom: v('name'), Entreprise: v('company'), Email: v('email'), Besoin: v('need'),
+        Page: document.referrer || location.href
+      })
+    }).catch(err => console.error('Form send failed', err));
     fill.style.width = '100%';
     transition(document.getElementById('step2'), document.getElementById('stepSuccess'), 'exit-up', 'hidden');
   }
