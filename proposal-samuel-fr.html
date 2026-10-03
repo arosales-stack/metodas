@@ -323,6 +323,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .work-text { font-size:17px; line-height:1.7; color:var(--ink-55); margin:0 0 18px; }
 .work-result { font-size:17px; line-height:1.6; font-weight:500; color:var(--ink); margin:22px 0 0; padding-top:18px; border-top:1px solid var(--ink-10); }
 .work-logo.is-full { padding:0; }
+.work-points.brief { display:grid; grid-template-columns:1fr 1fr; gap:12px 32px; margin:24px 0 0; }
+.work-points.brief li { color:var(--ink); }
+@media (max-width:760px){ .work-points.brief{grid-template-columns:1fr;} }
 .work-points li::before { content:''; position:absolute; left:3px; top:0.3em; width:6px; height:11px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 @media (max-width:860px){ .work-card{grid-template-columns:1fr;} .work-side{border-right:none; border-bottom:1px solid var(--ink-10);} }
 </style>
@@ -358,10 +361,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <!-- INTRO — remaining opening copy -->
 <section class="intro-section">
   <div class="inner">
-    <p class="intro-body">Samuel travaille depuis près de dix ans avec SumUp, N26, Square, Lightyear et EssilorLuxottica, entre stratégie de contenu, copywriting, UX, SEO et localisation.</p>
-    <p class="intro-body">Sa vraie différence se trouve derrière l'écriture : tone of voice, glossaires, gouvernance et workflows IA qui font tenir le contenu à grande échelle.</p>
-    <p class="intro-body">Ce type de profil se construit par la recommandation, pas sur les plateformes de freelances.</p>
-    <p class="intro-body">C'est précisément pour accéder à ce type de profils que nous avons construit Metodas.</p>
+    <p class="intro-body">Depuis près de dix ans, Samuel écrit pour SumUp, N26, Lightyear ou EssilorLuxottica, et construit les systèmes derrière l'écriture : tone of voice, glossaires, gouvernance éditoriale et workflows IA.</p>
+    <p class="intro-body">Ce type de profil se trouve par recommandation, pas sur les plateformes. C'est pour y accéder que nous avons créé Metodas.</p>
   </div>
 </section>
 
@@ -369,7 +370,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   <div class="inner">
     <div class="sh">
       <p class="ew"><span class="sec-num">02</span>Profil</p>
-      <h2 class="sh-h" style="margin-top:14px;">Content Strategist, Copywriter, et les systèmes derrière les deux.</h2>
+      <h2 class="sh-h" style="margin-top:14px;">Il écrit. Et il construit le système derrière.</h2>
     </div>
     <div class="feature-profile">
       <div class="feature-top">
@@ -389,48 +390,32 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <span class="tag">3M</span>
         <span class="tag">Onoff</span>
       </div>
-      <p class="feature-role" style="margin-top:20px;">Parfaitement bilingue anglais / français · ~10 ans d'expérience</p>
+      <p class="feature-role" style="margin-top:20px;">Parfaitement bilingue anglais / français</p>
+      <ul class="work-points brief"><li>~10 ans en contenu, copywriting, UX et localisation</li><li>Fintech, SaaS, B2B industriel, MedTech et grande consommation</li><li>Quatre marchés francophones gérés en parallèle chez SumUp</li><li>Braze, Contentful, Figma, Smartling, Lokalise, Python</li></ul>
       <div class="feature-desc">
-        <p>Samuel accompagne des entreprises internationales partout où des produits complexes, des canaux multiples et des opérations de contenu de plus en plus pilotées par l'IA créent un problème éditorial.</p>
-        <p>Il peut écrire le contenu lui-même, des landing pages au SEO et au CRM, en passant par l'UX, le produit et les campagnes, mais aussi construire ce qui se trouve derrière : voix de marque, standards éditoriaux, gouvernance de contenu, systèmes terminologiques et workflows de production assistés par l'IA.</p>
-        <p>Son expérience couvre la fintech, le SaaS, le B2B industriel, la MedTech et des marques grand public internationales, souvent en travaillant simultanément avec les équipes Marketing, Product, Legal, CRM et Localisation.</p>
+        <p>Samuel intervient là où des produits complexes, des canaux multiples et une production pilotée par l'IA créent un problème éditorial : il écrit les contenus, puis pose les règles qui gardent l'ensemble cohérent.</p>
 
-        <p class="feature-why-label">Expérience</p>
+        <p class="feature-why-label">Ce qui le distingue</p>
         <div class="feature-why-rows">
           <div class="feature-why-row">
             <p class="feature-why-num">01</p>
             <div>
-              <h3 class="feature-why-title">Près de 10 ans en Content, Copywriting, UX &amp; Localisation</h3>
-              <p class="feature-why-body">Samuel a produit des contenus web, SEO, CRM, lifecycle, produit, UX, Paid Media, social, bases de connaissances et documentation réglementée, dans des environnements B2B comme B2C.</p>
+              <h3 class="feature-why-title">L'écriture et le système, dans une seule personne</h3>
+              <p class="feature-why-body">Landing pages, SEO, CRM, UX et campagnes, mais aussi les cadres qui les structurent : un tone of voice de 25 pages pour Vogue Eyewear, les règles d'écriture de Lightyear et d'Onoff, la gouvernance terminologique de SumUp sur quatre marchés.</p>
             </div>
           </div>
           <div class="feature-why-row">
             <p class="feature-why-num">02</p>
             <div>
-              <h3 class="feature-why-title">De l'écriture au système qui la structure</h3>
-              <p class="feature-why-body">Son travail inclut un framework de tone of voice de 25 pages pour Vogue Eyewear, les règles d'écriture françaises de Lightyear, les guidelines UX writing d'Onoff, la gouvernance terminologique de SumUp sur quatre marchés et des systèmes de QA structurés pour Iron Mountain.</p>
+              <h3 class="feature-why-title">L'IA, au-delà du prompt</h3>
+              <p class="feature-why-body">Des environnements IA chargés de la voix de marque, des glossaires et du vocabulaire interdit, des system prompts réutilisables, une relecture humaine. Il a formé les copywriters d'EssilorLuxottica à passer d'une « IA à l'aveugle » à une « IA orchestrée ».</p>
             </div>
           </div>
           <div class="feature-why-row">
             <p class="feature-why-num">03</p>
             <div>
-              <h3 class="feature-why-title">Des opérations de contenu assistées par l'IA, au-delà du prompt</h3>
-              <p class="feature-why-body">Samuel construit des environnements IA dédiés, chargés de la voix de marque, des glossaires, du vocabulaire interdit et des contenus validés, conçoit des system prompts réutilisables, évalue des contenus générés automatiquement et construit des workflows combinant recherche, génération et contrôle éditorial humain.</p>
-              <p class="feature-why-body" style="margin-top:12px;">Il a également formé les copywriters internes d'EssilorLuxottica à passer d'une « IA à l'aveugle » à une « IA orchestrée ».</p>
-            </div>
-          </div>
-          <div class="feature-why-row">
-            <p class="feature-why-num">04</p>
-            <div>
-              <h3 class="feature-why-title">Une solide expérience des environnements complexes et réglementés</h3>
-              <p class="feature-why-body">Chez Lightyear et N26, son travail couvre les produits financiers, l'UX, le CRM, les contenus juridiques et de conformité. Chez 3M et Iron Mountain, il travaille sur des contenus B2B techniques, des textes générés automatiquement, la terminologie et des systèmes qualité structurés.</p>
-            </div>
-          </div>
-          <div class="feature-why-row">
-            <p class="feature-why-num">05</p>
-            <div>
-              <h3 class="feature-why-title">Assez technique pour travailler au-delà de l'équipe Content</h3>
-              <p class="feature-why-body">Samuel travaille avec Braze, Contentful, Figma, Smartling, Crowdin, Lokalise, Python et des outils d'IA, gère des contenus structurés et des contraintes de templates, et a même construit et déployé des applications web fonctionnelles avec des outils de code IA.</p>
+              <h3 class="feature-why-title">À l'aise dans le complexe et le réglementé</h3>
+              <p class="feature-why-body">Contenus financiers, juridiques et de conformité chez Lightyear et N26 ; B2B technique et textes générés automatiquement chez 3M et Iron Mountain.</p>
             </div>
           </div>
         </div>
@@ -443,10 +428,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <li>SEO &amp; B2B Content</li>
         <li>UX Writing &amp; Product Content</li>
         <li>CRM &amp; Lifecycle Content</li>
-        <li>Tone of Voice &amp; Content Governance</li>
+        <li>Tone of Voice &amp; Governance</li>
         <li>Localization &amp; Transcreation</li>
-        <li>AI Content Workflows &amp; System Prompts</li>
-        <li>AI Content QA &amp; Human-in-the-loop Operations</li>
+        <li>AI Content Workflows &amp; QA</li>
       </ul>
     </div>
   </div>
@@ -463,13 +447,13 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
       <div class="work-side">
         <div class="work-head">
           <div class="work-logo"><img src="Assets/Images/Logo/Clients/sumup.png" alt="SumUp"></div>
-          <div><p class="work-company">SumUp</p><p class="work-category">Opérations de contenu &amp; localisation à grande échelle</p></div>
+          <div><p class="work-company">SumUp</p><p class="work-category">Localisation à grande échelle</p></div>
         </div>
       </div>
       <div class="work-main">
-        <p class="work-intro">French Language Lead sur l'ensemble de l'écosystème de contenus de SumUp et quatre marchés francophones.</p>
-        <ul class="work-points"><li>Site, pages produit et tarifs, CRM, CMS, print et contenus on-image</li><li>France, Belgique, Suisse et Luxembourg gérés simultanément</li><li>Chantier nommage produit et langue pendant le rebranding du groupe</li><li>Environnements Contentful, BuilderIO, Braze, Iterable et Smartling</li><li>Contradictions de prix et de produit identifiées avant publication</li></ul>
-        <p class="work-result">Résultat : la terminologie française passe désormais par un seul point d'arbitrage au lieu de quatre prestataires en parallèle.</p>
+        <p class="work-intro">French Language Lead sur tout l'écosystème de contenus de SumUp.</p>
+        <ul class="work-points"><li>France, Belgique, Suisse et Luxembourg gérés en parallèle</li><li>Site, tarifs, CRM, CMS, print et contenus produit</li><li>Nommage produit pendant le rebranding du groupe</li><li>Incohérences de prix et de produit repérées avant publication</li></ul>
+        <p class="work-result">Résultat : un seul point d'arbitrage pour la terminologie française, au lieu de quatre prestataires.</p>
       </div>
     </div>
     <div class="work-card">
@@ -480,63 +464,49 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         </div>
       </div>
       <div class="work-main">
-        <p class="work-intro">Référent contenu et localisation français pour la plateforme européenne d'investissement.</p>
-        <ul class="work-points"><li>Contenus produit, app, CRM, web et financiers réglementés</li><li>ETF, plans d'investissement, comptes professionnels, crypto et trading</li><li>Voix de marque, glossaire et règles d'écriture en français</li><li>Formulations sensibles AMF et MiCA signalées avant revue juridique</li><li>Cohérence des contenus entre Marketing, Product, Tech et Compliance</li></ul>
-        <p class="work-result">Résultat : un cadre éditorial unique encadre désormais les contenus français, au lieu de décisions au cas par cas.</p>
+        <p class="work-intro">Référent contenu et localisation français de la plateforme européenne d'investissement.</p>
+        <ul class="work-points"><li>App, CRM, web et contenus financiers réglementés</li><li>Voix de marque, glossaire et règles d'écriture en français</li><li>Formulations sensibles AMF et MiCA signalées avant revue juridique</li></ul>
+        <p class="work-result">Résultat : un cadre éditorial unique au lieu de décisions au cas par cas.</p>
       </div>
     </div>
     <div class="work-card">
       <div class="work-side">
         <div class="work-head">
           <div class="work-logo"><img src="Assets/Images/Logo/Clients/onoff.png" alt="Onoff Telecom"></div>
-          <div><p class="work-company">Onoff Telecom</p><p class="work-category">UX Writing &amp; SaaS B2B</p></div>
+          <div><p class="work-company">Onoff Telecom</p><p class="work-category">UX writing &amp; SaaS B2B</p></div>
         </div>
       </div>
       <div class="work-main">
-        <p class="work-intro">Consultant externe UX Writing et localisation pour la plateforme de téléphonie cloud B2B.</p>
-        <ul class="work-points"><li>136 articles de base de connaissances en anglais audités, 114 articles livrés en français</li><li>Enquête de churn et parcours de suppression de numéro repensés, UX et copy</li><li>47 événements transactionnels SMS, push et email réécrits en anglais et en français</li><li>Guidelines UX writing, glossaire bilingue, référentiel de CTA et conventions de nommage</li></ul>
-        <p class="work-result">Résultat : Onoff est passé d'un style maison français informel à un système éditorial documenté, utilisé dans tout le produit.</p>
+        <p class="work-intro">UX writing et localisation pour une plateforme de téléphonie cloud B2B.</p>
+        <ul class="work-points"><li>136 articles d'aide audités, 114 livrés en français</li><li>47 SMS, notifications et emails réécrits en deux langues</li><li>Parcours de résiliation et de suppression de numéro repensés</li><li>Guidelines UX, glossaire bilingue, référentiel de CTA</li></ul>
+        <p class="work-result">Résultat : d'un style maison informel à un système éditorial documenté.</p>
       </div>
     </div>
     <div class="work-card">
       <div class="work-side">
         <div class="work-head">
           <div class="work-logo"><img src="Assets/Images/Logo/Clients/essilorluxottica.png" alt="EssilorLuxottica"></div>
-          <div><p class="work-company">EssilorLuxottica</p><p class="work-category">Workflows de contenu IA &amp; formation</p></div>
+          <div><p class="work-company">EssilorLuxottica</p><p class="work-category">Workflows IA &amp; formation</p></div>
         </div>
       </div>
       <div class="work-main">
-        <p class="work-intro">Un workflow IA conçu pour les copywriters internes des marques du groupe.</p>
-        <p class="work-text">Samuel a construit un atelier interne autour d'un principe : la vraie ligne de partage n'est pas humain contre IA, mais IA à l'aveugle contre IA orchestrée.</p>
-        <ul class="work-points"><li>Workflow de bout en bout sur trois outils IA</li><li>Brief de campagne volontairement contradictoire pour tester le contrôle qualité</li><li>Méthodologie contexte, rôle et format</li><li>Contraintes de marque, vocabulaire restreint et incohérences marché intégrés aux tests</li><li>System prompt réutilisable d’assistant de marque remis aux participants</li></ul>
-        <p class="work-result">Résultat : un framework pratique de 19 slides et un système IA opérationnel pour faire passer les équipes du prompt improvisé à une production de contenu maîtrisée.</p>
-      </div>
-    </div>
-    <div class="work-card">
-      <div class="work-side">
-        <div class="work-head">
-          <div class="work-logo"><img src="Assets/Images/Logo/Clients/vogue-eyewear.png" alt="Vogue Eyewear"></div>
-          <div><p class="work-company">Vogue Eyewear</p><p class="work-category">Brand Voice &amp; Content Governance</p></div>
-        </div>
-      </div>
-      <div class="work-main">
-        <p class="work-intro">Un framework français de tone of voice de 25 pages, construit directement à partir de la stratégie de marque.</p>
-        <ul class="work-points"><li>Identité de marque et segmentation des audiences</li><li>Règles ambassadeurs et vocabulaire</li><li>Méthode de transcréation de l'anglais vers le français</li><li>Recommandations éditoriales par canal</li><li>Framework de QA sur le CRM, l’e-commerce et le Paid</li></ul>
-        <p class="work-result">Résultat : des appréciations subjectives sont devenues un standard documenté que les relecteurs peuvent réellement appliquer.</p>
+        <p class="work-intro">Un workflow IA conçu pour les copywriters internes du groupe.</p>
+        <ul class="work-points"><li>Workflow de bout en bout sur trois outils IA</li><li>Un brief volontairement contradictoire pour tester le contrôle qualité</li><li>Contraintes de marque et vocabulaire interdit intégrés aux tests</li><li>Un system prompt d'assistant de marque remis à chaque participant</li></ul>
+        <p class="work-result">Résultat : un framework de 19 slides pour passer du prompt improvisé à une production maîtrisée.</p>
       </div>
     </div>
     <div class="work-card">
       <div class="work-side">
         <div class="work-head">
           <div class="work-logo"><img src="Assets/Images/Logo/Clients/3m.png" alt="3M"></div>
-          <div><p class="work-company">3M</p><p class="work-category">Qualité IA / traduction automatique &amp; B2B technique</p></div>
+          <div><p class="work-company">3M</p><p class="work-category">Qualité IA &amp; traduction automatique</p></div>
         </div>
       </div>
       <div class="work-main">
-        <p class="work-intro">Un contrôle qualité de contenus techniques qui a révélé un problème de système, au-delà de la simple correction de textes.</p>
-        <p class="work-text">Lors d'un lancement mondial, le taux de correction est passé de 39 % à environ 75 %. Samuel a remonté le problème à sa source : les corrections précédentes n'avaient pas été réinjectées dans la mémoire de traduction, si bien que le système régénérait sans cesse des erreurs déjà corrigées.</p>
-        <ul class="work-points"><li>Contenus B2B techniques et industriels</li><li>Évaluation de contenus générés automatiquement</li><li>Analyse des schémas d'erreurs</li><li>Diagnostic QA et process</li><li>Escalade technique appuyée par des preuves</li></ul>
-        <p class="work-result">Résultat : le problème a été escaladé comme un sujet de workflow et de facturation, plutôt que comme une nouvelle série de corrections linguistiques manuelles.</p>
+        <p class="work-intro">Une mission QA qui a révélé un problème de système, pas seulement des textes à corriger.</p>
+        <p class="work-text">Pendant un lancement mondial, le taux de correction est passé de 39 % à environ 75 %. Samuel a remonté la piste : les corrections passées n'avaient jamais été réinjectées dans la mémoire de traduction.</p>
+        <ul class="work-points"><li>Évaluation de contenus générés automatiquement</li><li>Analyse des schémas d'erreurs</li><li>Escalade appuyée par des preuves</li></ul>
+        <p class="work-result">Résultat : traité comme un problème de workflow et de facturation, pas comme une énième série de corrections.</p>
       </div>
     </div>
     </div>
@@ -549,28 +519,28 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <div class="why-split">
       <div>
         <p class="ew"><span class="sec-num">04</span>Notre lecture</p>
-        <h2 class="why-lead-h" style="margin-top:14px;">Là où nous pensons que ce type de profil crée le plus de valeur</h2>
+        <h2 class="why-lead-h" style="margin-top:14px;">Quand faire appel à ce profil</h2>
       </div>
       <div class="why-rows">
         <div class="why-row">
           <p class="why-row-num">01</p>
           <div>
-            <h3 class="why-row-title">Quand l'IA augmente le volume plus vite que la qualité.</h3>
-            <p class="why-row-body">Générer du contenu devient trivial. Construire le contexte, les standards et le jugement humain qui le rendent juste, distinctif et utile ne l'est pas.</p>
+            <h3 class="why-row-title">Quand l'IA produit plus vite que la qualité ne suit.</h3>
+            <p class="why-row-body">Générer du contenu est devenu facile. Le garder juste, distinctif et fidèle à la marque, non.</p>
           </div>
         </div>
         <div class="why-row">
           <p class="why-row-num">02</p>
           <div>
             <h3 class="why-row-title">Quand le contenu devient un système.</h3>
-            <p class="why-row-body">Dès que Product, CRM, SEO, Paid, localisation et IA touchent la même marque, de bons textes isolés ne suffisent plus. Le ton, la terminologie et les règles éditoriales doivent tenir sur l'ensemble de l'opération.</p>
+            <p class="why-row-body">Produit, CRM, SEO, Paid, localisation et IA touchent la même marque. Le ton et la terminologie doivent tenir partout.</p>
           </div>
         </div>
         <div class="why-row">
           <p class="why-row-num">03</p>
           <div>
             <h3 class="why-row-title">Quand la complexité doit devenir claire.</h3>
-            <p class="why-row-body">Les entreprises SaaS, financières et techniques ont souvent l'expertise mais peinent à la communiquer. Les meilleurs profils Content savent simplifier le message sans simplifier le fond.</p>
+            <p class="why-row-body">Simplifier le message, sans simplifier le fond.</p>
           </div>
         </div>
       </div>
