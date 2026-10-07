@@ -153,17 +153,27 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .pricing-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
 .pricing-box { display:grid; grid-template-columns:1fr 1fr; }
 .pricing-left { background:var(--card); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
-.pricing-left { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
+@media (prefers-color-scheme: dark) { .pricing-left { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); } }
+:root[data-theme="light"] .pricing-left { background:var(--card); --ink:inherit; --ink-55:inherit; color:inherit; }
+:root[data-theme="dark"] .pricing-left { background:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); color:var(--ink); }
 .pricing-right { background:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); color:var(--ink); padding:clamp(32px,4vw,56px); display:flex; flex-direction:column; justify-content:center; }
 .pricing-h2 { font-size:clamp(22px,2.6vw,34px); font-weight:700; letter-spacing:-0.025em; margin:12px 0 0; }
-.pricing-sub { font-size:15px; color:var(--ink-55); line-height:1.65; margin:14px 0 0; }
-.pricing-item { font-size:15px; line-height:1.6; display:flex; align-items:center; gap:10px; }
-.pricing-check { width:16px; height:16px; flex-shrink:0; color:var(--accent-2); }
-.pricing-big { display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+.pricing-sub { font-size:16px; color:var(--ink-55); line-height:1.65; margin:14px 0 0; }
+.pricing-big { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; margin-bottom:8px; }
 .pricing-pct { font-size:clamp(56px,6.4vw,80px); font-weight:700; letter-spacing:-0.05em; line-height:1; font-variant-numeric:tabular-nums; }
+.pricing-unit { font-size:0.68em; font-weight:500; letter-spacing:0; margin-left:3px; }
+.pricing-cta { align-self:flex-start; margin-top:28px; }
+.pricing-cta-mobile { display:none; }
+@media (max-width:640px){ .pricing-cta-desktop{display:none;} .pricing-cta-mobile{display:inline-flex;} }
+.pricing-unit { font-size:0.68em; font-weight:500; letter-spacing:0; margin-left:3px; }
+.pricing-cta { align-self:flex-start; margin-top:28px; }
+.pricing-cta-mobile { display:none; }
+@media (max-width:640px){ .pricing-cta-desktop{display:none;} .pricing-cta-mobile{display:inline-flex;} }
 .pricing-flat { font-size:14px; color:var(--ink-55); }
 .pricing-rule { width:44px; height:2px; background:var(--accent-2); margin-bottom:24px; }
 .pricing-items { display:flex; flex-direction:column; gap:18px; }
+.pricing-item { font-size:15px; line-height:1.6; position:relative; padding-left:24px; }
+.pricing-item::before { content:''; position:absolute; left:2px; top:0.3em; width:5px; height:10px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 @media (max-width:640px){ .pricing-box{grid-template-columns:1fr;} }
 
 /* FOUNDER CLOSING — two-column, equal width: section label left, photo-on-top card right, brand beige */
@@ -490,11 +500,38 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   </div>
 </section>
 
+<section id="pricing" class="pricing-section">
+  <div class="inner">
+    <div class="sh"><p class="ew"><span class="sec-num">04</span>Tarifs</p><div><h2 class="sh-h">Des tarifs transparents.</h2></div></div>
+    <div class="pricing-box">
+      <div class="pricing-left">
+        <p class="ew">Le modèle</p>
+        <h3 class="pricing-h2">Des talents seniors. Un engagement flexible.</h3>
+        <p class="pricing-sub">Travaillez directement avec un freelance pré-validé. Périmètre, budget et conditions sont fixés en amont.</p>
+        <a href="https://calendly.com/audrar/30min-chat" target="_blank" rel="noopener" class="btn-red-lg pricing-cta pricing-cta-desktop">Demander un devis</a>
+      </div>
+      <div class="pricing-right">
+        <div class="pricing-big"><span class="pricing-pct">3&nbsp;K<span class="pricing-unit">€</span></span><span class="pricing-flat">engagement mensuel minimum</span></div>
+        <div class="pricing-rule"></div>
+        <div class="pricing-items">
+          <p class="pricing-item">Freelance senior pré-validé</p>
+          <p class="pricing-item">Périmètre défini avant le démarrage</p>
+          <p class="pricing-item">Budget final transparent</p>
+          <p class="pricing-item">Collaboration directe avec le freelance</p>
+          <p class="pricing-item">Contrats, conformité et facturation gérés par Metodas</p>
+          <p class="pricing-item">Au mois, sans engagement long terme</p>
+        </div>
+        <a href="https://calendly.com/audrar/30min-chat" target="_blank" rel="noopener" class="btn-red-lg pricing-cta pricing-cta-mobile">Demander un devis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CE QUE NOUS FERIONS — exp-grid, exact copy dark cards, 3 cards -->
 <!-- PROFILES — new component, real freelancer profiles -->
 <section class="founder-closing">
   <div class="inner">
-    <p class="ew"><span class="sec-num">04</span>Qui sommes nous</p>
+    <p class="ew"><span class="sec-num">05</span>Qui sommes nous</p>
     <div class="founder-closing-grid" style="margin-top:32px;">
       <div>
         <h2 class="founder-closing-h2">Nous ne sommes ni une agence, ni une plateforme.</h2>
@@ -521,7 +558,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 <section id="contact" class="cta-section section-dark">
   <div class="inner">
     <div class="cta-inner-grid">
-      <div><p class="ew"><span class="sec-num">05</span>Pr&ecirc;t &agrave; travailler avec nous&nbsp;?</p><h2 class="cta-h2">Construisons ce projet ensemble</h2></div>
+      <div><p class="ew"><span class="sec-num">06</span>Pr&ecirc;t &agrave; travailler avec nous&nbsp;?</p><h2 class="cta-h2">Construisons ce projet ensemble</h2></div>
       <div>
         <p class="cta-sub">Un premier &eacute;change pour faire connaissance, parler de votre projet et voir si le match est l&agrave;. Sans engagement.</p>
         <div class="cta-btns">
