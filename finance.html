@@ -330,6 +330,9 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .tcard-li svg { width:18px; height:18px; display:block; }
 .tcard-role { font-size:15px; color:var(--ink-55); margin-bottom:2px; }
 .tcard-years { font-size:15px; color:var(--ink-55); margin-bottom:12px; }
+.tcard-logos { display:flex; flex-wrap:wrap; gap:6px; margin:-2px 0 14px; }
+.tcard-logo { width:30px; height:30px; background:var(--fixed-cream); border:1px solid var(--ink-10); padding:4px; display:flex; align-items:center; justify-content:center; }
+.tcard-logo img { width:100%; height:100%; object-fit:contain; display:block; }
 .tcard-overlay { max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.22,1,.36,1); }
 .tcard.is-open .tcard-overlay { max-height:420px; }
 .tcard-quote { font-size:15px; color:var(--ink-55); line-height:1.65; font-style:italic; margin-bottom:14px; padding-top:2px; }
@@ -473,6 +476,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Jérôme</h3>
           <p class="tcard-role">DA &amp; Graphiste</p>
           <p class="tcard-years">20+ ans d’expérience</p>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas" title="BNP Paribas"></span></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Plus de 15 ans chez BNP Paribas Cardif, avec une connaissance particulièrement profonde des codes et contraintes de la bancassurance.</p>
@@ -489,6 +493,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Gwennaëlle</h3>
           <p class="tcard-role">Brand Content &amp; Social Media</p>
           <p class="tcard-years">7+ ans d’expérience</p>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/allianz.png" alt="Allianz Trade" title="Allianz Trade"></span></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">7+ ans d’expérience en Brand Content et Social Media, avec une année chez Allianz Trade sur la stratégie éditoriale, la création de contenu, le reporting et l’Employee Advocacy.</p>
@@ -504,6 +509,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Samuel</h3>
           <p class="tcard-role">Senior Content Specialist</p>
           <p class="tcard-years">10+ ans d’expérience</p>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/n26.png" alt="N26" title="N26"></span><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/lightyear.png" alt="Lightyear" title="Lightyear"></span></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Spécialisé dans les environnements fintech : du contenu produit et CRM jusqu'aux sujets réglementaires et compliance.</p>
@@ -520,6 +526,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Maxime</h3>
           <p class="tcard-role">Motion Designer</p>
           <p class="tcard-years">15+ ans d’expérience</p>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas" title="BNP Paribas"></span></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">15+ ans d’expérience en Motion Design, avec une expérience directe auprès des équipes Marketing et Communication de BNP Paribas.</p>
@@ -535,9 +542,27 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Pierre</h3>
           <p class="tcard-role">Social Media &amp; Content</p>
           <p class="tcard-years">9+ ans d’expérience</p>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas" title="BNP Paribas"></span></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">9+ ans d’expérience en stratégie Social Media, création de contenu et Community Management, avec une expérience directe de la communication bancaire.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tcard" tabindex="0" role="button" aria-expanded="false">
+        <div class="tcard-photo">
+          <span class="tcard-tag">Social Media</span>
+          <img src="Assets/Images/Profiles/finance/bastien.webp" alt="Bastien" loading="lazy">
+        </div>
+        <div class="tcard-info">
+          <h3 class="tcard-name">Bastien</h3>
+          <p class="tcard-role">Social Media Strategist</p>
+          <p class="tcard-years">15+ ans d’expérience</p>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/societe-generale.png" alt="Société Générale" title="Société Générale"></span><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/allianz.png" alt="Allianz" title="Allianz"></span></div>
+          <span class="tcard-more">En savoir plus</span>
+          <div class="tcard-overlay">
+            <p class="tcard-quote">15 ans en stratégie Social Media et éditoriale, dont 10 en freelance, avec des missions pour Société Générale, Allianz, Crédit Agricole et Coinhouse.</p>
+            <div class="tcard-traits"><span class="trait">Social Media</span><span class="trait">Stratégie éditoriale</span><span class="trait">Community Management</span><span class="trait">Conception-rédaction</span></div>
           </div>
         </div>
       </div>
@@ -550,6 +575,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Cyril</h3>
           <p class="tcard-role">Senior Product Designer</p>
           <p class="tcard-years">10+ ans d’expérience</p>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/societe-generale.png" alt="Société Générale CIB" title="Société Générale CIB"></span></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Trois ans chez SGCIB, où il a travaillé sur plus de 10 produits B2B dans un environnement financier complexe.</p>
@@ -624,6 +650,20 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         <div class="mission-tags"><span class="tag">Content</span><span class="tag">UX Writing</span><span class="tag">Compliance</span></div>
       </div>
       <ul class="mission-list"><li>Contenus français sur l'ensemble du parcours digital : CRM, push, UX, support et releases</li><li>Rédaction et adaptation de contenus légaux et compliance</li><li>Gouvernance du ton et de la terminologie dans un environnement bancaire réglementé</li><li>Intervention transverse sur le produit, le CRM, le support et les contenus réglementaires de N26</li></ul>
+    </article>
+    <article class="mission">
+      <div class="mission-side">
+        <div class="mission-head">
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/societe-generale.png" alt="Société Générale"></div>
+          <div><p class="mission-co">Société Générale</p><p class="mission-cat">Social Media &amp; sponsoring sportif</p></div>
+        </div>
+        <div class="mission-who">
+          <div class="mission-photo"><img src="Assets/Images/Profiles/finance/bastien.webp" alt="Bastien"></div>
+          <div><p class="mission-name">Bastien</p><p class="mission-role">Social Media Strategist</p></div>
+        </div>
+        <div class="mission-tags"><span class="tag">Social Media</span><span class="tag">Sponsoring</span><span class="tag">Community Management</span></div>
+      </div>
+      <ul class="mission-list"><li>Conseil sur les stratégies d'activation de « Par Amour Du Rugby », la marque des partenariats rugby de Société Générale</li><li>Conseil sur les stratégies de contenus de la marque</li><li>Gestion des comptes Facebook, Twitter et Instagram</li><li>Écriture des posts, modération et reporting</li></ul>
     </article>
     </div>
   </div>
