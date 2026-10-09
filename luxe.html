@@ -605,24 +605,24 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
   <div class="inner">
     <div class="portfolio-cols">
       <div class="portfolio-col">
-        <div class="portfolio-item" style="aspect-ratio:720/1280;">
+        <div class="portfolio-item" style="aspect-ratio:16/9;">
           <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-01-poster.jpg">
             <source src="Assets/Videos/luxe-matthieu-01.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="portfolio-item" style="aspect-ratio:640/360;">
+        <div class="portfolio-item" style="aspect-ratio:16/9;">
           <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-03-poster.jpg">
             <source src="Assets/Videos/luxe-matthieu-03.mp4" type="video/mp4">
           </video>
         </div>
       </div>
       <div class="portfolio-col">
-        <div class="portfolio-item" style="aspect-ratio:720/900;">
+        <div class="portfolio-item" style="aspect-ratio:16/9;">
           <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-02-poster.jpg">
             <source src="Assets/Videos/luxe-matthieu-02.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="portfolio-item" style="aspect-ratio:640/360;">
+        <div class="portfolio-item" style="aspect-ratio:16/9;">
           <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-04-poster.jpg">
             <source src="Assets/Videos/luxe-matthieu-04.mp4" type="video/mp4">
           </video>
@@ -872,20 +872,15 @@ document.querySelectorAll('.tcard').forEach(card => {
 })();
 </script>
 <script>
-const portfolioVideos = document.querySelectorAll('.portfolio-media[preload="metadata"]');
-const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-portfolioVideos.forEach((v) => {
-  const item = v.closest('.portfolio-item');
-  if (supportsHover) {
-    item.addEventListener('mouseenter', () => { v.muted = true; v.play().catch(() => {}); });
-    item.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; v.muted = true; });
-  }
-  v.addEventListener('click', () => {
-    if (v.paused) { v.muted = false; v.play().catch(() => {}); }
-    else if (v.muted) { v.muted = false; }
-    else { v.pause(); v.muted = true; }
+const portfolioVideos = document.querySelectorAll('.deco-reel .portfolio-media');
+const reelObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    const v = e.target;
+    if (e.isIntersecting) { v.muted = true; v.play().catch(() => {}); }
+    else { v.pause(); }
   });
-});
+}, { threshold: 0.6 });
+portfolioVideos.forEach((v) => reelObserver.observe(v));
 </script>
 
 </body>
