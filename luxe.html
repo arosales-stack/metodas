@@ -347,11 +347,12 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .intro-btn:hover { border-color:var(--ink-55); }
 .intro-center { text-align:center; }
 .deco-reel { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
-.deco-reel .inner { padding-top:clamp(32px,4vw,56px); padding-bottom:clamp(32px,4vw,56px); }
-.deco-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
-.deco-grid > div { min-width:0; aspect-ratio:16/9; overflow:hidden; background:var(--ink-06); }
-.deco-grid video { width:100%; height:100%; object-fit:cover; display:block; }
-@media (max-width:760px){ .deco-grid{grid-template-columns:1fr 1fr;} }
+.deco-reel .inner { padding-top:clamp(80px,10vw,140px); padding-bottom:clamp(80px,10vw,140px); }
+.portfolio-cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; align-items:start; }
+.portfolio-col { display:flex; flex-direction:column; gap:14px; min-width:0; }
+@media (max-width:640px){ .portfolio-cols{grid-template-columns:1fr;} }
+.portfolio-item { break-inside:avoid; margin-bottom:14px; background:var(--ink-06); overflow:hidden; position:relative; }
+.portfolio-media { width:100%; height:100%; object-fit:cover; display:block; }
 /* MISSIONS — finance page */
 .missions { display:flex; flex-direction:column; gap:20px; }
 .mission { background:var(--card); border:1px solid var(--ink-10); display:grid; grid-template-columns:0.9fr 1.1fr; }
@@ -602,11 +603,31 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 <section class="deco-reel" aria-hidden="true">
   <div class="inner">
-    <div class="deco-grid">
-      <div><video autoplay muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-01-poster.jpg" aria-hidden="true"><source src="Assets/Videos/luxe-matthieu-01.mp4" type="video/mp4"></video></div>
-      <div><video autoplay muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-02-poster.jpg" aria-hidden="true"><source src="Assets/Videos/luxe-matthieu-02.mp4" type="video/mp4"></video></div>
-      <div><video autoplay muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-03-poster.jpg" aria-hidden="true"><source src="Assets/Videos/luxe-matthieu-03.mp4" type="video/mp4"></video></div>
-      <div><video autoplay muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-04-poster.jpg" aria-hidden="true"><source src="Assets/Videos/luxe-matthieu-04.mp4" type="video/mp4"></video></div>
+    <div class="portfolio-cols">
+      <div class="portfolio-col">
+        <div class="portfolio-item" style="aspect-ratio:720/1280;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-01-poster.jpg">
+            <source src="Assets/Videos/luxe-matthieu-01.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="portfolio-item" style="aspect-ratio:640/360;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-03-poster.jpg">
+            <source src="Assets/Videos/luxe-matthieu-03.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="portfolio-col">
+        <div class="portfolio-item" style="aspect-ratio:720/900;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-02-poster.jpg">
+            <source src="Assets/Videos/luxe-matthieu-02.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="portfolio-item" style="aspect-ratio:640/360;">
+          <video class="portfolio-media" muted loop playsinline preload="metadata" poster="Assets/Images/matthieu-portfolio/matthieu-04-poster.jpg">
+            <source src="Assets/Videos/luxe-matthieu-04.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -850,5 +871,22 @@ document.querySelectorAll('.tcard').forEach(card => {
   build();
 })();
 </script>
+<script>
+const portfolioVideos = document.querySelectorAll('.portfolio-media[preload="metadata"]');
+const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+portfolioVideos.forEach((v) => {
+  const item = v.closest('.portfolio-item');
+  if (supportsHover) {
+    item.addEventListener('mouseenter', () => { v.muted = true; v.play().catch(() => {}); });
+    item.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; v.muted = true; });
+  }
+  v.addEventListener('click', () => {
+    if (v.paused) { v.muted = false; v.play().catch(() => {}); }
+    else if (v.muted) { v.muted = false; }
+    else { v.pause(); v.muted = true; }
+  });
+});
+</script>
+
 </body>
 </html>
