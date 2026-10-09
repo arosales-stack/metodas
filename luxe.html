@@ -388,12 +388,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 @media (max-width:640px){ .talent-head{flex-direction:column; align-items:flex-start;} }
 .tcard-logos { display:flex; align-items:center; gap:14px; margin:6px 0 14px; }
 .tcard-logos img { height:26px; width:auto; max-width:130px; object-fit:contain; display:block; }
-.tcard-logos .tcard-logo { width:auto; min-width:30px; }
-.tcard-logos .tcard-logo img { height:20px; width:auto; max-width:110px; }
 .mission-logos { display:flex; gap:8px; }
-.mission-logo.is-wide { width:auto; min-width:56px; }
-.mission-logo.is-wide img { width:auto; max-width:150px; }
-.mission-logos .mission-logo.is-wide img { max-width:84px; }
+.tcard-logos .tcard-logo img { width:100%; height:100%; max-width:none; }
 .tcard-more { display:inline-flex; align-items:center; gap:6px; font-size:15px; color:var(--ink-55); margin-bottom:4px; }
 .tcard-more::after { content:'+'; font-weight:500; }
 .tcard:hover .tcard-more { color:var(--ink); }
@@ -516,7 +512,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Sutanya</h3>
           <p class="tcard-role">Senior Content Strategist &amp; Copywriter</p>
           <p class="tcard-years">15 ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/lvmh-wide.png" alt="LVMH" title="LVMH"></span><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/kering.png" alt="Kering" title="Kering"></span></div>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/lvmh.png" alt="LVMH" title="LVMH"></span><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/kering.png" alt="Kering" title="Kering"></span></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Voix de marque et copy de campagnes, pour des maisons parmi les plus prestigieuses au monde. Son travail a contribué à +25 % d’engagement social sur les comptes clients.</p>
@@ -621,7 +617,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <article class="mission">
       <div class="mission-side">
         <div class="mission-head">
-          <div class="mission-logo is-wide"><img src="Assets/Images/Logo/Clients/moet-hennessy.png" alt="Moët Hennessy"></div>
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/moet-hennessy.png" alt="Moët Hennessy"></div>
           <div><p class="mission-co">Moët Hennessy</p><p class="mission-cat">CRM</p></div>
         </div>
         <div class="mission-who">
@@ -649,7 +645,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <article class="mission">
       <div class="mission-side">
         <div class="mission-head">
-          <div class="mission-logo is-wide"><img src="Assets/Images/Logo/Clients/essilorluxottica-wide.png" alt="EssilorLuxottica"></div>
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/essilorluxottica.png" alt="EssilorLuxottica"></div>
           <div><p class="mission-co">EssilorLuxottica</p><p class="mission-cat">Copywriting &amp; transcréation</p></div>
         </div>
         <div class="mission-who">
@@ -663,7 +659,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <article class="mission">
       <div class="mission-side">
         <div class="mission-head">
-          <div class="mission-logos"><div class="mission-logo is-wide"><img src="Assets/Images/Logo/Clients/kenzo.png" alt="Kenzo"></div><div class="mission-logo is-wide"><img src="Assets/Images/Logo/Clients/lancome.png" alt="Lancôme"></div></div>
+          <div class="mission-logos"><div class="mission-logo"><img src="Assets/Images/Logo/Clients/kenzo.png" alt="Kenzo"></div><div class="mission-logo"><img src="Assets/Images/Logo/Clients/lancome.png" alt="Lancôme"></div></div>
           <div><p class="mission-co">Kenzo Parfums &amp; Lancôme</p><p class="mission-cat">Social Media beauté</p></div>
         </div>
         <div class="mission-who">
