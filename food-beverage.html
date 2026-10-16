@@ -414,6 +414,12 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 
 .tcard-logos .tcard-glogo { height:calc(clamp(56px,6.8vw,72px) * 0.6); width:auto; max-width:none; object-fit:contain; display:block; }
 .tcard-logos:has(.tcard-glogo) { gap:6px; margin:4px 0 10px; }
+.tcard-logos .glogo-dark { display:none; }
+@media (prefers-color-scheme: dark) { .tcard-logos .glogo-light{display:none;} .tcard-logos .glogo-dark{display:block;} }
+:root[data-theme="light"] .tcard-logos .glogo-light { display:block; }
+:root[data-theme="light"] .tcard-logos .glogo-dark { display:none; }
+:root[data-theme="dark"] .tcard-logos .glogo-light { display:none; }
+:root[data-theme="dark"] .tcard-logos .glogo-dark { display:block; }
 .mission-main { padding:clamp(24px,3vw,36px); display:flex; flex-direction:column; justify-content:center; gap:18px; }
 .mission-main .mission-list { padding:0; }
 .mission-title { font-size:19px; font-weight:700; letter-spacing:-0.01em; line-height:1.45; color:var(--ink); }
@@ -509,7 +515,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Julia</h3>
           <p class="tcard-role">Chef de produit &amp; Marketing</p>
           <p class="tcard-years">10 ans d’expérience</p>
-          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-oligosante.png" alt="Oligosanté" title="Oligosanté"></div>
+          <div class="tcard-logos"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-oligosante.png" alt="Oligosanté" title="Oligosanté"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-oligosante-white.png" alt="Oligosanté" title="Oligosanté"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Chef de projet marketing chez Oligosanté, laboratoire français de compléments alimentaires et de produits diététiques. Elle y a piloté les lancements de produits et de marques, le trade marketing et les dossiers export.</p>
@@ -526,7 +532,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Romain</h3>
           <p class="tcard-role">Growth &amp; Business Dev.</p>
           <p class="tcard-years">10 ans d’expérience</p>
-          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé" title="Nestlé"><img class="tcard-glogo" src="Assets/Images/Logos/food-kelloggs.png" alt="Kellogg’s" title="Kellogg’s"></div>
+          <div class="tcard-logos"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé" title="Nestlé"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-nestle-white.png" alt="Nestlé" title="Nestlé"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-kelloggs.png" alt="Kellogg’s" title="Kellogg’s"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-kelloggs-white.png" alt="Kellogg’s" title="Kellogg’s"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Ancien Senior Sales Manager chez Degusta Box, où il a développé l’offre B2B auprès des grands comptes de l’agroalimentaire, dont Nestlé et Kellogg’s. Depuis, 6 ans en acquisition payante pour plus de 50 entreprises.</p>
@@ -543,7 +549,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Florian</h3>
           <p class="tcard-role">Head of Marketing &amp; Growth</p>
           <p class="tcard-years">15 ans d’expérience</p>
-          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-wecook.png" alt="WeCook" title="WeCook"></div>
+          <div class="tcard-logos"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-wecook.png" alt="WeCook" title="WeCook"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-wecook-white.png" alt="WeCook" title="WeCook"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">15 ans en marketing digital et growth. Chez WeCook, spécialiste de l’accompagnement en nutrition, il a multiplié les ventes en ligne par 10 et généré 20 000 leads par mois.</p>
@@ -560,7 +566,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Cécilia</h3>
           <p class="tcard-role">Head of Content</p>
           <p class="tcard-years">15+ ans d’expérience</p>
-          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-nescafe-dolce-gusto.png" alt="Nescafé Dolce Gusto" title="Nescafé Dolce Gusto"><img class="tcard-glogo" src="Assets/Images/Logos/food-unilever.png" alt="Unilever" title="Unilever"></div>
+          <div class="tcard-logos"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-nescafe-dolce-gusto.png" alt="Nescafé Dolce Gusto" title="Nescafé Dolce Gusto"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-nescafe-dolce-gusto-white.png" alt="Nescafé Dolce Gusto" title="Nescafé Dolce Gusto"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-unilever.png" alt="Unilever" title="Unilever"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-unilever-white.png" alt="Unilever" title="Unilever"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">15+ ans de conception-rédaction, dont 6 ans chez Publicis : refonte du programme CRM de Nescafé Dolce Gusto, campagnes pour Kraft et Unilever, recommandations social media pour Bjorg et Cémoi.</p>
@@ -577,7 +583,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Nathalie</h3>
           <p class="tcard-role">CRM Manager</p>
           <p class="tcard-years">10+ ans d’expérience</p>
-          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-moet-hennessy.png" alt="Moët Hennessy" title="Moët Hennessy"><img class="tcard-glogo" src="Assets/Images/Logos/food-accor.png" alt="Accor" title="Accor"></div>
+          <div class="tcard-logos"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-moet-hennessy.png" alt="Moët Hennessy" title="Moët Hennessy"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-moet-hennessy-white.png" alt="Moët Hennessy" title="Moët Hennessy"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-accor.png" alt="Accor" title="Accor"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-accor-white.png" alt="Accor" title="Accor"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">CRM Manager pour Moët &amp; Chandon et Dom Pérignon, après le CRM d’Accor et de Chanel. Elle construit des stratégies CRM globales coordonnées avec les marchés à l’international.</p>
@@ -594,7 +600,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Bastien</h3>
           <p class="tcard-role">Social Media Strategist</p>
           <p class="tcard-years">15+ ans d’expérience</p>
-          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-coca-cola.png" alt="Coca-Cola" title="Coca-Cola"><img class="tcard-glogo" src="Assets/Images/Logos/food-happyvore.png" alt="HappyVore" title="HappyVore"></div>
+          <div class="tcard-logos"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-coca-cola.png" alt="Coca-Cola" title="Coca-Cola"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-coca-cola-white.png" alt="Coca-Cola" title="Coca-Cola"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-happyvore.png" alt="HappyVore" title="HappyVore"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-happyvore-white.png" alt="HappyVore" title="HappyVore"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">15 ans en stratégie social media et éditoriale, dont 10 en freelance, avec des missions pour Coca-Cola, Lustucru, HappyVore, Jack Daniel’s et Piper-Heidsieck.</p>
@@ -611,7 +617,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Jasmine</h3>
           <p class="tcard-role">Senior Event Manager</p>
           <p class="tcard-years">10+ ans d’expérience</p>
-          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé Waters" title="Nestlé Waters"><img class="tcard-glogo" src="Assets/Images/Logos/food-krug.png" alt="Krug" title="Krug"></div>
+          <div class="tcard-logos"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé Waters" title="Nestlé Waters"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-nestle-white.png" alt="Nestlé Waters" title="Nestlé Waters"><img class="tcard-glogo glogo-light" src="Assets/Images/Logos/food-krug.png" alt="Krug" title="Krug"><img class="tcard-glogo glogo-dark" src="Assets/Images/Logos/food-krug-white.png" alt="Krug" title="Krug"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">10+ ans d’activation de marque et d’événementiel, en France et à l’international, pour des marques de boissons et d’agroalimentaire comme Perrier, Heineken, Grolsch, Krug et Captain Morgan.</p>
