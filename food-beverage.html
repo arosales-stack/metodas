@@ -403,7 +403,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .tcard.is-open .tcard-more { display:none; }
 
 .marquee-mask { position:relative; -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); }
-.marquee-track { display:flex; align-items:center; gap:clamp(56px,6vw,88px); width:max-content; animation: marquee 20s linear infinite; }
+.marquee-track { display:flex; align-items:center; gap:clamp(56px,6vw,88px); width:max-content; animation: marquee 60s linear infinite; }
 .marquee-track:hover { animation-play-state:paused; }
 .logo-name { height:clamp(56px,6.8vw,72px); width:auto; max-width:280px; object-fit:contain; flex-shrink:0; }
 @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
@@ -412,6 +412,11 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .tcard-logos .tcard-logo.is-full, .mission-logo.is-full { padding:0; overflow:hidden; }
 .tcard-logos .tcard-logo.is-full img, .mission-logo.is-full img { object-fit:cover; }
 
+.tcard-logos .tcard-glogo { height:calc(clamp(56px,6.8vw,72px) * 0.6); width:auto; max-width:none; object-fit:contain; display:block; }
+.tcard-logos:has(.tcard-glogo) { gap:6px; margin:4px 0 10px; }
+.mission-main { padding:clamp(24px,3vw,36px); display:flex; flex-direction:column; justify-content:center; gap:18px; }
+.mission-main .mission-list { padding:0; }
+.mission-title { font-size:19px; font-weight:700; letter-spacing:-0.01em; line-height:1.45; color:var(--ink); }
 </style>
 </head>
 <body>
@@ -450,15 +455,31 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
       <img class="logo-name" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé">
       <img class="logo-name" src="Assets/Images/Logos/food-coca-cola.png" alt="Coca-Cola">
       <img class="logo-name" src="Assets/Images/Logos/food-unilever.png" alt="Unilever">
+      <img class="logo-name" src="Assets/Images/Logos/food-moet-hennessy.png" alt="Moët Hennessy">
+      <img class="logo-name" src="Assets/Images/Logos/food-kelloggs.png" alt="Kellogg’s">
+      <img class="logo-name" src="Assets/Images/Logos/food-nescafe-dolce-gusto.png" alt="Nescafé Dolce Gusto">
+      <img class="logo-name" src="Assets/Images/Logos/food-accor.png" alt="Accor">
+      <img class="logo-name" src="Assets/Images/Logos/food-heineken.png" alt="Heineken">
+      <img class="logo-name" src="Assets/Images/Logos/food-krug.png" alt="Krug">
+      <img class="logo-name" src="Assets/Images/Logos/food-grolsch.png" alt="Grolsch">
+      <img class="logo-name" src="Assets/Images/Logos/food-happyvore.png" alt="HappyVore">
+      <img class="logo-name" src="Assets/Images/Logos/food-wecook.png" alt="WeCook">
+      <img class="logo-name" src="Assets/Images/Logos/food-oligosante.png" alt="Oligosanté">
+      <img class="logo-name" src="Assets/Images/Logos/food-degusta-box.png" alt="Degusta Box">
       <img class="logo-name" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé">
       <img class="logo-name" src="Assets/Images/Logos/food-coca-cola.png" alt="Coca-Cola">
       <img class="logo-name" src="Assets/Images/Logos/food-unilever.png" alt="Unilever">
-      <img class="logo-name" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé">
-      <img class="logo-name" src="Assets/Images/Logos/food-coca-cola.png" alt="Coca-Cola">
-      <img class="logo-name" src="Assets/Images/Logos/food-unilever.png" alt="Unilever">
-      <img class="logo-name" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé">
-      <img class="logo-name" src="Assets/Images/Logos/food-coca-cola.png" alt="Coca-Cola">
-      <img class="logo-name" src="Assets/Images/Logos/food-unilever.png" alt="Unilever">
+      <img class="logo-name" src="Assets/Images/Logos/food-moet-hennessy.png" alt="Moët Hennessy">
+      <img class="logo-name" src="Assets/Images/Logos/food-kelloggs.png" alt="Kellogg’s">
+      <img class="logo-name" src="Assets/Images/Logos/food-nescafe-dolce-gusto.png" alt="Nescafé Dolce Gusto">
+      <img class="logo-name" src="Assets/Images/Logos/food-accor.png" alt="Accor">
+      <img class="logo-name" src="Assets/Images/Logos/food-heineken.png" alt="Heineken">
+      <img class="logo-name" src="Assets/Images/Logos/food-krug.png" alt="Krug">
+      <img class="logo-name" src="Assets/Images/Logos/food-grolsch.png" alt="Grolsch">
+      <img class="logo-name" src="Assets/Images/Logos/food-happyvore.png" alt="HappyVore">
+      <img class="logo-name" src="Assets/Images/Logos/food-wecook.png" alt="WeCook">
+      <img class="logo-name" src="Assets/Images/Logos/food-oligosante.png" alt="Oligosanté">
+      <img class="logo-name" src="Assets/Images/Logos/food-degusta-box.png" alt="Degusta Box">
       </div>
     </div>
     <p class="intro-center"><a href="#profils" class="intro-btn">Découvrir les profils ↓</a></p>
@@ -488,7 +509,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Julia</h3>
           <p class="tcard-role">Chef de produit &amp; Marketing</p>
           <p class="tcard-years">10 ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-oligosante.jpg" alt="Oligosanté" title="Oligosanté"></span></div>
+          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-oligosante.png" alt="Oligosanté" title="Oligosanté"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Chef de projet marketing chez Oligosanté, laboratoire français de compléments alimentaires et de produits diététiques. Elle y a piloté les lancements de produits et de marques, le trade marketing et les dossiers export.</p>
@@ -505,7 +526,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Romain</h3>
           <p class="tcard-role">Growth &amp; Business Dev.</p>
           <p class="tcard-years">10 ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-nestle.jpg" alt="Nestlé" title="Nestlé"></span><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-kelloggs.jpg" alt="Kellogg’s" title="Kellogg’s"></span></div>
+          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé" title="Nestlé"><img class="tcard-glogo" src="Assets/Images/Logos/food-kelloggs.png" alt="Kellogg’s" title="Kellogg’s"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">Ancien Senior Sales Manager chez Degusta Box, où il a développé l’offre B2B auprès des grands comptes de l’agroalimentaire, dont Nestlé et Kellogg’s. Depuis, 6 ans en acquisition payante pour plus de 50 entreprises.</p>
@@ -522,7 +543,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Florian</h3>
           <p class="tcard-role">Head of Marketing &amp; Growth</p>
           <p class="tcard-years">15 ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-wecook.jpg" alt="WeCook" title="WeCook"></span></div>
+          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-wecook.png" alt="WeCook" title="WeCook"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">15 ans en marketing digital et growth. Chez WeCook, spécialiste de l’accompagnement en nutrition, il a multiplié les ventes en ligne par 10 et généré 20 000 leads par mois.</p>
@@ -539,7 +560,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Cécilia</h3>
           <p class="tcard-role">Head of Content</p>
           <p class="tcard-years">15+ ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-nescafe-dolce-gusto.jpg" alt="Nescafé Dolce Gusto" title="Nescafé Dolce Gusto"></span><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-unilever.jpg" alt="Unilever" title="Unilever"></span></div>
+          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-nescafe-dolce-gusto.png" alt="Nescafé Dolce Gusto" title="Nescafé Dolce Gusto"><img class="tcard-glogo" src="Assets/Images/Logos/food-unilever.png" alt="Unilever" title="Unilever"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">15+ ans de conception-rédaction, dont 6 ans chez Publicis : refonte du programme CRM de Nescafé Dolce Gusto, campagnes pour Kraft et Unilever, recommandations social media pour Bjorg et Cémoi.</p>
@@ -556,7 +577,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Nathalie</h3>
           <p class="tcard-role">CRM Manager</p>
           <p class="tcard-years">10+ ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/moet-hennessy.png" alt="Moët Hennessy" title="Moët Hennessy"></span><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-accor.jpg" alt="Accor" title="Accor"></span></div>
+          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-moet-hennessy.png" alt="Moët Hennessy" title="Moët Hennessy"><img class="tcard-glogo" src="Assets/Images/Logos/food-accor.png" alt="Accor" title="Accor"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">CRM Manager pour Moët &amp; Chandon et Dom Pérignon, après le CRM d’Accor et de Chanel. Elle construit des stratégies CRM globales coordonnées avec les marchés à l’international.</p>
@@ -573,7 +594,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Bastien</h3>
           <p class="tcard-role">Social Media Strategist</p>
           <p class="tcard-years">15+ ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-coca-cola.jpg" alt="Coca-Cola" title="Coca-Cola"></span><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-happyvore.jpg" alt="HappyVore" title="HappyVore"></span></div>
+          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-coca-cola.png" alt="Coca-Cola" title="Coca-Cola"><img class="tcard-glogo" src="Assets/Images/Logos/food-happyvore.png" alt="HappyVore" title="HappyVore"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">15 ans en stratégie social media et éditoriale, dont 10 en freelance, avec des missions pour Coca-Cola, Lustucru, HappyVore, Jack Daniel’s et Piper-Heidsieck.</p>
@@ -590,7 +611,7 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
           <h3 class="tcard-name">Jasmine</h3>
           <p class="tcard-role">Senior Event Manager</p>
           <p class="tcard-years">10+ ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-nestle.jpg" alt="Nestlé Waters" title="Nestlé Waters"></span><span class="tcard-logo is-full"><img src="Assets/Images/Logo/Clients/sq-krug.jpg" alt="Krug" title="Krug"></span></div>
+          <div class="tcard-logos"><img class="tcard-glogo" src="Assets/Images/Logos/food-nestle.png" alt="Nestlé Waters" title="Nestlé Waters"><img class="tcard-glogo" src="Assets/Images/Logos/food-krug.png" alt="Krug" title="Krug"></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
             <p class="tcard-quote">10+ ans d’activation de marque et d’événementiel, en France et à l’international, pour des marques de boissons et d’agroalimentaire comme Perrier, Heineken, Grolsch, Krug et Captain Morgan.</p>
@@ -622,7 +643,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         </div>
         <div class="mission-tags"><span class="tag">Lancement produit</span><span class="tag">Trade Marketing</span><span class="tag">Export</span></div>
       </div>
-      <ul class="mission-list"><li>Pilotage des lancements de produits et de marques, de la conception à la mise sur le marché (fournisseurs, R&amp;D, budget)</li><li>Outils d’aide à la vente pour la force commerciale : fiches produits, catalogue, séminaire et accompagnement terrain</li><li>Merchandising : refonte de la PLV, amélioration du linéaire et du panier moyen</li><li>Gestion des dossiers export et de la conformité réglementaire des allégations et des packagings</li></ul>
+      <div class="mission-main">
+        <p class="mission-title">Des lancements produits menés de la conception jusqu’au linéaire, en France comme à l’export.</p>
+        <ul class="mission-list"><li>Pilotage des lancements de produits et de marques, de la conception à la mise sur le marché (fournisseurs, R&amp;D, budget)</li><li>Outils d’aide à la vente pour la force commerciale : fiches produits, catalogue, séminaire et accompagnement terrain</li><li>Merchandising : refonte de la PLV, amélioration du linéaire et du panier moyen</li><li>Gestion des dossiers export et de la conformité réglementaire des allégations et des packagings</li></ul>
+      </div>
     </article>
     <article class="mission">
       <div class="mission-side">
@@ -636,7 +660,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         </div>
         <div class="mission-tags"><span class="tag">Business Development</span><span class="tag">Grands comptes</span><span class="tag">B2B</span></div>
       </div>
-      <ul class="mission-list"><li>Développement commercial de l’offre B2B auprès des grands comptes de l’agroalimentaire</li><li>Relation commerciale avec des groupes comme Nestlé et Kellogg’s</li><li>Lancement de nouvelles offres online pour les marques : influence et études marketing</li><li>Deux ans dans l’équipe commerciale, de Sales Manager à Senior Sales Manager</li></ul>
+      <div class="mission-main">
+        <p class="mission-title">Une offre B2B développée auprès des plus grands groupes de l’agroalimentaire.</p>
+        <ul class="mission-list"><li>Développement commercial de l’offre B2B auprès des grands comptes de l’agroalimentaire</li><li>Relation commerciale avec des groupes comme Nestlé et Kellogg’s</li><li>Lancement de nouvelles offres online pour les marques : influence et études marketing</li><li>Deux ans dans l’équipe commerciale, de Sales Manager à Senior Sales Manager</li></ul>
+      </div>
     </article>
     <article class="mission">
       <div class="mission-side">
@@ -650,7 +677,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         </div>
         <div class="mission-tags"><span class="tag">Acquisition</span><span class="tag">E-commerce</span><span class="tag">Nutrition</span></div>
       </div>
-      <ul class="mission-list"><li>Pilotage de l’acquisition sur tout le funnel (Social Ads, Google Ads, Native Ads, affiliation) avec un budget d’1 M€</li><li>Partenariats avec des influenceurs et des plateformes e-commerce</li><li>Optimisation des tunnels de conversion : landing pages, emailing, contenus et SEO</li><li>+900 % de ventes en ligne, 20 000 leads et 8 000 inscriptions freemium par mois</li></ul>
+      <div class="mission-main">
+        <p class="mission-title">Des ventes en ligne multipliées par 10 grâce à une acquisition pilotée sur tout le funnel.</p>
+        <ul class="mission-list"><li>Pilotage de l’acquisition sur tout le funnel (Social Ads, Google Ads, Native Ads, affiliation) avec un budget d’1 M€</li><li>Partenariats avec des influenceurs et des plateformes e-commerce</li><li>Optimisation des tunnels de conversion : landing pages, emailing, contenus et SEO</li><li>+900 % de ventes en ligne, 20 000 leads et 8 000 inscriptions freemium par mois</li></ul>
+      </div>
     </article>
     <article class="mission">
       <div class="mission-side">
@@ -664,7 +694,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         </div>
         <div class="mission-tags"><span class="tag">CRM</span><span class="tag">Rétention</span><span class="tag">International</span></div>
       </div>
-      <ul class="mission-list"><li>Conception de la stratégie CRM globale de Moët &amp; Chandon et Dom Pérignon</li><li>Pilotage des activations CRM ponctuelles et automatisées, avec refonte des parcours Welcome et Birthday</li><li>Supervision des contenus et coordination avec les marchés à l’international</li><li>Intégration d’un nouveau partenaire pour booster la performance emailing et réactiver les inactifs</li></ul>
+      <div class="mission-main">
+        <p class="mission-title">Une stratégie CRM globale pour deux maisons de champagne, coordonnée sur les marchés internationaux.</p>
+        <ul class="mission-list"><li>Conception de la stratégie CRM globale de Moët &amp; Chandon et Dom Pérignon</li><li>Pilotage des activations CRM ponctuelles et automatisées, avec refonte des parcours Welcome et Birthday</li><li>Supervision des contenus et coordination avec les marchés à l’international</li><li>Intégration d’un nouveau partenaire pour booster la performance emailing et réactiver les inactifs</li></ul>
+      </div>
     </article>
     <article class="mission">
       <div class="mission-side">
@@ -678,7 +711,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         </div>
         <div class="mission-tags"><span class="tag">Social Media</span><span class="tag">Plant-based</span><span class="tag">Stratégie éditoriale</span></div>
       </div>
-      <ul class="mission-list"><li>Accompagnement de la marque dans sa stratégie social media et sa création de contenus</li><li>Définition de la ligne éditoriale</li><li>Définition des angles créatifs</li><li>Rédaction des posts au quotidien et community management</li></ul>
+      <div class="mission-main">
+        <p class="mission-title">Une ligne éditoriale et une présence social media construites pour une marque plant-based.</p>
+        <ul class="mission-list"><li>Accompagnement de la marque dans sa stratégie social media et sa création de contenus</li><li>Définition de la ligne éditoriale</li><li>Définition des angles créatifs</li><li>Rédaction des posts au quotidien et community management</li></ul>
+      </div>
     </article>
     <article class="mission">
       <div class="mission-side">
@@ -692,7 +728,10 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
         </div>
         <div class="mission-tags"><span class="tag">Brand Activation</span><span class="tag">Événementiel</span><span class="tag">Social Media</span></div>
       </div>
-      <ul class="mission-list"><li>Campagne 360° « Pop Around » pour la bière Grolsch, alors marque du groupe SABMiller</li><li>Dispositif complet : événement, happening, web-documentaire et social media</li><li>Gestion des réseaux sociaux de la marque</li><li>Prix de la Meilleure campagne événementielle aux Trophées de l’Événement 2015</li></ul>
+      <div class="mission-main">
+        <p class="mission-title">Une campagne 360° primée, de l’événement jusqu’aux réseaux sociaux.</p>
+        <ul class="mission-list"><li>Campagne 360° « Pop Around » pour la bière Grolsch, alors marque du groupe SABMiller</li><li>Dispositif complet : événement, happening, web-documentaire et social media</li><li>Gestion des réseaux sociaux de la marque</li><li>Prix de la Meilleure campagne événementielle aux Trophées de l’Événement 2015</li></ul>
+      </div>
     </article>
     </div>
   </div>
