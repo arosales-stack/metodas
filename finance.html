@@ -369,6 +369,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .mission-list li.is-result::before { left:3px; top:calc(18px + 0.3em); width:6px; height:11px; background:none; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 .mission-list li.is-result { font-weight:700; margin-top:6px; padding-top:18px; border-top:1px solid var(--ink-10); }
 @media (max-width:860px){ .mission{grid-template-columns:1fr;} .mission-side{border-right:none; border-bottom:1px solid var(--ink-10);} }
+@media (min-width:861px){ .missions{display:grid; grid-auto-rows:1fr;} }
+@media (max-width:860px){ .talent-grid .tcard-role{min-height:48px;} }
 
 .result-category { font-size:15px !important; }
 .result-who { font-size:15px; color:var(--ink); margin-top:10px; }
@@ -397,6 +399,12 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .marquee-track { display:flex; align-items:center; gap:clamp(56px,6vw,88px); width:max-content; animation: marquee 20s linear infinite; }
 .marquee-track:hover { animation-play-state:paused; }
 .logo-name { height:clamp(56px,6.8vw,72px); width:auto; max-width:280px; object-fit:contain; flex-shrink:0; }
+.marquee-track .glogo-dark { display:none; }
+@media (prefers-color-scheme: dark) { .marquee-track .glogo-light{display:none;} .marquee-track .glogo-dark{display:block;} }
+:root[data-theme="light"] .marquee-track .glogo-light { display:block; }
+:root[data-theme="light"] .marquee-track .glogo-dark { display:none; }
+:root[data-theme="dark"] .marquee-track .glogo-light { display:none; }
+:root[data-theme="dark"] .marquee-track .glogo-dark { display:block; }
 @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
 .hero-logos { max-width:720px; margin:32px auto 0; overflow:hidden; }
 
@@ -435,18 +443,18 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <p class="intro-body">Marketing, création, produit, contenu : nos freelances ont déjà travaillé pour des banques, assureurs et fintechs de premier plan. Tous sont sélectionnés pour leur expérience et leurs résultats.</p>
     <div class="hero-logos marquee-mask">
       <div class="marquee-track">
-      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
-      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
-      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
-      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
-      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
-      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
-      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
-      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
-      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
-      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
-      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
-      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas"><img class="logo-name glogo-dark" src="Assets/Images/Logos/BNPParibas-white.png" alt="BNP Paribas">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/Allianz.png" alt="Allianz"><img class="logo-name glogo-dark" src="Assets/Images/Logos/Allianz-white.png" alt="Allianz">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/revolut.png" alt="Revolut"><img class="logo-name glogo-dark" src="Assets/Images/Logos/revolut-white.png" alt="Revolut">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas"><img class="logo-name glogo-dark" src="Assets/Images/Logos/BNPParibas-white.png" alt="BNP Paribas">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/Allianz.png" alt="Allianz"><img class="logo-name glogo-dark" src="Assets/Images/Logos/Allianz-white.png" alt="Allianz">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/revolut.png" alt="Revolut"><img class="logo-name glogo-dark" src="Assets/Images/Logos/revolut-white.png" alt="Revolut">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas"><img class="logo-name glogo-dark" src="Assets/Images/Logos/BNPParibas-white.png" alt="BNP Paribas">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/Allianz.png" alt="Allianz"><img class="logo-name glogo-dark" src="Assets/Images/Logos/Allianz-white.png" alt="Allianz">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/revolut.png" alt="Revolut"><img class="logo-name glogo-dark" src="Assets/Images/Logos/revolut-white.png" alt="Revolut">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas"><img class="logo-name glogo-dark" src="Assets/Images/Logos/BNPParibas-white.png" alt="BNP Paribas">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/Allianz.png" alt="Allianz"><img class="logo-name glogo-dark" src="Assets/Images/Logos/Allianz-white.png" alt="Allianz">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/revolut.png" alt="Revolut"><img class="logo-name glogo-dark" src="Assets/Images/Logos/revolut-white.png" alt="Revolut">
       </div>
     </div>
     <p class="intro-center"><a href="#profils" class="intro-btn">Découvrir les profils ↓</a></p>
@@ -486,18 +494,18 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
       </div>
       <div class="tcard" tabindex="0" role="button" aria-expanded="false">
         <div class="tcard-photo">
-          <span class="tcard-tag">Brand Content</span>
-          <img src="Assets/Images/Profiles/finance/gwennaelle.webp" alt="Gwennaëlle" loading="lazy">
+          <span class="tcard-tag">Growth</span>
+          <img src="Assets/Images/Profiles/finance/florian.webp" alt="Florian" loading="lazy">
         </div>
         <div class="tcard-info">
-          <h3 class="tcard-name">Gwennaëlle</h3>
-          <p class="tcard-role">Brand Content &amp; Social Media</p>
-          <p class="tcard-years">7+ ans d’expérience</p>
-          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/allianz.png" alt="Allianz Trade" title="Allianz Trade"></span></div>
+          <h3 class="tcard-name">Florian</h3>
+          <p class="tcard-role">Head of Marketing &amp; Growth</p>
+          <p class="tcard-years">15 ans d’expérience</p>
+          <div class="tcard-logos"><span class="tcard-logo"><img src="Assets/Images/Logo/Clients/yomoni.png" alt="Yomoni" title="Yomoni"></span></div>
           <span class="tcard-more">En savoir plus</span>
           <div class="tcard-overlay">
-            <p class="tcard-quote">7+ ans d’expérience en Brand Content et Social Media, avec une année chez Allianz Trade sur la stratégie éditoriale, la création de contenu, le reporting et l’Employee Advocacy.</p>
-            <div class="tcard-traits"><span class="trait">Social Media</span><span class="trait">Brand Content</span><span class="trait">Employee Advocacy</span><span class="trait">Stratégie éditoriale</span></div>
+            <p class="tcard-quote">15 ans en marketing digital et growth, dont des postes de Head of Marketing chez Yomoni, Santiane et SPVIE Assurances, avec des budgets de plus de 5 M€.</p>
+            <div class="tcard-traits"><span class="trait">Growth</span><span class="trait">Acquisition</span><span class="trait">Paid Media</span><span class="trait">CRO</span></div>
           </div>
         </div>
       </div>
@@ -629,16 +637,16 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <article class="mission">
       <div class="mission-side">
         <div class="mission-head">
-          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/allianz.png" alt="Allianz Trade"></div>
-          <div><p class="mission-co">Allianz Trade</p><p class="mission-cat">Brand Content &amp; Social Media</p></div>
+          <div class="mission-logo"><img src="Assets/Images/Logo/Clients/yomoni.png" alt="Yomoni"></div>
+          <div><p class="mission-co">Yomoni</p><p class="mission-cat">Acquisition &amp; Growth</p></div>
         </div>
         <div class="mission-who">
-          <div class="mission-photo"><img src="Assets/Images/Profiles/finance/gwennaelle.webp" alt="Gwennaëlle"></div>
-          <div><p class="mission-name">Gwennaëlle</p><p class="mission-role">Brand Content &amp; Social Media</p></div>
+          <div class="mission-photo"><img src="Assets/Images/Profiles/finance/florian.webp" alt="Florian"></div>
+          <div><p class="mission-name">Florian</p><p class="mission-role">Head of Marketing &amp; Growth</p></div>
         </div>
-        <div class="mission-tags"><span class="tag">Social Media</span><span class="tag">Content</span><span class="tag">Employee Advocacy</span></div>
+        <div class="mission-tags"><span class="tag">Acquisition</span><span class="tag">Épargne &amp; investissement</span><span class="tag">CRO</span></div>
       </div>
-      <ul class="mission-list"><li>Définition des guidelines Social Media et Content</li><li>Création, organisation et publication des contenus, avec formation des équipes internes</li><li>Mise en place et pilotage d'un programme d'Employee Advocacy</li><li>Structuration du dispositif Social Media et Employee Advocacy d'Allianz Trade, de la production au reporting de performance</li></ul>
+      <ul class="mission-list"><li>Head of Marketing de transition, management d'un pôle digital de 7 salariés et 2 freelances</li><li>CAC -43 %, transformation +37 %, leads +129 %, clients Gold / Premium +7 %</li><li>Campagnes SEA et Meta Ads, SEO, CRO et marketing automation</li><li>Budget de plus de 5 M€</li></ul>
     </article>
     <article class="mission">
       <div class="mission-side">
