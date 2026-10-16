@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -436,6 +436,22 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .footer-legal-links a:hover { color:var(--fixed-cream); }
 .footer-copy { font-size:15px; color:var(--fixed-cream-55); }
 
+
+/* VETTING PROCESS (lines) */
+.vp-intro { font-size:17px; line-height:1.6; color:var(--ink-55); max-width:720px; margin-bottom:28px; }
+.vp-list { list-style:none; margin:0; padding:0; border-top:1px solid var(--ink-10); }
+.vp-list li { display:grid; grid-template-columns:72px 1fr; align-items:baseline; gap:16px; padding:18px 0; border-bottom:1px solid var(--ink-10); font-size:17px; line-height:1.5; color:var(--ink); }
+.vp-num { font-size:clamp(28px,3vw,40px); font-weight:700; letter-spacing:-0.04em; line-height:1; color:var(--accent-2); }
+@media (max-width:640px){ .vp-list li{ grid-template-columns:52px 1fr; padding:14px 0; } }
+
+/* WHY US — big numbers grid */
+.why-rows { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+.why-row { display:block; padding:28px 28px 28px 0; border-top:1px solid var(--ink-10); }
+.why-row:first-child { border-top:1px solid var(--ink-10); }
+.why-row:nth-child(odd) { padding-right:28px; border-right:1px solid var(--ink-10); }
+.why-row:nth-child(even) { padding-left:28px; padding-right:0; }
+.why-row-num { font-size:clamp(40px,4.4vw,60px); font-weight:700; letter-spacing:-0.05em; line-height:1; color:var(--accent-2); margin-bottom:16px; }
+@media (max-width:640px){ .why-rows{ grid-template-columns:1fr; } .why-row, .why-row:nth-child(odd), .why-row:nth-child(even){ padding:22px 0; border-right:none; } }
 </style>
 </head>
 <body>
@@ -453,7 +469,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
     <nav class="nav-links">
       <a href="#talent" class="nav-link" data-section="talent">Talents</a>
       <a href="#vetting" class="nav-link" data-section="vetting">Sélection</a>
-      <a href="#cases" class="nav-link" data-section="cases">Réalisations</a>
       <a href="#pricing" class="nav-link" data-section="pricing">Tarifs</a>
     </nav>
     <div class="nav-actions">
@@ -470,7 +485,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
     <div class="mobile-menu-inner">
       <a href="#talent" class="nav-link">Talents</a>
       <a href="#vetting" class="nav-link">Sélection</a>
-      <a href="#cases" class="nav-link">Réalisations</a>
       <a href="#pricing" class="nav-link">Tarifs</a>
       <a href="index.html" class="nav-link">EN</a>
       <a href="Validated elements/contact-fr.html" class="btn-red mobile-cta">Travailler avec nous</a>
@@ -875,80 +889,20 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
       <div class="reveal"><p class="v-ew ew"><span class="sec-num">06</span>Notre sélection</p><h2 class="v-h2">Bien au-delà du CV.</h2></div>
       <div class="reveal reveal-d1"><p class="v-stat-num">&lt;10 %</p><hr class="v-stat-rule"><p class="v-stat-body">des candidatures passent notre processus de sélection.</p></div>
     </div>
-    <div class="vline">
-      <div class="vsteps">
-        <div class="vstep reveal"><div class="vgate">01</div><h3 class="vstep-title">Expérience vérifiée</h3><p class="vstep-body">Nous examinons réalisations, résultats et références pour comprendre ce que chaque freelance a réellement accompli — au-delà des lignes du CV.</p></div>
-        <div class="vstep reveal reveal-d1"><div class="vgate">02</div><h3 class="vstep-title">Évaluation approfondie</h3><p class="vstep-body">Nous échangeons avec chaque candidat et testons son raisonnement sur des problématiques proches de celles de nos clients.</p></div>
-        <div class="vstep reveal reveal-d2"><div class="vgate">03</div><h3 class="vstep-title">Mise en situation réelle</h3><p class="vstep-body">Chaque candidat travaille sur un brief réel afin d’évaluer son jugement, sa capacité d’exécution et sa maîtrise de l’IA lorsqu’elle est pertinente.</p></div>
-        <div class="vstep reveal reveal-d3"><div class="vgate">04</div><h3 class="vstep-title">Personnalité &amp; culture</h3><p class="vstep-body">Nous évaluons la communication, la façon de travailler et les traits de personnalité pour proposer des freelances adaptés à la culture de chaque client.</p></div>
-      </div>
-    </div>
-    <div class="vetting-foot">
-      <p class="vf-note">De la candidature au profil actif, rien n'est externalisé.</p>
-      <span class="vf-rate">Taux d'acceptation · 8 %</span>
-    </div>
-  </div>
-</section>
-
-<section id="cases" class="cases-section">
-  <div class="inner">
-    <div class="sh"><p class="ew"><span class="sec-num">07</span>Études de cas</p><div><h2 class="sh-h">Des briefs réels. Des résultats concrets.</h2></div></div>
-    <div class="cases-stack">
-      <a href="usecase-sales-editorial-fr.html" class="casecard is-dark reveal">
-        <div class="case-img case-img-featured">
-          <div class="case-photo"><img src="Assets/Images/Profiles/laurence-c-crop.webp" alt="Laurence C." loading="lazy"></div>
-          <img src="Assets/Images/Use case images/webp/lead-scoring-matrix.webp" alt="Lead scoring matrix chart" loading="lazy">
-        </div>
-        <div class="case-body">
-          <p class="case-cat">Stratégie de mise sur le marché et ventes</p>
-          <p class="case-title">Les prospects affluaient mais sans se concrétiser.</p>
-          <p class="case-intro">Un groupe de 50 M€ recevait des prospects, mais ne disposait d'aucun système pour les convertir. Nous avons repensé le système de notation, le processus de conclusion de vente et le guide des événements.</p>
-          <p class="case-credit">Réalisé par une ancienne directrice commerciale · 20 ans d'exp.</p>
-        </div>
-      </a>
-      <a href="usecase-seo-editorial-fr.html" class="casecard is-dark reveal">
-        <div class="case-img case-img-featured">
-          <div class="case-photo"><img src="Assets/Images/Profiles/marc-d-crop.webp" alt="Marc D." loading="lazy"></div>
-          <img src="Assets/Images/Use case images/webp/entity-graph-rebuild.webp" alt="Entity graph rebuild diagram" loading="lazy">
-        </div>
-        <div class="case-body">
-          <p class="case-cat">IA et référencement naturel (SEO)</p>
-          <p class="case-title">Invisible pour les moteurs de recherche basés sur l'IA.</p>
-          <p class="case-intro">Une entreprise Tech juridique disposait d'une réelle expertise, mais restait invisible dans les recherches IA. Nous avons restructuré son contenu pour en faire une base de données compatible avec les IA les plus utilisées.</p>
-          <p class="case-credit">Réalisé par un spécialiste du référencement naturel (SEO) · 11 ans d'exp.</p>
-        </div>
-      </a>
-      <a href="usecase-event-editorial-fr.html" class="casecard is-dark reveal">
-        <div class="case-img case-img-featured">
-          <div class="case-photo"><img src="Assets/Images/Profiles/claire-l-crop.webp" alt="Christelle F." loading="lazy"></div>
-          <img src="Assets/Images/Use case images/webp/budget-segmentation.webp" alt="Budget segmentation chart" loading="lazy">
-        </div>
-        <div class="case-body">
-          <p class="case-cat">Gestion d'événements</p>
-          <p class="case-title">Opérations intérimaires : sauvetage d'un événement de 150 K€ en 30 jours.</p>
-          <p class="case-intro">Une chargée de com. a démissionné un mois avant un événement de 150 K€, alors que la logistique n'était pas encore finalisée. Nous avons pris en charge le budget, les prestataires et plus de 100 participants, et avons mené à bien l'événement dans les délais.</p>
-          <p class="case-credit">Réalisé par une responsable évènementielle · 14 ans d'exp.</p>
-        </div>
-      </a>
-      <a href="usecase-video-editorial-fr.html" class="casecard is-dark reveal">
-        <div class="case-img case-img-featured">
-          <div class="case-photo"><img src="Assets/Images/Profiles/julien-r-crop.webp" alt="Andy L." loading="lazy"></div>
-          <img src="Assets/Images/Use case images/webp/full-video-suite-timeline.webp" alt="Video production timeline" loading="lazy">
-        </div>
-        <div class="case-body">
-          <p class="case-cat">Contenu et vidéo</p>
-          <p class="case-title">Suite vidéo Corporate en moins de 7 jours.</p>
-          <p class="case-intro">Un groupe avait besoin d'une suite vidéo complète en moins d'une semaine, sans aucune direction artistique définie. Nous avons géré la production de A à Z et livré le projet avec 48 heures d'avance.</p>
-          <p class="case-credit">Réalisé par un directeur de création · 9 ans d'exp.</p>
-        </div>
-      </a>
-    </div>
+    <p class="vp-intro">Dirigé par des experts avec plus de 15 ans en grands groupes et en agences, et une base de talents construite en 4 ans en France et aux États-Unis.</p>
+    <ol class="vp-list">
+      <li><span class="vp-num">01</span><span>Nous partons de notre base de profils déjà sélectionnés.</span></li>
+      <li><span class="vp-num">02</span><span>Personne ne correspond ? Jusqu’à 10 entretiens par jour.</span></li>
+      <li><span class="vp-num">03</span><span>Vous recevez une shortlist et vous choisissez.</span></li>
+      <li><span class="vp-num">04</span><span>Le profil retenu propose une approche pour votre brief. Nous l’évaluons.</span></li>
+      <li><span class="vp-num">05</span><span>Nous l’affinons ensemble avant qu’elle vous parvienne.</span></li>
+    </ol>
   </div>
 </section>
 
 <section class="tm-section">
   <div class="inner">
-    <div class="sh"><p class="ew"><span class="sec-num">08</span>Avis clients</p><div><h2 class="sh-h">La confiance des équipes qui ne se contentent pas du minimum.</h2></div></div>
+    <div class="sh"><p class="ew"><span class="sec-num">07</span>Avis clients</p><div><h2 class="sh-h">La confiance des équipes qui ne se contentent pas du minimum.</h2></div></div>
     <div class="tm-list">
       <div class="tmcard reveal"><span class="tm-mark">&ldquo;</span><p class="tm-q">Le freelance que nous avons recruté a mis beaucoup moins de temps à s'intégrer que la personne précédente. Le processus s'est déroulé sans accroc grâce à un cadrage initial du projet bien exécuté. Un service stratégique et premium, pour un prix équivalent à ce que nous aurions dépensé sur Upwork en sélectionnant les profils nous-mêmes.</p><div class="tm-author"><div class="tm-init">SM</div><div><p class="tm-name">Sarah M.</p><p class="tm-co">Head of Growth, Spot and Tango</p></div></div></div>
       <div class="tmcard reveal reveal-d1"><span class="tm-mark">&ldquo;</span><p class="tm-q">Ce n'est pas facile de trouver des freelances avec les compétences spécifiques qu'exige notre secteur, et Metodas y est parvenu. Cela n'a pris que deux semaines et aucun effort de notre côté. Nous avons signé avec le premier profil proposé, qui a d'ailleurs renouvelé son contrat avec nous.</p><div class="tm-author"><div class="tm-init">DL</div><div><p class="tm-name">David L.</p><p class="tm-co">Marketing Director, Zerocater</p></div></div></div>
@@ -962,7 +916,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 
 <section id="pricing" class="pricing-section">
   <div class="inner">
-    <div class="sh"><p class="ew"><span class="sec-num">09</span>Tarifs</p><div><h2 class="sh-h">Des tarifs transparents.</h2></div></div>
+    <div class="sh"><p class="ew"><span class="sec-num">08</span>Tarifs</p><div><h2 class="sh-h">Des tarifs transparents.</h2></div></div>
     <div class="pricing-box reveal">
       <div class="pricing-left">
         <p class="ew">Le modèle</p>
@@ -987,7 +941,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 <section id="contact" class="cta-section section-dark">
   <div class="inner">
     <div class="cta-inner-grid">
-      <div class="reveal"><p class="ew"><span class="sec-num">10</span>Prêt à travailler avec nous ?</p><h2 class="cta-h2">Construisons votre projet avec des gens qui tiennent leurs engagements.</h2></div>
+      <div class="reveal"><p class="ew"><span class="sec-num">09</span>Prêt à travailler avec nous ?</p><h2 class="cta-h2">Construisons votre projet avec des gens qui tiennent leurs engagements.</h2></div>
       <div class="reveal reveal-d1">
         <p class="cta-sub">Dites-nous ce dont vous avez besoin. Nous vous proposerons une approche claire et des profils ciblés avant que vous ne signiez quoi que ce soit.</p>
         <div class="cta-btns">
@@ -1011,7 +965,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
       </div>
       <div class="footer-nav">
         <p class="footer-col-label">&nbsp;</p>
-        <a href="#cases" class="footer-link">Réalisations</a>
         <a href="#pricing" class="footer-link">Tarifs</a>
       </div>
     </div>
@@ -1071,7 +1024,7 @@ document.querySelectorAll('.tcard').forEach(card => {
 const themeToggle = document.getElementById('themeToggle');
 const root = document.documentElement;
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-let currentTheme = systemPrefersDark ? 'dark' : 'light';
+let currentTheme = 'light';
 themeToggle.addEventListener('click', () => {
   currentTheme = currentTheme === 'light' ? 'dark' : 'light';
   root.setAttribute('data-theme', currentTheme);
