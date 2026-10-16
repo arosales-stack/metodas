@@ -369,6 +369,8 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .mission-list li.is-result::before { left:3px; top:calc(18px + 0.3em); width:6px; height:11px; background:none; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
 .mission-list li.is-result { font-weight:700; margin-top:6px; padding-top:18px; border-top:1px solid var(--ink-10); }
 @media (max-width:860px){ .mission{grid-template-columns:1fr;} .mission-side{border-right:none; border-bottom:1px solid var(--ink-10);} }
+@media (min-width:861px){ .missions{display:grid; grid-auto-rows:1fr;} }
+@media (max-width:860px){ .talent-grid .tcard-role{min-height:48px;} }
 
 .result-category { font-size:15px !important; }
 .result-who { font-size:15px; color:var(--ink); margin-top:10px; }
@@ -397,6 +399,12 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
 .marquee-track { display:flex; align-items:center; gap:clamp(56px,6vw,88px); width:max-content; animation: marquee 20s linear infinite; }
 .marquee-track:hover { animation-play-state:paused; }
 .logo-name { height:clamp(56px,6.8vw,72px); width:auto; max-width:280px; object-fit:contain; flex-shrink:0; }
+.marquee-track .glogo-dark { display:none; }
+@media (prefers-color-scheme: dark) { .marquee-track .glogo-light{display:none;} .marquee-track .glogo-dark{display:block;} }
+:root[data-theme="light"] .marquee-track .glogo-light { display:block; }
+:root[data-theme="light"] .marquee-track .glogo-dark { display:none; }
+:root[data-theme="dark"] .marquee-track .glogo-light { display:none; }
+:root[data-theme="dark"] .marquee-track .glogo-dark { display:block; }
 @keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
 .hero-logos { max-width:720px; margin:32px auto 0; overflow:hidden; }
 
@@ -435,18 +443,18 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline
     <p class="intro-body">Marketing, création, produit, contenu : nos freelances ont déjà travaillé pour des banques, assureurs et fintechs de premier plan. Tous sont sélectionnés pour leur expérience et leurs résultats.</p>
     <div class="hero-logos marquee-mask">
       <div class="marquee-track">
-      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
-      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
-      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
-      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
-      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
-      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
-      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
-      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
-      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
-      <img class="logo-name" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas">
-      <img class="logo-name" src="Assets/Images/Logos/Allianz.png" alt="Allianz">
-      <img class="logo-name" src="Assets/Images/Logos/revolut.png" alt="Revolut">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas"><img class="logo-name glogo-dark" src="Assets/Images/Logos/BNPParibas-white.png" alt="BNP Paribas">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/Allianz.png" alt="Allianz"><img class="logo-name glogo-dark" src="Assets/Images/Logos/Allianz-white.png" alt="Allianz">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/revolut.png" alt="Revolut"><img class="logo-name glogo-dark" src="Assets/Images/Logos/revolut-white.png" alt="Revolut">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas"><img class="logo-name glogo-dark" src="Assets/Images/Logos/BNPParibas-white.png" alt="BNP Paribas">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/Allianz.png" alt="Allianz"><img class="logo-name glogo-dark" src="Assets/Images/Logos/Allianz-white.png" alt="Allianz">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/revolut.png" alt="Revolut"><img class="logo-name glogo-dark" src="Assets/Images/Logos/revolut-white.png" alt="Revolut">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas"><img class="logo-name glogo-dark" src="Assets/Images/Logos/BNPParibas-white.png" alt="BNP Paribas">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/Allianz.png" alt="Allianz"><img class="logo-name glogo-dark" src="Assets/Images/Logos/Allianz-white.png" alt="Allianz">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/revolut.png" alt="Revolut"><img class="logo-name glogo-dark" src="Assets/Images/Logos/revolut-white.png" alt="Revolut">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/BNPParibas.png" alt="BNP Paribas"><img class="logo-name glogo-dark" src="Assets/Images/Logos/BNPParibas-white.png" alt="BNP Paribas">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/Allianz.png" alt="Allianz"><img class="logo-name glogo-dark" src="Assets/Images/Logos/Allianz-white.png" alt="Allianz">
+      <img class="logo-name glogo-light" src="Assets/Images/Logos/revolut.png" alt="Revolut"><img class="logo-name glogo-dark" src="Assets/Images/Logos/revolut-white.png" alt="Revolut">
       </div>
     </div>
     <p class="intro-center"><a href="#profils" class="intro-btn">Découvrir les profils ↓</a></p>
