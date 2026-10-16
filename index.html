@@ -236,6 +236,31 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .mi-cta { font-size:15px; font-weight:500; color:var(--accent); }
 .mi-cta:hover { text-decoration:underline; }
 
+/* NETWORK CHECK */
+.nc-section { border-top:1px solid var(--ink-06); border-bottom:1px solid var(--ink-06); }
+.nc-sentence { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.3; margin:14px 0 36px; max-width:1000px; }
+.nc-pick { position:relative; display:inline-block; }
+.nc-word { font:inherit; letter-spacing:inherit; color:var(--accent-2); background:none; border:none; padding:0; cursor:pointer; border-bottom:3px solid var(--accent-2); line-height:1.15; }
+.nc-word::after { content:''; display:inline-block; width:10px; height:10px; border:solid currentColor; border-width:0 3px 3px 0; transform:rotate(45deg) translate(-4px,-4px); margin-left:14px; vertical-align:middle; }
+.nc-word:hover, .nc-word[aria-expanded="true"] { color:var(--ink); border-color:var(--ink); }
+.nc-panel { position:absolute; left:0; top:calc(100% + 10px); z-index:20; min-width:300px; max-height:340px; overflow-y:auto; list-style:none; margin:0; padding:6px 0; background:var(--card); border:1.5px solid var(--ink-20); box-shadow:0 18px 40px rgba(0,0,0,0.18); }
+.nc-panel li { font-size:16px; font-weight:500; letter-spacing:0; padding:11px 20px; cursor:pointer; color:var(--ink); border-left:3px solid transparent; white-space:nowrap; }
+.nc-panel li:hover { background:var(--ink-06); }
+.nc-panel li[aria-selected="true"] { border-left-color:var(--accent-2); color:var(--accent-2); }
+.nc-table { border:1.5px solid var(--ink-20); background:var(--card); }
+.nc-row { display:grid; grid-template-columns:1.4fr 1.2fr 0.8fr 1.2fr; gap:16px; padding:16px 24px; border-top:1px solid var(--ink-10); align-items:center; font-size:16px; }
+.nc-headrow { border-top:none; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); padding-top:14px; padding-bottom:14px; }
+.nc-blur { filter:blur(5px); opacity:0.55; user-select:none; }
+.nc-match { position:relative; padding-top:22px; padding-bottom:22px; font-weight:700; background:var(--ink-06); box-shadow:inset 4px 0 0 var(--accent-2); }
+.nc-match.is-anim { animation:ncIn .45s cubic-bezier(.22,1,.36,1); }
+@keyframes ncIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+.nc-status { display:flex; align-items:center; gap:10px; }
+.nc-check { width:24px; height:24px; flex-shrink:0; background:var(--accent-2); position:relative; }
+.nc-check::after { content:''; position:absolute; left:8px; top:4px; width:6px; height:11px; border:solid #fff; border-width:0 2.5px 2.5px 0; transform:rotate(45deg); }
+.nc-match.is-no .nc-check { background:var(--ink-20); }
+.nc-cta { margin-top:28px; }
+@media (max-width:760px){ .nc-row{ grid-template-columns:1.3fr 1fr; padding:14px 16px; font-size:15px; } .nc-sen, .nc-status:not(#ncMStatus){ display:none; } .nc-match .nc-status{ grid-column:1 / -1; } .nc-panel{ min-width:240px; } }
+
 /* LOGO MARQUEE */
 .logo-bar { background:var(--paper); overflow:hidden; }
 .logo-bar .inner { padding-top:40px; padding-bottom:40px; max-width:1200px; }
@@ -790,31 +815,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
   </div>
 </section>
 
-<section id="expertise" class="exp-section">
+<section id="network" class="nc-section">
   <div class="inner">
-    <div class="sh">
-      <p class="ew"><span class="sec-num">05</span>What we cover</p>
-      <div><h2 class="sh-h">From vision to delivery.</h2><p class="sh-b">One point of contact, the right expert every time.</p></div>
+    <p class="ew"><span class="sec-num">05</span>Our network</p>
+    <div class="nc-sentence">I need a senior <span class="nc-pick"><button type="button" class="nc-word" id="ncRoleBtn" aria-haspopup="listbox" aria-expanded="false">Growth Marketer</button><ul class="nc-panel" id="ncRolePanel" role="listbox" hidden><li role="option" data-i="0" aria-selected="true">Growth Marketer</li><li role="option" data-i="1">CRM Manager</li><li role="option" data-i="2">Social Media Manager</li><li role="option" data-i="3">Content Strategist</li><li role="option" data-i="4">Brand Strategist</li><li role="option" data-i="5">Paid Media Specialist</li><li role="option" data-i="6">SEO / GEO Specialist</li><li role="option" data-i="7">Product Marketing Manager</li><li role="option" data-i="8">Event Manager</li><li role="option" data-i="9">Art Director</li><li role="option" data-i="10">Motion Designer</li><li role="option" data-i="11">Product Designer</li><li role="option" data-i="12">Data Analyst</li><li role="option" data-i="13">AI &amp; Automation Specialist</li><li role="option" data-i="14">E-commerce Manager</li></ul></span> in <span class="nc-pick"><button type="button" class="nc-word" id="ncIndBtn" aria-haspopup="listbox" aria-expanded="false">Luxury</button><ul class="nc-panel" id="ncIndPanel" role="listbox" hidden><li role="option" data-i="0" aria-selected="true">Luxury</li><li role="option" data-i="1">Food &amp; Beverage</li><li role="option" data-i="2">Banking &amp; Insurance</li><li role="option" data-i="3">B2B &amp; SaaS</li><li role="option" data-i="4">Beauty &amp; Health</li></ul></span>.</div>
+    <div class="nc-table">
+      <div class="nc-row nc-headrow" aria-hidden="true"><span class="nc-c nc-role">Role</span><span class="nc-c nc-ind">Industry</span><span class="nc-c nc-sen">Seniority</span><span class="nc-c nc-status">Status</span></div>
+      <div class="nc-row nc-blur" aria-hidden="true"><span class="nc-c nc-role">Head of Growth</span><span class="nc-c nc-ind">B2B &amp; SaaS</span><span class="nc-c nc-sen">Senior</span><span class="nc-c nc-status">In our network</span></div><div class="nc-row nc-blur" aria-hidden="true"><span class="nc-c nc-role">Brand Strategist</span><span class="nc-c nc-ind">Luxury</span><span class="nc-c nc-sen">Senior</span><span class="nc-c nc-status">In our network</span></div><div class="nc-row nc-blur" aria-hidden="true"><span class="nc-c nc-role">CRM Manager</span><span class="nc-c nc-ind">Retail</span><span class="nc-c nc-sen">Senior</span><span class="nc-c nc-status">In our network</span></div><div class="nc-row nc-match" id="ncMatch"><span class="nc-c nc-role" id="ncMRole">Growth Marketer</span><span class="nc-c nc-ind" id="ncMInd">Luxury</span><span class="nc-c nc-sen">Senior</span><span class="nc-c nc-status" id="ncMStatus"><span class="nc-check" aria-hidden="true"></span><span id="ncMStatusTxt">In our network</span></span></div><div class="nc-row nc-blur" aria-hidden="true"><span class="nc-c nc-role">Social Media Manager</span><span class="nc-c nc-ind">Food &amp; Beverage</span><span class="nc-c nc-sen">Senior</span><span class="nc-c nc-status">In our network</span></div><div class="nc-row nc-blur" aria-hidden="true"><span class="nc-c nc-role">Product Designer</span><span class="nc-c nc-ind">Banking</span><span class="nc-c nc-sen">Senior</span><span class="nc-c nc-status">In our network</span></div><div class="nc-row nc-blur" aria-hidden="true"><span class="nc-c nc-role">Content Strategist</span><span class="nc-c nc-ind">Beauty</span><span class="nc-c nc-sen">Senior</span><span class="nc-c nc-status">In our network</span></div><div class="nc-row nc-blur" aria-hidden="true"><span class="nc-c nc-role">Paid Media Specialist</span><span class="nc-c nc-ind">Travel</span><span class="nc-c nc-sen">Senior</span><span class="nc-c nc-status">In our network</span></div>
     </div>
-    <div class="exp-grid">
-      <div class="exp-card reveal">
-        <p class="exp-num">— 01</p><h3 class="exp-title">Go-to-market</h3><p class="exp-body">Strategic direction for launches, repositioning and market expansion.</p>
-        <div class="exp-tags"><span class="tag">Launch strategy</span><span class="tag">Positioning</span><span class="tag">Funnel architecture</span></div>
-      </div>
-      <div class="exp-card reveal reveal-d1">
-        <p class="exp-num">— 02</p><h3 class="exp-title">Content &amp; creative</h3><p class="exp-body">From brand narrative to viral assets, across every format and channel.</p>
-        <div class="exp-tags"><span class="tag">Branding &amp; AI</span><span class="tag">Video production</span><span class="tag">Social media</span></div>
-      </div>
-      <div class="exp-card reveal reveal-d2">
-        <p class="exp-num">— 03</p><h3 class="exp-title">Growth &amp; paid</h3><p class="exp-body">Specialists who own the channel, the budget and the results.</p>
-        <div class="exp-tags"><span class="tag">Paid acquisition</span><span class="tag">Attribution</span><span class="tag">Funnel optimization</span></div>
-      </div>
-      <div class="exp-card reveal reveal-d3">
-        <p class="exp-num">— 04</p><h3 class="exp-title">AI &amp; data</h3><p class="exp-body">Tracking, AI automation and tech expertise to scale without adding headcount.</p>
-        <div class="exp-tags"><span class="tag">AI workflows</span><span class="tag">CRM automation</span><span class="tag">Analytics</span></div>
-      </div>
-    </div>
+    <div class="nc-cta"><a class="btn-red-lg" id="ncCta" href="Validated elements/contact.html">Get a shortlist in 48h →</a></div>
   </div>
+  <script type="application/json" id="ncData">{"match": {"0-0": true, "0-1": true, "0-2": true, "0-3": true, "0-4": true, "1-0": true, "1-1": true, "1-2": true, "1-3": true, "1-4": true, "2-0": true, "2-1": true, "2-2": true, "2-3": true, "2-4": true, "3-0": true, "3-1": true, "3-2": true, "3-3": true, "3-4": true, "4-0": true, "4-1": true, "4-2": true, "4-3": true, "4-4": true, "5-0": true, "5-1": true, "5-2": true, "5-3": true, "5-4": true, "6-0": true, "6-1": true, "6-2": true, "6-3": true, "6-4": true, "7-0": true, "7-1": true, "7-2": true, "7-3": true, "7-4": true, "8-0": true, "8-1": true, "8-2": true, "8-3": true, "8-4": true, "9-0": true, "9-1": true, "9-2": true, "9-3": true, "9-4": true, "10-0": true, "10-1": true, "10-2": true, "10-3": true, "10-4": true, "11-0": true, "11-1": true, "11-2": true, "11-3": true, "11-4": true, "12-0": true, "12-1": true, "12-2": true, "12-3": true, "12-4": true, "13-0": true, "13-1": true, "13-2": true, "13-3": true, "13-4": true, "14-0": true, "14-1": true, "14-2": true, "14-3": true, "14-4": true}, "yes": "In our network", "no": "We’ll find one · ~2 days", "indShort": ["Luxury", "Food & Beverage", "Banking & Insurance", "B2B & SaaS", "Beauty & Health"], "href": "Validated elements/contact.html"}</script>
 </section>
 
 <section id="talent" class="talent-section">
@@ -1128,6 +1139,35 @@ themeToggle.addEventListener('click', () => {
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalize);
   window.addEventListener('load',equalize);
   apply('home');
+})();
+
+(function(){
+  var dEl=document.getElementById('ncData'); if(!dEl) return;
+  var D=JSON.parse(dEl.textContent), sel={r:0,i:0};
+  var pairs=[['ncRoleBtn','ncRolePanel','r'],['ncIndBtn','ncIndPanel','i']];
+  function closeAll(){ pairs.forEach(function(p){ document.getElementById(p[1]).hidden=true; document.getElementById(p[0]).setAttribute('aria-expanded','false'); }); }
+  function update(){
+    var rb=document.getElementById('ncRoleBtn'), m=document.getElementById('ncMatch');
+    document.getElementById('ncMRole').textContent=rb.textContent;
+    document.getElementById('ncMInd').textContent=D.indShort[sel.i];
+    var ok=D.match[sel.r+'-'+sel.i];
+    document.getElementById('ncMStatusTxt').textContent= ok ? D.yes : D.no;
+    m.classList.toggle('is-no',!ok);
+    m.classList.remove('is-anim'); void m.offsetWidth; m.classList.add('is-anim');
+    var cta=document.getElementById('ncCta'); cta.href=D.href+'?role='+encodeURIComponent(rb.textContent)+'&industry='+encodeURIComponent(D.indShort[sel.i]);
+  }
+  pairs.forEach(function(p){
+    var btn=document.getElementById(p[0]), panel=document.getElementById(p[1]);
+    btn.addEventListener('click',function(e){ e.stopPropagation(); var open=panel.hidden; closeAll(); panel.hidden=!open; btn.setAttribute('aria-expanded',open?'true':'false'); });
+    panel.querySelectorAll('li').forEach(function(li){
+      li.addEventListener('click',function(e){ e.stopPropagation();
+        panel.querySelectorAll('li').forEach(function(x){x.removeAttribute('aria-selected');}); li.setAttribute('aria-selected','true');
+        sel[p[2]]=+li.dataset.i; btn.textContent=li.textContent; closeAll(); update(); });
+    });
+  });
+  document.addEventListener('click',closeAll);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeAll(); });
+  update();
 })();
 </script>
 
