@@ -229,4 +229,6 @@ Any page not reachable from site navigation and not in `sitemap.xml` (e.g. a cli
 | `proposal-trustify.html` (FR only) | **TRUSTIFY** — built in another session; not documented in detail here. Read the file fully before touching it. | Live on `main` | 2026-09-14 | `dev-metodas.a-rosales.workers.dev/proposal-trustify` | `metodas.co/proposal-trustify` |
 | `proposal-head-of-marketing.html` | Unknown origin (title "Proposition — Metodas", no client named) — exists on `dev` only, not documented. Ask the user before touching or shipping. | `dev` only | — | `dev-metodas.a-rosales.workers.dev/proposal-head-of-marketing` | not on `main` |
 
+**Takedowns 2026-10-16 (user request, brand proposals only — profile pages stay live):** curculia, nuoro, merraki, wale-adeyemi, malherbe, space-light, tf1, documan-v2, lumni, primal, circles, trustify, lunii, worldly replaced on `main` with the expired-link page. Real pages intact on `dev`; originals recoverable from `main` history (commit before `61f6644`). Their registry rows above still say "Live" — this line overrides that.
+
 **Takedowns 2026-09-24:** `proposal-cilsjo.html` and `proposal-pallini.html` replaced on `main` with the expired-link page (6+ weeks live, user request). Real pages intact on `dev`; originals recoverable from `main` history (commit before `d1aaa41`).
