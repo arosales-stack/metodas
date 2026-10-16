@@ -183,6 +183,53 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .hcard:hover img { transform: scale(1.06); }
 @media (max-width:680px){ .hero{grid-template-columns:1fr;} }
 
+/* HERO FEATURE — one rotating freelancer */
+.hero-feature { position:relative; z-index:1; justify-self:end; width:100%; max-width:420px; aspect-ratio:610/833; margin:0 18px 18px 0; }
+.hero-feature::before { content:''; position:absolute; top:18px; left:18px; right:-18px; bottom:-18px; background:var(--accent-2); }
+.hf-slide { position:absolute; inset:0; background:var(--fixed-beige); opacity:0; transition:opacity .9s ease; }
+.hf-slide.is-active { opacity:1; }
+.hf-slide img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+.hf-tags { position:absolute; left:16px; bottom:16px; display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.hf-role { background:#1c1a17; color:#f7f4ee; font-size:15px; font-weight:700; letter-spacing:0.01em; padding:8px 14px; }
+.hf-ind { background:var(--accent-2); color:#ffffff; font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:7px 14px; }
+@media (max-width:680px){ .hero-feature{ justify-self:center; max-width:340px; margin:0 12px 12px 0; } .hero-feature::before{ top:12px; left:12px; right:-12px; bottom:-12px; } }
+
+/* MISSIONS INDEX */
+.mi-section { border-top:1px solid var(--ink-06); }
+.mi-head-block { margin-bottom:28px; }
+.mi-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; margin-top:14px; }
+.mi-filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+.mi-chip { font-family:inherit; font-size:15px; font-weight:500; color:var(--ink); background:transparent; border:1.5px solid var(--ink-20); padding:9px 16px; cursor:pointer; transition:border-color .12s, background .12s, color .12s; }
+.mi-chip:hover { border-color:var(--ink-55); }
+.mi-chip.is-active { background:var(--accent); border-color:var(--accent); color:#ffffff; }
+.mi-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; align-items:start; }
+@media (max-width:1000px){ .mi-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:640px){ .mi-grid{ grid-template-columns:1fr; } }
+.mi-card { background:var(--card); border:1.5px solid var(--ink-20); padding:clamp(22px,2.4vw,30px); display:flex; flex-direction:column; gap:16px; min-width:0; }
+.mi-card[hidden] { display:none; }
+.mi-head { display:flex; align-items:center; gap:14px; }
+.mi-logo { width:56px; height:56px; flex-shrink:0; background:var(--fixed-cream); padding:7px; border:1px solid var(--ink-10); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.mi-logo img { width:100%; height:100%; object-fit:contain; display:block; }
+.mi-logo.is-full { padding:0; }
+.mi-logo.is-full img { object-fit:cover; }
+.mi-logo.is-text { font-size:22px; font-weight:700; color:var(--fixed-ink); }
+.mi-co { font-size:18px; font-weight:700; letter-spacing:-0.01em; line-height:1.25; }
+.mi-ind { font-size:15px; color:var(--ink-55); margin-top:2px; }
+.mi-title { font-size:19px; font-weight:700; line-height:1.4; letter-spacing:-0.01em; }
+.mi-who { font-size:15px; color:var(--ink-55); }
+.mi-tags { display:flex; flex-wrap:wrap; gap:6px; }
+.mi-tag { font-size:13px; font-weight:500; color:var(--ink); border:1.5px solid var(--ink-20); padding:4px 10px; }
+.mi-list { list-style:none; padding:0; margin:0; display:none; flex-direction:column; gap:10px; }
+.mi-card.is-open .mi-list { display:flex; }
+.mi-list li { position:relative; padding-left:24px; font-size:15px; line-height:1.6; color:var(--ink-55); }
+.mi-list li::before { content:''; position:absolute; left:2px; top:0.3em; width:5px; height:10px; border:solid var(--accent-2); border-width:0 2px 2px 0; transform:rotate(45deg); }
+.mi-actions { margin-top:auto; padding-top:16px; border-top:1.5px solid var(--ink-10); display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+.mi-more { font-family:inherit; font-size:15px; font-weight:500; color:var(--ink-55); background:none; border:none; padding:0; cursor:pointer; }
+.mi-more:hover { color:var(--ink); }
+.mi-card.is-open .mi-more span { display:inline-block; transform:rotate(45deg); }
+.mi-cta { font-size:15px; font-weight:500; color:var(--accent); }
+.mi-cta:hover { text-decoration:underline; }
+
 /* LOGO MARQUEE */
 .logo-bar { background:var(--paper); overflow:hidden; }
 .logo-bar .inner { padding-top:40px; padding-bottom:40px; max-width:1200px; }
@@ -413,19 +460,271 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
       <li>+15 rôles couverts en Marketing &amp; Création</li>
     </ul>
   </div>
-  <div class="hero-grid reveal" id="heroGrid">
-    <div class="hcard"><span class="hcard-tag">Marque</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2489.webp" alt=""></div>
-    <div class="hcard"><span class="hcard-tag">Growth</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2505.webp" alt=""></div>
-    <div class="hcard"><span class="hcard-tag">Contenu</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2479.webp" alt=""></div>
-    <div class="hcard"><span class="hcard-tag">CRM</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2483.webp" alt=""></div>
-    <div class="hcard"><span class="hcard-tag">Social</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2481.webp" alt=""></div>
-    <div class="hcard"><span class="hcard-tag">Analytique</span><img src="Assets/Images/Profiles/Header/JUILLET 26/Group 2482.webp" alt=""></div>
+  <div class="hero-feature" id="heroFeature">
+    <div class="hf-slide is-active"><img src="Assets/Images/Profiles/food/julia.webp" alt="" ><div class="hf-tags"><span class="hf-role">Chef de produit &amp; Marketing</span><span class="hf-ind">Food &amp; Beverage</span></div></div>
+    <div class="hf-slide"><img src="Assets/Images/Profiles/food/florian.webp" alt="" loading="lazy" ><div class="hf-tags"><span class="hf-role">Head of Marketing &amp; Growth</span><span class="hf-ind">Banque &amp; Assurance</span></div></div>
+    <div class="hf-slide"><img src="Assets/Images/Profiles/food/jasmine.webp" alt="" loading="lazy" ><div class="hf-tags"><span class="hf-role">Senior Event Manager</span><span class="hf-ind">Luxe</span></div></div>
+    <div class="hf-slide"><img src="Assets/Images/Profiles/food/nathalie.webp" alt="" loading="lazy" ><div class="hf-tags"><span class="hf-role">CRM Manager</span><span class="hf-ind">Luxe</span></div></div>
+    <div class="hf-slide"><img src="Assets/Images/Profiles/food/bastien.webp" alt="" loading="lazy" ><div class="hf-tags"><span class="hf-role">Social Media Strategist</span><span class="hf-ind">Beauté &amp; Santé</span></div></div>
+    <div class="hf-slide"><img src="Assets/Images/Profiles/food/cecilia.webp" alt="" loading="lazy" ><div class="hf-tags"><span class="hf-role">Head of Content</span><span class="hf-ind">B2B &amp; SaaS</span></div></div>
+  </div>
+</section>
+
+<section id="missions" class="mi-section">
+  <div class="inner">
+    <div class="mi-head-block">
+      <p class="ew"><span class="sec-num">02</span>Expériences</p>
+      <h2 class="mi-h2">Ce que nos freelances ont déjà réalisé.</h2>
+    </div>
+    <div class="mi-filters"><button class="mi-chip is-active" type="button" data-f="home">Tous</button><button class="mi-chip" type="button" data-f="luxury">Luxe</button><button class="mi-chip" type="button" data-f="food">Food &amp; Beverage</button><button class="mi-chip" type="button" data-f="banking">Banque &amp; Assurance</button><button class="mi-chip" type="button" data-f="b2b">B2B &amp; SaaS</button><button class="mi-chip" type="button" data-f="beauty">Beauté &amp; Santé</button></div>
+    <div class="mi-grid">
+      <article class="mi-card" data-ind="luxury" data-home="1">
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-krug.jpg" alt="Krug" loading="lazy"></div><div><p class="mi-co">Krug</p><p class="mi-ind">Luxe</p></div></div>
+        <p class="mi-title">Un voyage nordique sur mesure, de la Suède à la Laponie, qui a plongé 80 chefs et ambassadeurs dans l'univers Krug.</p>
+        <p class="mi-who">Jasmine · Senior Event Manager</p>
+        <div class="mi-tags"><span class="mi-tag">Champagne</span><span class="mi-tag">Voyage incentive</span><span class="mi-tag">Expérientiel</span></div>
+        <ul class="mi-list"><li>Voyage sur mesure pour 80 chefs et ambassadeurs de la marque (2024)</li><li>Expérience immersive mêlant musique, gastronomie et champagnes d'exception</li><li>Gestion de bout en bout : prestataires, logistique et coordination sur place</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="luxury" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/essilorluxottica.png" alt="EssilorLuxottica" loading="lazy"></div><div><p class="mi-co">EssilorLuxottica</p><p class="mi-ind">Luxe</p></div></div>
+        <p class="mi-title">Copy et transcréation en français pour Prada, Versace, Burberry et d'autres, et des guides de ton toujours utilisés comme référence.</p>
+        <p class="mi-who">Samuel · Senior Content Specialist</p>
+        <div class="mi-tags"><span class="mi-tag">Lunetterie</span><span class="mi-tag">Transcréation</span><span class="mi-tag">Tone of voice</span></div>
+        <ul class="mi-list"><li>Copy CRM et emailing en français pour Prada, Miu Miu, Versace, Burberry, Persol et Oliver Peoples</li><li>Guide de ton de 25 pages pour Vogue Eyewear, référence pour le CRM, l'e-commerce et le paid media</li><li>Transcréation depuis l'anglais et l'italien</li><li>Jusqu'à 27 campagnes gérées en simultané au pic d'activité</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="luxury" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/gucci.png" alt="Gucci Japan" loading="lazy"></div><div><p class="mi-co">Gucci Japan</p><p class="mi-ind">Luxe</p></div></div>
+        <p class="mi-title">Des relations presse qui ont aidé Gucci à atteindre le plus haut taux de retombées éditoriales parmi les marques de luxe au Japon.</p>
+        <p class="mi-who">Hibiki · PR &amp; Brand Marketing</p>
+        <div class="mi-tags"><span class="mi-tag">Relations presse</span><span class="mi-tag">Japon</span><span class="mi-tag">Mode</span></div>
+        <ul class="mi-list"><li>Gestion des relations entre Gucci et la presse pour les shootings</li><li>Coordination des échantillons, de la logistique et des délais</li><li>Organisation d'événements et de press days, des invitations à l'analyse des retombées</li><li>Tokyo, 2018–2020</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="luxury" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-moet-hennessy.jpg" alt="Moët Hennessy" loading="lazy"></div><div><p class="mi-co">Moët Hennessy</p><p class="mi-ind">Luxe</p></div></div>
+        <p class="mi-title">Une stratégie CRM globale pour Moët &amp; Chandon et Dom Pérignon, avec des parcours repensés et un plan de réactivation des inactifs.</p>
+        <p class="mi-who">Nathalie · CRM Manager</p>
+        <div class="mi-tags"><span class="mi-tag">Champagne</span><span class="mi-tag">CRM</span><span class="mi-tag">Emailing</span></div>
+        <ul class="mi-list"><li>Conception de la stratégie CRM globale des deux Maisons</li><li>Refonte des parcours Welcome et Birthday et pilotage des activations ponctuelles</li><li>Coordination des contenus avec les marchés internationaux et reporting de performance</li><li>Intégration d'un nouveau partenaire (Notify) pour réactiver les inactifs</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="luxury" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/kenzo.png" alt="Kenzo Parfums" loading="lazy"></div><div><p class="mi-co">Kenzo Parfums</p><p class="mi-ind">Luxe</p></div></div>
+        <p class="mi-title">Un plan de contenus ludique qui a fait du lancement du parfum Kenzo World un jeu sur Facebook et Instagram.</p>
+        <p class="mi-who">Bastien · Social Media Strategist</p>
+        <div class="mi-tags"><span class="mi-tag">Lancement parfum</span><span class="mi-tag">Contenus social</span><span class="mi-tag">Planning stratégique</span></div>
+        <ul class="mi-list"><li>Planning stratégique pour le lancement de l'eau de toilette Kenzo World</li><li>Contenus Facebook et Instagram construits autour du jeu</li><li>Stratégie social media et production de contenus avec l'agence Dix-Sept Paris</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="luxury" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/boss.png" alt="BOSS" loading="lazy"></div><div><p class="mi-co">BOSS</p><p class="mi-ind">Luxe</p></div></div>
+        <p class="mi-title">La réalisation et la direction artistique des campagnes BOSS, du partenariat Superman à Noël et « Striking ».</p>
+        <p class="mi-who">Matthieu · Réalisateur &amp; Directeur artistique</p>
+        <div class="mi-tags"><span class="mi-tag">Film de mode</span><span class="mi-tag">Direction artistique</span><span class="mi-tag">Partenariat</span></div>
+        <ul class="mi-list"><li>Campagne de partenariat pour la sortie du film Superman</li><li>Campagne de Noël</li><li>Film de campagne « Striking »</li><li>Réalisation et direction artistique des films et visuels de chaque campagne</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="food" data-home="1">
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-wecook.jpg" alt="WeCook" loading="lazy"></div><div><p class="mi-co">WeCook</p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <p class="mi-title">Des ventes en ligne multipliées par 10 grâce à une acquisition pilotée sur tout le funnel pour une marque de repas nutrition.</p>
+        <p class="mi-who">Florian · Head of Marketing &amp; Growth</p>
+        <div class="mi-tags"><span class="mi-tag">Acquisition</span><span class="mi-tag">E-commerce</span><span class="mi-tag">Nutrition</span></div>
+        <ul class="mi-list"><li>Acquisition multi-canal avec 1 M€ de budget : Social Ads, Google Ads, Native Ads et affiliation</li><li>Optimisation des landing pages, emailings, contenus et SEO</li><li>+900 % de ventes en ligne, 20 000 leads et 8 000 inscriptions freemium par mois</li><li>Visibilité de la marque multipliée par 5 et communautés en hausse de 40 %</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="food" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">T</div><div><p class="mi-co">Toques &amp; Nougat festival</p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <p class="mi-title">Un festival gastronomique créé de zéro, qui a réuni 15 000 visiteurs dès sa première édition.</p>
+        <p class="mi-who">Marianne · Cheffe de projet événementiel senior</p>
+        <div class="mi-tags"><span class="mi-tag">Festival gastronomique</span><span class="mi-tag">Lancement d'événement</span><span class="mi-tag">Partenariats</span></div>
+        <ul class="mi-list"><li>Préparation et organisation de la première édition de Toques &amp; Nougat</li><li>Animation du comité d'organisation, gestion logistique et budgétaire</li><li>Négociation des partenariats et démarchage des chefs, personnalités et médias</li><li>15 000 visiteurs</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="food" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-grolsch.jpg" alt="Grolsch" loading="lazy"></div><div><p class="mi-co">Grolsch</p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <p class="mi-title">Une campagne 360° primée pour Grolsch, de l'activation terrain aux réseaux sociaux.</p>
+        <p class="mi-who">Jasmine · Senior Event Manager</p>
+        <div class="mi-tags"><span class="mi-tag">Activation de marque</span><span class="mi-tag">Bière</span><span class="mi-tag">Campagne 360°</span></div>
+        <ul class="mi-list"><li>Campagne « Pop Around » : événement, happening, web-documentaire et social media</li><li>Gestion des comptes Facebook et Twitter de la marque</li><li>Prix de la Meilleure campagne événementielle, Trophées de l'Événement 2015</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="food" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-coca-cola.jpg" alt="The Coca-Cola Company" loading="lazy"></div><div><p class="mi-co">The Coca-Cola Company</p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <p class="mi-title">Trois lancements Coca-Cola et Fanta portés sur le social, la TV et l'affichage, avec des influenceurs et la Fédération française de football.</p>
+        <p class="mi-who">Jean-François · Responsable marketing &amp; partenariats</p>
+        <div class="mi-tags"><span class="mi-tag">Soft drinks</span><span class="mi-tag">Lancement de campagne</span><span class="mi-tag">Influenceurs</span></div>
+        <ul class="mi-list"><li>Pilotage des projets Coca-Cola Store, Gaming Stories et FantaxYou</li><li>Lancement de campagnes social, TV, programmatique, affichage et print</li><li>Gestion des partenariats : influenceurs, YouTubeurs, agences et FFF</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="food" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-oligosante.jpg" alt="Oligosanté" loading="lazy"></div><div><p class="mi-co">Oligosanté</p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <p class="mi-title">Des lancements menés de la conception jusqu'au marché, en France et à l'export, pour un laboratoire français de compléments alimentaires.</p>
+        <p class="mi-who">Julia · Chef de produit &amp; Marketing</p>
+        <div class="mi-tags"><span class="mi-tag">Lancement produit</span><span class="mi-tag">Trade marketing</span><span class="mi-tag">Export</span></div>
+        <ul class="mi-list"><li>Pilotage des lancements : fournisseurs, R&amp;D, budget et mise sur le marché</li><li>Outils d'aide à la vente, merchandising, PLV et optimisation du linéaire</li><li>Dossiers export, conformité réglementaire et allégations packaging</li><li>Digital : SEO, Instagram, Facebook et newsletter</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="food" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">M</div><div><p class="mi-co">Monbanquet</p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <p class="mi-title">De nouveaux clients entreprises gagnés pour un traiteur B2B grâce à une prospection automatisée et plus de 30 partenariats.</p>
+        <p class="mi-who">Baptiste · Expert lead generation B2B</p>
+        <div class="mi-tags"><span class="mi-tag">Traiteur B2B</span><span class="mi-tag">Prospection</span><span class="mi-tag">Partenariats</span></div>
+        <ul class="mi-list"><li>Acquisition de clients par cold emailing, networking et marketing automation</li><li>Mise en place de plus de 30 partenariats</li><li>Management de 2 stagiaires</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="banking" data-home="1">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/yomoni.png" alt="Yomoni" loading="lazy"></div><div><p class="mi-co">Yomoni</p><p class="mi-ind">Banque &amp; Assurance</p></div></div>
+        <p class="mi-title">Un coût d'acquisition réduit de 43 % et des leads en hausse de 129 % pour un leader de l'épargne en ligne, en pleine réorganisation.</p>
+        <p class="mi-who">Florian · Head of Marketing &amp; Growth</p>
+        <div class="mi-tags"><span class="mi-tag">Épargne &amp; investissement</span><span class="mi-tag">Acquisition</span><span class="mi-tag">Management de transition</span></div>
+        <ul class="mi-list"><li>Head of Marketing de transition, management d'un pôle digital de 7 salariés et 2 freelances</li><li>CAC -43 %, transformation +37 %, leads +129 %, clients Gold / Premium +7 %</li><li>Campagnes SEA et Meta Ads, SEO, CRO et marketing automation</li><li>Budget de plus de 5 M€</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="banking" data-home="1">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas Ma Banque" loading="lazy"></div><div><p class="mi-co">BNP Paribas Ma Banque</p><p class="mi-ind">Banque &amp; Assurance</p></div></div>
+        <p class="mi-title">Une prise de parole social media modernisée qui a fait croître la communauté de BNP Paribas Ma Banque de 20 % et triplé l'engagement en 3 mois.</p>
+        <p class="mi-who">Pierre · Social Media &amp; Content</p>
+        <div class="mi-tags"><span class="mi-tag">Banque de détail</span><span class="mi-tag">Social media</span><span class="mi-tag">Ligne éditoriale</span></div>
+        <ul class="mi-list"><li>Repositionnement des formats et de la ligne éditoriale de Ma Banque</li><li>Pilotage du planning, des contenus et des activations social media</li><li>Stratégie orientée visibilité, engagement et modernisation de la prise de parole</li><li>En 3 mois : +20 % de communauté, +35 % de reach, engagement passé de 1 % à 3,6 %</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="banking" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/societe-generale.png" alt="Société Générale CIB" loading="lazy"></div><div><p class="mi-co">Société Générale CIB</p><p class="mi-ind">Banque &amp; Assurance</p></div></div>
+        <p class="mi-title">Plus de 10 produits B2B conçus pour la marketplace de Société Générale CIB, avec un design system commun pour les harmoniser.</p>
+        <p class="mi-who">Cyril · Senior Product Designer</p>
+        <div class="mi-tags"><span class="mi-tag">Banque d'investissement</span><span class="mi-tag">Product design</span><span class="mi-tag">Recherche UX</span></div>
+        <ul class="mi-list"><li>Lead Designer sur la marketplace B2B de Société Générale CIB pendant 3 ans</li><li>Recherche utilisateurs, ateliers et tests dans un environnement financier complexe</li><li>Prototypage, structuration des méthodes Product et contribution au SG Design System</li><li>Plus de 10 produits B2B conçus et accompagnés</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="banking" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">B</div><div><p class="mi-co">BoursoBank</p><p class="mi-ind">Banque &amp; Assurance</p></div></div>
+        <p class="mi-title">Une veille concurrentielle sur 50 acteurs bancaires français, transformée en recommandations stratégiques pour le marketing.</p>
+        <p class="mi-who">Théo · Marketing stratégique &amp; veille concurrentielle</p>
+        <div class="mi-tags"><span class="mi-tag">Banque en ligne</span><span class="mi-tag">Veille concurrentielle</span><span class="mi-tag">Benchmarks</span></div>
+        <ul class="mi-list"><li>Analyse des évolutions du marché et des stratégies de 50 acteurs français</li><li>Pilotage de 60 classements, palmarès et benchmarks sectoriels par an</li><li>10 reportings KPI mensuels avec les directions métiers</li><li>Benchmarks : épargne programmée, offres de bienvenue et parrainage, taux de crédit</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="banking" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/n26.png" alt="N26" loading="lazy"></div><div><p class="mi-co">N26</p><p class="mi-ind">Banque &amp; Assurance</p></div></div>
+        <p class="mi-title">Des contenus français sur tout le parcours digital de N26, avec un ton et une terminologie cohérents dans un cadre bancaire régulé.</p>
+        <p class="mi-who">Samuel · Senior Content Specialist</p>
+        <div class="mi-tags"><span class="mi-tag">Néobanque</span><span class="mi-tag">UX writing</span><span class="mi-tag">Conformité</span></div>
+        <ul class="mi-list"><li>Contenus français pour le CRM, les push, l'UX, le support et les releases</li><li>Rédaction et adaptation de contenus légaux et compliance</li><li>Gouvernance du ton et de la terminologie dans un environnement régulé</li><li>Questions ponctuelles transformées en entrées de glossaire permanentes</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="banking" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/allianz.png" alt="Allianz" loading="lazy"></div><div><p class="mi-co">Allianz</p><p class="mi-ind">Banque &amp; Assurance</p></div></div>
+        <p class="mi-title">« Le Vestiaire Allianz » : un écosystème social media qui a rapproché les fans des athlètes sponsorisés par Allianz.</p>
+        <p class="mi-who">Bastien · Social Media Strategist</p>
+        <div class="mi-tags"><span class="mi-tag">Sponsoring sportif</span><span class="mi-tag">Assurance</span><span class="mi-tag">Social media</span></div>
+        <ul class="mi-list"><li>Branding, ligne éditoriale et contenus de l'écosystème dédié au sponsoring sportif</li><li>Création du « Vestiaire Allianz », lieu virtuel des athlètes de la #TeamAllianz</li><li>Contenus exclusifs et immersifs : reportages, interviews, formats pédagogiques</li><li>Rédaction de la charte verbale</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="b2b" data-home="1">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">S</div><div><p class="mi-co">SAP</p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <p class="mi-title">Des programmes de co-marketing partenaires qui ont généré un pipeline de 50 M€ sur l'ensemble du portefeuille SAP.</p>
+        <p class="mi-who">Thierry · Responsable marketing SaaS B2B</p>
+        <div class="mi-tags"><span class="mi-tag">Logiciel d'entreprise</span><span class="mi-tag">Marketing partenaires</span><span class="mi-tag">Génération de demande</span></div>
+        <ul class="mi-list"><li>Coordination des programmes de co-marketing partenaires et grands comptes avec SAP France</li><li>Campagnes de génération de demande (TOFU, MOFU, BOFU) pour les solutions RH en Europe du Nord</li><li>Campagnes de conquête face à Workday et Oracle</li><li>Keynotes clients, témoignages vidéo et tables rondes dirigeants</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="b2b" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">D</div><div><p class="mi-co">Didomi</p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <p class="mi-title">Un département digital créé de zéro, passé de 0 % à 30 % du chiffre d'affaires de l'entreprise.</p>
+        <p class="mi-who">Arnaud · Head of Digital &amp; Growth</p>
+        <div class="mi-tags"><span class="mi-tag">Privacy tech</span><span class="mi-tag">Growth</span><span class="mi-tag">Inbound</span></div>
+        <ul class="mi-list"><li>Arrivée en tant que 20e salarié et premier expert digital</li><li>Nouvelle plateforme digitale, acquisition à grande échelle, PRM et process de vente inbound</li><li>Le digital est passé de 0 % à 30 % du CA de l'entreprise</li><li>Recrutement de 7 experts digitaux dans une équipe marketing de 15 personnes</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="b2b" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/openclassrooms.png" alt="OpenClassrooms" loading="lazy"></div><div><p class="mi-co">OpenClassrooms</p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <p class="mi-title">Un tableau de bord admin et analytics B2B qui a fait progresser l'adoption produit de 15 points pour une école en ligne.</p>
+        <p class="mi-who">Sobia · Product leader SaaS B2B</p>
+        <div class="mi-tags"><span class="mi-tag">EdTech</span><span class="mi-tag">Lancement produit</span><span class="mi-tag">Adoption B2B</span></div>
+        <ul class="mi-list"><li>Lancement d'un tableau de bord admin et analytics pour les clients B2B : adoption +15 pts</li><li>Lancement d'une intégration LMS avec 360Learning, activée pour 5 clients dès le premier mois</li><li>Identification des irritants des apprenants B2B pour améliorer activation et engagement</li><li>Documentation produit et démos pour les équipes commerciales</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="b2b" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/bigblue.png" alt="Bigblue" loading="lazy"></div><div><p class="mi-co">Bigblue</p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <p class="mi-title">33 % de leads qualifiés en plus pour un coût par lead réduit de 10 % pour une plateforme logistique e-commerce, et deux nouveaux pays.</p>
+        <p class="mi-who">Romain · Growth &amp; Business Development</p>
+        <div class="mi-tags"><span class="mi-tag">Logistique e-commerce</span><span class="mi-tag">Génération de leads</span><span class="mi-tag">Paid media</span></div>
+        <ul class="mi-list"><li>Génération de MQL auprès des e-commerçants via un Typeform dédié</li><li>Tracking UTM précis jusqu'au MQL et CAC par mot-clé et créa dans Looker Studio</li><li>+33 % de MQL sur 12 mois avec -10 % de coût par lead</li><li>Deux nouveaux pays ouverts (États-Unis et Espagne)</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="b2b" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">C</div><div><p class="mi-co">CodinGame</p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <p class="mi-title">Plus de 900 K€ de revenus récurrents annuels et plus de 100 clients grands comptes signés pour un SaaS de recrutement tech.</p>
+        <p class="mi-who">Corentin · Head of Sales SaaS B2B</p>
+        <div class="mi-tags"><span class="mi-tag">Vente SaaS</span><span class="mi-tag">Grands comptes</span><span class="mi-tag">ARR</span></div>
+        <ul class="mi-list"><li>Évolution de SDR à Senior Enterprise Account Executive</li><li>Cycle de vente complet, des démos et essais à la négociation avec les C-levels</li><li>Plus de 900 K€ d'ARR et plus de 100 nouveaux clients en tant qu'Enterprise AE</li><li>Gestion et développement des 35 plus gros comptes (upsell, cross-sell)</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="b2b" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">I</div><div><p class="mi-co">ILOG (IBM)</p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <p class="mi-title">Des logiciels complexes vendus aux grands comptes, avec une place au President's Club, 3e sur 58 commerciaux.</p>
+        <p class="mi-who">Laurence · Business developer B2B</p>
+        <div class="mi-tags"><span class="mi-tag">Logiciel d'entreprise</span><span class="mi-tag">Développement commercial</span><span class="mi-tag">Grands comptes</span></div>
+        <ul class="mi-list"><li>Prospection des directions techniques de grands comptes en cold calling</li><li>Qualification des opportunités et accompagnement des clients pendant l'évaluation</li><li>Organisation et animation d'ateliers clients</li><li>President's Club 2007 : 3e sur 58 commerciaux</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="beauty" data-home="1">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">M</div><div><p class="mi-co">Meditopia</p><p class="mi-ind">Beauté &amp; Santé</p></div></div>
+        <p class="mi-title">Un rebranding qui a fait progresser le trafic web de 20 % et un lancement 360° qui a fait connaître une app de méditation au Japon.</p>
+        <p class="mi-who">Hibiki · PR &amp; Brand Marketing</p>
+        <div class="mi-tags"><span class="mi-tag">App bien-être</span><span class="mi-tag">Rebranding</span><span class="mi-tag">Lancement Japon</span></div>
+        <ul class="mi-list"><li>Pilotage d'un rebranding global : +20 % de trafic web en B2C et B2B</li><li>Country Manager Japon : campagne 360° social, digital, métro et train</li><li>Product marketing et plans go-to-market pour accélérer l'adoption</li><li>Partenariats B2B avec des entreprises japonaises</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="beauty" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">L</div><div><p class="mi-co">LifeStyles Healthcare (Manix, Skyn)</p><p class="mi-ind">Beauté &amp; Santé</p></div></div>
+        <p class="mi-title">Une notoriété en hausse de 5 points par an et une part de marché en hausse de 4 points en deux ans pour Manix et Skyn en Europe.</p>
+        <p class="mi-who">Benjamin · Directeur commercial &amp; marketing, santé grand public</p>
+        <div class="mi-tags"><span class="mi-tag">Santé grand public</span><span class="mi-tag">Stratégie de marque</span><span class="mi-tag">Média</span></div>
+        <ul class="mi-list"><li>Pilotage du plan marketing EMEA, de la stratégie de marque et d'un budget de 11 M€</li><li>Campagnes média multicanales, digitalisation et adaptation locale : notoriété +5 pts par an</li><li>Lancements, promotions, PLV et politique tarifaire : part de marché +4 pts en deux ans</li><li>Coût GRP réduit de 30 % grâce à un mix média optimisé</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="beauty" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">E</div><div><p class="mi-co">EPISOD (Groupe Verona)</p><p class="mi-ind">Beauté &amp; Santé</p></div></div>
+        <p class="mi-title">Une marque fitness premium construite sur les réseaux : 15 000 abonnés en 6 mois et 12 M d'impressions sur sa première campagne d'influence.</p>
+        <p class="mi-who">Pierre · Social Media &amp; Content</p>
+        <div class="mi-tags"><span class="mi-tag">Fitness</span><span class="mi-tag">Influence</span><span class="mi-tag">Brand content</span></div>
+        <ul class="mi-list"><li>Stratégie brand content et social media pour une marque premium du sport</li><li>Projets d'influence et storytelling de marque</li><li>+15 000 abonnés en 6 mois et 8,5 % d'engagement moyen</li><li>12 M d'impressions sur la première campagne d'influence ; 80 % de satisfaction client sur les réseaux</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="beauty" data-home="0">
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/haymarket-medical-education.png" alt="Haymarket Medical Education" loading="lazy"></div><div><p class="mi-co">Haymarket Medical Education</p><p class="mi-ind">Beauté &amp; Santé</p></div></div>
+        <p class="mi-title">Des programmes emailing touchant plus d'1 million de professionnels de santé à plus de 20 % d'ouverture, objectifs commerciaux atteints ou dépassés.</p>
+        <p class="mi-who">Deanna · Senior Growth Marketer</p>
+        <div class="mi-tags"><span class="mi-tag">Formation médicale</span><span class="mi-tag">Emailing</span><span class="mi-tag">Professionnels de santé</span></div>
+        <ul class="mi-list"><li>Campagnes de notoriété, d'inscriptions, d'engagement et de fidélisation pour myCME</li><li>Gestion de bases de plus d'1 million de professionnels de santé</li><li>Plus de 80 emails segmentés par semaine, à plus de 20 % d'ouverture moyenne</li><li>Reporting hebdomadaire du CA ; objectifs de complétion atteints ou dépassés</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="beauty" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">D</div><div><p class="mi-co">Dermalogica</p><p class="mi-ind">Beauté &amp; Santé</p></div></div>
+        <p class="mi-title">Le moteur d'acquisition digitale en France d'une marque de soin professionnelle, de la refonte du site au live shopping.</p>
+        <p class="mi-who">Cécile · Head of Communication &amp; Digital</p>
+        <div class="mi-tags"><span class="mi-tag">Soin de la peau</span><span class="mi-tag">E-commerce</span><span class="mi-tag">Influence</span></div>
+        <ul class="mi-list"><li>Stratégie digitale pour développer la notoriété et l'acquisition e-commerce (2019–2021)</li><li>SEO, SEA et affiliation, et refonte UX/UI complète de dermalogica.fr</li><li>Stratégie d'influence et social media, pilotage de l'agence de presse</li><li>Formats innovants : Live Shopping et Digital Masterclass</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+      <article class="mi-card" data-ind="beauty" data-home="0">
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">G</div><div><p class="mi-co">Groupe Rocher (Stanhome)</p><p class="mi-ind">Beauté &amp; Santé</p></div></div>
+        <p class="mi-title">Une identité visuelle unifiée et des templates social media qui ont rendu la marque Stanhome cohérente sur tous ses canaux.</p>
+        <p class="mi-who">Katia · Directrice artistique &amp; graphiste</p>
+        <div class="mi-tags"><span class="mi-tag">Cosmétique</span><span class="mi-tag">Identité visuelle</span><span class="mi-tag">Direction artistique</span></div>
+        <ul class="mi-list"><li>Développement et harmonisation de l'identité visuelle de Stanhome avec ses marques sœurs</li><li>Nouveaux templates réseaux sociaux pour la cohérence et la performance digitale</li><li>Mise à jour du brandbook corporate</li><li>Direction artistique des shootings et vidéos produits cosmétique et parfum</li></ul>
+        <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">Voir le détail <span>+</span></button><a class="mi-cta" href="Validated elements/contact-fr.html">Vérifier la disponibilité →</a></div>
+      </article>
+    </div>
   </div>
 </section>
 
 <div class="logo-bar">
   <div class="inner">
-  <p class="ew logo-ew"><span class="sec-num">02</span>Nos talents ont travaillé pour</p>
+  <p class="ew logo-ew"><span class="sec-num">03</span>Nos talents ont travaillé pour</p>
   <div class="marquee-mask">
         <div class="marquee-track">
       <img class="logo-name" src="Assets/Images/Logos/Netflix GRIS.png" alt="Netflix">
@@ -459,7 +758,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
   <div class="inner">
     <div class="why-split">
       <div class="reveal">
-        <p class="ew"><span class="sec-num">03</span>Pourquoi nous choisir</p>
+        <p class="ew"><span class="sec-num">04</span>Pourquoi nous choisir</p>
         <h2 class="why-lead-h">Des experts seniors. En direct. Sans friction.</h2>
       </div>
       <div class="why-rows">
@@ -483,7 +782,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 <section id="expertise" class="exp-section">
   <div class="inner">
     <div class="sh">
-      <p class="ew"><span class="sec-num">04</span>Nos expertises</p>
+      <p class="ew"><span class="sec-num">05</span>Nos expertises</p>
       <div><h2 class="sh-h">De la vision à l'exécution.</h2><p class="sh-b">Un interlocuteur unique, l'expert qu'il vous faut à chaque fois.</p></div>
     </div>
     <div class="exp-grid">
@@ -510,7 +809,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 <section id="talent" class="talent-section">
   <div class="inner">
     <div class="sh">
-      <p class="ew"><span class="sec-num">05</span>Les personnes</p>
+      <p class="ew"><span class="sec-num">06</span>Les personnes</p>
       <div><h2 class="sh-h">Le type de talents avec lesquels nous aimons travailler.</h2><p class="sh-b">Des experts choisis pour leur maîtrise, leur exigence et leur capacité à évoluer avec leur métier.</p></div>
     </div>
     <div class="cluster talent-grid">
@@ -581,7 +880,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 <section id="vetting" class="vetting-section section-dark">
   <div class="inner">
     <div class="vetting-head">
-      <div class="reveal"><p class="v-ew ew"><span class="sec-num">06</span>Notre sélection</p><h2 class="v-h2">Bien au-delà du CV.</h2></div>
+      <div class="reveal"><p class="v-ew ew"><span class="sec-num">07</span>Notre sélection</p><h2 class="v-h2">Bien au-delà du CV.</h2></div>
       <div class="reveal reveal-d1"><p class="v-stat-num">&lt;10 %</p><hr class="v-stat-rule"><p class="v-stat-body">des candidatures passent notre processus de sélection.</p></div>
     </div>
     <div class="vline">
@@ -601,7 +900,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 
 <section id="cases" class="cases-section">
   <div class="inner">
-    <div class="sh"><p class="ew"><span class="sec-num">07</span>Études de cas</p><div><h2 class="sh-h">Des briefs réels. Des résultats concrets.</h2></div></div>
+    <div class="sh"><p class="ew"><span class="sec-num">08</span>Études de cas</p><div><h2 class="sh-h">Des briefs réels. Des résultats concrets.</h2></div></div>
     <div class="cases-stack">
       <a href="usecase-sales-editorial-fr.html" class="casecard is-dark reveal">
         <div class="case-img case-img-featured">
@@ -657,7 +956,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 
 <section class="tm-section">
   <div class="inner">
-    <div class="sh"><p class="ew"><span class="sec-num">08</span>Avis clients</p><div><h2 class="sh-h">La confiance des équipes qui ne se contentent pas du minimum.</h2></div></div>
+    <div class="sh"><p class="ew"><span class="sec-num">09</span>Avis clients</p><div><h2 class="sh-h">La confiance des équipes qui ne se contentent pas du minimum.</h2></div></div>
     <div class="tm-list">
       <div class="tmcard reveal"><span class="tm-mark">&ldquo;</span><p class="tm-q">Le freelance que nous avons recruté a mis beaucoup moins de temps à s'intégrer que la personne précédente. Le processus s'est déroulé sans accroc grâce à un cadrage initial du projet bien exécuté. Un service stratégique et premium, pour un prix équivalent à ce que nous aurions dépensé sur Upwork en sélectionnant les profils nous-mêmes.</p><div class="tm-author"><div class="tm-init">SM</div><div><p class="tm-name">Sarah M.</p><p class="tm-co">Head of Growth, Spot and Tango</p></div></div></div>
       <div class="tmcard reveal reveal-d1"><span class="tm-mark">&ldquo;</span><p class="tm-q">Ce n'est pas facile de trouver des freelances avec les compétences spécifiques qu'exige notre secteur, et Metodas y est parvenu. Cela n'a pris que deux semaines et aucun effort de notre côté. Nous avons signé avec le premier profil proposé, qui a d'ailleurs renouvelé son contrat avec nous.</p><div class="tm-author"><div class="tm-init">DL</div><div><p class="tm-name">David L.</p><p class="tm-co">Marketing Director, Zerocater</p></div></div></div>
@@ -671,7 +970,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 
 <section id="pricing" class="pricing-section">
   <div class="inner">
-    <div class="sh"><p class="ew"><span class="sec-num">09</span>Tarifs</p><div><h2 class="sh-h">Des tarifs transparents.</h2></div></div>
+    <div class="sh"><p class="ew"><span class="sec-num">10</span>Tarifs</p><div><h2 class="sh-h">Des tarifs transparents.</h2></div></div>
     <div class="pricing-box reveal">
       <div class="pricing-left">
         <p class="ew">Le modèle</p>
@@ -697,7 +996,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 <section id="contact" class="cta-section section-dark">
   <div class="inner">
     <div class="cta-inner-grid">
-      <div class="reveal"><p class="ew"><span class="sec-num">10</span>Prêt à travailler avec nous ?</p><h2 class="cta-h2">Construisons votre projet avec des gens qui tiennent leurs engagements.</h2></div>
+      <div class="reveal"><p class="ew"><span class="sec-num">11</span>Prêt à travailler avec nous ?</p><h2 class="cta-h2">Construisons votre projet avec des gens qui tiennent leurs engagements.</h2></div>
       <div class="reveal reveal-d1">
         <p class="cta-sub">Dites-nous ce dont vous avez besoin. Nous vous proposerons une approche claire et des profils ciblés avant que vous ne signiez quoi que ce soit.</p>
         <div class="cta-btns">
@@ -787,6 +1086,38 @@ themeToggle.addEventListener('click', () => {
   root.setAttribute('data-theme', currentTheme);
 });
 
+
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('#heroFeature .hf-slide'));
+  if (slides.length>1 && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var i=0; setInterval(function(){ slides[i].classList.remove('is-active'); i=(i+1)%slides.length; slides[i].classList.add('is-active'); },4500);
+  }
+  var cards=[].slice.call(document.querySelectorAll('.mi-card'));
+  function equalize(){
+    var vis=cards.filter(function(c){return !c.hidden;});
+    vis.forEach(function(c){c.style.minHeight='';});
+    if (matchMedia('(max-width:640px)').matches) return;
+    var open=vis.filter(function(c){return c.classList.contains('is-open');});
+    open.forEach(function(c){c.classList.remove('is-open');});
+    var h=Math.max.apply(null,vis.map(function(c){return c.offsetHeight;}));
+    open.forEach(function(c){c.classList.add('is-open');});
+    vis.forEach(function(c){c.style.minHeight=h+'px';});
+  }
+  function apply(f){
+    cards.forEach(function(c){ c.hidden = f==='home' ? c.dataset.home!=='1' : c.dataset.ind!==f; c.classList.remove('is-open'); c.querySelector('.mi-more').setAttribute('aria-expanded','false'); });
+    equalize();
+  }
+  document.querySelectorAll('.mi-chip').forEach(function(b){
+    b.addEventListener('click',function(){ document.querySelectorAll('.mi-chip').forEach(function(x){x.classList.remove('is-active');}); b.classList.add('is-active'); apply(b.dataset.f); });
+  });
+  cards.forEach(function(c){
+    c.querySelector('.mi-more').addEventListener('click',function(){ var o=c.classList.toggle('is-open'); this.setAttribute('aria-expanded',o?'true':'false'); });
+  });
+  window.addEventListener('resize',equalize);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalize);
+  window.addEventListener('load',equalize);
+  apply('home');
+})();
 </script>
 
 </body>
