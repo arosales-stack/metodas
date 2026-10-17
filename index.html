@@ -476,12 +476,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .cmp-mobile { display:none; }
 @media (max-width:760px){
   .cmp-table { display:none; }
-  .cmp-mobile { display:flex; flex-direction:column; gap:28px; }
-  .cmpm-lbl { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); margin-bottom:10px; }
-  .cmpm-us { background:var(--dark-bg); color:var(--fixed-cream); border-left:4px solid var(--accent-2); padding:16px 18px; font-size:16px; font-weight:500; line-height:1.5; }
-  .cmpm-them { padding:12px 0 0 22px; display:flex; flex-direction:column; gap:8px; }
-  .cmpm-them p { font-size:14px; color:var(--ink-55); line-height:1.5; }
-  .cmpm-who { display:block; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:2px; opacity:0.75; }
+  .cmp-mobile { display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:var(--pad-x); margin:0 calc(-1 * var(--pad-x)); padding:6px var(--pad-x) 10px; scrollbar-width:none; }
+  .cmp-mobile::-webkit-scrollbar { display:none; }
+  .cmpm-card { flex:0 0 82%; scroll-snap-align:start; border:1.5px solid var(--ink-20); padding:22px 20px 8px; }
+  .cmpm-card.is-us { background:var(--dark-bg); border:none; border-top:4px solid var(--accent-2); color:var(--fixed-cream); }
+  .cmpm-name { font-size:18px; font-weight:700; margin-bottom:10px; }
+  .cmpm-row { padding:12px 0 14px; border-top:1px solid var(--ink-10); }
+  .cmpm-card.is-us .cmpm-row { border-top-color:rgba(247,244,238,0.14); }
+  .cmpm-lbl { font-size:12px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); margin-bottom:4px; }
+  .cmpm-card.is-us .cmpm-lbl { color:var(--fixed-cream-55); }
+  .cmpm-ans { font-size:15px; line-height:1.5; color:var(--ink-55); }
+  .cmpm-card.is-us .cmpm-ans { color:var(--fixed-cream); font-weight:500; }
 }
 </style>
 </head>
@@ -1009,7 +1014,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
     <p class="ew"><span class="sec-num">08</span>Compare</p>
     <h2 class="cmp-h2">Platform, agency or Metodas?</h2>
     <div class="cmp-table"><div class="cmp-c cmp-lbl cmp-hd"></div><div class="cmp-c cmp-hd">Freelance platforms</div><div class="cmp-c cmp-hd">Agencies</div><div class="cmp-c cmp-us cmp-us-top cmp-hd">Metodas</div><div class="cmp-c cmp-lbl">Selection</div><div class="cmp-c cmp-them">You sort through hundreds of profiles yourself.</div><div class="cmp-c cmp-them">They choose, and you rarely know who.</div><div class="cmp-c cmp-us">A vetted shortlist within 48 hours.</div><div class="cmp-c cmp-lbl">Cost</div><div class="cmp-c cmp-them">Platform fees on every invoice.</div><div class="cmp-c cmp-them">Large margins on top of the work.</div><div class="cmp-c cmp-us">One transparent commission.</div><div class="cmp-c cmp-lbl">Accountability</div><div class="cmp-c cmp-them">None if the mission goes wrong.</div><div class="cmp-c cmp-them">Yes, through layers of account managers.</div><div class="cmp-c cmp-us">One direct contact, until delivery.</div><div class="cmp-c cmp-lbl">Who does the work</div><div class="cmp-c cmp-them">Whoever you managed to vet.</div><div class="cmp-c cmp-them">Often junior profiles.</div><div class="cmp-c cmp-us cmp-us-bot">The senior expert you chose.</div></div>
-    <div class="cmp-mobile"><div class="cmpm-item"><p class="cmpm-lbl">Selection</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>A vetted shortlist within 48 hours.</div><div class="cmpm-them"><p><span class="cmpm-who">Freelance platforms</span>You sort through hundreds of profiles yourself.</p><p><span class="cmpm-who">Agencies</span>They choose, and you rarely know who.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Cost</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>One transparent commission.</div><div class="cmpm-them"><p><span class="cmpm-who">Freelance platforms</span>Platform fees on every invoice.</p><p><span class="cmpm-who">Agencies</span>Large margins on top of the work.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Accountability</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>One direct contact, until delivery.</div><div class="cmpm-them"><p><span class="cmpm-who">Freelance platforms</span>None if the mission goes wrong.</p><p><span class="cmpm-who">Agencies</span>Yes, through layers of account managers.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Who does the work</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>The senior expert you chose.</div><div class="cmpm-them"><p><span class="cmpm-who">Freelance platforms</span>Whoever you managed to vet.</p><p><span class="cmpm-who">Agencies</span>Often junior profiles.</p></div></div></div>
+    <div class="cmp-mobile"><div class="cmpm-card is-us"><p class="cmpm-name">Metodas</p><div class="cmpm-row"><p class="cmpm-lbl">Selection</p><p class="cmpm-ans">A vetted shortlist within 48 hours.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Cost</p><p class="cmpm-ans">One transparent commission.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Accountability</p><p class="cmpm-ans">One direct contact, until delivery.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Who does the work</p><p class="cmpm-ans">The senior expert you chose.</p></div></div><div class="cmpm-card"><p class="cmpm-name">Freelance platforms</p><div class="cmpm-row"><p class="cmpm-lbl">Selection</p><p class="cmpm-ans">You sort through hundreds of profiles yourself.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Cost</p><p class="cmpm-ans">Platform fees on every invoice.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Accountability</p><p class="cmpm-ans">None if the mission goes wrong.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Who does the work</p><p class="cmpm-ans">Whoever you managed to vet.</p></div></div><div class="cmpm-card"><p class="cmpm-name">Agencies</p><div class="cmpm-row"><p class="cmpm-lbl">Selection</p><p class="cmpm-ans">They choose, and you rarely know who.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Cost</p><p class="cmpm-ans">Large margins on top of the work.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Accountability</p><p class="cmpm-ans">Yes, through layers of account managers.</p></div><div class="cmpm-row"><p class="cmpm-lbl">Who does the work</p><p class="cmpm-ans">Often junior profiles.</p></div></div></div>
   </div>
 </section>
 
