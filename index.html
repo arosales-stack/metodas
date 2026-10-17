@@ -503,6 +503,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .cmpm-card.is-us { border-top-width:6px !important; box-shadow:inset 3px 0 0 #d9714a; }
 .cmpm-card.is-us .cmpm-ans { position:relative; padding-left:22px; }
 .cmpm-card.is-us .cmpm-ans::before { content:''; position:absolute; left:2px; top:4px; width:5px; height:10px; border:solid #d9714a; border-width:0 2px 2px 0; transform:rotate(45deg); }
+
+/* COMPARE — dark mode: raised warm surface instead of near-black */
+@media (prefers-color-scheme: dark) { .cmp-us, .cmpm-card.is-us { background:#2c2822; } .cmp-us { border-top-color:rgba(247,244,238,0.10); } }
+:root[data-theme="light"] .cmp-us, :root[data-theme="light"] .cmpm-card.is-us { background:var(--dark-bg); }
+:root[data-theme="dark"] .cmp-us, :root[data-theme="dark"] .cmpm-card.is-us { background:#2c2822; }
 </style>
 </head>
 <body>
