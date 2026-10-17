@@ -456,37 +456,25 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 
 /* COMPARE */
 .cmp-section { border-top:1px solid var(--ink-06); }
-.cmp-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; margin:14px 0 56px; }
-.cmp-cards { display:grid; grid-template-columns:1fr 1fr 1.12fr; grid-template-rows:auto repeat(4,auto); column-gap:20px; align-items:stretch; }
-.cmp-card { grid-row:span 5; display:grid; grid-template-rows:subgrid; padding:32px 30px 12px; border:1px solid var(--ink-10); }
-.cmp-head { padding-bottom:22px; }
-.cmp-name { font-size:20px; font-weight:700; letter-spacing:-0.015em; color:var(--ink); }
-.cmp-sub { font-size:14px; color:var(--ink-55); margin-top:4px; }
-.cmp-cell { padding:18px 0 20px; border-top:1px solid var(--ink-10); }
-.cmp-lbl { font-size:13px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); margin-bottom:6px; }
-.cmp-ans { font-size:16px; line-height:1.5; color:var(--ink-55); }
-.cmp-mark { position:absolute; top:44px; right:32px; height:30px; width:auto; }
-.cmp-mark-b { display:none; }
-/* Metodas card — Coffee in light mode, Sand in dark mode (same swap as hero cards) */
-.cmp-card.is-us { position:relative; margin:-18px 0; padding:50px 34px 30px; background:var(--dark-bg); border:none; box-shadow:0 24px 60px rgba(28,26,23,0.22); --c-ink:var(--fixed-cream); --c-ink-55:var(--fixed-cream-55); --c-line:rgba(247,244,238,0.14); }
-.cmp-card.is-us::before { content:''; position:absolute; left:0; right:0; top:0; height:4px; background:var(--accent-2); }
-.cmp-card.is-us .cmp-name { color:var(--c-ink); font-size:24px; }
-.cmp-card.is-us .cmp-sub, .cmp-card.is-us .cmp-lbl { color:var(--c-ink-55); }
-.cmp-card.is-us .cmp-ans { color:var(--c-ink); font-size:17px; font-weight:500; }
-.cmp-card.is-us .cmp-cell { border-top-color:var(--c-line); }
-@media (prefers-color-scheme: dark) { .cmp-card.is-us { background:var(--fixed-beige); --c-ink:var(--fixed-ink); --c-ink-55:var(--fixed-ink-55); --c-line:rgba(28,26,23,0.14); box-shadow:none; } .cmp-mark-a{display:none;} .cmp-mark-b{display:block;} }
-:root[data-theme="light"] .cmp-card.is-us { background:var(--dark-bg); --c-ink:var(--fixed-cream); --c-ink-55:var(--fixed-cream-55); --c-line:rgba(247,244,238,0.14); box-shadow:0 24px 60px rgba(28,26,23,0.22); }
-:root[data-theme="light"] .cmp-mark-a { display:block; }
-:root[data-theme="light"] .cmp-mark-b { display:none; }
-:root[data-theme="dark"] .cmp-card.is-us { background:var(--fixed-beige); --c-ink:var(--fixed-ink); --c-ink-55:var(--fixed-ink-55); --c-line:rgba(28,26,23,0.14); box-shadow:none; }
-:root[data-theme="dark"] .cmp-mark-a { display:none; }
-:root[data-theme="dark"] .cmp-mark-b { display:block; }
-@media (max-width:860px){
-  .cmp-cards { grid-template-columns:1fr; grid-template-rows:none; row-gap:20px; }
-  .cmp-card { grid-row:auto; display:block; padding:26px 22px 8px; }
-  .cmp-card.is-us { order:-1; margin:0 0 8px; padding:36px 24px 16px; }
-  .cmp-card:not(.is-us) .cmp-cell { padding:12px 0 14px; }
-  .cmp-card:not(.is-us) .cmp-ans { font-size:15px; }
+.cmp-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; margin:14px 0 48px; }
+.cmp-table { display:grid; grid-template-columns:170px 1fr 1fr 1.15fr; }
+.cmp-c { padding:22px 24px; font-size:15px; line-height:1.55; border-top:1px solid var(--ink-10); }
+.cmp-hd { border-top:none; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); padding-top:0; padding-bottom:16px; align-self:end; }
+.cmp-lbl { padding-left:0; font-size:13px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-55); }
+.cmp-them { color:var(--ink-55); }
+.cmp-us { background:var(--dark-bg); color:var(--fixed-cream); font-weight:500; border-top:1px solid rgba(247,244,238,0.12); }
+.cmp-us.cmp-hd { color:var(--fixed-cream); font-size:18px; font-weight:700; letter-spacing:-0.01em; text-transform:none; }
+.cmp-us-top { border-top:4px solid var(--accent-2); margin-top:-20px; padding-top:28px; }
+.cmp-us-bot { margin-bottom:-20px; padding-bottom:42px; }
+.cmp-mobile { display:none; }
+@media (max-width:760px){
+  .cmp-table { display:none; }
+  .cmp-mobile { display:flex; flex-direction:column; gap:28px; }
+  .cmpm-lbl { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); margin-bottom:10px; }
+  .cmpm-us { background:var(--dark-bg); color:var(--fixed-cream); border-left:4px solid var(--accent-2); padding:16px 18px; font-size:16px; font-weight:500; line-height:1.5; }
+  .cmpm-them { padding:12px 0 0 22px; display:flex; flex-direction:column; gap:8px; }
+  .cmpm-them p { font-size:14px; color:var(--ink-55); line-height:1.5; }
+  .cmpm-who { display:block; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:2px; opacity:0.75; }
 }
 </style>
 </head>
@@ -1013,8 +1001,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
   <div class="inner">
     <p class="ew"><span class="sec-num">08</span>Comparer</p>
     <h2 class="cmp-h2">Plateforme, agence ou Metodas ?</h2>
-    <div class="cmp-cards"><div class="cmp-card"><div class="cmp-head"><p class="cmp-name">Plateformes freelance</p><p class="cmp-sub">Places de marché en libre-service</p></div><div class="cmp-cell"><p class="cmp-lbl">Sélection</p><p class="cmp-ans">Vous triez vous-même des centaines de profils.</p></div><div class="cmp-cell"><p class="cmp-lbl">Coût</p><p class="cmp-ans">Des frais de plateforme sur chaque facture.</p></div><div class="cmp-cell"><p class="cmp-lbl">Responsabilité</p><p class="cmp-ans">Aucune si la mission tourne mal.</p></div><div class="cmp-cell"><p class="cmp-lbl">Qui réalise le travail</p><p class="cmp-ans">Celui que vous avez réussi à évaluer.</p></div></div><div class="cmp-card"><div class="cmp-head"><p class="cmp-name">Agences</p><p class="cmp-sub">Équipes intégrées</p></div><div class="cmp-cell"><p class="cmp-lbl">Sélection</p><p class="cmp-ans">Elles choisissent, et vous savez rarement qui.</p></div><div class="cmp-cell"><p class="cmp-lbl">Coût</p><p class="cmp-ans">De fortes marges en plus du travail.</p></div><div class="cmp-cell"><p class="cmp-lbl">Responsabilité</p><p class="cmp-ans">Oui, à travers plusieurs interlocuteurs.</p></div><div class="cmp-cell"><p class="cmp-lbl">Qui réalise le travail</p><p class="cmp-ans">Souvent des profils juniors.</p></div></div><div class="cmp-card is-us"><div class="cmp-head"><img class="cmp-mark cmp-mark-a" src="Assets/Images/Logo/metodas-mark-white.png" alt=""><img class="cmp-mark cmp-mark-b" src="Assets/Images/Logo/metodas-mark-black.png" alt=""><p class="cmp-name">Metodas</p><p class="cmp-sub">Collectif senior sélectionné</p></div><div class="cmp-cell"><p class="cmp-lbl">Sélection</p><p class="cmp-ans">Une shortlist sélectionnée sous 48 heures.</p></div><div class="cmp-cell"><p class="cmp-lbl">Coût</p><p class="cmp-ans">Une commission unique et transparente.</p></div><div class="cmp-cell"><p class="cmp-lbl">Responsabilité</p><p class="cmp-ans">Un contact direct, jusqu’à la livraison.</p></div><div class="cmp-cell"><p class="cmp-lbl">Qui réalise le travail</p><p class="cmp-ans">L’expert senior que vous avez choisi.</p></div></div></div>
-</div>
+    <div class="cmp-table"><div class="cmp-c cmp-lbl cmp-hd"></div><div class="cmp-c cmp-hd">Plateformes freelance</div><div class="cmp-c cmp-hd">Agences</div><div class="cmp-c cmp-us cmp-us-top cmp-hd">Metodas</div><div class="cmp-c cmp-lbl">Sélection</div><div class="cmp-c cmp-them">Vous triez vous-même des centaines de profils.</div><div class="cmp-c cmp-them">Elles choisissent, et vous savez rarement qui.</div><div class="cmp-c cmp-us">Une shortlist sélectionnée sous 48 heures.</div><div class="cmp-c cmp-lbl">Coût</div><div class="cmp-c cmp-them">Des frais de plateforme sur chaque facture.</div><div class="cmp-c cmp-them">De fortes marges en plus du travail.</div><div class="cmp-c cmp-us">Une commission unique et transparente.</div><div class="cmp-c cmp-lbl">Responsabilité</div><div class="cmp-c cmp-them">Aucune si la mission tourne mal.</div><div class="cmp-c cmp-them">Oui, à travers plusieurs interlocuteurs.</div><div class="cmp-c cmp-us">Un contact direct, jusqu’à la livraison.</div><div class="cmp-c cmp-lbl">Qui réalise le travail</div><div class="cmp-c cmp-them">Celui que vous avez réussi à évaluer.</div><div class="cmp-c cmp-them">Souvent des profils juniors.</div><div class="cmp-c cmp-us cmp-us-bot">L’expert senior que vous avez choisi.</div></div>
+    <div class="cmp-mobile"><div class="cmpm-item"><p class="cmpm-lbl">Sélection</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>Une shortlist sélectionnée sous 48 heures.</div><div class="cmpm-them"><p><span class="cmpm-who">Plateformes freelance</span>Vous triez vous-même des centaines de profils.</p><p><span class="cmpm-who">Agences</span>Elles choisissent, et vous savez rarement qui.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Coût</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>Une commission unique et transparente.</div><div class="cmpm-them"><p><span class="cmpm-who">Plateformes freelance</span>Des frais de plateforme sur chaque facture.</p><p><span class="cmpm-who">Agences</span>De fortes marges en plus du travail.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Responsabilité</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>Un contact direct, jusqu’à la livraison.</div><div class="cmpm-them"><p><span class="cmpm-who">Plateformes freelance</span>Aucune si la mission tourne mal.</p><p><span class="cmpm-who">Agences</span>Oui, à travers plusieurs interlocuteurs.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Qui réalise le travail</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>L’expert senior que vous avez choisi.</div><div class="cmpm-them"><p><span class="cmpm-who">Plateformes freelance</span>Celui que vous avez réussi à évaluer.</p><p><span class="cmpm-who">Agences</span>Souvent des profils juniors.</p></div></div></div>
   </div>
 </section>
 
