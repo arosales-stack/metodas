@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -497,7 +497,7 @@ resultObserver.observe(resultCards);
 const themeToggle = document.getElementById('themeToggle');
 const root = document.documentElement;
 const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-let currentTheme = systemPrefersDark ? 'dark' : 'light';
+let currentTheme = 'light';
 themeToggle.addEventListener('click', () => {
   currentTheme = currentTheme === 'light' ? 'dark' : 'light';
   root.setAttribute('data-theme', currentTheme);
