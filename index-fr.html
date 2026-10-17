@@ -507,6 +507,22 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 :root[data-theme="dark"] .cmp-us { border-top-color:rgba(28,26,23,0.12); }
 :root[data-theme="dark"] .cmpm-card.is-us .cmpm-ans { background:none; }
 :root[data-theme="dark"] .cmpm-card.is-us .cmpm-row { border-top-color:rgba(28,26,23,0.12); }
+
+/* MISSIONS — mobile horizontal swipe (1.5 cards visible) */
+.mi-swipe { display:none; }
+@media (max-width:640px){
+  .mi-grid { display:flex; grid-template-columns:none; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:var(--pad-x); margin:0 calc(-1 * var(--pad-x)); padding:4px var(--pad-x) 12px; align-items:stretch; scrollbar-width:none; }
+  .mi-grid::-webkit-scrollbar { display:none; }
+  .mi-card { flex:0 0 64%; scroll-snap-align:start; min-height:0 !important; }
+  .mi-card[hidden] { display:none; }
+  .mi-swipe { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-55); margin:-12px 0 14px; }
+  .mi-card { padding:18px 16px; gap:12px; }
+  .mi-logo { width:44px; height:44px; }
+  .mi-lbl { white-space:normal; }
+  .mi-co { font-size:16px; }
+  .mi-title { font-size:16px; }
+  .mi-actions { flex-direction:column; align-items:flex-start; gap:8px; }
+}
 </style>
 </head>
 <body>
@@ -577,6 +593,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
       <h2 class="mi-h2">Ce que nos freelances ont déjà réalisé.</h2>
     </div>
     <div class="mi-filters"><button class="mi-chip is-active" type="button" data-f="home">Tous</button><button class="mi-chip" type="button" data-f="luxury">Luxe</button><button class="mi-chip" type="button" data-f="food">Food &amp; Beverage</button><button class="mi-chip" type="button" data-f="banking">Banque &amp; Assurance</button><button class="mi-chip" type="button" data-f="b2b">B2B &amp; SaaS</button><button class="mi-chip" type="button" data-f="beauty">Beauté &amp; Santé</button></div>
+    <p class="mi-swipe" aria-hidden="true">Faites défiler →</p>
     <div class="mi-grid">
       <article class="mi-card" data-ind="luxury" data-home="1">
         <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-krug.jpg" alt="Krug" loading="lazy"></div><div><p class="mi-co">Krug <span class="mi-sep">—</span> <span class="mi-lbl">Voyage incentive</span></p><p class="mi-ind">Luxe</p></div></div>
