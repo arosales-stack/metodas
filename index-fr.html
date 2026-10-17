@@ -591,7 +591,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
       <p class="ew"><span class="sec-num">02</span>Expériences</p>
       <h2 class="mi-h2">Ce que nos freelances ont déjà réalisé.</h2>
     </div>
-    <div class="mi-filters"><button class="mi-chip is-active" type="button" data-f="home">Tous</button><button class="mi-chip" type="button" data-f="luxury">Luxe</button><button class="mi-chip" type="button" data-f="food">Food &amp; Beverage</button><button class="mi-chip" type="button" data-f="banking">Banque &amp; Assurance</button><button class="mi-chip" type="button" data-f="b2b">B2B &amp; SaaS</button><button class="mi-chip" type="button" data-f="beauty">Beauté &amp; Santé</button></div>
+    <div class="mi-filters"><button class="mi-chip is-active" type="button" data-f="b2b">B2B &amp; SaaS</button><button class="mi-chip" type="button" data-f="luxury">Luxe</button><button class="mi-chip" type="button" data-f="food">Food &amp; Beverage</button><button class="mi-chip" type="button" data-f="banking">Banque &amp; Assurance</button><button class="mi-chip" type="button" data-f="beauty">Beauté &amp; Santé</button></div>
     <div class="mi-grid">
       <article class="mi-card" data-ind="luxury" data-home="1">
         <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-krug.jpg" alt="Krug" loading="lazy"></div><div><p class="mi-co">Krug <span class="mi-sep">—</span> <span class="mi-lbl">Voyage incentive</span></p><p class="mi-ind">Luxe</p></div></div>
@@ -1186,7 +1186,7 @@ themeToggle.addEventListener('click', () => {
     vis.forEach(function(c){c.style.minHeight=h+'px';});
   }
   function apply(f){
-    cards.forEach(function(c){ c.hidden = f==='home' ? c.dataset.home!=='1' : c.dataset.ind!==f; c.classList.remove('is-open'); c.querySelector('.mi-more').setAttribute('aria-expanded','false'); });
+    cards.forEach(function(c){ c.hidden = c.dataset.ind!==f; c.classList.remove('is-open'); c.querySelector('.mi-more').setAttribute('aria-expanded','false'); });
     equalize();
   }
   document.querySelectorAll('.mi-chip').forEach(function(b){
@@ -1198,7 +1198,7 @@ themeToggle.addEventListener('click', () => {
   window.addEventListener('resize',equalize);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalize);
   window.addEventListener('load',equalize);
-  apply('home');
+  apply('b2b');
 })();
 
 (function(){
