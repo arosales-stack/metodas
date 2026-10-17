@@ -507,6 +507,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 :root[data-theme="dark"] .cmpm-card.is-us .cmpm-ans { background:none; }
 :root[data-theme="dark"] .cmpm-card.is-us .cmpm-row { border-top-color:rgba(28,26,23,0.12); }
 
+/* MISSIONS — dark mode only: Coffee cards so they separate from the Espresso page */
+@media (prefers-color-scheme: dark) { .mi-card { background:#221f1b; } }
+:root[data-theme="light"] .mi-card { background:var(--card); }
+:root[data-theme="dark"] .mi-card { background:#221f1b; }
+
 /* MISSIONS — mobile compact cards (client, title, main tag; rest on "details") */
 @media (max-width:640px){
   .mi-card { padding:18px 18px 14px; gap:12px; }
