@@ -460,6 +460,29 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .why-row-num { font-size:clamp(40px,4.4vw,60px); font-weight:700; letter-spacing:-0.05em; line-height:1; color:var(--accent-2); margin-bottom:16px; }
 @media (max-width:640px){ .why-rows{ grid-template-columns:1fr; } .why-row, .why-row:nth-child(odd), .why-row:nth-child(even){ display:grid; grid-template-columns:56px 1fr; gap:14px; align-items:start; padding:20px 0; border-right:none; } .why-row-num{ font-size:34px; margin:0; } }
 
+
+/* COMPARE */
+.cmp-section { border-top:1px solid var(--ink-06); }
+.cmp-h2 { font-size:clamp(26px,3.2vw,44px); font-weight:700; letter-spacing:-0.025em; line-height:1.12; margin:14px 0 48px; }
+.cmp-table { display:grid; grid-template-columns:170px 1fr 1fr 1.15fr; }
+.cmp-c { padding:22px 24px; font-size:15px; line-height:1.55; border-top:1px solid var(--ink-10); }
+.cmp-hd { border-top:none; font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); padding-top:0; padding-bottom:16px; align-self:end; }
+.cmp-lbl { padding-left:0; font-size:13px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-55); }
+.cmp-them { color:var(--ink-55); }
+.cmp-us { background:var(--dark-bg); color:var(--fixed-cream); font-weight:500; border-top:1px solid rgba(247,244,238,0.12); }
+.cmp-us.cmp-hd { color:var(--fixed-cream); font-size:18px; font-weight:700; letter-spacing:-0.01em; text-transform:none; }
+.cmp-us-top { border-top:4px solid var(--accent-2); margin-top:-20px; padding-top:28px; }
+.cmp-us-bot { margin-bottom:-20px; padding-bottom:42px; }
+.cmp-mobile { display:none; }
+@media (max-width:760px){
+  .cmp-table { display:none; }
+  .cmp-mobile { display:flex; flex-direction:column; gap:28px; }
+  .cmpm-lbl { font-size:13px; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-55); margin-bottom:10px; }
+  .cmpm-us { background:var(--dark-bg); color:var(--fixed-cream); border-left:4px solid var(--accent-2); padding:16px 18px; font-size:16px; font-weight:500; line-height:1.5; }
+  .cmpm-them { padding:12px 0 0 22px; display:flex; flex-direction:column; gap:8px; }
+  .cmpm-them p { font-size:14px; color:var(--ink-55); line-height:1.5; }
+  .cmpm-who { display:block; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:2px; opacity:0.75; }
+}
 </style>
 </head>
 <body>
@@ -981,9 +1004,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
   </div>
 </section>
 
+<section id="compare" class="cmp-section">
+  <div class="inner">
+    <p class="ew"><span class="sec-num">08</span>Compare</p>
+    <h2 class="cmp-h2">Platform, agency or Metodas?</h2>
+    <div class="cmp-table"><div class="cmp-c cmp-lbl cmp-hd"></div><div class="cmp-c cmp-hd">Freelance platforms</div><div class="cmp-c cmp-hd">Agencies</div><div class="cmp-c cmp-us cmp-us-top cmp-hd">Metodas</div><div class="cmp-c cmp-lbl">Selection</div><div class="cmp-c cmp-them">You sort through hundreds of profiles yourself.</div><div class="cmp-c cmp-them">They choose, and you rarely know who.</div><div class="cmp-c cmp-us">A vetted shortlist within 48 hours.</div><div class="cmp-c cmp-lbl">Cost</div><div class="cmp-c cmp-them">Platform fees on every invoice.</div><div class="cmp-c cmp-them">Large margins on top of the work.</div><div class="cmp-c cmp-us">One transparent commission.</div><div class="cmp-c cmp-lbl">Accountability</div><div class="cmp-c cmp-them">None if the mission goes wrong.</div><div class="cmp-c cmp-them">Yes, through layers of account managers.</div><div class="cmp-c cmp-us">One direct contact, until delivery.</div><div class="cmp-c cmp-lbl">Who does the work</div><div class="cmp-c cmp-them">Whoever you managed to vet.</div><div class="cmp-c cmp-them">Often junior profiles.</div><div class="cmp-c cmp-us cmp-us-bot">The senior expert you chose.</div></div>
+    <div class="cmp-mobile"><div class="cmpm-item"><p class="cmpm-lbl">Selection</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>A vetted shortlist within 48 hours.</div><div class="cmpm-them"><p><span class="cmpm-who">Freelance platforms</span>You sort through hundreds of profiles yourself.</p><p><span class="cmpm-who">Agencies</span>They choose, and you rarely know who.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Cost</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>One transparent commission.</div><div class="cmpm-them"><p><span class="cmpm-who">Freelance platforms</span>Platform fees on every invoice.</p><p><span class="cmpm-who">Agencies</span>Large margins on top of the work.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Accountability</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>One direct contact, until delivery.</div><div class="cmpm-them"><p><span class="cmpm-who">Freelance platforms</span>None if the mission goes wrong.</p><p><span class="cmpm-who">Agencies</span>Yes, through layers of account managers.</p></div></div><div class="cmpm-item"><p class="cmpm-lbl">Who does the work</p><div class="cmpm-us"><span class="cmpm-who">Metodas</span>The senior expert you chose.</div><div class="cmpm-them"><p><span class="cmpm-who">Freelance platforms</span>Whoever you managed to vet.</p><p><span class="cmpm-who">Agencies</span>Often junior profiles.</p></div></div></div>
+  </div>
+</section>
+
 <section id="pricing" class="pricing-section">
   <div class="inner">
-    <div class="sh"><p class="ew"><span class="sec-num">08</span>Pricing</p><div><h2 class="sh-h">Priced in the open.</h2></div></div>
+    <div class="sh"><p class="ew"><span class="sec-num">09</span>Pricing</p><div><h2 class="sh-h">Priced in the open.</h2></div></div>
     <div class="pricing-box reveal">
       <div class="pricing-left">
         <p class="ew">The model</p>
@@ -1008,7 +1040,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 <section id="contact" class="cta-section section-dark">
   <div class="inner">
     <div class="cta-inner-grid">
-      <div class="reveal"><p class="ew"><span class="sec-num">09</span>Ready to work together?</p><h2 class="cta-h2">Let's help you get the freelancer you need.</h2></div>
+      <div class="reveal"><p class="ew"><span class="sec-num">10</span>Ready to work together?</p><h2 class="cta-h2">Let's help you get the freelancer you need.</h2></div>
       <div class="reveal reveal-d1">
         <p class="cta-sub">Tell us what you need. We'll come back with a clear approach and identified profiles before you sign anything.</p>
         <div class="cta-btns">
