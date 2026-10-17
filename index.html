@@ -220,9 +220,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .mi-logo.is-full img { object-fit:cover; }
 .mi-logo.is-text { font-size:22px; font-weight:700; color:var(--fixed-ink); }
 .mi-co { font-size:18px; font-weight:700; letter-spacing:-0.01em; line-height:1.25; }
-.mi-ind { font-size:15px; color:var(--ink-55); margin-top:2px; }
-.mi-sep { font-weight:400; color:var(--ink-55); }
-.mi-lbl { white-space:nowrap; }
+.mi-lbl { font-size:18px; font-weight:500; letter-spacing:-0.01em; line-height:1.25; margin-top:2px; }
 .mi-title { font-size:18px; font-weight:300; line-height:1.55; }
 .mi-who { font-size:15px; color:var(--ink-55); }
 .mi-tags { display:flex; flex-wrap:wrap; gap:6px; }
@@ -518,7 +516,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 /* MISSIONS — mobile compact cards (client, title, main tag; rest on "details") */
 @media (max-width:640px){
   .mi-card { padding:18px 18px 14px; gap:12px; }
-  .mi-card:not(.is-open) .mi-ind,
   .mi-card:not(.is-open) .mi-title,
   .mi-card:not(.is-open) .mi-who { display:none; }
   .mi-card .mi-actions { padding-top:12px; }
@@ -601,7 +598,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
     <div class="mi-filters"><button class="mi-chip is-active" type="button" data-f="b2b">B2B &amp; SaaS</button><button class="mi-chip" type="button" data-f="luxury">Luxury</button><button class="mi-chip" type="button" data-f="food">Food &amp; Beverage</button><button class="mi-chip" type="button" data-f="banking">Banking &amp; Insurance</button><button class="mi-chip" type="button" data-f="beauty">Beauty &amp; Health</button></div>
     <div class="mi-grid">
       <article class="mi-card" data-ind="luxury" data-home="1">
-        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-krug.jpg" alt="Krug" loading="lazy"></div><div><p class="mi-co">Krug <span class="mi-sep">—</span> <span class="mi-lbl">Incentive trip</span></p><p class="mi-ind">Luxury</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-krug.jpg" alt="Krug" loading="lazy"></div><div><p class="mi-co">Krug</p><p class="mi-lbl">Incentive trip</p></div></div>
         <p class="mi-title">A tailor-made Nordic journey from Sweden to Lapland that immersed 80 chefs and brand ambassadors in the Krug universe.</p>
         <p class="mi-who">Jasmine · Senior Event Manager</p>
         <div class="mi-tags"><span class="mi-tag">Champagne</span><span class="mi-tag">Incentive trip</span><span class="mi-tag">Experiential</span></div>
@@ -609,7 +606,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="luxury" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/essilorluxottica.png" alt="EssilorLuxottica" loading="lazy"></div><div><p class="mi-co">EssilorLuxottica <span class="mi-sep">—</span> <span class="mi-lbl">Luxury transcreation</span></p><p class="mi-ind">Luxury</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/essilorluxottica.png" alt="EssilorLuxottica" loading="lazy"></div><div><p class="mi-co">EssilorLuxottica</p><p class="mi-lbl">Luxury transcreation</p></div></div>
         <p class="mi-title">French copy and transcreation for Prada, Versace, Burberry and more, plus tone-of-voice guides still used as the reference.</p>
         <p class="mi-who">Samuel · Senior Content Specialist</p>
         <div class="mi-tags"><span class="mi-tag">Eyewear</span><span class="mi-tag">Transcreation</span><span class="mi-tag">Tone of voice</span></div>
@@ -617,7 +614,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="luxury" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/gucci.png" alt="Gucci Japan" loading="lazy"></div><div><p class="mi-co">Gucci Japan <span class="mi-sep">—</span> <span class="mi-lbl">Press relations</span></p><p class="mi-ind">Luxury</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/gucci.png" alt="Gucci Japan" loading="lazy"></div><div><p class="mi-co">Gucci Japan</p><p class="mi-lbl">Press relations</p></div></div>
         <p class="mi-title">Press relations that helped Gucci reach the highest editorial coverage rate among luxury brands in Japan.</p>
         <p class="mi-who">Hibiki · PR &amp; Brand Marketing</p>
         <div class="mi-tags"><span class="mi-tag">Press relations</span><span class="mi-tag">Japan</span><span class="mi-tag">Fashion</span></div>
@@ -625,7 +622,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="luxury" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-moet-hennessy.jpg" alt="Moët Hennessy" loading="lazy"></div><div><p class="mi-co">Moët Hennessy <span class="mi-sep">—</span> <span class="mi-lbl">Global CRM strategy</span></p><p class="mi-ind">Luxury</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-moet-hennessy.jpg" alt="Moët Hennessy" loading="lazy"></div><div><p class="mi-co">Moët Hennessy</p><p class="mi-lbl">Global CRM strategy</p></div></div>
         <p class="mi-title">A global CRM strategy for Moët &amp; Chandon and Dom Pérignon, with redesigned journeys and a plan to win back inactive clients.</p>
         <p class="mi-who">Nathalie · CRM Manager</p>
         <div class="mi-tags"><span class="mi-tag">Champagne</span><span class="mi-tag">CRM</span><span class="mi-tag">Emailing</span></div>
@@ -633,7 +630,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="luxury" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/kenzo.png" alt="Kenzo Parfums" loading="lazy"></div><div><p class="mi-co">Kenzo Parfums <span class="mi-sep">—</span> <span class="mi-lbl">Fragrance launch</span></p><p class="mi-ind">Luxury</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/kenzo.png" alt="Kenzo Parfums" loading="lazy"></div><div><p class="mi-co">Kenzo Parfums</p><p class="mi-lbl">Fragrance launch</p></div></div>
         <p class="mi-title">A playful social content plan that turned the Kenzo World fragrance launch into a game on Facebook and Instagram.</p>
         <p class="mi-who">Bastien · Social Media Strategist</p>
         <div class="mi-tags"><span class="mi-tag">Fragrance launch</span><span class="mi-tag">Social content</span><span class="mi-tag">Strategic planning</span></div>
@@ -641,7 +638,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="luxury" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/boss.png" alt="BOSS" loading="lazy"></div><div><p class="mi-co">BOSS <span class="mi-sep">—</span> <span class="mi-lbl">Campaign films</span></p><p class="mi-ind">Luxury</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/boss.png" alt="BOSS" loading="lazy"></div><div><p class="mi-co">BOSS</p><p class="mi-lbl">Campaign films</p></div></div>
         <p class="mi-title">Film direction and art direction for BOSS campaigns, from the Superman partnership to Christmas and "Striking".</p>
         <p class="mi-who">Matthieu · Director &amp; Art Director</p>
         <div class="mi-tags"><span class="mi-tag">Fashion film</span><span class="mi-tag">Art direction</span><span class="mi-tag">Brand partnership</span></div>
@@ -649,7 +646,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="food" data-home="1">
-        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-wecook.jpg" alt="WeCook" loading="lazy"></div><div><p class="mi-co">WeCook <span class="mi-sep">—</span> <span class="mi-lbl">E-commerce growth</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-wecook.jpg" alt="WeCook" loading="lazy"></div><div><p class="mi-co">WeCook</p><p class="mi-lbl">E-commerce growth</p></div></div>
         <p class="mi-title">Online sales multiplied by 10 thanks to full-funnel acquisition for a nutrition meal brand.</p>
         <p class="mi-who">Florian · Head of Marketing &amp; Growth</p>
         <div class="mi-tags"><span class="mi-tag">Acquisition</span><span class="mi-tag">E-commerce</span><span class="mi-tag">Nutrition</span></div>
@@ -657,7 +654,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="food" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">T</div><div><p class="mi-co">Toques &amp; Nougat festival <span class="mi-sep">—</span> <span class="mi-lbl">Festival launch</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">T</div><div><p class="mi-co">Toques &amp; Nougat festival</p><p class="mi-lbl">Festival launch</p></div></div>
         <p class="mi-title">A brand-new food festival launched from scratch, drawing 15,000 visitors in its first edition.</p>
         <p class="mi-who">Marianne · Senior Event Project Manager</p>
         <div class="mi-tags"><span class="mi-tag">Food festival</span><span class="mi-tag">Event launch</span><span class="mi-tag">Partnerships</span></div>
@@ -665,7 +662,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="food" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-grolsch.jpg" alt="Grolsch" loading="lazy"></div><div><p class="mi-co">Grolsch <span class="mi-sep">—</span> <span class="mi-lbl">360° campaign</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-grolsch.jpg" alt="Grolsch" loading="lazy"></div><div><p class="mi-co">Grolsch</p><p class="mi-lbl">360° campaign</p></div></div>
         <p class="mi-title">An award-winning 360° campaign for Grolsch, from street activation to social media.</p>
         <p class="mi-who">Jasmine · Senior Event Manager</p>
         <div class="mi-tags"><span class="mi-tag">Brand activation</span><span class="mi-tag">Beer</span><span class="mi-tag">360° campaign</span></div>
@@ -673,7 +670,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="food" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-coca-cola.jpg" alt="The Coca-Cola Company" loading="lazy"></div><div><p class="mi-co">The Coca-Cola Company <span class="mi-sep">—</span> <span class="mi-lbl">Product launches</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-coca-cola.jpg" alt="The Coca-Cola Company" loading="lazy"></div><div><p class="mi-co">The Coca-Cola Company</p><p class="mi-lbl">Product launches</p></div></div>
         <p class="mi-title">Three Coca-Cola and Fanta launches driven across social, TV and out-of-home, with influencers and the French Football Federation.</p>
         <p class="mi-who">Jean-François · Marketing &amp; Partnerships Manager</p>
         <div class="mi-tags"><span class="mi-tag">Soft drinks</span><span class="mi-tag">Campaign launch</span><span class="mi-tag">Influencers</span></div>
@@ -681,7 +678,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="food" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-oligosante.jpg" alt="Oligosanté" loading="lazy"></div><div><p class="mi-co">Oligosanté <span class="mi-sep">—</span> <span class="mi-lbl">Launches &amp; export</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-oligosante.jpg" alt="Oligosanté" loading="lazy"></div><div><p class="mi-co">Oligosanté</p><p class="mi-lbl">Launches &amp; export</p></div></div>
         <p class="mi-title">Product launches taken from concept to market, in France and abroad, for a French food supplement laboratory.</p>
         <p class="mi-who">Julia · Product &amp; Marketing Manager</p>
         <div class="mi-tags"><span class="mi-tag">Product launch</span><span class="mi-tag">Trade marketing</span><span class="mi-tag">Export</span></div>
@@ -689,7 +686,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="food" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">M</div><div><p class="mi-co">Monbanquet <span class="mi-sep">—</span> <span class="mi-lbl">B2B lead generation</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">M</div><div><p class="mi-co">Monbanquet</p><p class="mi-lbl">B2B lead generation</p></div></div>
         <p class="mi-title">New corporate catering clients won through automated prospecting and more than 30 partnerships.</p>
         <p class="mi-who">Baptiste · B2B Lead Generation Expert</p>
         <div class="mi-tags"><span class="mi-tag">B2B catering</span><span class="mi-tag">Prospecting</span><span class="mi-tag">Partnerships</span></div>
@@ -697,7 +694,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="banking" data-home="1">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/yomoni.png" alt="Yomoni" loading="lazy"></div><div><p class="mi-co">Yomoni <span class="mi-sep">—</span> <span class="mi-lbl">Acquisition</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/yomoni.png" alt="Yomoni" loading="lazy"></div><div><p class="mi-co">Yomoni</p><p class="mi-lbl">Acquisition</p></div></div>
         <p class="mi-title">Acquisition cost cut 43% and leads up 129% for a leading online savings manager, during a reorganisation.</p>
         <p class="mi-who">Florian · Head of Marketing &amp; Growth</p>
         <div class="mi-tags"><span class="mi-tag">Savings &amp; investment</span><span class="mi-tag">Acquisition</span><span class="mi-tag">Interim management</span></div>
@@ -705,7 +702,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="banking" data-home="1">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas Ma Banque" loading="lazy"></div><div><p class="mi-co">Ma Banque <span class="mi-sep">—</span> <span class="mi-lbl">Social media</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas Ma Banque" loading="lazy"></div><div><p class="mi-co">Ma Banque</p><p class="mi-lbl">Social media</p></div></div>
         <p class="mi-title">A refreshed social media voice that grew BNP Paribas Ma Banque's community 20% and tripled engagement in 3 months.</p>
         <p class="mi-who">Pierre · Social Media &amp; Content</p>
         <div class="mi-tags"><span class="mi-tag">Retail banking</span><span class="mi-tag">Social media</span><span class="mi-tag">Editorial line</span></div>
@@ -713,7 +710,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="banking" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/societe-generale.png" alt="Société Générale CIB" loading="lazy"></div><div><p class="mi-co">Société Générale CIB <span class="mi-sep">—</span> <span class="mi-lbl">Product design</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/societe-generale.png" alt="Société Générale CIB" loading="lazy"></div><div><p class="mi-co">Société Générale CIB</p><p class="mi-lbl">Product design</p></div></div>
         <p class="mi-title">10+ B2B products designed for Société Générale CIB's marketplace, with a shared design system to keep them consistent.</p>
         <p class="mi-who">Cyril · Senior Product Designer</p>
         <div class="mi-tags"><span class="mi-tag">Investment banking</span><span class="mi-tag">Product design</span><span class="mi-tag">UX research</span></div>
@@ -721,7 +718,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="banking" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">B</div><div><p class="mi-co">BoursoBank <span class="mi-sep">—</span> <span class="mi-lbl">Competitive intelligence</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">B</div><div><p class="mi-co">BoursoBank</p><p class="mi-lbl">Competitive intelligence</p></div></div>
         <p class="mi-title">Competitive intelligence on 50 French banking players, turned into strategic recommendations for the marketing teams.</p>
         <p class="mi-who">Théo · Strategic Marketing &amp; Market Intelligence</p>
         <div class="mi-tags"><span class="mi-tag">Online banking</span><span class="mi-tag">Competitive intelligence</span><span class="mi-tag">Benchmarks</span></div>
@@ -729,7 +726,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="banking" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/n26.png" alt="N26" loading="lazy"></div><div><p class="mi-co">N26 <span class="mi-sep">—</span> <span class="mi-lbl">Content &amp; UX writing</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/n26.png" alt="N26" loading="lazy"></div><div><p class="mi-co">N26</p><p class="mi-lbl">Content &amp; UX writing</p></div></div>
         <p class="mi-title">French content across N26's whole digital journey, with tone and terminology kept consistent in a regulated banking setting.</p>
         <p class="mi-who">Samuel · Senior Content Specialist</p>
         <div class="mi-tags"><span class="mi-tag">Digital banking</span><span class="mi-tag">UX writing</span><span class="mi-tag">Compliance</span></div>
@@ -737,7 +734,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="banking" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/allianz.png" alt="Allianz" loading="lazy"></div><div><p class="mi-co">Allianz <span class="mi-sep">—</span> <span class="mi-lbl">Sports sponsorship</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/allianz.png" alt="Allianz" loading="lazy"></div><div><p class="mi-co">Allianz</p><p class="mi-lbl">Sports sponsorship</p></div></div>
         <p class="mi-title">"Le Vestiaire Allianz": a social media hub that brought fans closer to the athletes Allianz sponsors.</p>
         <p class="mi-who">Bastien · Social Media Strategist</p>
         <div class="mi-tags"><span class="mi-tag">Sports sponsorship</span><span class="mi-tag">Insurance</span><span class="mi-tag">Social media</span></div>
@@ -745,7 +742,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="b2b">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">S</div><div><p class="mi-co">SVP Groupe <span class="mi-sep">—</span> <span class="mi-lbl">Event management</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">S</div><div><p class="mi-co">SVP Groupe</p><p class="mi-lbl">Event management</p></div></div>
         <p class="mi-title">Saving a €150K commercial event in 30 days.</p>
         <p class="mi-who">Christelle · Former Senior Event Manager</p>
         <div class="mi-tags"><span class="mi-tag">Crisis Management</span><span class="mi-tag">Operational Leader</span><span class="mi-tag">Budget-Controlled</span></div>
@@ -753,7 +750,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="usecase-event-editorial.html">Read the case →</a></div>
       </article>
       <article class="mi-card" data-ind="b2b">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">S</div><div><p class="mi-co">SVP Groupe <span class="mi-sep">—</span> <span class="mi-lbl">Sales enablement</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">S</div><div><p class="mi-co">SVP Groupe</p><p class="mi-lbl">Sales enablement</p></div></div>
         <p class="mi-title">Rebuilding commercial conversion for a €50M group.</p>
         <p class="mi-who">Laurence · Former Commercial Director</p>
         <div class="mi-tags"><span class="mi-tag">Pipeline Architect</span><span class="mi-tag">Conversion-Focused</span><span class="mi-tag">Process Builder</span></div>
@@ -761,7 +758,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="usecase-sales-editorial.html">Read the case →</a></div>
       </article>
       <article class="mi-card" data-ind="b2b" data-home="1">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">S</div><div><p class="mi-co">SAP <span class="mi-sep">—</span> <span class="mi-lbl">Partner marketing</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">S</div><div><p class="mi-co">SAP</p><p class="mi-lbl">Partner marketing</p></div></div>
         <p class="mi-title">Partner co-marketing programmes that drove a €50M pipeline across SAP's full solution portfolio.</p>
         <p class="mi-who">Thierry · B2B SaaS Marketing Lead</p>
         <div class="mi-tags"><span class="mi-tag">Enterprise software</span><span class="mi-tag">Partner marketing</span><span class="mi-tag">Demand generation</span></div>
@@ -769,7 +766,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="b2b" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">D</div><div><p class="mi-co">Didomi <span class="mi-sep">—</span> <span class="mi-lbl">Digital growth</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">D</div><div><p class="mi-co">Didomi</p><p class="mi-lbl">Digital growth</p></div></div>
         <p class="mi-title">A digital department built from scratch that grew from 0% to 30% of the company's revenue.</p>
         <p class="mi-who">Arnaud · Head of Digital &amp; Growth</p>
         <div class="mi-tags"><span class="mi-tag">Privacy tech</span><span class="mi-tag">Growth</span><span class="mi-tag">Inbound</span></div>
@@ -777,7 +774,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="b2b" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/openclassrooms.png" alt="OpenClassrooms" loading="lazy"></div><div><p class="mi-co">OpenClassrooms <span class="mi-sep">—</span> <span class="mi-lbl">Product adoption</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/openclassrooms.png" alt="OpenClassrooms" loading="lazy"></div><div><p class="mi-co">OpenClassrooms</p><p class="mi-lbl">Product adoption</p></div></div>
         <p class="mi-title">A B2B admin and analytics dashboard that lifted product adoption by 15 points for an online school.</p>
         <p class="mi-who">Sobia · Product Leader, B2B SaaS</p>
         <div class="mi-tags"><span class="mi-tag">EdTech</span><span class="mi-tag">Product launch</span><span class="mi-tag">B2B adoption</span></div>
@@ -785,7 +782,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="b2b" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/bigblue.png" alt="Bigblue" loading="lazy"></div><div><p class="mi-co">Bigblue <span class="mi-sep">—</span> <span class="mi-lbl">Lead generation</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/bigblue.png" alt="Bigblue" loading="lazy"></div><div><p class="mi-co">Bigblue</p><p class="mi-lbl">Lead generation</p></div></div>
         <p class="mi-title">33% more qualified leads at a 10% lower cost per lead for an e-commerce logistics platform, plus two new countries.</p>
         <p class="mi-who">Romain · Growth &amp; Business Development</p>
         <div class="mi-tags"><span class="mi-tag">Logistics tech</span><span class="mi-tag">Lead generation</span><span class="mi-tag">Paid media</span></div>
@@ -793,7 +790,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="b2b" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">C</div><div><p class="mi-co">CodinGame <span class="mi-sep">—</span> <span class="mi-lbl">SaaS sales</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">C</div><div><p class="mi-co">CodinGame</p><p class="mi-lbl">SaaS sales</p></div></div>
         <p class="mi-title">€900K+ in new annual recurring revenue and 100+ enterprise clients signed for a tech recruitment SaaS.</p>
         <p class="mi-who">Corentin · Head of Sales, B2B SaaS</p>
         <div class="mi-tags"><span class="mi-tag">SaaS sales</span><span class="mi-tag">Enterprise accounts</span><span class="mi-tag">ARR</span></div>
@@ -801,7 +798,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="b2b" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">I</div><div><p class="mi-co">ILOG (IBM) <span class="mi-sep">—</span> <span class="mi-lbl">Enterprise sales</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">I</div><div><p class="mi-co">ILOG (IBM)</p><p class="mi-lbl">Enterprise sales</p></div></div>
         <p class="mi-title">Complex software sold to large accounts, earning a place in the President's Club as 3rd of 58 sales reps.</p>
         <p class="mi-who">Laurence · B2B Business Developer</p>
         <div class="mi-tags"><span class="mi-tag">Enterprise software</span><span class="mi-tag">Business development</span><span class="mi-tag">Large accounts</span></div>
@@ -809,7 +806,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="beauty" data-home="1">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">M</div><div><p class="mi-co">Meditopia <span class="mi-sep">—</span> <span class="mi-lbl">Rebrand &amp; launch</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">M</div><div><p class="mi-co">Meditopia</p><p class="mi-lbl">Rebrand &amp; launch</p></div></div>
         <p class="mi-title">A rebrand that lifted web traffic 20% and a 360° launch that put a meditation app on the map in Japan.</p>
         <p class="mi-who">Hibiki · PR &amp; Brand Marketing</p>
         <div class="mi-tags"><span class="mi-tag">Wellness app</span><span class="mi-tag">Rebranding</span><span class="mi-tag">Japan launch</span></div>
@@ -817,7 +814,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="beauty" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">L</div><div><p class="mi-co">LifeStyles Healthcare (Manix, Skyn) <span class="mi-sep">—</span> <span class="mi-lbl">Brand &amp; market share</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">L</div><div><p class="mi-co">LifeStyles Healthcare (Manix, Skyn)</p><p class="mi-lbl">Brand &amp; market share</p></div></div>
         <p class="mi-title">Brand awareness up 5 points a year and market share up 4 points in two years for Manix and Skyn across Europe.</p>
         <p class="mi-who">Benjamin · Head of Sales &amp; Marketing, Consumer Health</p>
         <div class="mi-tags"><span class="mi-tag">Consumer health</span><span class="mi-tag">Brand strategy</span><span class="mi-tag">Media</span></div>
@@ -825,7 +822,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="beauty" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">E</div><div><p class="mi-co">EPISOD (Groupe Verona) <span class="mi-sep">—</span> <span class="mi-lbl">Social brand building</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">E</div><div><p class="mi-co">EPISOD (Groupe Verona)</p><p class="mi-lbl">Social brand building</p></div></div>
         <p class="mi-title">A premium fitness brand built on social media: 15K new followers in 6 months and 12M impressions on its first influencer campaign.</p>
         <p class="mi-who">Pierre · Social Media &amp; Content</p>
         <div class="mi-tags"><span class="mi-tag">Fitness</span><span class="mi-tag">Influencer marketing</span><span class="mi-tag">Brand content</span></div>
@@ -833,7 +830,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="beauty" data-home="0">
-        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/haymarket-medical-education.png" alt="Haymarket Medical Education" loading="lazy"></div><div><p class="mi-co">Haymarket Medical Education <span class="mi-sep">—</span> <span class="mi-lbl">Email marketing</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
+        <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/haymarket-medical-education.png" alt="Haymarket Medical Education" loading="lazy"></div><div><p class="mi-co">Haymarket Medical Education</p><p class="mi-lbl">Email marketing</p></div></div>
         <p class="mi-title">Email programmes reaching 1M+ healthcare professionals at a 20%+ open rate, meeting or beating sales targets.</p>
         <p class="mi-who">Deanna · Senior Growth Marketer</p>
         <div class="mi-tags"><span class="mi-tag">Medical education</span><span class="mi-tag">Email marketing</span><span class="mi-tag">Healthcare professionals</span></div>
@@ -841,7 +838,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="beauty" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">D</div><div><p class="mi-co">Dermalogica <span class="mi-sep">—</span> <span class="mi-lbl">Digital acquisition</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">D</div><div><p class="mi-co">Dermalogica</p><p class="mi-lbl">Digital acquisition</p></div></div>
         <p class="mi-title">The French digital acquisition engine of a professional skincare brand, from website redesign to live shopping.</p>
         <p class="mi-who">Cécile · Head of Communication &amp; Digital</p>
         <div class="mi-tags"><span class="mi-tag">Skincare</span><span class="mi-tag">E-commerce</span><span class="mi-tag">Influence</span></div>
@@ -849,7 +846,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
       <article class="mi-card" data-ind="beauty" data-home="0">
-        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">G</div><div><p class="mi-co">Groupe Rocher (Stanhome) <span class="mi-sep">—</span> <span class="mi-lbl">Visual identity</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
+        <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">G</div><div><p class="mi-co">Groupe Rocher (Stanhome)</p><p class="mi-lbl">Visual identity</p></div></div>
         <p class="mi-title">A unified visual identity and social templates that made Stanhome's brand consistent across channels.</p>
         <p class="mi-who">Katia · Art Director &amp; Graphic Designer</p>
         <div class="mi-tags"><span class="mi-tag">Cosmetics</span><span class="mi-tag">Visual identity</span><span class="mi-tag">Art direction</span></div>
