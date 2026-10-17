@@ -460,15 +460,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 .why-row-num { font-size:clamp(40px,4.4vw,60px); font-weight:700; letter-spacing:-0.05em; line-height:1; color:var(--accent-2); margin-bottom:16px; }
 @media (max-width:640px){ .why-rows{ grid-template-columns:1fr; } .why-row, .why-row:nth-child(odd), .why-row:nth-child(even){ display:grid; grid-template-columns:56px 1fr; gap:14px; align-items:start; padding:20px 0; border-right:none; } .why-row-num{ font-size:34px; margin:0; } }
 
-/* Talent card logos (grey in light, white in dark) */
-.tcard-logos { display:flex; align-items:center; gap:14px; height:32px; margin:4px 0 2px; }
-.tcard-logos img { width:auto; max-width:110px; object-fit:contain; display:block; }
-.tcard-logos .glogo-dark { display:none; }
-@media (prefers-color-scheme: dark) { .tcard-logos .glogo-light{display:none;} .tcard-logos .glogo-dark{display:block;} }
-:root[data-theme="light"] .tcard-logos .glogo-light { display:block; }
-:root[data-theme="light"] .tcard-logos .glogo-dark { display:none; }
-:root[data-theme="dark"] .tcard-logos .glogo-light { display:none; }
-:root[data-theme="dark"] .tcard-logos .glogo-dark { display:block; }
 </style>
 </head>
 <body>
@@ -845,7 +836,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <h3 class="tcard-name">Florian</h3>
           <p class="tcard-role">Head of Marketing &amp; Growth</p>
           <p class="tcard-years">15 yrs exp.</p>
-          <div class="tcard-logos"><img class="glogo-light" style="height:30px" src="Assets/Images/Logos/home/wecook-grey.png" alt="WeCook" title="WeCook"><img class="glogo-dark" style="height:30px" src="Assets/Images/Logos/home/wecook-white.png" alt="WeCook" title="WeCook"></div>
           <div class="tcard-overlay">
             <p class="tcard-quote">15 years in digital marketing and growth, including Head of Marketing roles at Yomoni, Santiane and SPVIE Assurances, with budgets over €5M.</p>
             <div class="tcard-traits"><span class="trait">Growth</span><span class="trait">Acquisition</span><span class="trait">Paid Media</span><span class="trait">CRO</span></div>
@@ -861,7 +851,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <h3 class="tcard-name">Nathalie</h3>
           <p class="tcard-role">CRM Manager</p>
           <p class="tcard-years">10+ yrs exp.</p>
-          <div class="tcard-logos"><img class="glogo-light" style="height:21px" src="Assets/Images/Logos/home/moet-hennessy-grey.png" alt="Moët Hennessy" title="Moët Hennessy"><img class="glogo-dark" style="height:21px" src="Assets/Images/Logos/home/moet-hennessy-white.png" alt="Moët Hennessy" title="Moët Hennessy"><img class="glogo-light" style="height:19px" src="Assets/Images/Logos/home/chanel-grey.png" alt="Chanel" title="Chanel"><img class="glogo-dark" style="height:19px" src="Assets/Images/Logos/home/chanel-white.png" alt="Chanel" title="Chanel"></div>
           <div class="tcard-overlay">
             <p class="tcard-quote">CRM Manager for Moët &amp; Chandon and Dom Pérignon, with international CRM experience at Chanel and By Terry. MBA in Luxury Marketing.</p>
             <div class="tcard-traits"><span class="trait">CRM</span><span class="trait">Emailing</span><span class="trait">Marketing Automation</span></div>
@@ -877,7 +866,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <h3 class="tcard-name">Matthieu</h3>
           <p class="tcard-role">Director &amp; Art Director</p>
           <p class="tcard-years">22+ yrs exp.</p>
-          <div class="tcard-logos"><img class="glogo-light" style="height:30px" src="Assets/Images/Logos/home/givenchy-grey.png" alt="Givenchy" title="Givenchy"><img class="glogo-dark" style="height:30px" src="Assets/Images/Logos/home/givenchy-white.png" alt="Givenchy" title="Givenchy"><img class="glogo-light" style="height:24px" src="Assets/Images/Logos/home/boss-grey.png" alt="BOSS" title="BOSS"><img class="glogo-dark" style="height:24px" src="Assets/Images/Logos/home/boss-white.png" alt="BOSS" title="BOSS"></div>
           <div class="tcard-overlay">
             <p class="tcard-quote">Independent director and art director for 22 years: film, photo, motion, CGI and post-production. His work includes Chaumet, Givenchy Parfums, Rabanne and Hugo Boss.</p>
             <div class="tcard-traits"><span class="trait">Directing</span><span class="trait">Art direction</span><span class="trait">Post-production</span><span class="trait">Photography</span></div>
@@ -893,7 +881,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <h3 class="tcard-name">Cyril</h3>
           <p class="tcard-role">Senior Product Designer</p>
           <p class="tcard-years">10+ yrs exp.</p>
-          <div class="tcard-logos"><img class="glogo-light" style="height:20px" src="Assets/Images/Logos/home/shipup-grey.png" alt="Shipup" title="Shipup"><img class="glogo-dark" style="height:20px" src="Assets/Images/Logos/home/shipup-white.png" alt="Shipup" title="Shipup"><img class="glogo-light" style="height:25px" src="Assets/Images/Logos/home/bpifrance-grey.png" alt="Bpifrance" title="Bpifrance"><img class="glogo-dark" style="height:25px" src="Assets/Images/Logos/home/bpifrance-white.png" alt="Bpifrance" title="Bpifrance"></div>
           <div class="tcard-overlay">
             <p class="tcard-quote">Product Designer specialised in B2B and SaaS: Shipup, Teamstarter, Bpifrance, Decathlon, and 3 years on Société Générale CIB’s B2B marketplace.</p>
             <div class="tcard-traits"><span class="trait">Product Design</span><span class="trait">UX/UI</span><span class="trait">Design Systems</span><span class="trait">Research</span></div>
@@ -909,7 +896,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <h3 class="tcard-name">Samuel</h3>
           <p class="tcard-role">Senior Content Specialist</p>
           <p class="tcard-years">10+ yrs exp.</p>
-          <div class="tcard-logos"><img class="glogo-light" style="height:19px" src="Assets/Images/Logos/home/prada-grey.png" alt="Prada" title="Prada"><img class="glogo-dark" style="height:19px" src="Assets/Images/Logos/home/prada-white.png" alt="Prada" title="Prada"><img class="glogo-light" style="height:16px" src="Assets/Images/Logos/home/burberry-grey.png" alt="Burberry" title="Burberry"><img class="glogo-dark" style="height:16px" src="Assets/Images/Logos/home/burberry-white.png" alt="Burberry" title="Burberry"></div>
           <div class="tcard-overlay">
             <p class="tcard-quote">French copywriter and transcreator for EssilorLuxottica brands: Prada, Miu Miu, Versace, Burberry, Persol, Oliver Peoples and Vogue Eyewear.</p>
             <div class="tcard-traits"><span class="trait">Copywriting</span><span class="trait">Transcreation</span><span class="trait">CRM</span><span class="trait">Tone of voice</span></div>
@@ -925,7 +911,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <h3 class="tcard-name">Hibiki</h3>
           <p class="tcard-role">PR &amp; Brand Marketing</p>
           <p class="tcard-years">10+ yrs exp.</p>
-          <div class="tcard-logos"><img class="glogo-light" style="height:22px" src="Assets/Images/Logos/home/gucci-grey.png" alt="Gucci" title="Gucci"><img class="glogo-dark" style="height:22px" src="Assets/Images/Logos/home/gucci-white.png" alt="Gucci" title="Gucci"></div>
           <div class="tcard-overlay">
             <p class="tcard-quote">A year and a half in Gucci Japan’s press office, reaching the highest editorial coverage rate among luxury brands in Japan. Fluent in French, English and Japanese.</p>
             <div class="tcard-traits"><span class="trait">Press relations</span><span class="trait">Events</span><span class="trait">Brand Marketing</span></div>
@@ -941,7 +926,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <h3 class="tcard-name">Jasmine</h3>
           <p class="tcard-role">Senior Event Manager</p>
           <p class="tcard-years">10+ yrs exp.</p>
-          <div class="tcard-logos"><img class="glogo-light" style="height:30px" src="Assets/Images/Logos/home/krug-grey.png" alt="Krug" title="Krug"><img class="glogo-dark" style="height:30px" src="Assets/Images/Logos/home/krug-white.png" alt="Krug" title="Krug"><img class="glogo-light" style="height:30px" src="Assets/Images/Logos/home/heineken-grey.png" alt="Heineken" title="Heineken"><img class="glogo-dark" style="height:30px" src="Assets/Images/Logos/home/heineken-white.png" alt="Heineken" title="Heineken"></div>
           <div class="tcard-overlay">
             <p class="tcard-quote">10+ years of brand activation and events in France and abroad, for food and beverage brands such as Perrier, Heineken, Grolsch, Krug and Captain Morgan.</p>
             <div class="tcard-traits"><span class="trait">Brand Activation</span><span class="trait">Events</span><span class="trait">Launches</span><span class="trait">International</span></div>
@@ -957,7 +941,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
           <h3 class="tcard-name">Baptiste</h3>
           <p class="tcard-role">B2B Outbound Expert</p>
           <p class="tcard-years">5+ yrs exp.</p>
-          <div class="tcard-logos"><img class="glogo-light" style="height:30px" src="Assets/Images/Logos/home/orange-grey.png" alt="Orange Business Services" title="Orange Business Services"><img class="glogo-dark" style="height:30px" src="Assets/Images/Logos/home/orange-white.png" alt="Orange Business Services" title="Orange Business Services"><img class="glogo-light" style="height:22px" src="Assets/Images/Logos/home/muzzo-grey.png" alt="Muzzo" title="Muzzo"><img class="glogo-dark" style="height:22px" src="Assets/Images/Logos/home/muzzo-white.png" alt="Muzzo" title="Muzzo"></div>
           <div class="tcard-overlay">
             <p class="tcard-quote">Around thirty B2B companies supported on prospecting, directly (Orange Business Services, Muzzo) or through agencies: targeting, automated campaigns and CRM set-up, through to qualified meetings.</p>
             <div class="tcard-traits"><span class="trait">Outbound</span><span class="trait">Automation</span><span class="trait">HubSpot</span><span class="trait">Copywriting</span></div>
