@@ -507,6 +507,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 :root[data-theme="dark"] .cmpm-card.is-us .cmpm-ans { background:none; }
 :root[data-theme="dark"] .cmpm-card.is-us .cmpm-row { border-top-color:rgba(28,26,23,0.12); }
 
+/* MISSIONS — dark cards: Coffee in light mode, Sand in dark mode (same pairing as the Compare Metodas column) */
+.mi-card { background:var(--dark-bg); border-color:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-20:rgba(247,244,238,0.24); --ink-10:rgba(247,244,238,0.12); --accent:#d9714a; color:var(--ink); }
+@media (prefers-color-scheme: dark) { .mi-card { background:var(--fixed-beige); border-color:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.22); --ink-10:rgba(28,26,23,0.12); --accent:#a3311a; color:var(--ink); } }
+:root[data-theme="light"] .mi-card { background:var(--dark-bg); border-color:var(--dark-bg); --ink:var(--fixed-cream); --ink-55:var(--fixed-cream-55); --ink-20:rgba(247,244,238,0.24); --ink-10:rgba(247,244,238,0.12); --accent:#d9714a; color:var(--ink); }
+:root[data-theme="dark"] .mi-card { background:var(--fixed-beige); border-color:var(--fixed-beige); --ink:var(--fixed-ink); --ink-55:var(--fixed-ink-55); --ink-20:rgba(28,26,23,0.22); --ink-10:rgba(28,26,23,0.12); --accent:#a3311a; color:var(--ink); }
+
 /* MISSIONS — mobile compact cards (client, title, main tag; rest on "details") */
 @media (max-width:640px){
   .mi-card { padding:18px 18px 14px; gap:12px; }
