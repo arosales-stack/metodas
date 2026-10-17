@@ -488,6 +488,21 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
   .cmpm-ans { font-size:15px; line-height:1.5; color:var(--ink-55); }
   .cmpm-card.is-us .cmpm-ans { color:var(--fixed-cream); font-weight:500; }
 }
+
+/* COMPARE — colour accents (Clay in both modes, per user) */
+.cmp-us-top { border-top-color:#d9714a !important; }
+.cmpm-card.is-us { border-top-color:#d9714a !important; }
+.cmp-lbl { color:#d9714a !important; font-weight:700; }
+.cmp-us-top { border-top-width:6px !important; }
+.cmp-us { box-shadow:inset 3px 0 0 #d9714a; }
+.cmp-us:not(.cmp-hd) { position:relative; padding-left:52px; }
+.cmp-us:not(.cmp-hd)::before { content:''; position:absolute; left:26px; top:24px; width:6px; height:12px; border:solid #d9714a; border-width:0 2.5px 2.5px 0; transform:rotate(45deg); }
+.cmp-them { position:relative; padding-left:46px; }
+.cmp-them::before { content:''; position:absolute; left:24px; top:33px; width:10px; height:2px; background:var(--ink-20); }
+.cmpm-lbl { color:#d9714a !important; font-weight:700; }
+.cmpm-card.is-us { border-top-width:6px !important; box-shadow:inset 3px 0 0 #d9714a; }
+.cmpm-card.is-us .cmpm-ans { position:relative; padding-left:22px; }
+.cmpm-card.is-us .cmpm-ans::before { content:''; position:absolute; left:2px; top:4px; width:5px; height:10px; border:solid #d9714a; border-width:0 2px 2px 0; transform:rotate(45deg); }
 </style>
 </head>
 <body>
