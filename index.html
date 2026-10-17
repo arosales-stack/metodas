@@ -1192,6 +1192,14 @@ themeToggle.addEventListener('click', () => {
   cards.forEach(function(c){
     c.querySelector('.mi-more').addEventListener('click',function(){ var o=c.classList.toggle('is-open'); this.setAttribute('aria-expanded',o?'true':'false'); });
   });
+  // Mission CTA → form with context. Visitor sees only title + industry; client/freelancer go to the email only.
+  var indName={}; document.querySelectorAll('.mi-chip').forEach(function(b){ indName[b.dataset.f]=b.textContent.trim(); });
+  cards.forEach(function(c){
+    var a=c.querySelector('a.mi-cta'); if(!a || a.getAttribute('href').indexOf('contact')<0) return;
+    var t=function(sel){ var e=c.querySelector(sel); return e?e.textContent.trim():''; };
+    var lbl=t('.mi-lbl'), who=t('.mi-who').split('·')[0].trim();
+    a.href=a.getAttribute('href').split('?')[0]+'?src=mission&req='+encodeURIComponent(lbl+' · '+(indName[c.dataset.ind]||''))+'&m='+encodeURIComponent(btoa(unescape(encodeURIComponent(t('.mi-co')+' — '+lbl+(who?' ('+who+')':'')))));
+  });
   window.addEventListener('resize',equalize);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(equalize);
   window.addEventListener('load',equalize);
@@ -1211,7 +1219,7 @@ themeToggle.addEventListener('click', () => {
     document.getElementById('ncMStatusTxt').textContent= ok ? D.yes : D.no;
     m.classList.toggle('is-no',!ok);
     m.classList.remove('is-anim'); void m.offsetWidth; m.classList.add('is-anim');
-    var cta=document.getElementById('ncCta'); cta.href=D.href+'?role='+encodeURIComponent(rb.querySelector('.nc-val').textContent)+'&industry='+encodeURIComponent(D.indShort[sel.i]);
+    var cta=document.getElementById('ncCta'); cta.href=D.href+'?src=network&role='+encodeURIComponent(rb.querySelector('.nc-val').textContent)+'&industry='+encodeURIComponent(D.indShort[sel.i]);
   }
   pairs.forEach(function(p){
     var btn=document.getElementById(p[0]), panel=document.getElementById(p[1]);

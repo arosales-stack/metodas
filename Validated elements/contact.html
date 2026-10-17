@@ -109,6 +109,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .field input::placeholder, .field textarea::placeholder { color:var(--ink-20); }
 .field input:focus, .field textarea:focus { border-bottom-color:var(--accent); }
 .field textarea { resize:none; line-height:1.65; min-height:96px; }
+/* REQUEST CONTEXT — shown only when the visitor arrives from a mission card or the network check */
+.req-line { display:flex; flex-direction:column; gap:7px; }
+.req-line[hidden] { display:none; }
+.req-lbl { font-size:11px; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-55); }
+.req-val { font-size:17px; font-weight:500; color:var(--ink); }
 .optional-tag { font-size:11px; color:var(--ink-20); font-style:italic; margin-left:6px; text-transform:none; letter-spacing:0; }
 
 /* ERROR */
@@ -162,6 +167,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   <div class="form-step active" id="step1">
     <div class="step-label">Step 1 of 2</div>
     <h1 class="form-heading">A few basics<br>to get started.</h1>
+    <div class="req-line" hidden><span class="req-lbl">Your request</span><span class="req-val"></span></div>
     <div class="fields-group">
       <div class="field" id="field-name">
         <label for="name">Your name</label>
@@ -191,6 +197,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     <div class="step-label">Step 2 of 2</div>
     <h1 class="form-heading">What are you<br>looking for?</h1>
     <p class="form-subtext">We'll read this before we call — no need to be exhaustive.</p>
+    <div class="req-line" hidden><span class="req-lbl">Your request</span><span class="req-val"></span></div>
     <div class="fields-group">
       <div class="field">
         <label for="need">Your need <span class="optional-tag">optional</span></label>
@@ -265,6 +272,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     transition(document.getElementById('step2'), document.getElementById('step1'), 'exit-dn', 'hidden');
   }
 
+  // Context from the link that opened the form (mission card or network check). No params = generic form, unchanged.
+  const qp = new URLSearchParams(location.search);
+  const ctx = { src: qp.get('src') || (qp.get('role') ? 'network' : ''), req: '', ref: '' };
+  try { if (qp.get('m')) ctx.ref = decodeURIComponent(escape(atob(qp.get('m')))); } catch (e) {}
+  if (ctx.src === 'mission') ctx.req = qp.get('req') || '';
+  else if (ctx.src === 'network') ctx.req = [qp.get('role'), qp.get('industry')].filter(Boolean).join(' · ');
+  if (ctx.req) document.querySelectorAll('.req-line').forEach(el => { el.querySelector('.req-val').textContent = ctx.req; el.hidden = false; });
+  if (location.search) document.querySelectorAll('.lang-toggle').forEach(l => { l.href = l.getAttribute('href').split('?')[0] + location.search; });
+  const srcLabel = { mission: 'Mission card', network: 'Network check', '': 'Generic' };
+
   function submitForm() {
     const v = id => (document.getElementById(id) || {}).value || '';
     fetch('https://formsubmit.co/ajax/a.rosales@metodas.co', {
@@ -275,6 +292,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
         _template: 'table',
         _captcha: 'false',
         Nom: v('name'), Entreprise: v('company'), Email: v('email'), Besoin: v('need'),
+        Source: srcLabel[ctx.src] || srcLabel[''], Demande: ctx.req || '—', Mission: ctx.ref || '—',
         Page: document.referrer || location.href
       })
     }).catch(err => console.error('Form send failed', err));
