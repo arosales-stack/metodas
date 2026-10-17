@@ -515,20 +515,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
 :root[data-theme="dark"] .cmpm-card.is-us .cmpm-ans { background:none; }
 :root[data-theme="dark"] .cmpm-card.is-us .cmpm-row { border-top-color:rgba(28,26,23,0.12); }
 
-/* MISSIONS — mobile horizontal swipe (1.5 cards visible) */
-.mi-swipe { display:none; }
+/* MISSIONS — mobile compact cards (client, title, main tag; rest on "details") */
 @media (max-width:640px){
-  .mi-grid { display:flex; grid-template-columns:none; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:var(--pad-x); margin:0 calc(-1 * var(--pad-x)); padding:4px var(--pad-x) 12px; align-items:stretch; scrollbar-width:none; }
-  .mi-grid::-webkit-scrollbar { display:none; }
-  .mi-card { flex:0 0 64%; scroll-snap-align:start; min-height:0 !important; }
-  .mi-card[hidden] { display:none; }
-  .mi-swipe { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-55); margin:-12px 0 14px; }
-  .mi-card { padding:18px 16px; gap:12px; }
-  .mi-logo { width:44px; height:44px; }
-  .mi-lbl { white-space:normal; }
-  .mi-co { font-size:16px; }
-  .mi-title { font-size:16px; }
-  .mi-actions { flex-direction:column; align-items:flex-start; gap:8px; }
+  .mi-card { padding:18px 18px 14px; gap:12px; }
+  .mi-card:not(.is-open) .mi-ind,
+  .mi-card:not(.is-open) .mi-title,
+  .mi-card:not(.is-open) .mi-who { display:none; }
+  .mi-card .mi-actions { padding-top:12px; }
+}
+
+.mi-skill { display:none; }
+@media (max-width:640px){
+  .mi-card:not(.is-open) .mi-tag { display:none !important; }
+  .mi-card:not(.is-open) .mi-skill { display:inline-block; font-size:13px; font-weight:500; color:var(--ink); border:1.5px solid var(--ink-20); padding:4px 10px; }
 }
 </style>
 </head>
@@ -600,13 +599,12 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
       <h2 class="mi-h2">What our freelancers have already delivered.</h2>
     </div>
     <div class="mi-filters"><button class="mi-chip is-active" type="button" data-f="home">All</button><button class="mi-chip" type="button" data-f="luxury">Luxury</button><button class="mi-chip" type="button" data-f="food">Food &amp; Beverage</button><button class="mi-chip" type="button" data-f="banking">Banking &amp; Insurance</button><button class="mi-chip" type="button" data-f="b2b">B2B &amp; SaaS</button><button class="mi-chip" type="button" data-f="beauty">Beauty &amp; Health</button></div>
-    <p class="mi-swipe" aria-hidden="true">Swipe →</p>
     <div class="mi-grid">
       <article class="mi-card" data-ind="luxury" data-home="1">
         <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-krug.jpg" alt="Krug" loading="lazy"></div><div><p class="mi-co">Krug <span class="mi-sep">—</span> <span class="mi-lbl">Incentive trip</span></p><p class="mi-ind">Luxury</p></div></div>
         <p class="mi-title">A tailor-made Nordic journey from Sweden to Lapland that immersed 80 chefs and brand ambassadors in the Krug universe.</p>
         <p class="mi-who">Jasmine · Senior Event Manager</p>
-        <div class="mi-tags"><span class="mi-tag">Champagne</span><span class="mi-tag">Incentive trip</span><span class="mi-tag">Experiential</span></div>
+        <div class="mi-tags"><span class="mi-skill">Events</span><span class="mi-tag">Champagne</span><span class="mi-tag">Incentive trip</span><span class="mi-tag">Experiential</span></div>
         <ul class="mi-list"><li>Tailor-made journey for 80 chefs and brand ambassadors (2024)</li><li>Immersive experience pairing music, gastronomy and exceptional champagnes</li><li>End-to-end management: suppliers, logistics and on-site coordination</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -614,7 +612,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/essilorluxottica.png" alt="EssilorLuxottica" loading="lazy"></div><div><p class="mi-co">EssilorLuxottica <span class="mi-sep">—</span> <span class="mi-lbl">Luxury transcreation</span></p><p class="mi-ind">Luxury</p></div></div>
         <p class="mi-title">French copy and transcreation for Prada, Versace, Burberry and more, plus tone-of-voice guides still used as the reference.</p>
         <p class="mi-who">Samuel · Senior Content Specialist</p>
-        <div class="mi-tags"><span class="mi-tag">Eyewear</span><span class="mi-tag">Transcreation</span><span class="mi-tag">Tone of voice</span></div>
+        <div class="mi-tags"><span class="mi-skill">Content</span><span class="mi-tag">Eyewear</span><span class="mi-tag">Transcreation</span><span class="mi-tag">Tone of voice</span></div>
         <ul class="mi-list"><li>French CRM and emailing copy for Prada, Miu Miu, Versace, Burberry, Persol and Oliver Peoples</li><li>25-page tone-of-voice guide for Vogue Eyewear, the reference for CRM, e-commerce and paid media</li><li>Transcreation from English and Italian</li><li>Up to 27 campaigns handled at once at peak</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -622,7 +620,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/gucci.png" alt="Gucci Japan" loading="lazy"></div><div><p class="mi-co">Gucci Japan <span class="mi-sep">—</span> <span class="mi-lbl">Press relations</span></p><p class="mi-ind">Luxury</p></div></div>
         <p class="mi-title">Press relations that helped Gucci reach the highest editorial coverage rate among luxury brands in Japan.</p>
         <p class="mi-who">Hibiki · PR &amp; Brand Marketing</p>
-        <div class="mi-tags"><span class="mi-tag">Press relations</span><span class="mi-tag">Japan</span><span class="mi-tag">Fashion</span></div>
+        <div class="mi-tags"><span class="mi-skill">PR</span><span class="mi-tag">Press relations</span><span class="mi-tag">Japan</span><span class="mi-tag">Fashion</span></div>
         <ul class="mi-list"><li>Managed relations between Gucci and the press for shoots</li><li>Handled samples, logistics and timing</li><li>Organised events and press days, from invitations to results analysis</li><li>Tokyo, 2018–2020</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -630,7 +628,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-moet-hennessy.jpg" alt="Moët Hennessy" loading="lazy"></div><div><p class="mi-co">Moët Hennessy <span class="mi-sep">—</span> <span class="mi-lbl">Global CRM strategy</span></p><p class="mi-ind">Luxury</p></div></div>
         <p class="mi-title">A global CRM strategy for Moët &amp; Chandon and Dom Pérignon, with redesigned journeys and a plan to win back inactive clients.</p>
         <p class="mi-who">Nathalie · CRM Manager</p>
-        <div class="mi-tags"><span class="mi-tag">Champagne</span><span class="mi-tag">CRM</span><span class="mi-tag">Emailing</span></div>
+        <div class="mi-tags"><span class="mi-skill">CRM</span><span class="mi-tag">Champagne</span><span class="mi-tag">CRM</span><span class="mi-tag">Emailing</span></div>
         <ul class="mi-list"><li>Designed the global CRM strategy for the two Maisons</li><li>Redesigned the Welcome and Birthday triggers and ran one-shot activations</li><li>Coordinated content with international markets, with regular performance reporting</li><li>Integrated a new partner (Notify) to reactivate inactive contacts</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -638,7 +636,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/kenzo.png" alt="Kenzo Parfums" loading="lazy"></div><div><p class="mi-co">Kenzo Parfums <span class="mi-sep">—</span> <span class="mi-lbl">Fragrance launch</span></p><p class="mi-ind">Luxury</p></div></div>
         <p class="mi-title">A playful social content plan that turned the Kenzo World fragrance launch into a game on Facebook and Instagram.</p>
         <p class="mi-who">Bastien · Social Media Strategist</p>
-        <div class="mi-tags"><span class="mi-tag">Fragrance launch</span><span class="mi-tag">Social content</span><span class="mi-tag">Strategic planning</span></div>
+        <div class="mi-tags"><span class="mi-skill">Social Media</span><span class="mi-tag">Fragrance launch</span><span class="mi-tag">Social content</span><span class="mi-tag">Strategic planning</span></div>
         <ul class="mi-list"><li>Strategic planning for the launch of the Kenzo World eau de toilette</li><li>Facebook and Instagram content built around the theme of play</li><li>Social media strategy and content production with agency Dix-Sept Paris</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -646,7 +644,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/boss.png" alt="BOSS" loading="lazy"></div><div><p class="mi-co">BOSS <span class="mi-sep">—</span> <span class="mi-lbl">Campaign films</span></p><p class="mi-ind">Luxury</p></div></div>
         <p class="mi-title">Film direction and art direction for BOSS campaigns, from the Superman partnership to Christmas and "Striking".</p>
         <p class="mi-who">Matthieu · Director &amp; Art Director</p>
-        <div class="mi-tags"><span class="mi-tag">Fashion film</span><span class="mi-tag">Art direction</span><span class="mi-tag">Brand partnership</span></div>
+        <div class="mi-tags"><span class="mi-skill">Creative Direction</span><span class="mi-tag">Fashion film</span><span class="mi-tag">Art direction</span><span class="mi-tag">Brand partnership</span></div>
         <ul class="mi-list"><li>Partnership campaign for the release of the Superman film</li><li>Christmas campaign</li><li>"Striking" campaign film</li><li>Directed the films and art-directed the visuals of each campaign</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -654,7 +652,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-wecook.jpg" alt="WeCook" loading="lazy"></div><div><p class="mi-co">WeCook <span class="mi-sep">—</span> <span class="mi-lbl">E-commerce growth</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
         <p class="mi-title">Online sales multiplied by 10 thanks to full-funnel acquisition for a nutrition meal brand.</p>
         <p class="mi-who">Florian · Head of Marketing &amp; Growth</p>
-        <div class="mi-tags"><span class="mi-tag">Acquisition</span><span class="mi-tag">E-commerce</span><span class="mi-tag">Nutrition</span></div>
+        <div class="mi-tags"><span class="mi-skill">Growth</span><span class="mi-tag">Acquisition</span><span class="mi-tag">E-commerce</span><span class="mi-tag">Nutrition</span></div>
         <ul class="mi-list"><li>Multi-channel acquisition on a €1M budget: Social Ads, Google Ads, Native Ads and affiliation</li><li>Optimised landing pages, emailing, content and SEO</li><li>+900% online sales, 20K leads and 8K freemium sign-ups a month</li><li>Brand visibility multiplied by 5 and communities up 40%</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -662,7 +660,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">T</div><div><p class="mi-co">Toques &amp; Nougat festival <span class="mi-sep">—</span> <span class="mi-lbl">Festival launch</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
         <p class="mi-title">A brand-new food festival launched from scratch, drawing 15,000 visitors in its first edition.</p>
         <p class="mi-who">Marianne · Senior Event Project Manager</p>
-        <div class="mi-tags"><span class="mi-tag">Food festival</span><span class="mi-tag">Event launch</span><span class="mi-tag">Partnerships</span></div>
+        <div class="mi-tags"><span class="mi-skill">Events</span><span class="mi-tag">Food festival</span><span class="mi-tag">Event launch</span><span class="mi-tag">Partnerships</span></div>
         <ul class="mi-list"><li>Prepared and organised the first edition of Toques &amp; Nougat</li><li>Planned and ran the organising committee, logistics and budget</li><li>Negotiated partnerships and reached out to chefs, personalities and media</li><li>15,000 visitors</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -670,7 +668,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-grolsch.jpg" alt="Grolsch" loading="lazy"></div><div><p class="mi-co">Grolsch <span class="mi-sep">—</span> <span class="mi-lbl">360° campaign</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
         <p class="mi-title">An award-winning 360° campaign for Grolsch, from street activation to social media.</p>
         <p class="mi-who">Jasmine · Senior Event Manager</p>
-        <div class="mi-tags"><span class="mi-tag">Brand activation</span><span class="mi-tag">Beer</span><span class="mi-tag">360° campaign</span></div>
+        <div class="mi-tags"><span class="mi-skill">Events</span><span class="mi-tag">Brand activation</span><span class="mi-tag">Beer</span><span class="mi-tag">360° campaign</span></div>
         <ul class="mi-list"><li>"Pop Around" campaign: event, happening, web documentary and social media</li><li>Managed the brand's Facebook and Twitter accounts</li><li>Best Event Campaign award, Trophées de l'Événement 2015</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -678,7 +676,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-coca-cola.jpg" alt="The Coca-Cola Company" loading="lazy"></div><div><p class="mi-co">The Coca-Cola Company <span class="mi-sep">—</span> <span class="mi-lbl">Product launches</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
         <p class="mi-title">Three Coca-Cola and Fanta launches driven across social, TV and out-of-home, with influencers and the French Football Federation.</p>
         <p class="mi-who">Jean-François · Marketing &amp; Partnerships Manager</p>
-        <div class="mi-tags"><span class="mi-tag">Soft drinks</span><span class="mi-tag">Campaign launch</span><span class="mi-tag">Influencers</span></div>
+        <div class="mi-tags"><span class="mi-skill">Social Media</span><span class="mi-tag">Soft drinks</span><span class="mi-tag">Campaign launch</span><span class="mi-tag">Influencers</span></div>
         <ul class="mi-list"><li>Led the Coca-Cola Store, Gaming Stories and FantaxYou projects</li><li>Launched campaigns across social, TV, programmatic, out-of-home and print</li><li>Managed partnerships with influencers, YouTubers, agencies and the FFF</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -686,7 +684,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-full"><img src="Assets/Images/Logo/Clients/sq-oligosante.jpg" alt="Oligosanté" loading="lazy"></div><div><p class="mi-co">Oligosanté <span class="mi-sep">—</span> <span class="mi-lbl">Launches &amp; export</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
         <p class="mi-title">Product launches taken from concept to market, in France and abroad, for a French food supplement laboratory.</p>
         <p class="mi-who">Julia · Product &amp; Marketing Manager</p>
-        <div class="mi-tags"><span class="mi-tag">Product launch</span><span class="mi-tag">Trade marketing</span><span class="mi-tag">Export</span></div>
+        <div class="mi-tags"><span class="mi-skill">Product Marketing</span><span class="mi-tag">Product launch</span><span class="mi-tag">Trade marketing</span><span class="mi-tag">Export</span></div>
         <ul class="mi-list"><li>Led launches end to end: suppliers, R&amp;D, budget and market release</li><li>Sales tools for the sales force, merchandising, POS and shelf optimisation</li><li>Export files, regulatory compliance and packaging claims</li><li>Digital: SEO, Instagram, Facebook and newsletter</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -694,7 +692,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">M</div><div><p class="mi-co">Monbanquet <span class="mi-sep">—</span> <span class="mi-lbl">B2B lead generation</span></p><p class="mi-ind">Food &amp; Beverage</p></div></div>
         <p class="mi-title">New corporate catering clients won through automated prospecting and more than 30 partnerships.</p>
         <p class="mi-who">Baptiste · B2B Lead Generation Expert</p>
-        <div class="mi-tags"><span class="mi-tag">B2B catering</span><span class="mi-tag">Prospecting</span><span class="mi-tag">Partnerships</span></div>
+        <div class="mi-tags"><span class="mi-skill">Growth</span><span class="mi-tag">B2B catering</span><span class="mi-tag">Prospecting</span><span class="mi-tag">Partnerships</span></div>
         <ul class="mi-list"><li>Client acquisition through cold emailing, networking and marketing automation</li><li>Set up more than 30 partnerships</li><li>Managed 2 interns</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -702,7 +700,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/yomoni.png" alt="Yomoni" loading="lazy"></div><div><p class="mi-co">Yomoni <span class="mi-sep">—</span> <span class="mi-lbl">Acquisition</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
         <p class="mi-title">Acquisition cost cut 43% and leads up 129% for a leading online savings manager, during a reorganisation.</p>
         <p class="mi-who">Florian · Head of Marketing &amp; Growth</p>
-        <div class="mi-tags"><span class="mi-tag">Savings &amp; investment</span><span class="mi-tag">Acquisition</span><span class="mi-tag">Interim management</span></div>
+        <div class="mi-tags"><span class="mi-skill">Growth</span><span class="mi-tag">Savings &amp; investment</span><span class="mi-tag">Acquisition</span><span class="mi-tag">Interim management</span></div>
         <ul class="mi-list"><li>Interim Head of Marketing managing a digital team of 7 employees and 2 freelancers</li><li>CAC -43%, conversion +37%, leads +129%, Gold / Premium clients +7%</li><li>SEA and Meta Ads campaigns, SEO, CRO and nurturing automation</li><li>Budget over €5M</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -710,7 +708,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/bnp-paribas-icon.png" alt="BNP Paribas Ma Banque" loading="lazy"></div><div><p class="mi-co">BNP Paribas Ma Banque <span class="mi-sep">—</span> <span class="mi-lbl">Social media</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
         <p class="mi-title">A refreshed social media voice that grew BNP Paribas Ma Banque's community 20% and tripled engagement in 3 months.</p>
         <p class="mi-who">Pierre · Social Media &amp; Content</p>
-        <div class="mi-tags"><span class="mi-tag">Retail banking</span><span class="mi-tag">Social media</span><span class="mi-tag">Editorial line</span></div>
+        <div class="mi-tags"><span class="mi-skill">Social Media</span><span class="mi-tag">Retail banking</span><span class="mi-tag">Social media</span><span class="mi-tag">Editorial line</span></div>
         <ul class="mi-list"><li>Repositioned the formats and editorial line of Ma Banque</li><li>Ran the planning, content and social media activations</li><li>Strategy focused on visibility, engagement and a more modern tone</li><li>In 3 months: +20% community, +35% reach, engagement from 1% to 3.6%</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -718,7 +716,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/societe-generale.png" alt="Société Générale CIB" loading="lazy"></div><div><p class="mi-co">Société Générale CIB <span class="mi-sep">—</span> <span class="mi-lbl">Product design</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
         <p class="mi-title">10+ B2B products designed for Société Générale CIB's marketplace, with a shared design system to keep them consistent.</p>
         <p class="mi-who">Cyril · Senior Product Designer</p>
-        <div class="mi-tags"><span class="mi-tag">Investment banking</span><span class="mi-tag">Product design</span><span class="mi-tag">UX research</span></div>
+        <div class="mi-tags"><span class="mi-skill">Product Design</span><span class="mi-tag">Investment banking</span><span class="mi-tag">Product design</span><span class="mi-tag">UX research</span></div>
         <ul class="mi-list"><li>Lead designer on Société Générale CIB's B2B marketplace for 3 years</li><li>User research, workshops and tests in a complex financial environment</li><li>Prototyping, product methods and contribution to the SG Design System</li><li>10+ B2B products designed and supported</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -726,7 +724,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">B</div><div><p class="mi-co">BoursoBank <span class="mi-sep">—</span> <span class="mi-lbl">Competitive intelligence</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
         <p class="mi-title">Competitive intelligence on 50 French banking players, turned into strategic recommendations for the marketing teams.</p>
         <p class="mi-who">Théo · Strategic Marketing &amp; Market Intelligence</p>
-        <div class="mi-tags"><span class="mi-tag">Online banking</span><span class="mi-tag">Competitive intelligence</span><span class="mi-tag">Benchmarks</span></div>
+        <div class="mi-tags"><span class="mi-skill">Data &amp; Insights</span><span class="mi-tag">Online banking</span><span class="mi-tag">Competitive intelligence</span><span class="mi-tag">Benchmarks</span></div>
         <ul class="mi-list"><li>Analysed market changes and the strategies of 50 French players</li><li>Ran 60 rankings, awards and sector benchmarks a year</li><li>10 monthly KPI reports with business teams</li><li>Benchmarks on savings plans, welcome and referral offers and consumer credit rates</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -734,7 +732,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/n26.png" alt="N26" loading="lazy"></div><div><p class="mi-co">N26 <span class="mi-sep">—</span> <span class="mi-lbl">Content &amp; UX writing</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
         <p class="mi-title">French content across N26's whole digital journey, with tone and terminology kept consistent in a regulated banking setting.</p>
         <p class="mi-who">Samuel · Senior Content Specialist</p>
-        <div class="mi-tags"><span class="mi-tag">Digital banking</span><span class="mi-tag">UX writing</span><span class="mi-tag">Compliance</span></div>
+        <div class="mi-tags"><span class="mi-skill">Content</span><span class="mi-tag">Digital banking</span><span class="mi-tag">UX writing</span><span class="mi-tag">Compliance</span></div>
         <ul class="mi-list"><li>French content for CRM, push notifications, UX, support and app releases</li><li>Wrote and adapted legal and compliance content</li><li>Governed tone and terminology in a regulated environment</li><li>Turned one-off translation questions into permanent glossary entries</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -742,7 +740,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/allianz.png" alt="Allianz" loading="lazy"></div><div><p class="mi-co">Allianz <span class="mi-sep">—</span> <span class="mi-lbl">Sports sponsorship</span></p><p class="mi-ind">Banking &amp; Insurance</p></div></div>
         <p class="mi-title">"Le Vestiaire Allianz": a social media hub that brought fans closer to the athletes Allianz sponsors.</p>
         <p class="mi-who">Bastien · Social Media Strategist</p>
-        <div class="mi-tags"><span class="mi-tag">Sports sponsorship</span><span class="mi-tag">Insurance</span><span class="mi-tag">Social media</span></div>
+        <div class="mi-tags"><span class="mi-skill">Social Media</span><span class="mi-tag">Sports sponsorship</span><span class="mi-tag">Insurance</span><span class="mi-tag">Social media</span></div>
         <ul class="mi-list"><li>Imagined the branding, editorial line and content of Allianz's sports sponsorship ecosystem</li><li>Created "Le Vestiaire Allianz", a virtual locker room for #TeamAllianz athletes</li><li>Exclusive, immersive content: reportage, interviews and educational formats</li><li>Wrote the verbal charter</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -750,7 +748,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">S</div><div><p class="mi-co">SAP <span class="mi-sep">—</span> <span class="mi-lbl">Partner marketing</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
         <p class="mi-title">Partner co-marketing programmes that drove a €50M pipeline across SAP's full solution portfolio.</p>
         <p class="mi-who">Thierry · B2B SaaS Marketing Lead</p>
-        <div class="mi-tags"><span class="mi-tag">Enterprise software</span><span class="mi-tag">Partner marketing</span><span class="mi-tag">Demand generation</span></div>
+        <div class="mi-tags"><span class="mi-skill">Go-to-Market</span><span class="mi-tag">Enterprise software</span><span class="mi-tag">Partner marketing</span><span class="mi-tag">Demand generation</span></div>
         <ul class="mi-list"><li>Coordinated partner and large enterprise co-marketing programmes with SAP France</li><li>Ran demand generation campaigns (TOFU, MOFU, BOFU) for HR solutions in Northern Europe</li><li>Competitive displacement campaigns against Workday and Oracle</li><li>Customer keynotes, video testimonials and executive roundtables</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -758,7 +756,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">D</div><div><p class="mi-co">Didomi <span class="mi-sep">—</span> <span class="mi-lbl">Digital growth</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
         <p class="mi-title">A digital department built from scratch that grew from 0% to 30% of the company's revenue.</p>
         <p class="mi-who">Arnaud · Head of Digital &amp; Growth</p>
-        <div class="mi-tags"><span class="mi-tag">Privacy tech</span><span class="mi-tag">Growth</span><span class="mi-tag">Inbound</span></div>
+        <div class="mi-tags"><span class="mi-skill">Growth</span><span class="mi-tag">Privacy tech</span><span class="mi-tag">Growth</span><span class="mi-tag">Inbound</span></div>
         <ul class="mi-list"><li>Joined as 20th employee and first digital expert</li><li>Built a new digital platform, acquisition at scale, partner relationship management and inbound sales</li><li>Digital went from 0% to 30% of company revenue</li><li>Recruited 7 digital experts within a 15-person marketing team</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -766,7 +764,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/openclassrooms.png" alt="OpenClassrooms" loading="lazy"></div><div><p class="mi-co">OpenClassrooms <span class="mi-sep">—</span> <span class="mi-lbl">Product adoption</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
         <p class="mi-title">A B2B admin and analytics dashboard that lifted product adoption by 15 points for an online school.</p>
         <p class="mi-who">Sobia · Product Leader, B2B SaaS</p>
-        <div class="mi-tags"><span class="mi-tag">EdTech</span><span class="mi-tag">Product launch</span><span class="mi-tag">B2B adoption</span></div>
+        <div class="mi-tags"><span class="mi-skill">Product Marketing</span><span class="mi-tag">EdTech</span><span class="mi-tag">Product launch</span><span class="mi-tag">B2B adoption</span></div>
         <ul class="mi-list"><li>Launched an admin and analytics dashboard for B2B customers: adoption +15 pts</li><li>Launched an LMS integration with 360Learning, live for 5 customers in month one</li><li>Identified B2B learners' pain points to improve activation and engagement</li><li>Product documentation and demos for sales enablement</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -774,7 +772,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/bigblue.png" alt="Bigblue" loading="lazy"></div><div><p class="mi-co">Bigblue <span class="mi-sep">—</span> <span class="mi-lbl">Lead generation</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
         <p class="mi-title">33% more qualified leads at a 10% lower cost per lead for an e-commerce logistics platform, plus two new countries.</p>
         <p class="mi-who">Romain · Growth &amp; Business Development</p>
-        <div class="mi-tags"><span class="mi-tag">Logistics tech</span><span class="mi-tag">Lead generation</span><span class="mi-tag">Paid media</span></div>
+        <div class="mi-tags"><span class="mi-skill">Paid Media</span><span class="mi-tag">Logistics tech</span><span class="mi-tag">Lead generation</span><span class="mi-tag">Paid media</span></div>
         <ul class="mi-list"><li>Generated qualified leads (MQL) among e-merchants through a dedicated Typeform</li><li>Precise UTM tracking down to the MQL and CAC per keyword and creative in Looker Studio</li><li>+33% MQL over 12 months with -10% cost per lead</li><li>Two new countries opened (US and Spain)</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -782,7 +780,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">C</div><div><p class="mi-co">CodinGame <span class="mi-sep">—</span> <span class="mi-lbl">SaaS sales</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
         <p class="mi-title">€900K+ in new annual recurring revenue and 100+ enterprise clients signed for a tech recruitment SaaS.</p>
         <p class="mi-who">Corentin · Head of Sales, B2B SaaS</p>
-        <div class="mi-tags"><span class="mi-tag">SaaS sales</span><span class="mi-tag">Enterprise accounts</span><span class="mi-tag">ARR</span></div>
+        <div class="mi-tags"><span class="mi-skill">Go-to-Market</span><span class="mi-tag">SaaS sales</span><span class="mi-tag">Enterprise accounts</span><span class="mi-tag">ARR</span></div>
         <ul class="mi-list"><li>Grew from SDR to Senior Enterprise Account Executive</li><li>Ran the full sale, from demos and trials to C-level contract negotiation</li><li>€900K+ ARR and 100+ new clients as Enterprise AE</li><li>Managed and expanded the 35 largest accounts (upsell, cross-sell)</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -790,7 +788,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">I</div><div><p class="mi-co">ILOG (IBM) <span class="mi-sep">—</span> <span class="mi-lbl">Enterprise sales</span></p><p class="mi-ind">B2B &amp; SaaS</p></div></div>
         <p class="mi-title">Complex software sold to large accounts, earning a place in the President's Club as 3rd of 58 sales reps.</p>
         <p class="mi-who">Laurence · B2B Business Developer</p>
-        <div class="mi-tags"><span class="mi-tag">Enterprise software</span><span class="mi-tag">Business development</span><span class="mi-tag">Large accounts</span></div>
+        <div class="mi-tags"><span class="mi-skill">Go-to-Market</span><span class="mi-tag">Enterprise software</span><span class="mi-tag">Business development</span><span class="mi-tag">Large accounts</span></div>
         <ul class="mi-list"><li>Prospected technical departments of large accounts by cold calling</li><li>Qualified opportunities and supported clients through software evaluation</li><li>Organised and ran client workshops</li><li>President's Club 2007: ranked 3rd of 58 sales reps</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -798,7 +796,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">M</div><div><p class="mi-co">Meditopia <span class="mi-sep">—</span> <span class="mi-lbl">Rebrand &amp; launch</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
         <p class="mi-title">A rebrand that lifted web traffic 20% and a 360° launch that put a meditation app on the map in Japan.</p>
         <p class="mi-who">Hibiki · PR &amp; Brand Marketing</p>
-        <div class="mi-tags"><span class="mi-tag">Wellness app</span><span class="mi-tag">Rebranding</span><span class="mi-tag">Japan launch</span></div>
+        <div class="mi-tags"><span class="mi-skill">Brand Strategy</span><span class="mi-tag">Wellness app</span><span class="mi-tag">Rebranding</span><span class="mi-tag">Japan launch</span></div>
         <ul class="mi-list"><li>Led a company-wide rebrand: +20% web traffic in B2C and B2B</li><li>Country Manager Japan: 360° campaign across social, digital, subway and train ads</li><li>Product marketing and go-to-market plans to boost adoption</li><li>B2B partnerships with Japanese companies</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -806,7 +804,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">L</div><div><p class="mi-co">LifeStyles Healthcare (Manix, Skyn) <span class="mi-sep">—</span> <span class="mi-lbl">Brand &amp; market share</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
         <p class="mi-title">Brand awareness up 5 points a year and market share up 4 points in two years for Manix and Skyn across Europe.</p>
         <p class="mi-who">Benjamin · Head of Sales &amp; Marketing, Consumer Health</p>
-        <div class="mi-tags"><span class="mi-tag">Consumer health</span><span class="mi-tag">Brand strategy</span><span class="mi-tag">Media</span></div>
+        <div class="mi-tags"><span class="mi-skill">Brand Strategy</span><span class="mi-tag">Consumer health</span><span class="mi-tag">Brand strategy</span><span class="mi-tag">Media</span></div>
         <ul class="mi-list"><li>Led the EMEA marketing plan, brand strategy and an €11M budget</li><li>Multichannel media campaigns, more digital and well-adapted local assets: awareness +5 pts a year</li><li>Launches, promotions, POS and pricing: market share +4 pts in two years</li><li>GRP cost cut 30% through a better media mix</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -814,7 +812,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">E</div><div><p class="mi-co">EPISOD (Groupe Verona) <span class="mi-sep">—</span> <span class="mi-lbl">Social brand building</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
         <p class="mi-title">A premium fitness brand built on social media: 15K new followers in 6 months and 12M impressions on its first influencer campaign.</p>
         <p class="mi-who">Pierre · Social Media &amp; Content</p>
-        <div class="mi-tags"><span class="mi-tag">Fitness</span><span class="mi-tag">Influencer marketing</span><span class="mi-tag">Brand content</span></div>
+        <div class="mi-tags"><span class="mi-skill">Social Media</span><span class="mi-tag">Fitness</span><span class="mi-tag">Influencer marketing</span><span class="mi-tag">Brand content</span></div>
         <ul class="mi-list"><li>Brand content and social media strategy for a premium sports brand</li><li>Influencer projects and brand storytelling</li><li>+15K followers in 6 months and 8.5% average engagement</li><li>12M impressions on the first influencer campaign; 80% customer satisfaction on social</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -822,7 +820,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo"><img src="Assets/Images/Logo/Clients/haymarket-medical-education.png" alt="Haymarket Medical Education" loading="lazy"></div><div><p class="mi-co">Haymarket Medical Education <span class="mi-sep">—</span> <span class="mi-lbl">Email marketing</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
         <p class="mi-title">Email programmes reaching 1M+ healthcare professionals at a 20%+ open rate, meeting or beating sales targets.</p>
         <p class="mi-who">Deanna · Senior Growth Marketer</p>
-        <div class="mi-tags"><span class="mi-tag">Medical education</span><span class="mi-tag">Email marketing</span><span class="mi-tag">Healthcare professionals</span></div>
+        <div class="mi-tags"><span class="mi-skill">CRM</span><span class="mi-tag">Medical education</span><span class="mi-tag">Email marketing</span><span class="mi-tag">Healthcare professionals</span></div>
         <ul class="mi-list"><li>Campaigns driving awareness, registrations, engagement and loyalty for myCME</li><li>Managed email lists of 1M+ healthcare professionals</li><li>80+ segmented emails a week at a 20%+ average open rate</li><li>Weekly revenue reporting; course completion goals met or exceeded</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -830,7 +828,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">D</div><div><p class="mi-co">Dermalogica <span class="mi-sep">—</span> <span class="mi-lbl">Digital acquisition</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
         <p class="mi-title">The French digital acquisition engine of a professional skincare brand, from website redesign to live shopping.</p>
         <p class="mi-who">Cécile · Head of Communication &amp; Digital</p>
-        <div class="mi-tags"><span class="mi-tag">Skincare</span><span class="mi-tag">E-commerce</span><span class="mi-tag">Influence</span></div>
+        <div class="mi-tags"><span class="mi-skill">Growth</span><span class="mi-tag">Skincare</span><span class="mi-tag">E-commerce</span><span class="mi-tag">Influence</span></div>
         <ul class="mi-list"><li>Digital strategy to grow awareness and e-commerce acquisition (2019–2021)</li><li>SEO, SEA and affiliation, plus a full UX/UI redesign of dermalogica.fr</li><li>Influencer and social media strategy, press agency management</li><li>Innovative formats: Live Shopping and Digital Masterclass</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
@@ -838,7 +836,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px so
         <div class="mi-head"><div class="mi-logo is-text" aria-hidden="true">G</div><div><p class="mi-co">Groupe Rocher (Stanhome) <span class="mi-sep">—</span> <span class="mi-lbl">Visual identity</span></p><p class="mi-ind">Beauty &amp; Health</p></div></div>
         <p class="mi-title">A unified visual identity and social templates that made Stanhome's brand consistent across channels.</p>
         <p class="mi-who">Katia · Art Director &amp; Graphic Designer</p>
-        <div class="mi-tags"><span class="mi-tag">Cosmetics</span><span class="mi-tag">Visual identity</span><span class="mi-tag">Art direction</span></div>
+        <div class="mi-tags"><span class="mi-skill">Creative Direction</span><span class="mi-tag">Cosmetics</span><span class="mi-tag">Visual identity</span><span class="mi-tag">Art direction</span></div>
         <ul class="mi-list"><li>Developed and harmonised Stanhome's visual identity with its sister brands</li><li>New social media templates for consistency and digital performance</li><li>Updated the corporate brand book</li><li>Art direction of cosmetics and perfume product shoots and videos</li></ul>
         <div class="mi-actions"><button class="mi-more" type="button" aria-expanded="false">View details <span>+</span></button><a class="mi-cta" href="Validated elements/contact.html">Check availability →</a></div>
       </article>
